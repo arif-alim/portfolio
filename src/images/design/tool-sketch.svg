@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #ea6c00;
+      }
+
+      .cls-3 {
+        fill: #feeeb7;
+      }
+
+      .cls-4 {
+        fill: #fdad00;
+      }
+
+      .cls-5 {
+        fill: #fdd231;
+      }
+
+      .cls-6 {
+        fill: #fdb300;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="200" height="200"/>
+  <path class="cls-6" d="M43.64,16.15l56.35-5.92,56.36,5.92,43.64,58.1-100,115.52L0,74.25,43.64,16.15Z"/>
+  <polygon class="cls-2" points="40.51 74.25 100 189.77 0 74.25 40.51 74.25"/>
+  <polygon class="cls-2" points="159.49 74.25 100 189.77 200 74.25 159.49 74.25"/>
+  <polygon class="cls-4" points="40.51 74.25 159.49 74.25 100 189.77 40.51 74.25"/>
+  <polygon class="cls-5" points="100 10.23 43.64 16.15 40.51 74.25 100 10.23"/>
+  <polygon class="cls-5" points="100 10.23 156.36 16.15 159.49 74.25 100 10.23"/>
+  <polygon class="cls-4" points="200 74.25 156.36 16.15 159.49 74.25 200 74.25"/>
+  <polygon class="cls-3" points="100 10.23 40.51 74.25 159.49 74.25 100 10.23"/>
+  <polygon class="cls-4" points="0 74.25 43.64 16.15 40.51 74.25 0 74.25"/>
+</svg>

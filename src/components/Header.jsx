@@ -121,11 +121,12 @@ function MobileNavigation(props) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/articles">Articles</MobileNavItem>
+                <MobileNavItem href="/">About</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
-                <MobileNavItem href="/uses">Uses</MobileNavItem>
                 <MobileNavItem href="/accolades">Accolades</MobileNavItem>
+                <MobileNavItem href="/toolbox">Toolbox</MobileNavItem>
+                {/* <MobileNavItem href="/articles">Articles</MobileNavItem> */}
+                <MobileNavItem href="/contact">Contact</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -145,13 +146,13 @@ function NavItem({ href, children }) {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-sky-700 dark:text-sky-400'
-            : 'hover:text-sky-700 dark:hover:text-sky-400'
+            ? 'text-indigo-700 dark:text-indigo-400'
+            : 'hover:text-indigo-700 dark:hover:text-indigo-400'
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
+          <span className="i nset-x-1 absolute -bottom-px h-px bg-gradient-to-r from-indigo-500/0 via-indigo-500/40 to-indigo-500/0 dark:from-indigo-400/0 dark:via-indigo-400/40 dark:to-indigo-400/0" />
         )}
       </Link>
     </li>
@@ -162,11 +163,12 @@ function DesktopNavigation(props) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/about">About</NavItem>
+        <NavItem href="/">About</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/accolades">Accolades</NavItem>
-        <NavItem href="/uses">Uses</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
+        <NavItem href="/toolbox">Toolbox</NavItem>
+        {/* <NavItem href="/articles">Articles</NavItem> */}
+        <NavItem href="/contact">Contact</NavItem>
       </ul>
     </nav>
   )
@@ -202,9 +204,9 @@ function ModeToggle() {
       onClick={toggleMode}
     >
       <SunIcon className="hidden h-6 w-6 fill-gray-400 stroke-gray-200 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-gray-200 [@media_not_(prefers-color-scheme:dark)]:fill-gray-50 [@media_not_(prefers-color-scheme:dark)]:stroke-gray-50" />
-      <MoonIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-slate-50 [@media(prefers-color-scheme:dark)]:stroke-slate-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-slate-900" />
-      {/* <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
-      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" /> */}
+      <MoonIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-slate-50 [@media(prefers-color-scheme:dark)]:stroke-slate-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-indigo-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-slate-900" />
+      {/* <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-indigo-50 [@media(prefers-color-scheme:dark)]:stroke-indigo-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-indigo-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-indigo-600" />
+      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-indigo-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-indigo-500" /> */}
     </button>
   )
 }
@@ -250,107 +252,11 @@ function Avatar({ large = false, className, ...props }) {
 }
 
 export function Header() {
-  let isHomePage = useRouter().pathname === '/'
+  let isHomePage = useRouter().pathname === '/about'
 
   let headerRef = useRef()
   let avatarRef = useRef()
   let isInitial = useRef(true)
-
-  useEffect(() => {
-    let downDelay = avatarRef.current?.offsetTop ?? 0
-    let upDelay = 64
-
-    function setProperty(property, value) {
-      document.documentElement.style.setProperty(property, value)
-    }
-
-    function removeProperty(property) {
-      document.documentElement.style.removeProperty(property)
-    }
-
-    function updateHeaderStyles() {
-      let { top, height } = headerRef.current.getBoundingClientRect()
-      let scrollY = clamp(
-        window.scrollY,
-        0,
-        document.body.scrollHeight - window.innerHeight
-      )
-
-      if (isInitial.current) {
-        setProperty('--header-position', 'sticky')
-      }
-
-      setProperty('--content-offset', `${downDelay}px`)
-
-      if (isInitial.current || scrollY < downDelay) {
-        setProperty('--header-height', `${downDelay + height}px`)
-        setProperty('--header-mb', `${-downDelay}px`)
-      } else if (top + height < -upDelay) {
-        let offset = Math.max(height, scrollY - upDelay)
-        setProperty('--header-height', `${offset}px`)
-        setProperty('--header-mb', `${height - offset}px`)
-      } else if (top === 0) {
-        setProperty('--header-height', `${scrollY + height}px`)
-        setProperty('--header-mb', `${-scrollY}px`)
-      }
-
-      if (top === 0 && scrollY > 0 && scrollY >= downDelay) {
-        setProperty('--header-inner-position', 'fixed')
-        removeProperty('--header-top')
-        removeProperty('--avatar-top')
-      } else {
-        removeProperty('--header-inner-position')
-        setProperty('--header-top', '0px')
-        setProperty('--avatar-top', '0px')
-      }
-    }
-
-    function updateAvatarStyles() {
-      if (!isHomePage) {
-        return
-      }
-
-      let fromScale = 1
-      let toScale = 36 / 64
-      let fromX = 0
-      let toX = 2 / 16
-
-      let scrollY = downDelay - window.scrollY
-
-      let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale
-      scale = clamp(scale, fromScale, toScale)
-
-      let x = (scrollY * (fromX - toX)) / downDelay + toX
-      x = clamp(x, fromX, toX)
-
-      setProperty(
-        '--avatar-image-transform',
-        `translate3d(${x}rem, 0, 0) scale(${scale})`
-      )
-
-      let borderScale = 1 / (toScale / scale)
-      let borderX = (-toX + x) * borderScale
-      let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`
-
-      setProperty('--avatar-border-transform', borderTransform)
-      setProperty('--avatar-border-opacity', scale === toScale ? 1 : 0)
-    }
-
-    function updateStyles() {
-      updateHeaderStyles()
-      updateAvatarStyles()
-      isInitial.current = false
-    }
-
-    updateStyles()
-    window.addEventListener('scroll', updateStyles, { passive: true })
-    window.addEventListener('resize', updateStyles)
-
-    return () => {
-      window.removeEventListener('scroll', updateStyles, { passive: true })
-      window.removeEventListener('resize', updateStyles)
-    }
-  }, [isHomePage])
 
   return (
     <>
