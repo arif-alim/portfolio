@@ -16,36 +16,36 @@ export default function Speaking() {
   return (
     <>
       <Head>
-        <title>Speaking - Spencer Sharp</title>
+        <title>Niagara Falls Craft Distiller - Projects</title>
         <meta
           name="description"
           content="I’ve spoken at events all around the world and been interviewed for many podcasts."
         />
       </Head>
       <SimpleLayout
-        title="I’ve spoken at events all around the world and been interviewed for many podcasts."
-        intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I love podcast interviews because they give me the opportunity to answer questions instead of just present my opinions."
+        title="Niagara Falls Craft Distillers"
+        intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I "
       >
-        <div className="space-y-20">
+        <div className="space-y-24">
           {/* <section className="overflow-hidden text-gray-700">
             <div className="container mx-auto py-2 lg:pt-24">
               <div className="-m-1 flex flex-wrap md:-m-2">
                 <div className="flex w-1/2 flex-wrap">
-                  <div className="w-1/2 p-1 md:p-4">
+                  <div className="w-1/2 p-1 md:p-3">
                     <Image
                       alt="gallery"
                       className="block h-full w-full rounded-lg object-cover object-center"
                       src={nfcd1}
                     ></Image>
                   </div>
-                  <div className="w-1/2 p-1 md:p-4">
+                  <div className="w-1/2 p-1 md:p-3">
                     <Image
                       alt="gallery"
                       className="block h-full w-full rounded-lg object-cover object-center"
                       src={nfcd2}
                     ></Image>
                   </div>
-                  <div className="w-full p-1 md:p-4">
+                  <div className="w-full p-1 md:p-3">
                     <Image
                       alt="gallery"
                       className="block h-full w-full rounded-lg object-cover object-center"
@@ -54,21 +54,21 @@ export default function Speaking() {
                   </div>
                 </div>
                 <div className="flex w-1/2 flex-wrap">
-                  <div className="w-full p-1 md:p-4">
+                  <div className="w-full p-1 md:p-3">
                     <Image
                       alt="gallery"
                       className="block h-full w-full rounded-lg object-cover object-center"
                       src={nfcd4}
                     ></Image>
                   </div>
-                  <div className="w-1/2 p-1 md:p-4">
+                  <div className="w-1/2 p-1 md:p-3">
                     <Image
                       alt="gallery"
                       className="block h-full w-full rounded-lg object-cover object-center"
                       src={nfcd5}
                     ></Image>
                   </div>
-                  <div className="w-1/2 p-1 md:p-4">
+                  <div className="w-1/2 p-1 md:p-3">
                     <Image
                       alt="gallery"
                       className="block h-full w-full rounded-lg object-cover object-center"
@@ -79,44 +79,75 @@ export default function Speaking() {
               </div>
             </div>
           </section> */}
-          <section className="overflow-hidden text-gray-700">
-            <div className="container mx-auto">
-              <div className="flex flex-wrap ">
-                <div className="flex w-1/2 flex-wrap py-0">
-                  <div className="border-1 w-full border-slate-100 p-1 py-4 md:p-4">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd1}
-                    ></Image>
-                  </div>
-                  <div className="border-1 w-full border-slate-100 p-1 py-4 md:p-4">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd2}
-                    ></Image>
-                  </div>
+          <div className="container mx-auto px-4">
+            <section className="pt-4">
+              <div className="-mx-4 flex flex-wrap">
+                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={nfcd1}
+                    alt=""
+                  ></Image>
                 </div>
-                <div className="flex w-1/2 flex-wrap">
-                  <div className="border-1 w-full border-slate-100 p-1 py-4 md:px-8">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd4}
-                    ></Image>
-                  </div>
-                  <div className="border-1 w-full border-slate-100 p-1 py-4 md:px-8">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd5}
-                    ></Image>
-                  </div>
+                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={nfcd1}
+                    alt=""
+                  ></Image>
+                </div>
+                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={nfcd1}
+                    alt=""
+                  ></Image>
+                </div>
+                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={nfcd1}
+                    alt=""
+                  ></Image>
+                </div>
+                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={nfcd1}
+                    alt=""
+                  ></Image>
+                </div>
+                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={nfcd1}
+                    alt=""
+                  ></Image>
+                </div>
+                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={nfcd1}
+                    alt=""
+                  ></Image>
+                </div>
+                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={nfcd1}
+                    alt=""
+                  ></Image>
+                </div>
+                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={nfcd1}
+                    alt=""
+                  ></Image>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
       </SimpleLayout>
     </>
