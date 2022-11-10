@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
 import { SimpleLayoutAlt } from '@/components/SimpleLayoutAlt'
 
 import certCSSEssentialTraining from '@/images/certificates/CSSEssentialTraining.jpg'
@@ -155,20 +154,20 @@ const Certifications = [
 
 const Education = [
   {
-    name: 'University of Waterloo',
-    link: {
-      href: 'https://uwaterloo.ca/',
-      label: 'Visit website',
-    },
-    logo: logoUW,
-  },
-  {
     name: 'Wilfrid Laurier University',
     link: {
       href: 'https://www.wlu.ca/',
-      label: 'Visit website',
+      label: 'www.wlu.ca',
     },
     logo: logoWLU,
+  },
+  {
+    name: 'University of Waterloo',
+    link: {
+      href: 'https://uwaterloo.ca/',
+      label: 'uwaterloo.ca',
+    },
+    logo: logoUW,
   },
 ]
 
@@ -183,8 +182,8 @@ export default function Accolades() {
         />
       </Head>
       <SimpleLayoutAlt
-        title="I’ve spoken at events all around the world and been interviewed for many podcasts."
-        intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I love podcast interviews because they give me the opportunity to answer questions instead of just present my opinions."
+        title="Double Degree education and over a decade of industry experience in UI/UX Design and Frontend Development"
+        intro="Started graphic design at the age of 15 and soon progressed to user interaction and experience design. With extensive knowledge of industry standard javascript frameworks, it has helped me design with development in mind."
       >
         <div className="space-y-10">
           <ul
@@ -193,23 +192,23 @@ export default function Accolades() {
           >
             {Education.map((school) => (
               <li key={school.name}>
-                <div>
-                  <div className="auto aspect-w-3 flex h-16 items-center rounded-lg bg-white px-4 ">
-                    <Image
-                      className="h-full object-cover"
-                      src={school.logo}
-                      alt=""
-                    />
-                  </div>
+                <div className="auto aspect-w-3 flex h-16 items-center rounded-lg bg-white px-4 ">
+                  <Image
+                    className="flex h-full object-cover"
+                    src={school.logo}
+                    alt=""
+                  />
+                </div>
 
-                  <div className="space-y-2">
-                    <div className=" flex flex-row justify-between space-y-1 px-1.5 text-sm font-medium dark:text-zinc-200">
-                      <h3>{school.heading}</h3>
-                      <a
-                        href={school.linkedinUrl}
-                        className="text-gray-400 hover:text-gray-500"
-                      ></a>
-                    </div>
+                <div className="space-y-2">
+                  <div className=" flex flex-col justify-between space-y-1 px-1.5 text-sm font-medium dark:text-zinc-200">
+                    <h3>{school.name}</h3>
+                    <Link
+                      href={school.link.href}
+                      className="text-zinc-400 hover:text-zinc-500"
+                    >
+                      {school.link.label}
+                    </Link>
                   </div>
                 </div>
               </li>
@@ -234,11 +233,11 @@ export default function Accolades() {
                   </div>
 
                   <div className="space-y-2">
-                    <div className=" flex flex-row justify-between space-y-1 px-1.5 text-sm font-medium dark:text-zinc-200">
+                    <div className=" flex flex-col justify-between space-y-1 px-1.5 text-sm font-medium dark:text-zinc-200">
                       <h3>{cert.heading}</h3>
                       <a
                         href={cert.linkedinUrl}
-                        className="text-gray-400 hover:text-gray-500"
+                        className="flex items-center gap-3 font-normal text-zinc-500 hover:text-blue-900 dark:text-zinc-400 dark:hover:text-blue-300"
                       >
                         <span className="sr-only">LinkedIn</span>
                         <svg
@@ -253,6 +252,7 @@ export default function Accolades() {
                             clipRule="evenodd"
                           />
                         </svg>
+                        View Certificate
                       </a>
                     </div>
                   </div>

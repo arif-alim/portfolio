@@ -1,247 +1,207 @@
-import Image from 'next/future/image'
 import Head from 'next/head'
-import { Card } from '@/components/Card'
+import Link from 'next/link'
+
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-// Logo
-import logoBombardier from '@/images/projects/BombardierLogo.svg'
-import logoChicasaDesign from '@/images/projects/ChicasaDesign.svg'
-import logoCraftCity from '@/images/projects/CraftCity.svg'
-import logoDistrictEatery from '@/images/projects/DistrictEatery.svg'
-import logoEquityBank from '@/images/projects/EquityBank.svg'
-import logoHydroOne from '@/images/projects/HydroOneLogo.svg'
-import logoIslandTraders from '@/images/projects/IslandTraders.svg'
-import logoMissBahamas from '@/images/projects/MissBahamas.svg'
-import logoNBARestaurant from '@/images/projects/NBARestaurant.svg'
-import logoNFCD from '@/images/projects/NFCD.svg'
-import logoPerfectone from '@/images/projects/Perfectone.svg'
-import logoServiceOntario from '@/images/projects/ServiceOntario.svg'
-import logoTitanGroup from '@/images/projects/TitanGroup.svg'
-import logoTripSupport from '@/images/projects/TripSupportLogo.svg'
-import logoUrbanDining from '@/images/projects/UrbanDiningGroup.svg'
-import lightWolff from '@/images/projects/Wolff.svg'
-// Logo Light
-import lightBombardier from '@/images/projects/BombardierLogo-Light.svg'
-import lightChicasaDesign from '@/images/projects/ChicasaDesign-Light.svg'
-import lightCraftCity from '@/images/projects/CraftCity-Light.svg'
-import lightDistrictEatery from '@/images/projects/DistrictEatery-Light.svg'
-import lightEquityBank from '@/images/projects/EquityBank-Light.svg'
-import lightHydroOne from '@/images/projects/HydroOneLogo-Light.svg'
-import lightIslandTraders from '@/images/projects/IslandTraders-Light.svg'
-import lightMissBahamas from '@/images/projects/MissBahamas-Light.svg'
-import lightNBARestaurant from '@/images/projects/NBARestaurant-Light.svg'
-import lightNFCD from '@/images/projects/NFCD-Light.svg'
-import lightPerfectone from '@/images/projects/Perfectone-Light.svg'
-import lightServiceOntario from '@/images/projects/ServiceOntario-Light.svg'
-import lightTitanGroup from '@/images/projects/TitanGroup-Light.svg'
-import lightTripSupport from '@/images/projects/TripSupportLogo-Light.svg'
-import lightUrbanDining from '@/images/projects/UrbanDiningGroup-Light.svg'
-// Logo Dark
-// import darkBombardier from '@/images/projects/BombardierLogo-Dark.svg'
-// import darkChicasaDesign from '@/images/projects/ChicasaDesign-Dark.svg'
-// import darkCraftCity from '@/images/projects/CraftCity-Dark.svg'
-// import darkDistrictEatery from '@/images/projects/DistrictEatery-Dark.svg'
-// import darkEquityBank from '@/images/projects/EquityBank-Dark.svg'
-// import darkHydroOne from '@/images/projects/HydroOneLogo-Dark.svg'
-// import darkIslandTraders from '@/images/projects/IslandTraders-Dark.svg'
-// import darkMissBahamas from '@/images/projects/MissBahamas-Dark.svg'
-// import darkNBARestaurant from '@/images/projects/NBARestaurant-Dark.svg'
-// import darkNFCD from '@/images/projects/NFCD-Dark.svg'
-// import darkPerfectone from '@/images/projects/Perfectone-Dark.svg'
-// import darkServiceOntario from '@/images/projects/ServiceOntario-Dark.svg'
-// import darkTitanGroup from '@/images/projects/TitanGroup-Dark.svg'
-// import darkTripSupport from '@/images/projects/TripSupportLogo-Dark.svg'
-// import darkUrbanDining from '@/images/projects/UrbanDiningGroup-Dark.svg'
-import darkWolff from '@/images/projects/Wolff-Dark.svg'
+// Logo preset bg
+import craftCity from '@/images/projects/craftcity.png'
+import tripSupport from '@/images/projects/tripsupport.png'
+import bombardier from '@/images/projects/bombardier.png'
+import chicasaDesign from '@/images/projects/chicasadesign.png'
+import districtEatery from '@/images/projects/districteatery.png'
+import equityBank from '@/images/projects/equitybank.png'
+import hydroOne from '@/images/projects/hydroone.png'
+import islandTraders from '@/images/projects/islandtraders.png'
+import missBahamas from '@/images/projects/missbahamas.png'
+import nbaRestaurant from '@/images/projects/nbarestaurant.png'
+import nfcd from '@/images/projects/nfcd.png'
+import serviceOntario from '@/images/projects/serviceontario.png'
+import titanGroup from '@/images/projects/titangroup.png'
+import urbanDining from '@/images/projects/urbandining.png'
+import wolff from '@/images/projects/wolff.png'
+
+import { useEffect, useId, useState } from 'react'
+import Image from 'next/image'
+import clsx from 'clsx'
 
 const projects = [
   {
-    company: 'Trip Support',
-    title: 'Lead UI/UX Designer, Front-end Developer',
-    sow: 'Created high-fidelity prototypes with Sketch, Figma and Axure. Converted digital assets to vector files and redesigned footer logos with Illustrator. Used Photoshop to edit photos / images and adjusted resolution and applied lossless compress to further reduce file size to optimize performance.',
-    link: {
-      href: '/projects/trip-support',
-      label: 'View project',
-    },
-    logoLight: lightTripSupport,
-  },
-  {
-    company: 'Bombardier',
-    title: 'Sr. UI Designer',
-    sow: 'Worked on MySmartRouter and MyPrinciple mobile application screens ',
+    id: 0,
+    name: 'Bombardier',
+    about: 'Manufacturer of business jets',
     link: {
       href: '/projects/bombardier',
       label: 'View project',
     },
-    logoLight: lightBombardier,
+    image: bombardier,
   },
   {
-    company: 'Service Ontario',
-    title: 'UI/UX Design',
-    sow: 'Assigend to the Digital Dealership Registration as the Sr. UI Architect. Responsible for the user interaction and user experience design.',
+    id: 1,
+    name: 'Craft City',
+    about: 'Hard seltzer brand',
     link: {
-      href: '/projects/service-ontario',
+      href: '/projects/craft-city',
       label: 'View project',
     },
-    logoLight: lightServiceOntario,
+    image: craftCity,
   },
   {
-    company: 'Hydro One',
-    title: 'UI/UX Design',
-    sow: 'Applied different variations of my design thinking process to conduct user research to address user pain points.',
+    id: 2,
+    name: 'Trip Support',
+    about: 'Online Travel Agency',
     link: {
-      href: '/projects/hydro-one',
+      href: '/projects/trip-support',
       label: 'View project',
     },
-    logoLight: lightHydroOne,
+    image: tripSupport,
   },
-  // {
-  //   company: 'Airbus',
-  //   title: 'UI/UX Design',
-  //   sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
-  //   link: {
-  //     href: '/projects/airbus',
-  //     label: 'View project',
-  //   },
-  //   logoLight: lightAirbus,
-  // },
   {
-    company: 'NBA Courtside Restaurant',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
+    id: 3,
+    name: 'Chicasa Design',
+    about: 'Custom Home Builders',
     link: {
       href: '/projects/chicasa-design',
       label: 'View project',
     },
-    logoLight: lightNBARestaurant,
+    image: chicasaDesign,
   },
   {
-    company: 'Miss Bahamas',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
+    id: 4,
+    name: 'District Eatery',
+    about: 'Chain of restaurants',
+    link: {
+      href: '/projects/nba-restaurant',
+      label: 'View project',
+    },
+    image: districtEatery,
+  },
+  {
+    id: 5,
+    name: 'Equity Bank',
+    about: 'Private banking Bahamas',
+    link: {
+      href: '/projects/equity-bank',
+      label: 'View project',
+    },
+    image: equityBank,
+  },
+  {
+    id: 6,
+    name: 'Hydro One',
+    about: 'Electricity distribution utility',
+    link: {
+      href: '/projects/hydro-one',
+      label: 'View project',
+    },
+    image: hydroOne,
+  },
+  {
+    id: 7,
+    name: 'Island Traders',
+    about: 'Courier service in Bahamas',
+    link: {
+      href: '/projects/island-traders',
+      label: 'View project',
+    },
+    image: islandTraders,
+  },
+  {
+    id: 8,
+    name: 'Miss Bahamas',
+    about: 'Bahamas beauty pageant',
     link: {
       href: '/projects/miss-bahamas',
       label: 'View project',
     },
-    logoLight: lightMissBahamas,
+    image: missBahamas,
   },
   {
-    company: 'Urban Dining Group',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
+    id: 9,
+    name: 'NBA Restaurant',
+    about: 'NBA courtside restaurant',
     link: {
-      href: '/projects/hydro-one',
+      href: '/projects/nba-restaurant',
       label: 'View project',
     },
-    logoLight: lightUrbanDining,
+    image: nbaRestaurant,
   },
   {
-    company: 'Titan Group',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
+    id: 10,
+    name: 'Niagara Falls Craft Distillers',
+    about: 'Spirit distillers',
     link: {
-      href: '/projects/chicasa-design',
+      href: '/projects/nfcd',
       label: 'View project',
     },
-    logoLight: lightTitanGroup,
+    image: nfcd,
   },
   {
-    company: 'Chicasa Design',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
+    id: 11,
+    name: 'Service Ontario',
+    about: 'Government of Ontario',
     link: {
-      href: '/projects/chicasa-design',
+      href: '/projects/service-ontario',
       label: 'View project',
     },
-    logoLight: lightChicasaDesign,
-  },
-
-  {
-    company: 'Craft City Seltzer',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
-    link: {
-      href: '/projects/chicasa-design',
-      label: 'View project',
-    },
-    logoLight: lightCraftCity,
+    image: serviceOntario,
   },
   {
-    company: 'District Eatery',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
+    id: 12,
+    name: 'Titan Group',
+    about: 'Custom home builders',
     link: {
-      href: '/projects/chicasa-design',
+      href: '/projects/titan-group',
       label: 'View project',
     },
-    logoLight: lightDistrictEatery,
+    image: titanGroup,
   },
   {
-    company: 'Niagara Falls Craft Distillers',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
+    id: 13,
+    name: 'Urban Dining',
+    about: 'Chain of restaurants',
     link: {
-      href: '/projects/chicasa-design',
+      href: '/projects/urban-dining-group',
       label: 'View project',
     },
-    logoLight: lightNFCD,
+    image: urbanDining,
   },
   {
-    company: 'Island Traders',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
+    id: 14,
+    name: 'Wolff Mechanical',
+    about: 'Commercial construction company',
     link: {
-      href: '/projects/chicasa-design',
+      href: '/projects/wolff',
       label: 'View project',
     },
-    logoLight: lightIslandTraders,
+    image: wolff,
   },
-  {
-    company: 'Perfec-tone',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
-    link: {
-      href: '/projects/perfec-tone',
-      label: 'View project',
-    },
-    logoLight: lightPerfectone,
-  },
-  {
-    company: 'Equity Bank',
-    title: 'UI/UX Design',
-    sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
-    link: {
-      href: '/projects/equity-bank-bahamas',
-      label: 'View project',
-    },
-    logoLight: lightEquityBank,
-  },
-  // {
-  //   company: 'Bluestone BID',
-  //   title: 'UI/UX Design',
-  //   sow: "Analyzed user stories to create user affinity map and user-flow with figjam. Designed mySmartRouter from scratch and expanded Bombardier’s components and revamped existing ones. Bombarider's myServiceVisit team lead Ricardo loved the work I did for mySmartRouter and requested I work with him on myServiceVisit. Refactored designed by removing deep nesting and creating base components to build higher level components and simplified it by using component properties to reduce the number of component variants.",
-  //   link: {
-  //     href: '/projects/chicasa-design',
-  //     label: 'View project',
-  //   },
-  //   logoLight: lightTitanGroup,
-  // },
 ]
 
-function LinkIcon(props) {
+function ImageClipPaths({ id, ...props }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        d="M1.90283 0L0 1.88L6.18084 8L0 14.12L1.90283 16L10 8L1.90283 0Z"
-        fill="currentColor"
-      />
+    <svg aria-hidden="true" width={0} height={0} {...props}>
+      <defs>
+        <clipPath id={`${id}-0`} clipPathUnits="objectBoundingBox">
+          <path d="M0,0 h0.729 v0.129 h0.121 l-0.016,0.032 C0.815,0.198,0.843,0.243,0.885,0.243 H1 v0.757 H0.271 v-0.086 l-0.121,0.057 v-0.214 c0,-0.032,-0.026,-0.057,-0.057,-0.057 H0 V0" />
+        </clipPath>
+        <clipPath id={`${id}-1`} clipPathUnits="objectBoundingBox">
+          <path d="M1,1 H0.271 v-0.129 H0.15 l0.016,-0.032 C0.185,0.802,0.157,0.757,0.115,0.757 H0 V0 h0.729 v0.086 l0.121,-0.057 v0.214 c0,0.032,0.026,0.057,0.057,0.057 h0.093 v0.7" />
+        </clipPath>
+        <clipPath id={`${id}-2`} clipPathUnits="objectBoundingBox">
+          <path d="M1,0 H0.271 v0.129 H0.15 l0.016,0.032 C0.185,0.198,0.157,0.243,0.115,0.243 H0 v0.757 h0.729 v-0.086 l0.121,0.057 v-0.214 c0,-0.032,0.026,-0.057,0.057,-0.057 h0.093 V0" />
+        </clipPath>
+      </defs>
     </svg>
   )
 }
 
-export default function Projects() {
+export default function Speakers() {
+  let id = useId()
+
   return (
-    <>
+    <section id="speakers" aria-labelledby="speakers-title">
+      <ImageClipPaths id={id} />
+
       <Head>
         <title>Projects - Arif Alim</title>
         <meta
@@ -253,70 +213,48 @@ export default function Projects() {
         title="Things I’ve made trying to put my dent in the universe."
         intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
       >
-        {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-4">
           {projects.map((project) => (
-            <div
-              key={project.link}
-              className="relative flex items-center gap-2 space-x-3 rounded-lg
-              border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500
-              focus-within:ring-offset-2 hover:border-gray-400 dark:border-zinc-900 dark:bg-zinc-800 dark:hover:border-zinc-700"
-            >
-              <div className="h-full flex-shrink-0 rounded-lg bg-white px-2 py-2">
-                <Image
-                  className="h-full w-16 sm:w-20"
-                  src={project.logo}
-                  alt=""
-                />
-              </div>
-              <div className="min-w-0 flex-1">
-                <a href="#" className="focus:outline-none">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  <h2 className=" text-md font-bold leading-tight text-zinc-900 dark:text-zinc-50">
-                    {project.company}
-                  </h2>
-                  <p className="text-sm font-normal text-zinc-500 dark:text-zinc-300">
-                    {project.title}
-                  </p>
-                  <p className="text-sm text-zinc-700 line-clamp-2 dark:text-zinc-50">
-                    {project.sow}
-                  </p>
-                </a>
+            <div key={project.id} unmount={false}>
+              <div key={project.id}>
+                <div className="rounded-4xl group relative h-[12rem] transform overflow-hidden">
+                  <div
+                    className={clsx(
+                      'rounded-4xl absolute top-0 left-0 right-4 bottom-6 border transition duration-300 group-hover:scale-95 xl:right-6',
+                      [
+                        'border-blue-300',
+                        'border-indigo-300',
+                        'border-sky-300',
+                      ][project.id % 3]
+                    )}
+                  />
+                  <div
+                    className="absolute inset-0 bg-blue-50"
+                    style={{ clipPath: `url(#${id}-${project.id % 3})` }}
+                  >
+                    <Image
+                      className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-110"
+                      src={project.image}
+                      alt=""
+                      priority
+                      sizes="(min-width: 1280px) 17.5rem, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    />
+                  </div>
+                </div>
+                <h3 className="font-display mt-8 text-lg font-bold tracking-tight text-slate-900">
+                  {project.name}
+                </h3>
+                <p className="mt-1 text-base tracking-tight text-slate-700">
+                  {project.about}
+                </p>
+                <p className="text-sm tracking-tight text-blue-900">
+                  <Link href={project.link.href}>{project.link.label}</Link>
+                </p>
               </div>
             </div>
           ))}
-        </div> */}
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {projects.map((project) => (
-            <Card as="li" key={project.company}>
-              {/* <div className="w-fullitems-center relative z-10 flex h-auto w-full justify-start"> */}
-              <div className="w-fullitems-center relative z-10 flex h-auto w-60 items-center justify-start rounded-lg dark:bg-zinc-100">
-                <Image
-                  src={project.logoLight}
-                  alt=""
-                  className="h-20 w-auto p-2"
-                  unoptimized
-                />
-              </div>
-              <h2 className="mt-4 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>
-                  {project.company}
-                </Card.Link>
-              </h2>
-
-              <p className="relative z-10 mt-2 text-sm text-zinc-600 line-clamp-2 dark:text-zinc-400">
-                {project.sow}
-              </p>
-              <p className="relative z-10 mt-2 flex flex-row items-center gap-4 text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                <span>{project.link.label}</span>
-                <LinkIcon className="mt-1.5 h-4 w-4 flex-none" />
-              </p>
-            </Card>
-          ))}
-        </ul>
+        </div>
       </SimpleLayout>
-    </>
+    </section>
   )
 }
