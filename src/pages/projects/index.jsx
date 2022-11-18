@@ -4,21 +4,26 @@ import Link from 'next/link'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Logo preset bg
-import craftCity from '@/images/projects/craftcity.png'
-import tripSupport from '@/images/projects/tripsupport.png'
-import bombardier from '@/images/projects/bombardier.png'
-import chicasaDesign from '@/images/projects/chicasadesign.png'
-import districtEatery from '@/images/projects/districteatery.png'
-import equityBank from '@/images/projects/equitybank.png'
-import hydroOne from '@/images/projects/hydroone.png'
-import islandTraders from '@/images/projects/islandtraders.png'
-import missBahamas from '@/images/projects/missbahamas.png'
-import nbaRestaurant from '@/images/projects/nbarestaurant.png'
-import nfcd from '@/images/projects/nfcd.png'
-import serviceOntario from '@/images/projects/serviceontario.png'
-import titanGroup from '@/images/projects/titangroup.png'
-import urbanDining from '@/images/projects/urbandining.png'
-import wolff from '@/images/projects/wolff.png'
+import logoCraftCity from '@/images/projects/craftcity.png'
+import logoTripSupport from '@/images/projects/tripsupport.png'
+import logoBombardier from '@/images/projects/bombardier.png'
+import logoChicasaDesign from '@/images/projects/chicasadesign.png'
+import logoDistrictEatery from '@/images/projects/districteatery.png'
+import logoEquityBank from '@/images/projects/equitybank.png'
+import logoHydroOne from '@/images/projects/hydroone.png'
+import logoIslandTraders from '@/images/projects/islandtraders.png'
+import logoMissBahamas from '@/images/projects/missbahamas.png'
+import logoNBARestaurant from '@/images/projects/nbarestaurant.png'
+import logoNFCD from '@/images/projects/nfcd.png'
+import logoServiceOntario from '@/images/projects/serviceontario.png'
+import logoTitanGroup from '@/images/projects/titangroup.png'
+import logoUrbanDining from '@/images/projects/urbandining.png'
+import logoWolff from '@/images/projects/wolff.png'
+import logoCooper from '@/images/projects/cooper.png'
+import logoTritecSolutions from '@/images/projects/tritecsolutions.png'
+import logoLieberGroup from '@/images/projects/liebergroup.png'
+import logoGabbys from '@/images/projects/gabbys.png'
+import logoHeyLucys from '@/images/projects/heylucys.png'
 
 import { useEffect, useId, useState } from 'react'
 import Image from 'next/image'
@@ -33,77 +38,77 @@ const projects = [
       href: '/projects/bombardier',
       label: 'View project',
     },
-    image: bombardier,
+    image: logoBombardier,
   },
   {
     id: 1,
-    name: 'Craft City',
-    about: 'Hard seltzer brand',
-    link: {
-      href: '/projects/craft-city',
-      label: 'View project',
-    },
-    image: craftCity,
-  },
-  {
-    id: 2,
     name: 'Trip Support',
     about: 'Online Travel Agency',
     link: {
       href: '/projects/trip-support',
       label: 'View project',
     },
-    image: tripSupport,
+    image: logoTripSupport,
+  },
+  {
+    id: 2,
+    name: 'Service Ontario',
+    about: 'Government of Ontario',
+    link: {
+      href: '/projects/service-ontario',
+      label: 'View project',
+    },
+    image: logoServiceOntario,
   },
   {
     id: 3,
-    name: 'Chicasa Design',
-    about: 'Custom Home Builders',
-    link: {
-      href: '/projects/chicasa-design',
-      label: 'View project',
-    },
-    image: chicasaDesign,
-  },
-  {
-    id: 4,
-    name: 'District Eatery',
-    about: 'Chain of restaurants',
-    link: {
-      href: '/projects/nba-restaurant',
-      label: 'View project',
-    },
-    image: districtEatery,
-  },
-  {
-    id: 5,
-    name: 'Equity Bank',
-    about: 'Private banking Bahamas',
-    link: {
-      href: '/projects/equity-bank',
-      label: 'View project',
-    },
-    image: equityBank,
-  },
-  {
-    id: 6,
     name: 'Hydro One',
     about: 'Electricity distribution utility',
     link: {
       href: '/projects/hydro-one',
       label: 'View project',
     },
-    image: hydroOne,
+    image: logoHydroOne,
+  },
+  {
+    id: 4,
+    name: 'NBA Restaurant',
+    about: 'NBA courtside restaurant',
+    link: {
+      href: '/projects/nba-restaurant',
+      label: 'View project',
+    },
+    image: logoNBARestaurant,
+  },
+  {
+    id: 5,
+    name: 'Chicasa Design',
+    about: 'Custom Home Builders',
+    link: {
+      href: '/projects/chicasa-design',
+      label: 'View project',
+    },
+    image: logoChicasaDesign,
+  },
+  {
+    id: 6,
+    name: 'Titan Group',
+    about: 'Custom home builders',
+    link: {
+      href: '/projects/titan-group',
+      label: 'View project',
+    },
+    image: logoTitanGroup,
   },
   {
     id: 7,
-    name: 'Island Traders',
-    about: 'Courier service in Bahamas',
+    name: 'Craft City',
+    about: 'Hard seltzer brand',
     link: {
-      href: '/projects/island-traders',
+      href: '/projects/craft-city',
       label: 'View project',
     },
-    image: islandTraders,
+    image: logoCraftCity,
   },
   {
     id: 8,
@@ -113,67 +118,119 @@ const projects = [
       href: '/projects/miss-bahamas',
       label: 'View project',
     },
-    image: missBahamas,
+    image: logoMissBahamas,
   },
+
   {
     id: 9,
-    name: 'NBA Restaurant',
-    about: 'NBA courtside restaurant',
+    name: 'District Eatery',
+    about: 'Chain of restaurants',
     link: {
-      href: '/projects/nba-restaurant',
+      href: '/projects/district-eatery',
       label: 'View project',
     },
-    image: nbaRestaurant,
+    image: logoDistrictEatery,
   },
   {
     id: 10,
+    name: 'Equity Bank',
+    about: 'Private banking Bahamas',
+    link: {
+      href: '/projects/equity-bank',
+      label: 'View project',
+    },
+    image: logoEquityBank,
+  },
+  {
+    id: 11,
+    name: 'Island Traders',
+    about: 'Courier service in Bahamas',
+    link: {
+      href: '/projects/island-traders',
+      label: 'View project',
+    },
+    image: logoIslandTraders,
+  },
+  {
+    id: 12,
     name: 'Niagara Falls Craft Distillers',
     about: 'Spirit distillers',
     link: {
       href: '/projects/nfcd',
       label: 'View project',
     },
-    image: nfcd,
+    image: logoNFCD,
   },
-  {
-    id: 11,
-    name: 'Service Ontario',
-    about: 'Government of Ontario',
-    link: {
-      href: '/projects/service-ontario',
-      label: 'View project',
-    },
-    image: serviceOntario,
-  },
-  {
-    id: 12,
-    name: 'Titan Group',
-    about: 'Custom home builders',
-    link: {
-      href: '/projects/titan-group',
-      label: 'View project',
-    },
-    image: titanGroup,
-  },
+
   {
     id: 13,
     name: 'Urban Dining',
     about: 'Chain of restaurants',
     link: {
-      href: '/projects/urban-dining-group',
+      href: '/projects/urban-dining',
       label: 'View project',
     },
-    image: urbanDining,
+    image: logoUrbanDining,
   },
   {
     id: 14,
     name: 'Wolff Mechanical',
-    about: 'Commercial construction company',
+    about: 'Construction company',
     link: {
       href: '/projects/wolff',
       label: 'View project',
     },
-    image: wolff,
+    image: logoWolff,
+  },
+  {
+    id: 15,
+    name: 'Cooper',
+    about: 'Uber like app for Bahamas',
+    link: {
+      href: '/projects/cooper',
+      label: 'View project',
+    },
+    image: logoCooper,
+  },
+  {
+    id: 16,
+    name: 'Tritec Solutions',
+    about: 'Uber like app for Bahamas',
+    link: {
+      href: '/projects/tritec-solutions',
+      label: 'View project',
+    },
+    image: logoTritecSolutions,
+  },
+  {
+    id: 17,
+    name: 'Lieber Group',
+    about: 'Uber like app for Bahamas',
+    link: {
+      href: '/projects/lieber-group',
+      label: 'View project',
+    },
+    image: logoLieberGroup,
+  },
+  {
+    id: 18,
+    name: "Gabby's",
+    about: 'Restaurant',
+    link: {
+      href: '/projects/gabbys',
+      label: 'View project',
+    },
+    image: logoGabbys,
+  },
+  {
+    id: 19,
+    name: "Hey Lucy's",
+    about: 'Restaurant',
+    link: {
+      href: '/projects/hey-lucys',
+      label: 'View project',
+    },
+    image: logoHeyLucys,
   },
 ]
 
@@ -213,43 +270,42 @@ export default function Speakers() {
         title="Things I’ve made trying to put my dent in the universe."
         intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
       >
-        <div className="mt-14 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16  lg:grid-cols-4">
           {projects.map((project) => (
             <div key={project.id} unmount={false}>
               <div key={project.id}>
-                <div className="rounded-4xl group relative h-[12rem] transform overflow-hidden">
-                  <div
-                    className={clsx(
-                      'rounded-4xl absolute top-0 left-0 right-4 bottom-6 border transition duration-300 group-hover:scale-95 xl:right-6',
-                      [
-                        'border-blue-300',
-                        'border-indigo-300',
-                        'border-sky-300',
-                      ][project.id % 3]
-                    )}
-                  />
-                  <div
-                    className="absolute inset-0 bg-blue-50"
-                    style={{ clipPath: `url(#${id}-${project.id % 3})` }}
-                  >
-                    <Image
-                      className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-110"
-                      src={project.image}
-                      alt=""
-                      priority
-                      sizes="(min-width: 1280px) 17.5rem, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                <Link href={project.link.href}>
+                  <div className="rounded-4xl group relative h-[16rem] transform overflow-hidden sm:h-[12rem]">
+                    <div
+                      className={clsx(
+                        'rounded-4xl absolute top-0 left-0 right-4 bottom-6 border transition duration-300 group-hover:scale-95 xl:right-6',
+                        [
+                          'border-blue-300',
+                          'border-indigo-300',
+                          'border-sky-300',
+                        ][project.id % 3]
+                      )}
                     />
+                    <div
+                      className="absolute inset-0 bg-blue-50 "
+                      style={{ clipPath: `url(#${id}-${project.id % 3})` }}
+                    >
+                      <Image
+                        className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-110"
+                        src={project.image}
+                        alt=""
+                        priority
+                        sizes="(min-width: 1280px) 17.5rem, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      />
+                    </div>
                   </div>
-                </div>
-                <h3 className="font-display mt-8 text-lg font-bold tracking-tight text-slate-900">
-                  {project.name}
-                </h3>
-                <p className="mt-1 text-base tracking-tight text-slate-700">
-                  {project.about}
-                </p>
-                <p className="text-sm tracking-tight text-blue-900">
-                  <Link href={project.link.href}>{project.link.label}</Link>
-                </p>
+                  <h3 className="font-display mt-8 text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+                    {project.name}
+                  </h3>
+                  <p className="text-sm tracking-tight text-zinc-500 dark:font-light dark:text-zinc-100">
+                    {project.about}
+                  </p>
+                </Link>
               </div>
             </div>
           ))}

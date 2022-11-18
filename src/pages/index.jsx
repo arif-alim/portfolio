@@ -65,22 +65,27 @@ export default function About() {
             </p>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                Currently developing apps on React, Redux, Laravel, Amazon Web
-                Services and contributing to open source in my free time. New to
-                Next.js, Tailwindcss and Figma.
+                Creative UI/UX designer and a frontend developer with over 15
+                years of experience. I have designed for small to enterprise
+                level applications for companies such as Trip Support, Hydro
+                One, Service Ontario and Bombardier. My design thinking process,
+                methodologies, and user-centric approach to UI/UX with the
+                latest trends and accessibility in mind, I can help you achieve
+                your UI/UX goals.
               </p>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Mollitia necessitatibus accusantium iste eos tenetur
-                perspiciatis error iusto? Iure, fugiat aliquid! Adipisci
-                molestias, magnam esse repellendus blanditiis quisquam
-                perspiciatis distinctio, sed soluta voluptate nemo repudiandae
-                excepturi nostrum reiciendis tempore impedit ipsum!
+                Contributed to Bombardiers design system, simplified the
+                component structure by combining variants and using component
+                properties to reduce the total number of components. Designed
+                mySmartRouter and myPrinciple mobile apps for Bombardier.
+                Created HydroOne design system from scratch to ensure the design
+                stayed consistent when developed.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corporis dolorum perspiciatis praesentium labore quod, tempora
-                ad saepe minima incidunt fugit?
+                On another note, the results of the double slit experiment has
+                got me thinking. Who or what is the observer that collapses the
+                probability wave function of electrons and photons to behave as
+                particles?
               </p>
             </div>
           </div>

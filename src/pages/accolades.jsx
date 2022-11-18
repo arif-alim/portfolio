@@ -235,9 +235,10 @@ export default function Accolades() {
                   <div className="space-y-2">
                     <div className=" flex flex-col justify-between space-y-1 px-1.5 text-sm font-medium dark:text-zinc-200">
                       <h3>{cert.heading}</h3>
-                      <a
+                      <Link
                         href={cert.linkedinUrl}
                         className="flex items-center gap-3 font-normal text-zinc-500 hover:text-blue-900 dark:text-zinc-400 dark:hover:text-blue-300"
+                        target="_blank"
                       >
                         <span className="sr-only">LinkedIn</span>
                         <svg
@@ -253,7 +254,7 @@ export default function Accolades() {
                           />
                         </svg>
                         View Certificate
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

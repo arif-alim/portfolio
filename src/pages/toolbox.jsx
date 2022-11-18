@@ -325,8 +325,8 @@ export default function Toolbox() {
         />
       </Head>
       <SimpleLayout
-        title="Trending Softare, languages, and frameworks I prefer to use to create magical things!"
-        intro="I get asked a lot about the things I use to for graphic, interaction and user experience design. I am also asked about my frontend and backend tools. I've provided a list of software, language and frameworks I use."
+        title="Softare, languages, and frameworks I prefer to use to create magical things!"
+        intro="I get asked a lot about the things I use for graphic, interaction and user experience design. Also, I get asked about my frontend and backend tools. I've provided a list of software, language and frameworks I currently use."
       >
         <div className="space-y-20">
           <div className="space-y-10">

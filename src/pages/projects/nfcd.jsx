@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 
@@ -16,7 +17,7 @@ export default function Speaking() {
   return (
     <>
       <Head>
-        <title>Niagara Falls Craft Distiller - Projects</title>
+        <title>Niagara Falls Craft Distiller - Project</title>
         <meta
           name="description"
           content="I’ve spoken at events all around the world and been interviewed for many podcasts."
@@ -24,63 +25,30 @@ export default function Speaking() {
       </Head>
       <SimpleLayout
         title="Niagara Falls Craft Distillers"
-        intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I "
+        intro="At Niagara Falls Craft Distillers, our products are made locally at our state-of-the-art distillery, including a 1,000-litre copper kettle with stainless steel fermenters. We use quality ingredients, employ local talent and are known for our community involvement. The pioneering spirit is our mission to blend high-quality spirits with the natural wonder of Niagara Falls."
       >
         <div className="space-y-24">
-          {/* <section className="overflow-hidden text-gray-700">
-            <div className="container mx-auto py-2 lg:pt-24">
-              <div className="-m-1 flex flex-wrap md:-m-2">
-                <div className="flex w-1/2 flex-wrap">
-                  <div className="w-1/2 p-1 md:p-3">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd1}
-                    ></Image>
-                  </div>
-                  <div className="w-1/2 p-1 md:p-3">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd2}
-                    ></Image>
-                  </div>
-                  <div className="w-full p-1 md:p-3">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd3}
-                    ></Image>
-                  </div>
-                </div>
-                <div className="flex w-1/2 flex-wrap">
-                  <div className="w-full p-1 md:p-3">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd4}
-                    ></Image>
-                  </div>
-                  <div className="w-1/2 p-1 md:p-3">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd5}
-                    ></Image>
-                  </div>
-                  <div className="w-1/2 p-1 md:p-3">
-                    <Image
-                      alt="gallery"
-                      className="block h-full w-full rounded-lg object-cover object-center"
-                      src={nfcd6}
-                    ></Image>
-                  </div>
-                </div>
-              </div>
+          <div className="container mx-auto ">
+            <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
+              <h2 className=" text-xl font-bold  dark:text-zinc-100">
+                Custom e-commerce mobile responsive web design
+              </h2>
+              <Link
+                href="https://niagarafallscraftdistillers.ca/"
+                className="text-blue-800 dark:text-blue-300"
+                target="_blank"
+              >
+                www.niagarafallscraftdistillers.ca
+              </Link>
+
+              <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
+                Conducted user research, created affinity map to pin point
+                customer pain points. Rapidly created low to high fidelity
+                prototypes using Figma.
+              </p>
             </div>
-          </section> */}
-          <div className="container mx-auto px-4">
-            <section className="pt-4">
+
+            <section className="my-8">
               <div className="-mx-4 flex flex-wrap">
                 <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
                   <Image
@@ -92,49 +60,49 @@ export default function Speaking() {
                 <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
                   <Image
                     className="rounded shadow-md"
-                    src={nfcd1}
+                    src={nfcd2}
                     alt=""
                   ></Image>
                 </div>
                 <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
                   <Image
                     className="rounded shadow-md"
-                    src={nfcd1}
+                    src={nfcd3}
                     alt=""
                   ></Image>
                 </div>
                 <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
                   <Image
                     className="rounded shadow-md"
-                    src={nfcd1}
+                    src={nfcd4}
                     alt=""
                   ></Image>
                 </div>
                 <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
                   <Image
                     className="rounded shadow-md"
-                    src={nfcd1}
+                    src={nfcd5}
                     alt=""
                   ></Image>
                 </div>
                 <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
                   <Image
                     className="rounded shadow-md"
-                    src={nfcd1}
+                    src={nfcd6}
                     alt=""
                   ></Image>
                 </div>
                 <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
                   <Image
                     className="rounded shadow-md"
-                    src={nfcd1}
+                    src={nfcd7}
                     alt=""
                   ></Image>
                 </div>
                 <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
                   <Image
                     className="rounded shadow-md"
-                    src={nfcd1}
+                    src={nfcd8}
                     alt=""
                   ></Image>
                 </div>
