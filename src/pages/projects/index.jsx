@@ -24,6 +24,8 @@ import logoTritecSolutions from '@/images/projects/tritecsolutions.png'
 import logoLieberGroup from '@/images/projects/liebergroup.png'
 import logoGabbys from '@/images/projects/gabbys.png'
 import logoHeyLucys from '@/images/projects/heylucys.png'
+import logoPerfectone from '@/images/projects/perfectone.png'
+import logoAirbus from '@/images/projects/airbus.png'
 
 import { useEffect, useId, useState } from 'react'
 import Image from 'next/image'
@@ -69,6 +71,26 @@ const projects = [
       label: 'View project',
     },
     image: logoHydroOne,
+  },
+  {
+    id: 20,
+    name: 'Airbus',
+    about: 'Aerospace Industry',
+    link: {
+      href: '/projects/airbus',
+      label: 'View project',
+    },
+    image: logoAirbus,
+  },
+  {
+    id: 21,
+    name: 'Perfec-tone',
+    about: 'Aerospace Industry',
+    link: {
+      href: '/projects/perfec-tone',
+      label: 'View project',
+    },
+    image: logoPerfectone,
   },
   {
     id: 4,
