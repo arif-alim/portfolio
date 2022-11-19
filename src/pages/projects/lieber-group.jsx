@@ -16,7 +16,7 @@ import screen7 from '@/images/projects/hydroone/vacation-conservation.jpg'
 import screen8 from 'https://aalim.s3.ca-central-1.amazonaws.com/projects/hydroone/vacation-conservation-mobile.jpg'
 import screen9 from 'https://aalim.s3.ca-central-1.amazonaws.com/projects/hydroone/energy-hub.jpg'
 
-https: function SocialLink({ className, href, children, icon: Icon }) {
+function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
