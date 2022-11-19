@@ -13,10 +13,10 @@ import screen4 from '@/images/projects/hydroone/sustainability-people.jpg'
 import screen5 from '@/images/projects/hydroone/sustainability-planet.jpg'
 import screen6 from '@/images/projects/hydroone/sustainability-planet-mobile.jpg'
 import screen7 from '@/images/projects/hydroone/vacation-conservation.jpg'
-import screen8 from '@/images/projects/hydroone/vacation-conservation-mobile.jpg'
-import screen9 from '@/images/projects/hydroone/energy-hub.jpg'
+import screen8 from 'https://aalim.s3.ca-central-1.amazonaws.com/projects/hydroone/vacation-conservation-mobile.jpg'
+import screen9 from 'https://aalim.s3.ca-central-1.amazonaws.com/projects/hydroone/energy-hub.jpg'
 
-function SocialLink({ className, href, children, icon: Icon }) {
+https: function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
