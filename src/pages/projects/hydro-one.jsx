@@ -41,7 +41,7 @@ function MailIcon(props) {
   )
 }
 
-export default function Speaking() {
+export default function HydroOne() {
   return (
     <>
       <Head>

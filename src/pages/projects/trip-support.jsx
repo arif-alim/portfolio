@@ -1,26 +1,27 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Trip Support pages
-import screen1 from '@/images/projects/tripsupport/tripsupport1.png'
-import screen2 from '@/images/projects/tripsupport/tripsupport2.png'
-import screen3 from '@/images/projects/tripsupport/tripsupport3.png'
-import screen4 from '@/images/projects/tripsupport/tripsupport4.png'
-import screen5 from '@/images/projects/tripsupport/tripsupport5.png'
-import screen6 from '@/images/projects/tripsupport/tripsupport6.png'
-import screen7 from '@/images/projects/tripsupport/tripsupport7.png'
-import screen8 from '@/images/projects/tripsupport/tripsupport8.png'
-import screen9 from '@/images/projects/tripsupport/tripsupport9.png'
-import screen10 from '@/images/projects/tripsupport/tripsupport10.png'
-import screen11 from '@/images/projects/tripsupport/tripsupport11.png'
-import screen12 from '@/images/projects/tripsupport/tripsupport12.png'
-import screen13 from '@/images/projects/tripsupport/tripsupport13.png'
-import screen14 from '@/images/projects/tripsupport/tripsupport14.png'
-import screen15 from '@/images/projects/tripsupport/tripsupport15.png'
-import screen16 from '@/images/projects/tripsupport/tripsupport16.png'
-import screen17 from '@/images/projects/tripsupport/tripsupport17.png'
+import screen1 from '@/images/projects/tripsupport/tripsupport1.jpg'
+import screen2 from '@/images/projects/tripsupport/tripsupport2.jpg'
+import screen3 from '@/images/projects/tripsupport/tripsupport3.jpg'
+import screen4 from '@/images/projects/tripsupport/tripsupport4.jpg'
+import screen5 from '@/images/projects/tripsupport/tripsupport5.jpg'
+import screen6 from '@/images/projects/tripsupport/tripsupport6.jpg'
+import screen7 from '@/images/projects/tripsupport/tripsupport7.jpg'
+import screen8 from '@/images/projects/tripsupport/tripsupport8.jpg'
+import screen9 from '@/images/projects/tripsupport/tripsupport9.jpg'
+import screen10 from '@/images/projects/tripsupport/tripsupport10.jpg'
+import screen11 from '@/images/projects/tripsupport/tripsupport11.jpg'
+import screen12 from '@/images/projects/tripsupport/tripsupport12.jpg'
+import screen13 from '@/images/projects/tripsupport/tripsupport13.jpg'
+import screen14 from '@/images/projects/tripsupport/tripsupport14.jpg'
+import screen15 from '@/images/projects/tripsupport/tripsupport15.jpg'
+import screen16 from '@/images/projects/tripsupport/tripsupport16.jpg'
+import screen17 from '@/images/projects/tripsupport/tripsupport17.jpg'
 
 export default function Speaking() {
   return (
@@ -43,15 +44,28 @@ export default function Speaking() {
                 <h2 className=" text-xl font-bold  dark:text-zinc-100">
                   Trip Support
                 </h2>
-                <p className="mt-2 max-w-3xl text-tiny dark:text-zinc-100">
-                  New Design{': '}
-                  <a
-                    href="#"
-                    className="text-tiny text-blue-800 dark:text-blue-300"
-                  >
-                    tripsupport.ca
-                  </a>
-                </p>
+                <div className="sm:flex sm:flex-row sm:gap-6">
+                  <p className="mt-2 max-w-3xl text-tiny font-medium dark:text-zinc-100">
+                    New Design{': '}
+                    <Link
+                      href="https://tripsupport.ca/"
+                      className="text-tiny text-blue-800 dark:text-blue-300"
+                      target="_blank"
+                    >
+                      tripsupport.ca
+                    </Link>
+                  </p>
+                  <p className="mt-2 max-w-3xl text-tiny font-medium dark:text-zinc-100">
+                    Old Design{': '}
+                    <Link
+                      href="https://tripsupport.com/"
+                      className="text-tiny text-blue-800 dark:text-blue-300"
+                      target="_blank"
+                    >
+                      tripsupport.com
+                    </Link>
+                  </p>
+                </div>
 
                 <p className="mt-4 max-w-3xl text-tiny dark:text-zinc-100">
                   Created high-fidelity prototypes with Sketch, Figma and Axure.
