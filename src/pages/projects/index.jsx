@@ -72,16 +72,16 @@ const projects = [
     },
     image: logoHydroOne,
   },
-  {
-    id: 20,
-    name: 'Airbus',
-    about: 'Aerospace Industry',
-    link: {
-      href: '/projects/airbus',
-      label: 'View project',
-    },
-    image: logoAirbus,
-  },
+  // {
+  //   id: 20,
+  //   name: 'Airbus',
+  //   about: 'Aerospace Industry',
+  //   link: {
+  //     href: '/projects/airbus',
+  //     label: 'View project',
+  //   },
+  //   image: logoAirbus,
+  // },
   {
     id: 21,
     name: 'Perfec-tone',
@@ -92,16 +92,16 @@ const projects = [
     },
     image: logoPerfectone,
   },
-  {
-    id: 4,
-    name: 'NBA Restaurant',
-    about: 'NBA courtside restaurant',
-    link: {
-      href: '/projects/nba-restaurant',
-      label: 'View project',
-    },
-    image: logoNBARestaurant,
-  },
+  // {
+  //   id: 4,
+  //   name: 'NBA Restaurant',
+  //   about: 'NBA courtside restaurant',
+  //   link: {
+  //     href: '/projects/nba-restaurant',
+  //     label: 'View project',
+  //   },
+  //   image: logoNBARestaurant,
+  // },
   {
     id: 5,
     name: 'Chicasa Design',
@@ -111,16 +111,6 @@ const projects = [
       label: 'View project',
     },
     image: logoChicasaDesign,
-  },
-  {
-    id: 6,
-    name: 'Titan Group',
-    about: 'Custom home builders',
-    link: {
-      href: '/projects/titan-group',
-      label: 'View project',
-    },
-    image: logoTitanGroup,
   },
   {
     id: 7,
@@ -133,6 +123,26 @@ const projects = [
     image: logoCraftCity,
   },
   {
+    id: 15,
+    name: 'Cooper',
+    about: 'Uber like app for Bahamas',
+    link: {
+      href: '/projects/cooper',
+      label: 'View project',
+    },
+    image: logoCooper,
+  },
+  {
+    id: 6,
+    name: 'Titan Group',
+    about: 'Custom home builders',
+    link: {
+      href: '/projects/titan-group',
+      label: 'View project',
+    },
+    image: logoTitanGroup,
+  },
+  {
     id: 8,
     name: 'Miss Bahamas',
     about: 'Bahamas beauty pageant',
@@ -143,16 +153,16 @@ const projects = [
     image: logoMissBahamas,
   },
 
-  {
-    id: 9,
-    name: 'District Eatery',
-    about: 'Chain of restaurants',
-    link: {
-      href: '/projects/district-eatery',
-      label: 'View project',
-    },
-    image: logoDistrictEatery,
-  },
+  // {
+  //   id: 9,
+  //   name: 'District Eatery',
+  //   about: 'Chain of restaurants',
+  //   link: {
+  //     href: '/projects/district-eatery',
+  //     label: 'View project',
+  //   },
+  //   image: logoDistrictEatery,
+  // },
   {
     id: 10,
     name: 'Equity Bank',
@@ -184,36 +194,26 @@ const projects = [
     image: logoNFCD,
   },
 
-  {
-    id: 13,
-    name: 'Urban Dining',
-    about: 'Chain of restaurants',
-    link: {
-      href: '/projects/urban-dining',
-      label: 'View project',
-    },
-    image: logoUrbanDining,
-  },
-  {
-    id: 14,
-    name: 'Wolff Mechanical',
-    about: 'Construction company',
-    link: {
-      href: '/projects/wolff',
-      label: 'View project',
-    },
-    image: logoWolff,
-  },
-  {
-    id: 15,
-    name: 'Cooper',
-    about: 'Uber like app for Bahamas',
-    link: {
-      href: '/projects/cooper',
-      label: 'View project',
-    },
-    image: logoCooper,
-  },
+  // {
+  //   id: 13,
+  //   name: 'Urban Dining',
+  //   about: 'Chain of restaurants',
+  //   link: {
+  //     href: '/projects/urban-dining',
+  //     label: 'View project',
+  //   },
+  //   image: logoUrbanDining,
+  // },
+  // {
+  //   id: 14,
+  //   name: 'Wolff Mechanical',
+  //   about: 'Construction company',
+  //   link: {
+  //     href: '/projects/wolff',
+  //     label: 'View project',
+  //   },
+  //   image: logoWolff,
+  // },
   {
     id: 16,
     name: 'Tritec Solutions',
@@ -229,7 +229,7 @@ const projects = [
     name: 'Lieber Group',
     about: 'Uber like app for Bahamas',
     link: {
-      href: '/projects/lieber-group',
+      href: '/projects/lieber',
       label: 'View project',
     },
     image: logoLieberGroup,
@@ -243,16 +243,6 @@ const projects = [
       label: 'View project',
     },
     image: logoGabbys,
-  },
-  {
-    id: 19,
-    name: "Hey Lucy's",
-    about: 'Restaurant',
-    link: {
-      href: '/projects/hey-lucys',
-      label: 'View project',
-    },
-    image: logoHeyLucys,
   },
 ]
 
@@ -297,7 +287,7 @@ export default function Speakers() {
             <div key={project.id} unmount={false}>
               <div key={project.id}>
                 <Link href={project.link.href}>
-                  <div className="rounded-4xl group relative h-[16rem] transform overflow-hidden sm:h-[12rem]">
+                  <div className="rounded-4xl group relative h-36 transform overflow-hidden ">
                     <div
                       className={clsx(
                         'rounded-4xl absolute top-0 left-0 right-4 bottom-6 border transition duration-300 group-hover:scale-95 xl:right-6',
@@ -309,16 +299,16 @@ export default function Speakers() {
                       )}
                     />
                     <div
-                      className="absolute inset-0 bg-blue-50 "
+                      className="absolute inset-0 my-auto bg-blue-50"
                       style={{ clipPath: `url(#${id}-${project.id % 3})` }}
                     >
-                      <Image
-                        className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-110"
-                        src={project.image}
-                        alt=""
-                        priority
-                        sizes="(min-width: 1280px) 17.5rem, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      />
+                      <div className="flex h-full w-full flex-row items-center p-12 align-middle sm:p-4">
+                        <Image
+                          className=" transition duration-300 group-hover:scale-110"
+                          src={project.image}
+                          alt=""
+                        />
+                      </div>
                     </div>
                   </div>
                   <h3 className="font-display mt-8 text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">

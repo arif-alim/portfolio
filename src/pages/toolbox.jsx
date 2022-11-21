@@ -339,7 +339,7 @@ export default function Toolbox() {
                   key={des.name}
                   className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
-                  <div className=" relative w-1/3 flex-shrink bg-cover sm:h-auto sm:w-10 ">
+                  <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
                     <Image src={des.imageUrl} alt="" />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -371,7 +371,7 @@ export default function Toolbox() {
                   key={front.name}
                   className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
-                  <div className=" relative w-1/3 flex-shrink bg-cover sm:h-auto sm:w-10 ">
+                  <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
                     <Image src={front.imageUrl} alt="" />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -401,7 +401,7 @@ export default function Toolbox() {
                   key={back.name}
                   className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
-                  <div className=" relative w-1/3 flex-shrink bg-cover sm:h-auto sm:w-10 ">
+                  <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
                     <Image src={back.imageUrl} alt="" />
                   </div>
                   <div className="min-w-0 flex-1">

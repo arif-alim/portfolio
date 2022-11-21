@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-import screen1 from '@/images/projects/titan/titan-1.jpeg'
-import screen2 from '@/images/projects/titan/titan-2.jpeg'
-import screen3 from '@/images/projects/titan/titan-3.jpeg'
-import screen4 from '@/images/projects/titan/titan-4.jpeg'
-import screen5 from '@/images/projects/titan/titan-5.jpeg'
-import screen6 from '@/images/projects/titan/titan-6.jpeg'
-import screen7 from '@/images/projects/titan/titan-7.jpeg'
-import screen8 from '@/images/projects/titan/titan-8.jpeg'
+import screen1 from '@/images/projects/titan/titan-1.jpg'
+import screen2 from '@/images/projects/titan/titan-2.jpg'
+import screen3 from '@/images/projects/titan/titan-3.jpg'
+import screen4 from '@/images/projects/titan/titan-4.jpg'
+import screen5 from '@/images/projects/titan/titan-5.jpg'
+import screen6 from '@/images/projects/titan/titan-6.jpg'
+import screen7 from '@/images/projects/titan/titan-7.jpg'
+import screen8 from '@/images/projects/titan/titan-8.jpg'
 
 export default function Speaking() {
   return (

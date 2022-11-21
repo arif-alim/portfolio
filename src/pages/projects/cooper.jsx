@@ -1,122 +1,92 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Trip Support pages
-import screen1 from '@/images/projects/hydroone/sustainability-homepage-mobile.jpg'
-import screen2 from '@/images/projects/hydroone/sustainability-people-mobile.jpg'
-import screen3 from '@/images/projects/hydroone/sustainability-homepage.jpg'
-import screen4 from '@/images/projects/hydroone/sustainability-people.jpg'
-import screen5 from '@/images/projects/hydroone/sustainability-planet.jpg'
-import screen6 from '@/images/projects/hydroone/sustainability-planet-mobile.jpg'
-import screen7 from '@/images/projects/hydroone/vacation-conservation.jpg'
-import screen8 from '@/images/projects/hydroone/vacation-conservation-mobile.jpg'
-import screen9 from '@/images/projects/hydroone/energy-hub.jpg'
-
-function SocialLink({ className, href, children, icon: Icon }) {
-  return (
-    <li className={clsx(className, 'flex')}>
-      <Link
-        href={href}
-        className="group flex items-center text-sm font-medium text-zinc-800 transition hover:text-sky-700 dark:text-zinc-200 dark:hover:text-sky-700"
-      >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-sky-700" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </li>
-  )
-}
-
-function MailIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-      />
-    </svg>
-  )
-}
+import screen1 from '@/images/projects/cooper/cooper-1.jpg'
+import screen2 from '@/images/projects/cooper/cooper-2.jpg'
+import screen3 from '@/images/projects/cooper/cooper-3.jpg'
+import screen4 from '@/images/projects/cooper/cooper-4.jpg'
+import screen5 from '@/images/projects/cooper/cooper-5.jpg'
+import screen6 from '@/images/projects/cooper/cooper-6.jpg'
+import screen7 from '@/images/projects/cooper/cooper-7.jpg'
+import screen8 from '@/images/projects/cooper/cooper-8.jpg'
+import screen9 from '@/images/projects/cooper/cooper-9.jpg'
+import screen10 from '@/images/projects/cooper/cooper-10.jpg'
+import screen11 from '@/images/projects/cooper/cooper-11.jpg'
+import screen12 from '@/images/projects/cooper/cooper-12.jpg'
+import screen13 from '@/images/projects/cooper/cooper-13.jpg'
+import screen14 from '@/images/projects/cooper/cooper-14.jpg'
+import screen15 from '@/images/projects/cooper/cooper-15.jpg'
+import screen16 from '@/images/projects/cooper/cooper-16.jpg'
+import screen17 from '@/images/projects/cooper/cooper-17.jpg'
+import screen18 from '@/images/projects/cooper/cooper-18.jpg'
+import screen19 from '@/images/projects/cooper/cooper-19.jpg'
+import screen20 from '@/images/projects/cooper/cooper-20.jpg'
 
 export default function Speaking() {
   return (
     <>
       <Head>
-        <title>Hydro One - Project</title>
+        <title>Cooper - Project</title>
         <meta
           name="description"
-          content="Trip Support graphic web and interaction design"
+          content="graphic, logo design, web design, and mobile app design for cooper app"
         />
       </Head>
       <SimpleLayout
-        title="Hydro One"
+        title="Cooper"
         intro="Created custom design system for MySmartRouter and MyPrinciple"
       >
         <div className="space-y-24">
           <div className="container mx-auto ">
-            <section className="">
+            <section className="12">
               <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  Sustainability 2021
+                <h2 className=" text-xl font-bold  capitalize dark:text-zinc-100">
+                  logo design
                 </h2>
-                <Link
-                  href="https://www.hydroone.com/sustainability"
-                  className="text-blue-800 dark:text-blue-300"
-                  target="_blank"
-                >
-                  hydroone.com/sustainability
-                </Link>
 
                 <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  Created mobile and tablet responsive pages, sustainability
-                  page sustainability/community, sustainability/planet,
-                  sustainability/people.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tempore totam, laboriosam nemo magnam aperiam labore
+                  praesentium doloremque ipsum corporis facere.
                 </p>
               </div>
-
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-12">
-                <div className="col-span-3 mb-8  px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded bg-cover shadow-md"
-                    src={screen3}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 hidden px-0 sm:px-2 md:block md:p-3">
+              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-5">
+                <div className="mb-8 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="col-span-3 mb-8  px-0 sm:px-2 md:p-3">
+                <div className="mb-8 h-16 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
-                    src={screen4}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 hidden px-0 sm:px-2 md:block md:p-3">
-                  <Image
-                    className="rounded shadow-md"
                     src={screen2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="col-span-3 mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-8 px-0 sm:px-2 md:p-3">
                   <Image
-                    className="rounded bg-cover shadow-md"
-                    src={screen5}
+                    className="rounded shadow-md"
+                    src={screen3}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 hidden px-0 sm:px-2 md:block md:p-3">
+                <div className="mb-8 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
-                    src={screen6}
+                    src={screen4}
+                    alt=""
+                  ></Image>
+                </div>
+                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                  <Image
+                    className="rounded shadow-md"
+                    src={screen5}
                     alt=""
                   ></Image>
                 </div>
@@ -124,16 +94,9 @@ export default function Speaking() {
               <div className="mt-12 sm:flex sm:flex-row sm:gap-12">
                 <div>
                   <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                    <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                      Energy Hub, Vacation Energy Conservation pages
+                    <h2 className=" text-xl font-bold  capitalize dark:text-zinc-100">
+                      mobile app design
                     </h2>
-                    <Link
-                      href="https://www.hydroone.com/energy-hub"
-                      className="text-blue-800 dark:text-blue-300"
-                      target="_blank"
-                    >
-                      hydroone.com/energy-hub
-                    </Link>
 
                     <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
                       Designed the responsive pages on Figma and converted the
@@ -143,39 +106,115 @@ export default function Speaking() {
                     </p>
                   </div>
 
-                  <div className="mt-6 grid grid-cols-1 items-start gap-x-2 sm:mt-10 lg:grid-cols-12">
-                    <div className="col-span-4 mb-8 px-0 sm:px-2 md:p-3">
+                  <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-4">
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen6}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 h-16 px-0 sm:px-2 md:p-3">
                       <Image
                         className="rounded bg-cover shadow-md"
                         src={screen7}
                         alt=""
                       ></Image>
                     </div>
-                    <div className="col-span-2 mb-8 hidden px-0 sm:px-2 md:block md:p-3">
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
                       <Image
                         className="rounded shadow-md"
                         src={screen8}
                         alt=""
                       ></Image>
                     </div>
-                    <div className="col-span-6 mb-8 px-0 sm:px-2 md:p-3">
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
                       <Image
-                        className="rounded bg-cover shadow-md"
+                        className="rounded shadow-md"
                         src={screen9}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen10}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen11}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen12}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen13}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen14}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen15}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen16}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen17}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen18}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen19}
+                        alt=""
+                      ></Image>
+                    </div>
+                    <div className="mb-8 px-0 sm:px-2 md:p-3">
+                      <Image
+                        className="rounded shadow-md"
+                        src={screen20}
                         alt=""
                       ></Image>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
-            <section className="border-t-4 border-zinc-100 pt-12  dark:border-zinc-700">
-              <h2 className="mb-4 text-xl font-bold dark:text-zinc-100">
-                More screens?
-              </h2>
-              <SocialLink href="mailto:arif.alim@outlook.com" icon={MailIcon}>
-                Request to view additional design assets
-              </SocialLink>
             </section>
           </div>
         </div>
