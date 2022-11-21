@@ -35,7 +35,7 @@ export default function Speaking() {
       </Head>
       <SimpleLayout
         title="Trip Support"
-        intro="Created custom design system for MySmartRouter and MyPrinciple"
+        intro="Trip Support uses up-to-date technology and financing tools that provide clients with the best possible travel solutions. We offer high-quality, personalized, and tailor-made services and packages at the best possible prices. Trip Support prides itself on its outstanding client care, best available rates, deals, and easy payment methods."
       >
         <div className="space-y-24">
           <div className="container mx-auto ">
@@ -68,129 +68,126 @@ export default function Speaking() {
                 </div>
 
                 <p className="mt-4 max-w-3xl text-tiny dark:text-zinc-100">
-                  Created high-fidelity prototypes with Sketch, Figma and Axure.
-                  Converted digital assets to vector files and redesigned footer
-                  logos with Illustrator. Used Photoshop to edit photos / images
-                  and adjusted resolution and applied lossless compress to
-                  further reduce file size to optimize performance. Designed
-                  Trip Supports new mobile responsive website with Svelte and
-                  Tailwind CSS.
+                  Conducted User Research, created affinity maps and journey
+                  maps to address user pain points. Created rapid high-fidelity
+                  prototypes with Figma and converted design to code using
+                  Svelte, TailwindCSS and deployed with Vercel.
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-3">
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 h-16 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen3}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen4}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen5}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen6}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen7}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen8}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen9}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen10}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen11}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen12}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen13}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen14}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen15}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen16}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen17}

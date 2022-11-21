@@ -45,63 +45,63 @@ export default function chicasa() {
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 items-start gap-x-10 sm:mt-10 lg:grid-cols-3">
-                <div className="mb-8  px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen11}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8  px-0 sm:px-2 md:p-3">
+                <div className="mb-12  px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:block md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:block md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8  px-0 sm:px-2 md:p-3">
+                <div className="mb-12  px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen3}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:block md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:block md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen4}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen5}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:block md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:block md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen6}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:block md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:block md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen7}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:block md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:block md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen8}

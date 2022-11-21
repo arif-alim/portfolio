@@ -19,19 +19,19 @@ export default function Speaking() {
         <title>Gabbys - Project</title>
         <meta
           name="description"
-          content="Trip Support graphic web and interaction design"
+          content="Custom resonsive web and logo design"
         />
       </Head>
       <SimpleLayout
         title="Gabbys"
-        intro="Created custom design system for MySmartRouter and MyPrinciple"
+        intro="Gabby’s was founded in 1988 by a local Toronto based family. We opened our first location in March of 1989, the whole family worked long hours to make things work. The concept was simply to create a cosy environment that was well suited to have great conversations, served quality freshly cooked meals and offered great draft beer and spirit selections. "
       >
         <div className="space-y-24">
           <div className="container mx-auto ">
             <section className="12">
               <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
                 <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  Digital Dealership Registration
+                  Mobile responsive website
                 </h2>
                 {/* <a
                   href="#"
@@ -41,50 +41,46 @@ export default function Speaking() {
                 </a> */}
 
                 <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  As the UI Architect I was tasked with creating the interface
-                  for DDR. Using the base styles and components, I created a new
-                  design system for DDR and reduced the number of components
-                  that were in the original design system by combining variants
-                  and using component properties.
+                  Graphic design, mobile repsonsive website and logo design.
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-2">
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 h-16 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen3}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen4}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen5}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen6}

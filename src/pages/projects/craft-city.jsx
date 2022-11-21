@@ -61,28 +61,28 @@ export default function Speaking() {
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-4">
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccLogo}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 h-16 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={ccLogo1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccLogo2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccLogo3}
@@ -109,21 +109,21 @@ export default function Speaking() {
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-4">
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccSticker1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccSticker2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccSticker3}
@@ -150,35 +150,35 @@ export default function Speaking() {
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-3">
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccCan}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccCan2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccCan3}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccCan4}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccCan5}
@@ -206,28 +206,28 @@ export default function Speaking() {
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-4">
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccPromo1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccPromo2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccPromo3}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccPromo4}
@@ -254,28 +254,28 @@ export default function Speaking() {
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-4">
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccCiderLogo}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccCider1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccCider2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={ccCider3}

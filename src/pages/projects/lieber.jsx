@@ -25,7 +25,9 @@ export default function Speaking() {
       </Head>
       <SimpleLayout
         title="Lieber Group"
-        intro="Custom logo and mobile responsive web design"
+        intro="At Lieber Group, we know how important timelines are. We have the capacity and the ability to work on complex projects. No matter how small or big the project is, we will always adhere to our clients timeline and budget. We take pride in showcasing our workmanship and delivering projects on time.
+
+"
       >
         <div className="space-y-24">
           <div className="container mx-auto ">
@@ -36,55 +38,53 @@ export default function Speaking() {
                 </h2>
 
                 <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tempore totam, laboriosam nemo magnam aperiam labore
-                  praesentium doloremque ipsum corporis facere.
+                  Custom logo and mobile responsive web design
                 </p>
               </div>
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-2">
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 h-16 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen3}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen4}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen5}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen6}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 px-0 sm:px-2 md:p-3">
+                <div className="mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen7}

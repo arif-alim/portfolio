@@ -53,7 +53,7 @@ export default function HydroOne() {
       </Head>
       <SimpleLayout
         title="Hydro One"
-        intro="Created custom design system for MySmartRouter and MyPrinciple"
+        intro="Hydro One is Ontario’s largest electricity transmission and distribution service provider. We distribute electricity across Ontario to nearly 1.4 million predominantly rural customers, or approximately 26% of the total number of customers in Ontario."
       >
         <div className="space-y-24">
           <div className="container mx-auto ">
@@ -78,42 +78,42 @@ export default function HydroOne() {
               </div>
 
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-12">
-                <div className="col-span-3 mb-8  px-0 sm:px-2 md:p-3">
+                <div className="col-span-3 mb-12  px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen3}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 hidden px-0 sm:px-2 md:block md:p-3">
+                <div className="mb-12 hidden px-0 sm:px-2 md:block md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen1}
                     alt=""
                   ></Image>
                 </div>
-                <div className="col-span-3 mb-8  px-0 sm:px-2 md:p-3">
+                <div className="col-span-3 mb-12  px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen4}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 hidden px-0 sm:px-2 md:block md:p-3">
+                <div className="mb-12 hidden px-0 sm:px-2 md:block md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen2}
                     alt=""
                   ></Image>
                 </div>
-                <div className="col-span-3 mb-8 px-0 sm:px-2 md:p-3">
+                <div className="col-span-3 mb-12 px-0 sm:px-2 md:p-3">
                   <Image
                     className="rounded bg-cover shadow-md"
                     src={screen5}
                     alt=""
                   ></Image>
                 </div>
-                <div className="mb-8 hidden px-0 sm:px-2 md:block md:p-3">
+                <div className="mb-12 hidden px-0 sm:px-2 md:block md:p-3">
                   <Image
                     className="rounded shadow-md"
                     src={screen6}
@@ -144,21 +144,21 @@ export default function HydroOne() {
                   </div>
 
                   <div className="mt-6 grid grid-cols-1 items-start gap-x-2 sm:mt-10 lg:grid-cols-12">
-                    <div className="col-span-4 mb-8 px-0 sm:px-2 md:p-3">
+                    <div className="col-span-4 mb-12 px-0 sm:px-2 md:p-3">
                       <Image
                         className="rounded bg-cover shadow-md"
                         src={screen7}
                         alt=""
                       ></Image>
                     </div>
-                    <div className="col-span-2 mb-8 hidden px-0 sm:px-2 md:block md:p-3">
+                    <div className="col-span-2 mb-12 hidden px-0 sm:px-2 md:block md:p-3">
                       <Image
                         className="rounded shadow-md"
                         src={screen8}
                         alt=""
                       ></Image>
                     </div>
-                    <div className="col-span-6 mb-8 px-0 sm:px-2 md:p-3">
+                    <div className="col-span-6 mb-12 px-0 sm:px-2 md:p-3">
                       <Image
                         className="rounded bg-cover shadow-md"
                         src={screen9}

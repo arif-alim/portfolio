@@ -50,68 +50,70 @@ export default function Speaking() {
 
             <section className="my-8">
               <div className="-mx-4 flex flex-wrap">
-                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={nfcd1}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={nfcd2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={nfcd3}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={nfcd4}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={nfcd5}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={nfcd6}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={nfcd7}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={nfcd8}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-8 px-0 sm:px-2 md:w-1/3 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={nfcd1}
-                    alt=""
-                  ></Image>
+                <div className="mt-6 grid grid-cols-1 items-start gap-x-10 sm:mt-10 lg:grid-cols-3">
+                  <div className="mb-12 px-4 sm:px-2 md:p-3">
+                    <Image
+                      className="rounded shadow-md"
+                      src={nfcd1}
+                      alt=""
+                    ></Image>
+                  </div>
+                  <div className="mb-12 px-4 sm:px-2 md:p-3">
+                    <Image
+                      className="rounded shadow-md"
+                      src={nfcd2}
+                      alt=""
+                    ></Image>
+                  </div>
+                  <div className="mb-12 px-4 sm:px-2 md:p-3">
+                    <Image
+                      className="rounded shadow-md"
+                      src={nfcd3}
+                      alt=""
+                    ></Image>
+                  </div>
+                  <div className="mb-12 px-4 sm:px-2 md:p-3">
+                    <Image
+                      className="rounded shadow-md"
+                      src={nfcd4}
+                      alt=""
+                    ></Image>
+                  </div>
+                  <div className="mb-12 px-4 sm:px-2 md:p-3">
+                    <Image
+                      className="rounded shadow-md"
+                      src={nfcd5}
+                      alt=""
+                    ></Image>
+                  </div>
+                  <div className="mb-12 px-4 sm:px-2 md:p-3">
+                    <Image
+                      className="rounded shadow-md"
+                      src={nfcd6}
+                      alt=""
+                    ></Image>
+                  </div>
+                  <div className="mb-12 px-4 sm:px-2 md:p-3">
+                    <Image
+                      className="rounded shadow-md"
+                      src={nfcd7}
+                      alt=""
+                    ></Image>
+                  </div>
+                  <div className="mb-12 px-4 sm:px-2 md:p-3">
+                    <Image
+                      className="rounded shadow-md"
+                      src={nfcd8}
+                      alt=""
+                    ></Image>
+                  </div>
+                  <div className="mb-12 px-4 sm:px-2 md:p-3">
+                    <Image
+                      className="rounded shadow-md"
+                      src={nfcd1}
+                      alt=""
+                    ></Image>
+                  </div>
                 </div>
               </div>
             </section>
