@@ -279,8 +279,8 @@ export default function Speakers() {
         />
       </Head>
       <SimpleLayout
-        title="Things I’ve made trying to put my dent in the universe."
-        intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        title="My portfolio, a humble begining!"
+        intro="Started with graphical design at age 15 with Adobe Creative Cloud apps, and gradually progressed into interaction and user experience design. Sketch was the tool I heavily utilized in UI/UX projects until Figma came along. I've worked on small to large and complex enterprise applications such as Bombardiers MySmartRouter and MyPrinciple applications."
       >
         <div className="mt-10 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16  lg:grid-cols-4">
           {projects.map((project) => (

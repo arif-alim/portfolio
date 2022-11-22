@@ -59,11 +59,11 @@ export default function About() {
               Hi, I’m Arif Alim.
               <br /> A Canadian UI/UX Architect!
             </h1>
-            <p className="mt-2 text-sm tracking-tight text-zinc-400 dark:text-zinc-100 sm:text-[15px]">
+            <p className="mt-4 text-sm tracking-tight text-zinc-400 dark:text-zinc-100 sm:text-[15px]">
               Honours Bachelor of Computer Science (BCS) from UW.BCS from
               University of Waterloo and BBA from Wilfrid Laurier University.
             </p>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <div className="mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 Creative UI/UX designer and a frontend developer with over 15
                 years of experience. I have designed for small to enterprise
@@ -74,12 +74,14 @@ export default function About() {
                 your UI/UX goals.
               </p>
               <p>
-                Contributed to Bombardiers design system, simplified the
-                component structure by combining variants and using component
-                properties to reduce the total number of components. Designed
-                mySmartRouter and myPrinciple mobile apps for Bombardier.
-                Created HydroOne design system from scratch to ensure the design
-                stayed consistent when developed.
+                Contributed to Bombardiers design system, simplified and reduced
+                the total number of components using Figma&rsquo;s component
+                propertie. Designed mySmartRouter and myPrinciple mobile apps
+                for Bombardier. Proposed and accepted style revisions to
+                Bombardier&rsquo;s core design system to comply with
+                accessibility standards. Created HydroOne design system from
+                scratch, helping the design components scale and keeping pages
+                design consistent throught.
               </p>
               <p>
                 On another note, the results of the double slit experiment has
