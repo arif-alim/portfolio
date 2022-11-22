@@ -254,10 +254,10 @@ export default function Process() {
             </section>
             <section className="max-w-3xl space-y-10">
               <div>
-                <h2 className="mb-2 text-xl font-bold text-gray-700 dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300 sm:text-2xl">
+                <h2 className="mb-2 text-xl font-bold text-gray-700 dark:border-gray-500 dark:text-gray-300 sm:text-2xl">
                   Understand your users
                 </h2>
-                <p className="text-base font-normal text-gray-500 dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300">
+                <p className="text-base font-normal text-gray-500 dark:border-gray-500 dark:text-gray-300">
                   The goal of design thinking is to design with real users in
                   mind. Designers gain an intimate understanding of people who
                   will use their product and offer a solution that satisfies
@@ -268,10 +268,10 @@ export default function Process() {
                 </p>
               </div>
               <div>
-                <h2 className="mb-2 text-xl font-bold text-gray-700 dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300 sm:text-2xl">
+                <h2 className="mb-2 text-xl font-bold text-gray-700 dark:border-gray-500 dark:text-gray-300 sm:text-2xl">
                   Design thinking isn’t always a linear process
                 </h2>
-                <p className="text-base font-normal text-gray-500 dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300">
+                <p className="text-base font-normal text-gray-500 dark:border-gray-500 dark:text-gray-300">
                   It is important to mention that the five phases of the design
                   process defined above are not always sequential. In many
                   cases, it’s a highly iterative loop. Depending on the needs of
