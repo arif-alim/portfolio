@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-import screen1 from '@/images/projects/equitybank/equitybank-1.jpg'
-import screen2 from '@/images/projects/equitybank/equitybank-2.jpg'
-import screen3 from '@/images/projects/equitybank/equitybank-3.jpg'
-import screen4 from '@/images/projects/equitybank/equitybank-4.jpg'
-import screen5 from '@/images/projects/equitybank/equitybank-5.jpg'
-import screen6 from '@/images/projects/equitybank/equitybank-6.jpg'
-import screen7 from '@/images/projects/equitybank/equitybank-7.jpg'
-import screen8 from '@/images/projects/equitybank/equitybank-8.jpg'
+import screen1 from '@/images/portfolio/equitybank/equitybank-1.jpg'
+import screen2 from '@/images/portfolio/equitybank/equitybank-2.jpg'
+import screen3 from '@/images/portfolio/equitybank/equitybank-3.jpg'
+import screen4 from '@/images/portfolio/equitybank/equitybank-4.jpg'
+import screen5 from '@/images/portfolio/equitybank/equitybank-5.jpg'
+import screen6 from '@/images/portfolio/equitybank/equitybank-6.jpg'
+import screen7 from '@/images/portfolio/equitybank/equitybank-7.jpg'
+import screen8 from '@/images/portfolio/equitybank/equitybank-8.jpg'
 
 export default function Speaking() {
   return (

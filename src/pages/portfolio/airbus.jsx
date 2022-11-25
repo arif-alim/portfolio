@@ -5,14 +5,14 @@ import Link from 'next/link'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Trip Support pages
-import screen1 from '@/images/projects/airbus/airbus-1.jpg'
-import screen2 from '@/images/projects/airbus/airbus-2.jpg'
-import screen3 from '@/images/projects/airbus/airbus-3.jpg'
-import screen4 from '@/images/projects/airbus/airbus-4.jpg'
-import screen5 from '@/images/projects/airbus/airbus-5.jpg'
-import screen6 from '@/images/projects/airbus/airbus-6.jpg'
-import screen7 from '@/images/projects/airbus/airbus-7.jpg'
-import screen8 from '@/images/projects/airbus/airbus-8.jpg'
+import screen1 from '@/images/portfolio/airbus/airbus-1.jpg'
+import screen2 from '@/images/portfolio/airbus/airbus-2.jpg'
+import screen3 from '@/images/portfolio/airbus/airbus-3.jpg'
+import screen4 from '@/images/portfolio/airbus/airbus-4.jpg'
+import screen5 from '@/images/portfolio/airbus/airbus-5.jpg'
+import screen6 from '@/images/portfolio/airbus/airbus-6.jpg'
+import screen7 from '@/images/portfolio/airbus/airbus-7.jpg'
+import screen8 from '@/images/portfolio/airbus/airbus-8.jpg'
 
 export default function Speaking() {
   return (

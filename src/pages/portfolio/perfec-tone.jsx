@@ -5,14 +5,14 @@ import Link from 'next/link'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Trip Support pages
-import screen1 from '@/images/projects/perfectone/perfectone-1.jpg'
-import screen2 from '@/images/projects/perfectone/perfectone-2.jpg'
-import screen3 from '@/images/projects/perfectone/perfectone-3.jpg'
-import screen4 from '@/images/projects/perfectone/perfectone-4.jpg'
-import screen5 from '@/images/projects/perfectone/perfectone-5.jpg'
-import screen6 from '@/images/projects/perfectone/perfectone-6.jpg'
-import screen7 from '@/images/projects/perfectone/perfectone-7.jpg'
-import screen8 from '@/images/projects/perfectone/perfectone-8.jpg'
+import screen1 from '@/images/portfolio/perfectone/perfectone-1.jpg'
+import screen2 from '@/images/portfolio/perfectone/perfectone-2.jpg'
+import screen3 from '@/images/portfolio/perfectone/perfectone-3.jpg'
+import screen4 from '@/images/portfolio/perfectone/perfectone-4.jpg'
+import screen5 from '@/images/portfolio/perfectone/perfectone-5.jpg'
+import screen6 from '@/images/portfolio/perfectone/perfectone-6.jpg'
+import screen7 from '@/images/portfolio/perfectone/perfectone-7.jpg'
+import screen8 from '@/images/portfolio/perfectone/perfectone-8.jpg'
 
 export default function Speaking() {
   return (

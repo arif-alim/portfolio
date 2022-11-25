@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-import screen1 from '@/images/projects/islandtraders/islandtraders-1.jpeg'
-import screen2 from '@/images/projects/islandtraders/islandtraders-2.jpeg'
-import screen3 from '@/images/projects/islandtraders/islandtraders-3.jpeg'
-import screen4 from '@/images/projects/islandtraders/islandtraders-4.jpeg'
-import screen5 from '@/images/projects/islandtraders/islandtraders-5.jpeg'
-import screen6 from '@/images/projects/islandtraders/islandtraders-6.jpeg'
-import screen7 from '@/images/projects/islandtraders/islandtraders-7.jpeg'
-import screen8 from '@/images/projects/islandtraders/islandtraders-8.jpeg'
+import screen1 from '@/images/portfolio/islandtraders/islandtraders-1.jpeg'
+import screen2 from '@/images/portfolio/islandtraders/islandtraders-2.jpeg'
+import screen3 from '@/images/portfolio/islandtraders/islandtraders-3.jpeg'
+import screen4 from '@/images/portfolio/islandtraders/islandtraders-4.jpeg'
+import screen5 from '@/images/portfolio/islandtraders/islandtraders-5.jpeg'
+import screen6 from '@/images/portfolio/islandtraders/islandtraders-6.jpeg'
+import screen7 from '@/images/portfolio/islandtraders/islandtraders-7.jpeg'
+import screen8 from '@/images/portfolio/islandtraders/islandtraders-8.jpeg'
 
 export default function Speaking() {
   return (

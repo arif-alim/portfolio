@@ -4,15 +4,15 @@ import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-import screen1 from '@/images/projects/chicasa/chicasa-1.jpg'
-import screen2 from '@/images/projects/chicasa/chicasa-2.jpg'
-import screen3 from '@/images/projects/chicasa/chicasa-3.jpg'
-import screen4 from '@/images/projects/chicasa/chicasa-4.jpg'
-import screen5 from '@/images/projects/chicasa/chicasa-5.jpg'
-import screen6 from '@/images/projects/chicasa/chicasa-6.jpg'
-import screen7 from '@/images/projects/chicasa/chicasa-7.jpg'
-import screen8 from '@/images/projects/chicasa/chicasa-8.jpg'
-import screen11 from '@/images/projects/chicasa/chicasaLogo.jpg'
+import screen1 from '@/images/portfolio/chicasa/chicasa-1.jpg'
+import screen2 from '@/images/portfolio/chicasa/chicasa-2.jpg'
+import screen3 from '@/images/portfolio/chicasa/chicasa-3.jpg'
+import screen4 from '@/images/portfolio/chicasa/chicasa-4.jpg'
+import screen5 from '@/images/portfolio/chicasa/chicasa-5.jpg'
+import screen6 from '@/images/portfolio/chicasa/chicasa-6.jpg'
+import screen7 from '@/images/portfolio/chicasa/chicasa-7.jpg'
+import screen8 from '@/images/portfolio/chicasa/chicasa-8.jpg'
+import screen11 from '@/images/portfolio/chicasa/chicasaLogo.jpg'
 
 export default function chicasa() {
   return (

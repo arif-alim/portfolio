@@ -31,13 +31,13 @@ import { useEffect, useId, useState } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 
-const projects = [
+const portfolio = [
   {
     id: 0,
     name: 'Bombardier',
     about: 'Manufacturer of business jets',
     link: {
-      href: '/projects/bombardier',
+      href: '/portfolio/bombardier',
       label: 'View project',
     },
     image: logoBombardier,
@@ -47,7 +47,7 @@ const projects = [
     name: 'Trip Support',
     about: 'Online Travel Agency',
     link: {
-      href: '/projects/trip-support',
+      href: '/portfolio/trip-support',
       label: 'View project',
     },
     image: logoTripSupport,
@@ -57,7 +57,7 @@ const projects = [
   //   name: 'Service Ontario',
   //   about: 'Government of Ontario',
   //   link: {
-  //     href: '/projects/service-ontario',
+  //     href: '/portfolio/service-ontario',
   //     label: 'View project',
   //   },
   //   image: logoServiceOntario,
@@ -67,7 +67,7 @@ const projects = [
     name: 'Hydro One',
     about: 'Electricity distribution utility',
     link: {
-      href: '/projects/hydro-one',
+      href: '/portfolio/hydro-one',
       label: 'View project',
     },
     image: logoHydroOne,
@@ -77,7 +77,7 @@ const projects = [
   //   name: 'Airbus',
   //   about: 'Aerospace Industry',
   //   link: {
-  //     href: '/projects/airbus',
+  //     href: '/portfolio/airbus',
   //     label: 'View project',
   //   },
   //   image: logoAirbus,
@@ -87,7 +87,7 @@ const projects = [
     name: 'Perfec-tone',
     about: 'Aerospace Industry',
     link: {
-      href: '/projects/perfec-tone',
+      href: '/portfolio/perfec-tone',
       label: 'View project',
     },
     image: logoPerfectone,
@@ -97,7 +97,7 @@ const projects = [
   //   name: 'NBA Restaurant',
   //   about: 'NBA courtside restaurant',
   //   link: {
-  //     href: '/projects/nba-restaurant',
+  //     href: '/portfolio/nba-restaurant',
   //     label: 'View project',
   //   },
   //   image: logoNBARestaurant,
@@ -107,7 +107,7 @@ const projects = [
     name: 'Chicasa Design',
     about: 'Custom Home Builders',
     link: {
-      href: '/projects/chicasa-design',
+      href: '/portfolio/chicasa-design',
       label: 'View project',
     },
     image: logoChicasaDesign,
@@ -117,7 +117,7 @@ const projects = [
     name: 'Craft City',
     about: 'Hard seltzer brand',
     link: {
-      href: '/projects/craft-city',
+      href: '/portfolio/craft-city',
       label: 'View project',
     },
     image: logoCraftCity,
@@ -127,7 +127,7 @@ const projects = [
     name: 'Cooper',
     about: 'Uber like app for Bahamas',
     link: {
-      href: '/projects/cooper',
+      href: '/portfolio/cooper',
       label: 'View project',
     },
     image: logoCooper,
@@ -137,7 +137,7 @@ const projects = [
     name: 'Titan Group',
     about: 'Custom home builders',
     link: {
-      href: '/projects/titan-group',
+      href: '/portfolio/titan-group',
       label: 'View project',
     },
     image: logoTitanGroup,
@@ -147,7 +147,7 @@ const projects = [
     name: 'Miss Bahamas',
     about: 'Bahamas beauty pageant',
     link: {
-      href: '/projects/miss-bahamas',
+      href: '/portfolio/miss-bahamas',
       label: 'View project',
     },
     image: logoMissBahamas,
@@ -158,7 +158,7 @@ const projects = [
   //   name: 'District Eatery',
   //   about: 'Chain of restaurants',
   //   link: {
-  //     href: '/projects/district-eatery',
+  //     href: '/portfolio/district-eatery',
   //     label: 'View project',
   //   },
   //   image: logoDistrictEatery,
@@ -168,7 +168,7 @@ const projects = [
     name: 'Equity Bank',
     about: 'Private banking Bahamas',
     link: {
-      href: '/projects/equity-bank',
+      href: '/portfolio/equity-bank',
       label: 'View project',
     },
     image: logoEquityBank,
@@ -178,7 +178,7 @@ const projects = [
     name: 'Island Traders',
     about: 'Courier service in Bahamas',
     link: {
-      href: '/projects/island-traders',
+      href: '/portfolio/island-traders',
       label: 'View project',
     },
     image: logoIslandTraders,
@@ -188,7 +188,7 @@ const projects = [
     name: 'Niagara Falls Craft Distillers',
     about: 'Spirit distillers',
     link: {
-      href: '/projects/nfcd',
+      href: '/portfolio/nfcd',
       label: 'View project',
     },
     image: logoNFCD,
@@ -199,7 +199,7 @@ const projects = [
   //   name: 'Urban Dining',
   //   about: 'Chain of restaurants',
   //   link: {
-  //     href: '/projects/urban-dining',
+  //     href: '/portfolio/urban-dining',
   //     label: 'View project',
   //   },
   //   image: logoUrbanDining,
@@ -209,7 +209,7 @@ const projects = [
   //   name: 'Wolff Mechanical',
   //   about: 'Construction company',
   //   link: {
-  //     href: '/projects/wolff',
+  //     href: '/portfolio/wolff',
   //     label: 'View project',
   //   },
   //   image: logoWolff,
@@ -219,7 +219,7 @@ const projects = [
     name: 'Tritec Solutions',
     about: 'Uber like app for Bahamas',
     link: {
-      href: '/projects/tritec-solutions',
+      href: '/portfolio/tritec-solutions',
       label: 'View project',
     },
     image: logoTritecSolutions,
@@ -229,7 +229,7 @@ const projects = [
     name: 'Lieber Group',
     about: 'Uber like app for Bahamas',
     link: {
-      href: '/projects/lieber',
+      href: '/portfolio/lieber',
       label: 'View project',
     },
     image: logoLieberGroup,
@@ -239,7 +239,7 @@ const projects = [
     name: "Gabby's",
     about: 'Restaurant',
     link: {
-      href: '/projects/gabbys',
+      href: '/portfolio/gabbys',
       label: 'View project',
     },
     image: logoGabbys,
@@ -272,7 +272,7 @@ export default function Speakers() {
       <ImageClipPaths id={id} />
 
       <Head>
-        <title>Projects - Arif Alim</title>
+        <title>portfolio - Arif Alim</title>
         <meta
           name="description"
           content="Things I’ve made trying to put my dent in the universe."
@@ -280,10 +280,10 @@ export default function Speakers() {
       </Head>
       <SimpleLayout
         title="My portfolio, a humble begining!"
-        intro="Started with graphical design at age 15 with Adobe Creative Cloud apps, and gradually progressed into interaction and user experience design. Sketch was the tool I heavily utilized in UI/UX projects until Figma came along. I've worked on small to large and complex enterprise applications such as Bombardiers MySmartRouter and MyPrinciple applications."
+        intro="Started with graphical design at age 15 with Adobe Creative Cloud apps, and gradually progressed into interaction and user experience design. Sketch was the tool I heavily utilized in UI/UX portfolio until Figma came along. I've worked on small to large and complex enterprise applications such as Bombardiers MySmartRouter and MyPrinciple applications."
       >
         <div className="mt-10 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16  lg:grid-cols-4">
-          {projects.map((project) => (
+          {portfolio.map((project) => (
             <div key={project.id} unmount={false}>
               <div key={project.id}>
                 <Link href={project.link.href}>

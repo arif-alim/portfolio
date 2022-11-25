@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-import nfcd1 from '@/images/projects/nfcd/nfcd1.jpg'
-import nfcd2 from '@/images/projects/nfcd/nfcd2.jpg'
-import nfcd3 from '@/images/projects/nfcd/nfcd3.jpg'
-import nfcd4 from '@/images/projects/nfcd/nfcd4.jpg'
-import nfcd5 from '@/images/projects/nfcd/nfcd5.jpg'
-import nfcd6 from '@/images/projects/nfcd/nfcd6.jpg'
-import nfcd7 from '@/images/projects/nfcd/nfcd7.jpg'
-import nfcd8 from '@/images/projects/nfcd/nfcd8.jpg'
+import nfcd1 from '@/images/portfolio/nfcd/nfcd1.jpg'
+import nfcd2 from '@/images/portfolio/nfcd/nfcd2.jpg'
+import nfcd3 from '@/images/portfolio/nfcd/nfcd3.jpg'
+import nfcd4 from '@/images/portfolio/nfcd/nfcd4.jpg'
+import nfcd5 from '@/images/portfolio/nfcd/nfcd5.jpg'
+import nfcd6 from '@/images/portfolio/nfcd/nfcd6.jpg'
+import nfcd7 from '@/images/portfolio/nfcd/nfcd7.jpg'
+import nfcd8 from '@/images/portfolio/nfcd/nfcd8.jpg'
 
 export default function Speaking() {
   return (
