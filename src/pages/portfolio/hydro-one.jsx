@@ -6,15 +6,15 @@ import clsx from 'clsx'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Trip Support pages
-import screen1 from '@/images/portfolio/hydroone/sustainability-homepage-mobile.jpg'
-import screen2 from '@/images/portfolio/hydroone/sustainability-people-mobile.jpg'
-import screen3 from '@/images/portfolio/hydroone/sustainability-homepage.jpg'
-import screen4 from '@/images/portfolio/hydroone/sustainability-people.jpg'
-import screen5 from '@/images/portfolio/hydroone/sustainability-planet.jpg'
-import screen6 from '@/images/portfolio/hydroone/sustainability-planet-mobile.jpg'
-import screen7 from '@/images/portfolio/hydroone/vacation-conservation.jpg'
-import screen8 from '@/images/portfolio/hydroone/vacation-conservation-mobile.jpg'
-import screen9 from '@/images/portfolio/hydroone/energy-hub.jpg'
+import screen1 from '@/images/projects/hydroone/sustainability-homepage-mobile.jpg'
+import screen2 from '@/images/projects/hydroone/sustainability-people-mobile.jpg'
+import screen3 from '@/images/projects/hydroone/sustainability-homepage.jpg'
+import screen4 from '@/images/projects/hydroone/sustainability-people.jpg'
+import screen5 from '@/images/projects/hydroone/sustainability-planet.jpg'
+import screen6 from '@/images/projects/hydroone/sustainability-planet-mobile.jpg'
+import screen7 from '@/images/projects/hydroone/vacation-conservation.jpg'
+import screen8 from '@/images/projects/hydroone/vacation-conservation-mobile.jpg'
+import screen9 from '@/images/projects/hydroone/energy-hub.jpg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (

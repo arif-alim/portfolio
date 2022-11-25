@@ -5,13 +5,13 @@ import Link from 'next/link'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Trip Support pages
-import screen1 from '@/images/portfolio/lieber/lieber-1.jpg'
-import screen2 from '@/images/portfolio/lieber/lieber-2.jpg'
-import screen3 from '@/images/portfolio/lieber/lieber-3.jpg'
-import screen4 from '@/images/portfolio/lieber/lieber-4.jpg'
-import screen5 from '@/images/portfolio/lieber/lieber-5.jpg'
-import screen6 from '@/images/portfolio/lieber/lieber-6.jpg'
-import screen7 from '@/images/portfolio/lieber/lieber-7.jpg'
+import screen1 from '@/images/projects/lieber/lieber-1.jpg'
+import screen2 from '@/images/projects/lieber/lieber-2.jpg'
+import screen3 from '@/images/projects/lieber/lieber-3.jpg'
+import screen4 from '@/images/projects/lieber/lieber-4.jpg'
+import screen5 from '@/images/projects/lieber/lieber-5.jpg'
+import screen6 from '@/images/projects/lieber/lieber-6.jpg'
+import screen7 from '@/images/projects/lieber/lieber-7.jpg'
 
 export default function Speaking() {
   return (

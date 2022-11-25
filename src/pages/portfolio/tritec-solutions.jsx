@@ -5,15 +5,15 @@ import Link from 'next/link'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Trip Support pages
-import screen1 from '@/images/portfolio/tritec/tritec-1.jpg'
-import screen2 from '@/images/portfolio/tritec/tritec-2.jpg'
-import screen3 from '@/images/portfolio/tritec/tritec-3.jpg'
-import screen4 from '@/images/portfolio/tritec/tritec-4.jpg'
-import screen5 from '@/images/portfolio/tritec/tritec-5.jpg'
-import screen6 from '@/images/portfolio/tritec/tritec-6.jpg'
-import screen7 from '@/images/portfolio/tritec/tritec-7.jpg'
-import screen8 from '@/images/portfolio/tritec/tritec-8.jpg'
-import screen9 from '@/images/portfolio/tritec/tritec-9.jpg'
+import screen1 from '@/images/projects/tritec/tritec-1.jpg'
+import screen2 from '@/images/projects/tritec/tritec-2.jpg'
+import screen3 from '@/images/projects/tritec/tritec-3.jpg'
+import screen4 from '@/images/projects/tritec/tritec-4.jpg'
+import screen5 from '@/images/projects/tritec/tritec-5.jpg'
+import screen6 from '@/images/projects/tritec/tritec-6.jpg'
+import screen7 from '@/images/projects/tritec/tritec-7.jpg'
+import screen8 from '@/images/projects/tritec/tritec-8.jpg'
+import screen9 from '@/images/projects/tritec/tritec-9.jpg'
 
 export default function Speaking() {
   return (
