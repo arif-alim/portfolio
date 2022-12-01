@@ -1,5 +1,5 @@
-import Image from 'next/future/image'
 import Head from 'next/head'
+import Image from 'next/future/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 

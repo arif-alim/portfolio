@@ -24,22 +24,24 @@ import certHTMLEssential from '@/images/certificates/HTMLEssentialTraining.jpg'
 import certHTTPEssential from '@/images/certificates/HTTPEssentialTraining.jpg'
 import certJavaScript from '@/images/certificates/JavaScript.jpg'
 import certRuby from '@/images/certificates/Ruby.jpg'
+import certUXDesign1 from '@/images/certificates/uxdesign1.jpg'
+import certUXDesign2 from '@/images/certificates/uxdesign2.jpg'
 
 import logoUW from '@/images/school/UniversityWaterloo.svg'
 import logoWLU from '@/images/school/WilfridLaurier.png'
 
 const Certifications = [
   {
-    heading: 'JavaScript',
-    image: certJavaScript,
+    heading: 'UX Design 1: Overview',
+    image: certUXDesign1,
     linkedinUrl:
-      'https://www.codecademy.com/profiles/alim.arif/certificates/705dcb15de0da4dd9d9fc4f3274b430e',
+      'https://www.linkedin.com/learning/certificates/5fab0db71cb46dabfd0882c06357fa29b4ee59e9b5afd3474d4982859454f8d3',
   },
   {
-    heading: 'Ruby',
-    image: certRuby,
+    heading: 'UX Design 2: Analyzing User Data',
+    image: certUXDesign2,
     linkedinUrl:
-      'https://www.codecademy.com/profiles/alim.arif/certificates/1c05e0382bc5681c824c4cbe85c126fd',
+      'https://www.linkedin.com/learning/certificates/80f3d24f527fe8bad60c4c1f907c6a3698e33f9f4b52ae660a364780cda598ea',
   },
   {
     heading: 'Interaction Design Flow',
@@ -58,6 +60,18 @@ const Certifications = [
     image: certGraphicDesign,
     linkedinUrl:
       'https://www.linkedin.com/learning/certificates/b4bfb24e779c15c910fcc63a913bff12609b6e1fb02cff7fc6fc973e9fb736f4',
+  },
+  {
+    heading: 'JavaScript',
+    image: certJavaScript,
+    linkedinUrl:
+      'https://www.codecademy.com/profiles/alim.arif/certificates/705dcb15de0da4dd9d9fc4f3274b430e',
+  },
+  {
+    heading: 'Ruby',
+    image: certRuby,
+    linkedinUrl:
+      'https://www.codecademy.com/profiles/alim.arif/certificates/1c05e0382bc5681c824c4cbe85c126fd',
   },
   {
     heading: 'CSS Essential Training',
@@ -188,7 +202,7 @@ export default function Accolades() {
         <div className="space-y-10">
           <ul
             role="list"
-            className="sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 lg:grid-cols-5 lg:gap-x-8"
+            className="sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
           >
             {Education.map((school) => (
               <li key={school.name}>
@@ -219,7 +233,7 @@ export default function Accolades() {
           </h2>
           <ul
             role="list"
-            className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8"
+            className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
           >
             {Certifications.map((cert) => (
               <li key={cert.image}>
