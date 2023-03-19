@@ -42,7 +42,7 @@ export default function About() {
           content="I’m Arif Alim. I live in New York City, where I design the future."
         />
       </Head>
-      <Container className="mt-16 sm:mt-32">
+      <Container className="mt-16 sm:mt-28">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
             <div className="w-full max-w-xs px-2.5 lg:max-w-none">
@@ -65,29 +65,27 @@ export default function About() {
             </p>
             <div className="mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                Creative UI/UX designer and a frontend developer with over 15
-                years of experience. I have designed for small to enterprise
-                level applications for companies such as Trip Support, Hydro
-                One, Service Ontario and Bombardier. My design thinking process,
-                methodologies, and user-centric approach to UI/UX with the
-                latest trends and accessibility in mind, I can help you achieve
-                your UI/UX goals.
+                With over 15 years of experience, I am a skilled UI/UX designer
+                and frontend developer known for my creativity. My portfolio
+                includes designing applications for small businesses and
+                enterprise-level companies such as Hydro One, Trip Support,
+                Service Ontario, and Bombardier. I utilize the latest trends,
+                accessibility guidelines, and user-centric methodologies in my
+                design thinking process to help you achieve your UI/UX goals.
               </p>
               <p>
-                Contributed to Bombardiers design system, simplified and reduced
-                the total number of components using Figma&rsquo;s component
-                propertie. Designed mySmartRouter and myPrinciple mobile apps
-                for Bombardier. Proposed and accepted style revisions to
-                Bombardier&rsquo;s core design system to comply with
-                accessibility standards. Created HydroOne design system from
-                scratch, helping the design components scale and keeping pages
-                design consistent throught.
+                I simplified and reduced Bombardier's design system by utilizing
+                Figma's component properties. I designed the mySmartRouter and
+                myPrinciple mobile apps for Bombardier and proposed style
+                revisions to comply with accessibility standards. I've worked on
+                many design systems with standard and trending UI and UX
+                patterns while keeping the designs consistent and scalable.
               </p>
               <p>
-                On another note, the results of the double slit experiment has
-                got me thinking. Who or what is the observer that collapses the
-                probability wave function of electrons and photons to behave as
-                particles?
+                Curious what peaks my curiosity... The outcome of the
+                double-slit experiment. I wonder who/what the observer is thats
+                responsible for collapsing the probability wave function of
+                electrons and photons, causing them to behave as particles?
               </p>
             </div>
           </div>

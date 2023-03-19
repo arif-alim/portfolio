@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Container } from '@/components/Container'
+import { CaseStudy } from '@/components/CaseStudy'
 
 // MySmartRouter
 import msScreen1 from '@/images/projects/bombardier/mySmartRouter/dashboard1.jpg'
@@ -36,7 +37,84 @@ import screenAlt6 from '@/images/projects/bombardier/myPrinciple/experienceAlt2.
 import screen7 from '@/images/projects/bombardier/myPrinciple/wishlist1.jpg'
 import screenAlt7 from '@/images/projects/bombardier/myPrinciple/wishlistAlt1.jpg'
 
-export default function Speaking() {
+const designs = [
+  {
+    title: 'Screen name',
+    description: 'Screen description',
+    imageUrl: msScreen1,
+  },
+  {
+    title: 'Screen name',
+    description: 'Screen description',
+    imageUrl: msScreen3,
+  },
+  {
+    title: 'Screen name',
+    description: 'Screen description',
+    imageUrl: msScreen2,
+  },
+  {
+    title: 'Screen name',
+    description: 'Screen description',
+    imageUrl: msScreen4,
+  },
+  {
+    title: 'Screen name',
+    description: 'Screen description',
+    imageUrl: msScreen5,
+  },
+]
+
+export function Designs() {
+  return (
+    <div className="mx-auto flex flex-col gap-12">
+      <div className="max-w-3xl">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Our team
+        </h2>
+        <p className="mt-6 text-lg leading-8 text-gray-600">
+          We’re a dynamic group of individuals who are passionate about what we
+          do and dedicated to delivering the best results for our clients.
+        </p>
+      </div>
+      <div
+        role="list"
+        className="grid max-w-7xl grid-cols-1  gap-x-6  sm:grid-cols-2 lg:grid-cols-5"
+      >
+        {designs.map((frame) => (
+          <div key={frame.title}>
+            <Image src={frame.imageUrl} alt=""></Image>
+            <h3 className="mt-1 text-base font-semibold leading-8 text-gray-900">
+              {frame.title}
+            </h3>
+            <p className="text-sm leading-4 text-gray-600">
+              {frame.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default function Project() {
+  const stats = [
+    {
+      id: 1,
+      name: 'New components using variants, component properties, grid, cosntraints and auto layout',
+      value: '350+',
+    },
+    {
+      id: 2,
+      name: 'Increase in happiness, transparency, efficiency, rapid prototype and consistency',
+      value: '100%',
+    },
+    {
+      id: 3,
+      name: 'Coined the term "Lego components" which allowed for rapid prototyping by combining base components',
+      value: '150+',
+    },
+  ]
   return (
     <>
       <Head>
@@ -46,24 +124,18 @@ export default function Speaking() {
           content="Bombardier MyPrinciple and MySmartRouter Mobile Truth"
         />
       </Head>
-      <SimpleLayout
-        title="Bombardier"
-        intro="Created custom design system for MySmartRouter and MyPrinciple"
-      >
-        <div className="space-y-24">
-          <div className="container mx-auto ">
-            <section className="12">
-              <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  MySmartRouter
-                </h2>
 
-                <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  Lead the design of Bombardiers mySmartRouter low-high fidelity
-                  prototypes. Worked with cross-functional teams, constantly
-                  reached my sprint goals.
-                </p>
-              </div>
+      <Container className="py-28">
+        <CaseStudy
+          heading="Bombardier - mySmartRouter"
+          subheading="Lead the design of Bombardiers mySmartRouter low-high fidelity prototypes. Worked with cross-functional teams, constantly reached my sprint goals."
+          stats={stats}
+        />
+        <Designs></Designs>
+
+        <div className="space-y-24">
+          <div className="mx-auto ">
+            <section className="12">
               <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-5">
                 <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
                   <Image
@@ -279,51 +351,9 @@ export default function Speaking() {
                 </div>
               </div>
             </section>
-            {/* <section className="my-8">
-              <h2 className="border-b-4 border-zinc-100 pb-2 text-xl font-bold dark:border-zinc-700 dark:text-zinc-100">
-                Can Design
-              </h2>
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-3">
-                <div className="mb-12 sm:mb-8 px-10 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 sm:mb-8 px-10 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 sm:mb-8 px-10 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan3}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 sm:mb-8 px-10 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan4}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 sm:mb-8 px-10 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan5}
-                    alt=""
-                  ></Image>
-                </div>
-              </div>
-            </section> */}
           </div>
         </div>
-      </SimpleLayout>
+      </Container>
     </>
   )
 }
