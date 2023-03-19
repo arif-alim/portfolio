@@ -74,12 +74,13 @@ export default function About() {
                 design thinking process to help you achieve your UI/UX goals.
               </p>
               <p>
-                I simplified and reduced Bombardier's design system by utilizing
-                Figma's component properties. I designed the mySmartRouter and
-                myPrinciple mobile apps for Bombardier and proposed style
-                revisions to comply with accessibility standards. I've worked on
-                many design systems with standard and trending UI and UX
-                patterns while keeping the designs consistent and scalable.
+                I've contributed to Bombardier's design system by utilizing
+                variants and combining them with component properties. I
+                designed mySmartRouter and myPrinciple mobile apps for
+                Bombardier and proposed style revisions to comply with
+                accessibility standards. I've worked on many design systems with
+                standard and trending UI and UX patterns while keeping the
+                designs consistent and scalable.
               </p>
               <p>
                 Curious what peaks my curiosity... The outcome of the
