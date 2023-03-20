@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { CaseStudy } from '@/components/CaseStudy'
 
+import portrait from '@/images/arifalim.jpeg'
+
 // MySmartRouter
 import msScreen1 from '@/images/projects/bombardier/mySmartRouter/dashboard1.jpg'
 import msScreen2 from '@/images/projects/bombardier/mySmartRouter/dashboard2.jpg'
@@ -36,6 +38,77 @@ import screenAlt5 from '@/images/projects/bombardier/myPrinciple/experienceAlt1.
 import screenAlt6 from '@/images/projects/bombardier/myPrinciple/experienceAlt2.jpg'
 import screen7 from '@/images/projects/bombardier/myPrinciple/wishlist1.jpg'
 import screenAlt7 from '@/images/projects/bombardier/myPrinciple/wishlistAlt1.jpg'
+
+import logoBombardier from '@/images/projects/bombardier.png'
+
+const posts = [
+  {
+    id: 1,
+    title: 'Boost your conversion rate',
+    href: '#',
+    description:
+      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta laboris incididunt.',
+    imageUrl: logoBombardier,
+    date: 'Mar 16, 2020',
+    datetime: '2020-03-16',
+    category: { title: 'Marketing', href: '#' },
+  },
+  // More posts...
+]
+
+export function Example() {
+  return (
+    <div className="mx-auto max-w-2xl lg:max-w-5xl">
+      <h1 className="text-[700] font-extrabold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
+        Bombardier
+      </h1>
+      <p className="mt-2 text-lg leading-8 text-gray-600">
+        Learn how to grow your business with our expert advice.
+      </p>
+      <div className="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
+        {posts.map((post) => (
+          <article
+            key={post.id}
+            className="relative isolate flex flex-col gap-8 lg:flex-row"
+          >
+            <div className="lg:aspect-square relative aspect-[16/9] sm:aspect-[2/1] lg:w-64 lg:shrink-0">
+              <Image
+                src={post.imageUrl}
+                alt=""
+                className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
+              />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+            </div>
+            <div>
+              <div className="flex items-center gap-x-4 text-xs">
+                <time dateTime={post.datetime} className="text-gray-500">
+                  {post.date}
+                </time>
+                <a
+                  href={post.category.href}
+                  className="relative z-10 rounded-full bg-gray-50 py-1.5 px-3 font-medium text-gray-600 hover:bg-gray-100"
+                >
+                  {post.category.title}
+                </a>
+              </div>
+              <div className="group relative max-w-xl">
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                  <a href={post.href}>
+                    <span className="absolute inset-0" />
+                    {post.title}
+                  </a>
+                </h3>
+                <p className="mt-5 text-sm leading-6 text-gray-600">
+                  {post.description}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 const designs = [
   {
@@ -124,6 +197,10 @@ export default function Project() {
           content="Bombardier MyPrinciple and MySmartRouter Mobile Truth"
         />
       </Head>
+
+      <section className="py-28">
+        <Example></Example>
+      </section>
 
       <Container className="py-28">
         <CaseStudy

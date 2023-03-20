@@ -52,16 +52,16 @@ const portfolio = [
     },
     image: logoTripSupport,
   },
-  // {
-  //   id: 2,
-  //   name: 'Service Ontario',
-  //   about: 'Government of Ontario',
-  //   link: {
-  //     href: '/portfolio/service-ontario',
-  //     label: 'View project',
-  //   },
-  //   image: logoServiceOntario,
-  // },
+  {
+    id: 2,
+    name: 'Service Ontario',
+    about: 'Government of Ontario',
+    link: {
+      href: '/portfolio/service-ontario',
+      label: 'View project',
+    },
+    image: logoServiceOntario,
+  },
   {
     id: 3,
     name: 'Hydro One',
