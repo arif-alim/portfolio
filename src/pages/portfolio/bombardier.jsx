@@ -1,436 +1,560 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-
-import { Container } from '@/components/Container'
-import { CaseStudy } from '@/components/CaseStudy'
-
-import portrait from '@/images/arifalim.jpeg'
-
-// MySmartRouter
-import msScreen1 from '@/images/projects/bombardier/mySmartRouter/dashboard1.jpg'
-import msScreen2 from '@/images/projects/bombardier/mySmartRouter/dashboard2.jpg'
-import msScreen3 from '@/images/projects/bombardier/mySmartRouter/dashboard3.jpg'
-import msScreen4 from '@/images/projects/bombardier/mySmartRouter/dashboard4.jpg'
-import msScreen5 from '@/images/projects/bombardier/mySmartRouter/device1.jpg'
-import msScreen6 from '@/images/projects/bombardier/mySmartRouter/device2.jpg'
-import msScreen7 from '@/images/projects/bombardier/mySmartRouter/networks1.jpg'
-import msScreen8 from '@/images/projects/bombardier/mySmartRouter/networks2.jpg'
-import msScreen9 from '@/images/projects/bombardier/mySmartRouter/networks3.jpg'
-import msScreen10 from '@/images/projects/bombardier/mySmartRouter/networks4.jpg'
-import msScreen11 from '@/images/projects/bombardier/mySmartRouter/networks5.jpg'
-import msScreen12 from '@/images/projects/bombardier/mySmartRouter/support1.jpg'
-import msScreen13 from '@/images/projects/bombardier/mySmartRouter/support2.jpg'
-
 // MyPrinciple
 //
 import screen1 from '@/images/projects/bombardier/myPrinciple/aircraft1.jpg'
 import screen2 from '@/images/projects/bombardier/myPrinciple/aircraft2.jpg'
 import screen3 from '@/images/projects/bombardier/myPrinciple/aircraft3.jpg'
-import screenAlt1 from '@/images/projects/bombardier/myPrinciple/aircraftAlt1.jpg'
-import screenAlt2 from '@/images/projects/bombardier/myPrinciple/aircraftAlt2.jpg'
-import screenAlt3 from '@/images/projects/bombardier/myPrinciple/aircraftAlt3.jpg'
-import screen4 from '@/images/projects/bombardier/myPrinciple/booking1.jpg'
-import screenAlt4 from '@/images/projects/bombardier/myPrinciple/bookingAlt1.jpg'
-import screen5 from '@/images/projects/bombardier/myPrinciple/experience1.jpg'
-import screen6 from '@/images/projects/bombardier/myPrinciple/experience2.jpg'
-import screenAlt5 from '@/images/projects/bombardier/myPrinciple/experienceAlt1.jpg'
-import screenAlt6 from '@/images/projects/bombardier/myPrinciple/experienceAlt2.jpg'
-import screen7 from '@/images/projects/bombardier/myPrinciple/wishlist1.jpg'
-import screenAlt7 from '@/images/projects/bombardier/myPrinciple/wishlistAlt1.jpg'
+import screen4 from '@/images/projects/bombardier/myPrinciple/aircraftAlt1.jpg'
+import screen5 from '@/images/projects/bombardier/myPrinciple/aircraftAlt2.jpg'
+import screen6 from '@/images/projects/bombardier/myPrinciple/aircraftAlt3.jpg'
+import screen7 from '@/images/projects/bombardier/myPrinciple/booking1.jpg'
+import screen8 from '@/images/projects/bombardier/myPrinciple/bookingAlt1.jpg'
+import screen9 from '@/images/projects/bombardier/myPrinciple/experience1.jpg'
+import screen10 from '@/images/projects/bombardier/myPrinciple/experience2.jpg'
+import screen11 from '@/images/projects/bombardier/myPrinciple/experienceAlt1.jpg'
+import screen12 from '@/images/projects/bombardier/myPrinciple/experienceAlt2.jpg'
+import screen13 from '@/images/projects/bombardier/myPrinciple/wishlist1.jpg'
+import screen14 from '@/images/projects/bombardier/myPrinciple/wishlistAlt1.jpg'
+// MySmartRouter
+//
+import screen18 from '@/images/projects/bombardier/mySmartRouter/dashboard1.jpg'
+import screen19 from '@/images/projects/bombardier/mySmartRouter/dashboard2.jpg'
+import screen20 from '@/images/projects/bombardier/mySmartRouter/dashboard3.jpg'
+import screen21 from '@/images/projects/bombardier/mySmartRouter/dashboard4.jpg'
+import screen22 from '@/images/projects/bombardier/mySmartRouter/device1.jpg'
+import screen23 from '@/images/projects/bombardier/mySmartRouter/device2.jpg'
+import screen24 from '@/images/projects/bombardier/mySmartRouter/networks1.jpg'
+import screen25 from '@/images/projects/bombardier/mySmartRouter/networks2.jpg'
+import screen26 from '@/images/projects/bombardier/mySmartRouter/networks3.jpg'
+import screen27 from '@/images/projects/bombardier/mySmartRouter/networks4.jpg'
+import screen28 from '@/images/projects/bombardier/mySmartRouter/networks5.jpg'
+import screen29 from '@/images/projects/bombardier/mySmartRouter/support1.jpg'
+import screen30 from '@/images/projects/bombardier/mySmartRouter/support2.jpg'
 
-import logoBombardier from '@/images/projects/bombardier.png'
+import logoBombardier from '@/images/projects/Bombardier_Logo.svg'
 
-const posts = [
+// Components
+import cardComponent from '@/images/projects/bombardier/components/Card.png'
+import selectAircraftComponent from '@/images/projects/bombardier/components/SelectAircraft.png'
+import flightHIstoryComponent from '@/images/projects/bombardier/components/FlightHistory.png'
+
+/* eslint-disable @next/next/no-img-element */
+
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { SimpleLayout } from '@/components/SimpleLayout'
+
+import { Fragment, useState } from 'react'
+import { Tab } from '@headlessui/react'
+
+const tabs = [
   {
-    id: 1,
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta laboris incididunt.',
-    imageUrl: logoBombardier,
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { title: 'Marketing', href: '#' },
+    name: 'Summary',
+    features: [
+      {
+        name: 'Bombardier Apps',
+        para1:
+          "As the Lead UX Designer at Xennial Innovations from March 2019 to April 2021, I was responsible for leading the design efforts of multiple high-profile projects for Bombardier. These projects included designing intuitive user interfaces for Flight Link by Airbus and Bombardier's MySmartRouter and MyPrinciple mobile applications. I ensured that the designs met the needs of various stakeholders and users while adhering to AODA and WCAG 2.0 accessibility standards.",
+        para2:
+          "I also played a key role in the development of Bombardier's corporate design system by introducing accessible styles and typography. Using Figma, I built the design systems for Bombardier's MySmartRouter and MyPrinciple mobile applications. This involved creating lego components composed of base components and using variants and component properties to simplify the use of components.",
+        para3:
+          "To enhance the user experience and make it more interactive, I designed JSON Lottie graphic animations using Adobe After Effects. Additionally, I expanded enterprise-level design systems using Figma's auto layout, component variants, and component properties, allowing for high-fidelity rapid prototyping. I created comprehensive design guidelines to ensure consistency across various platforms and applications.",
+        imageSrc: logoBombardier,
+        imageAlt: 'Bombardier designs',
+      },
+    ],
   },
-  // More posts...
+  {
+    name: 'Wireframes',
+    features: [
+      {
+        imageSrc1: screen1,
+        imageAlt1: 'Service Ontario project screen 1',
+        imageSrc2: screen2,
+        imageAlt2: 'Service Ontario project screen 2',
+        imageSrc3: screen3,
+        imageAlt3: 'Service Ontario project screen 3',
+        imageSrc4: screen4,
+        imageAlt4: 'Service Ontario project screen 4',
+        imageSrc5: screen5,
+        imageAlt5: 'Service Ontario project screen 1',
+        imageSrc6: screen6,
+        imageAlt6: 'Service Ontario project screen 1',
+        imageSrc7: screen7,
+        imageAlt7: 'Service Ontario project screen 1',
+        imageSrc8: screen8,
+        imageAlt8: 'Service Ontario project screen 1',
+        imageSrc9: screen9,
+        imageAlt9: 'Service Ontario project screen 1',
+        imageSrc10: screen10,
+        imageAlt10: 'Service Ontario project screen 1',
+        imageSrc11: screen11,
+        imageAlt11: 'Service Ontario project screen 1',
+        imageSrc12: screen12,
+        imageAlt12: 'Service Ontario project screen 1',
+        imageSrc13: screen13,
+        imageAlt13: 'Service Ontario project screen 1',
+        imageSrc14: screen14,
+        imageAlt14: 'Service Ontario project screen 1',
+
+        imageSrc18: screen18,
+        imageAlt18: 'Service Ontario project screen 1',
+        imageSrc19: screen19,
+        imageAlt19: 'Service Ontario project screen 1',
+        imageSrc20: screen20,
+        imageAlt20: 'Service Ontario project screen 1',
+        imageSrc21: screen21,
+        imageAlt21: 'Service Ontario project screen 1',
+        imageSrc22: screen22,
+        imageAlt22: 'Service Ontario project screen 1',
+        imageSrc23: screen23,
+        imageAlt23: 'Service Ontario project screen 1',
+        imageSrc24: screen24,
+        imageAlt24: 'Service Ontario project screen 1',
+        imageSrc25: screen25,
+        imageAlt25: 'Service Ontario project screen 1',
+        imageSrc26: screen26,
+        imageAlt26: 'Service Ontario project screen 1',
+        imageSrc27: screen27,
+        imageAlt27: 'Service Ontario project screen 1',
+        imageSrc28: screen28,
+        imageAlt28: 'Service Ontario project screen 1',
+        imageSrc29: screen29,
+        imageAlt29: 'Service Ontario project screen 1',
+        imageSrc30: screen30,
+        imageAlt30: 'Service Ontario project screen 1',
+      },
+    ],
+  },
+  {
+    name: 'Lego components',
+    features: [
+      {
+        type: 'Components',
+        component:
+          'Combining base components to create a higher order component, which I call "Lego Components"',
+        imgSrc15: cardComponent,
+        imgAlt15: 'Card component',
+        imgSrc16: selectAircraftComponent,
+        imgAlt16: 'Select aircraft comonent',
+        imgSrc17: flightHIstoryComponent,
+        imgAlt17: 'Select aircraft comonent',
+      },
+    ],
+  },
+  {
+    name: 'Notes',
+    features: [
+      {
+        name: 'Additional notes',
+        para1: 'Coming soon...',
+      },
+    ],
+  },
 ]
 
-export function Example() {
-  return (
-    <div className="mx-auto max-w-2xl lg:max-w-5xl">
-      <h1 className="text-[700] font-extrabold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
-        Bombardier
-      </h1>
-      <p className="mt-2 text-lg leading-8 text-gray-600">
-        Learn how to grow your business with our expert advice.
-      </p>
-      <div className="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
-        {posts.map((post) => (
-          <article
-            key={post.id}
-            className="relative isolate flex flex-col gap-8 lg:flex-row"
-          >
-            <div className="lg:aspect-square relative aspect-[16/9] sm:aspect-[2/1] lg:w-64 lg:shrink-0">
-              <Image
-                src={post.imageUrl}
-                alt=""
-                className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
-              />
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-            </div>
-            <div>
-              <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime={post.datetime} className="text-gray-500">
-                  {post.date}
-                </time>
-                <a
-                  href={post.category.href}
-                  className="relative z-10 rounded-full bg-gray-50 py-1.5 px-3 font-medium text-gray-600 hover:bg-gray-100"
-                >
-                  {post.category.title}
-                </a>
-              </div>
-              <div className="group relative max-w-xl">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                  <a href={post.href}>
-                    <span className="absolute inset-0" />
-                    {post.title}
-                  </a>
-                </h3>
-                <p className="mt-5 text-sm leading-6 text-gray-600">
-                  {post.description}
-                </p>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-const designs = [
-  {
-    title: 'Screen name',
-    description: 'Screen description',
-    imageUrl: msScreen1,
-  },
-  {
-    title: 'Screen name',
-    description: 'Screen description',
-    imageUrl: msScreen3,
-  },
-  {
-    title: 'Screen name',
-    description: 'Screen description',
-    imageUrl: msScreen2,
-  },
-  {
-    title: 'Screen name',
-    description: 'Screen description',
-    imageUrl: msScreen4,
-  },
-  {
-    title: 'Screen name',
-    description: 'Screen description',
-    imageUrl: msScreen5,
-  },
-]
-
-export function Designs() {
-  return (
-    <div className="mx-auto flex flex-col gap-12">
-      <div className="max-w-3xl">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Our team
-        </h2>
-        <p className="mt-6 text-lg leading-8 text-gray-600">
-          We’re a dynamic group of individuals who are passionate about what we
-          do and dedicated to delivering the best results for our clients.
-        </p>
-      </div>
-      <div
-        role="list"
-        className="grid max-w-7xl grid-cols-1  gap-x-6  sm:grid-cols-2 lg:grid-cols-5"
-      >
-        {designs.map((frame) => (
-          <div key={frame.title}>
-            <Image src={frame.imageUrl} alt=""></Image>
-            <h3 className="mt-1 text-base font-semibold leading-8 text-gray-900">
-              {frame.title}
-            </h3>
-            <p className="text-sm leading-4 text-gray-600">
-              {frame.description}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
 }
 
 export default function Project() {
-  const stats = [
-    {
-      id: 1,
-      name: 'New components using variants, component properties, grid, cosntraints and auto layout',
-      value: '350+',
-    },
-    {
-      id: 2,
-      name: 'Increase in happiness, transparency, efficiency, rapid prototype and consistency',
-      value: '100%',
-    },
-    {
-      id: 3,
-      name: 'Coined the term "Lego components" which allowed for rapid prototyping by combining base components',
-      value: '150+',
-    },
-  ]
+  const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
-    <>
-      <Head>
-        <title>Bombardier - Project</title>
-        <meta
-          name="description"
-          content="Bombardier MyPrinciple and MySmartRouter Mobile Truth"
-        />
-      </Head>
+    <SimpleLayout>
+      <div className="bg-white">
+        <section
+          aria-labelledby="features-heading"
+          className="mx-auto max-w-7xl"
+        >
+          <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
+            <div className="max-w-3xl">
+              <h1
+                id="features-heading"
+                className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              >
+                Bombardier
+              </h1>
+              <h2 className="mt-1 text-md font-medium tracking-tight text-gray-500 ">
+                mySmartRouter
+              </h2>
+              <h2 className=" text-md font-medium tracking-tight text-gray-500 ">
+                myPrinciple
+              </h2>
+              <h2 className=" text-md font-medium tracking-tight text-gray-500 ">
+                myOnlineProductOrdering (OPO)
+              </h2>
+            </div>
 
-      <section className="py-28">
-        <Example></Example>
-      </section>
-
-      <Container className="py-28">
-        <CaseStudy
-          heading="Bombardier - mySmartRouter"
-          subheading="Lead the design of Bombardiers mySmartRouter low-high fidelity prototypes. Worked with cross-functional teams, constantly reached my sprint goals."
-          stats={stats}
-        />
-        <Designs></Designs>
-
-        <div className="space-y-24">
-          <div className="mx-auto ">
-            <section className="12">
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-5">
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen1}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 h-16 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded bg-cover shadow-md"
-                    src={msScreen3}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen4}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen5}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen6}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen7}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen8}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen9}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen10}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen11}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen12}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={msScreen13}
-                    alt=""
-                  ></Image>
+            <Tab.Group
+              as="div"
+              className="scroll-x- mt-12"
+              value={selectedTab}
+              onSelect={setSelectedTab}
+            >
+              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                <div className="flex-auto border-b border-gray-200 px-4 sm:px-0">
+                  <Tab.List className="-mb-px flex space-x-10">
+                    {tabs.map((tab) => (
+                      <Tab
+                        key={tab.name}
+                        className={({ selected }) =>
+                          classNames(
+                            selected
+                              ? 'border-violet-700 text-base font-semibold text-violet-900 outline-none'
+                              : 'border-transparent text-base font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 ',
+                            'whitespace-nowrap border-b-2 px-2 outline-none visited:border-none '
+                          )
+                        }
+                      >
+                        {tab.name}
+                      </Tab>
+                    ))}
+                  </Tab.List>
                 </div>
               </div>
-            </section>
-            <section className="my-8">
-              <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  MyPrinciple
-                </h2>
-                {/* <a
-                  href="#"
-                  className="text-blue-800 dark:text-blue-300"
-                >
-                  equitybankbahamas.com
-                </a> */}
 
-                <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  I was brought onto this project after delivering high quality
-                  prototypes for mySmartRouter. The head of design Michel was
-                  impressed from my work on mySmartRouter and I was given the
-                  task to cleanup and create base and high-level components on
-                  Figma and redesign the screens.
-                </p>
-              </div>
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-5">
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen1}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screenAlt1}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screenAlt2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen3}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screenAlt3}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen4}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screenAlt4}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen5}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screenAlt5}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen6}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screenAlt6}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen7}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-10 sm:mb-8 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screenAlt7}
-                    alt=""
-                  ></Image>
-                </div>
-              </div>
-            </section>
+              <Tab.Panels as={Fragment}>
+                {tabs.map((tab) => (
+                  <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
+                    {tab.name === 'Summary'
+                      ? /* Render content for Summary tab */
+                        tab.features.map((feature) => (
+                          <div
+                            key={feature.name}
+                            className="flex flex-col  lg:gap-x-8"
+                          >
+                            <div className="lg: mb-0 max-w-md lg:mb-8">
+                              <Image
+                                src={feature.imageSrc}
+                                alt={feature.imageAlt}
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                            <div className="mt-6 max-w-prose lg:mt-0">
+                              <h3 className="text-xl font-semibold text-gray-900">
+                                {feature.name}
+                              </h3>
+                              <p className="mt-2 text-tiny text-gray-700">
+                                {feature.para1}
+                              </p>
+                              <p className="mt-4 text-tiny text-gray-700">
+                                {feature.para2}
+                              </p>
+                              <p className="mt-4 text-tiny text-gray-700">
+                                {feature.para3}
+                              </p>
+                            </div>
+                          </div>
+                        ))
+                      : tab.name === 'Wireframes'
+                      ? /* Render content for Wireframes tab */
+                        tab.features.map((feature) => (
+                          <div
+                            key={feature.name}
+                            className="flex flex-col gap-y-2 bg-slate-100"
+                          >
+                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:p-6">
+                              <div className="col-span-full mb-4 text-lg font-semibold underline">
+                                <h2>mySmartRouter</h2>
+                              </div>
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc18}
+                                    alt={feature.imageAlt18}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc24}
+                                    alt={feature.imageAlt24}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc19}
+                                    alt={feature.imageAlt19}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc25}
+                                    alt={feature.imageAlt25}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc20}
+                                    alt={feature.imageAlt20}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc26}
+                                    alt={feature.imageAlt26}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc21}
+                                    alt={feature.imageAlt21}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc27}
+                                    alt={feature.imageAlt27}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc22}
+                                    alt={feature.imageAlt22}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc28}
+                                    alt={feature.imageAlt28}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc23}
+                                    alt={feature.imageAlt23}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc29}
+                                    alt={feature.imageAlt29}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:p-6">
+                              <div className="col-span-full mb-4 text-lg font-semibold underline">
+                                <h2>myPrinciple</h2>
+                              </div>
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc1}
+                                    alt={feature.imageAlt1}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc4}
+                                    alt={feature.imageAlt4}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc2}
+                                    alt={feature.imageAlt2}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc5}
+                                    alt={feature.imageAlt5}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc3}
+                                    alt={feature.imageAlt3}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc6}
+                                    alt={feature.imageAlt6}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc7}
+                                    alt={feature.imageAlt7}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc8}
+                                    alt={feature.imageAlt8}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc10}
+                                    alt={feature.imageAlt10}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc12}
+                                    alt={feature.imageAlt12}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+                              <div className="lg:col-span-2">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc9}
+                                    alt={feature.imageAlt9}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc11}
+                                    alt={feature.imageAlt11}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))
+                      : tab.name === 'Lego components'
+                      ? /* Render content for Wireframes tab */
+                        tab.features.map((feature) => (
+                          <div
+                            key={feature.type}
+                            className="flex flex-col  lg:gap-x-8"
+                          >
+                            <div className="my-6 lg:mt-0 lg:max-w-prose">
+                              <h3 className="text-lg font-medium text-gray-900">
+                                {feature.type}
+                              </h3>
+                              <p className="mt-2 text-sm text-gray-500">
+                                {feature.component}
+                              </p>
+                            </div>
+                            <div className=" mb-8 lg:max-w-full">
+                              <div className="mb-2 text-tiny">
+                                Select aircraft component -
+                                <Link
+                                  href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=486%3A8043&t=ZNtgizfNIxMUnfdq-1"
+                                  target="_blank"
+                                  className="px-1 text-tiny text-blue-800"
+                                >
+                                  View Figma
+                                </Link>
+                              </div>
+                              <Image
+                                src={feature.imgSrc16}
+                                alt={feature.imgAlt16}
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                            <div className=" mb-8 lg:max-w-xl">
+                              <div className="mb-2 text-tiny">
+                                Card component -
+                                <Link
+                                  href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=91%3A709&t=ZNtgizfNIxMUnfdq-1"
+                                  target="_blank"
+                                  className="px-1 text-tiny text-blue-800"
+                                >
+                                  View Figma
+                                </Link>
+                              </div>
+                              <Image
+                                src={feature.imgSrc15}
+                                alt={feature.imgAlt15}
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                            <div className=" lg:max-w-md">
+                              <div className="mb-2 text-tiny">
+                                Card component -
+                                <Link
+                                  href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=145%3A1448&t=ZNtgizfNIxMUnfdq-1"
+                                  target="_blank"
+                                  className="px-1 text-tiny text-blue-800"
+                                >
+                                  View Figma
+                                </Link>
+                              </div>
+                              <Image
+                                src={feature.imgSrc17}
+                                alt={feature.imgAlt17}
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                          </div>
+                        ))
+                      : tab.name === 'Notes'
+                      ? /* Render content for Wireframes tab */
+                        tab.features.map((feature) => (
+                          <div key={feature.name}>
+                            <div className="mt-6 lg:col-span-5 lg:mt-0">
+                              <h3 className="text-lg font-medium text-gray-900">
+                                {feature.name}
+                              </h3>
+                              <p className="mt-2 text-sm text-gray-500">
+                                {feature.para1}
+                              </p>
+                            </div>
+                          </div>
+                        ))
+                      : null}
+                  </Tab.Panel>
+                ))}
+              </Tab.Panels>
+            </Tab.Group>
           </div>
-        </div>
-      </Container>
-    </>
+        </section>
+      </div>
+    </SimpleLayout>
   )
 }

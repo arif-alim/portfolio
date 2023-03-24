@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import Head from 'next/head'
 import Image from 'next/future/image'
 import Link from 'next/link'
@@ -6,6 +7,7 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import { VercelIcon, GithubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.png'
+import { fontWeight } from 'tailwindcss/defaultTheme'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -36,13 +38,19 @@ export default function About() {
   return (
     <>
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+          rel="stylesheet"
+        />
         <title>About - Arif Alim</title>
         <meta
           name="description"
           content="I’m Arif Alim. I live in New York City, where I design the future."
         />
       </Head>
-      <Container className="mt-16 sm:mt-28">
+      <Container className="mt-16 sm:mt-20">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
             <div className="w-full max-w-xs px-2.5 lg:max-w-none">
@@ -55,38 +63,36 @@ export default function About() {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-3xl font-extrabold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
+            <h1
+              className="text-3xl font-extrabold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl"
+              // style={{
+              //   fontFamily: "'Playfair Display', serif",
+              //   fontWeight: 'bold',
+              // }}
+            >
               Hi, I’m Arif Alim.
               <br /> A Canadian UI/UX Architect!
             </h1>
+
             <p className="mt-4 text-sm tracking-tight text-zinc-400 dark:text-zinc-100 sm:text-[15px]">
               Honours Bachelor of Computer Science (BCS) from UW.BCS from
               University of Waterloo and BBA from Wilfrid Laurier University.
             </p>
-            <div className="mt-12 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <div className="mt-6 space-y-7 text-tiny text-zinc-600 dark:text-zinc-400">
               <p>
-                With over 15 years of experience, I am a skilled UI/UX designer
-                and frontend developer known for my creativity. My portfolio
-                includes designing applications for small businesses and
-                enterprise-level companies such as Hydro One, Trip Support,
-                Service Ontario, and Bombardier. I utilize the latest trends,
-                accessibility guidelines, and user-centric methodologies in my
-                design thinking process to help you achieve your UI/UX goals.
+                As an experienced UI/UX designer and frontend developer with
+                over 15 years of expertise, I am well-regarded for my innovative
+                and creative design solutions. My portfolio includes designing
+                applications for a diverse range of clients, including Hydro
+                One, Trip Support, Service Ontario, and Bombardier, both for
+                small businesses and enterprise-level organizations.
               </p>
+
               <p>
-                I've contributed to Bombardier's design system by utilizing
-                variants and combining them with component properties. I
-                designed mySmartRouter and myPrinciple mobile apps for
-                Bombardier and proposed style revisions to comply with
-                accessibility standards. I've worked on many design systems with
-                standard and trending UI and UX patterns while keeping the
-                designs consistent and scalable.
-              </p>
-              <p>
-                Curious what peaks my curiosity... The outcome of the
-                double-slit experiment. I wonder who/what the observer is thats
-                responsible for collapsing the probability wave function of
-                electrons and photons, causing them to behave as particles?
+                My design process is guided by the latest industry trends,
+                accessibility guidelines, and user-centric methodologies. I can
+                help you achieve your UI/UX goals by creating thoughtful and
+                intuitive designs that prioritize the user experience.
               </p>
             </div>
           </div>
