@@ -30,7 +30,7 @@ import screen28 from '@/images/projects/bombardier/mySmartRouter/networks5.jpg'
 import screen29 from '@/images/projects/bombardier/mySmartRouter/support1.jpg'
 import screen30 from '@/images/projects/bombardier/mySmartRouter/support2.jpg'
 
-import logoBombardier from '@/images/projects/Bombardier_Logo.svg'
+import logoBombardier from '@/images/projects/bombardier/bombardier-logo.svg'
 
 // Components
 import cardComponent from '@/images/projects/bombardier/components/Card.png'
@@ -127,7 +127,7 @@ const tabs = [
     ],
   },
   {
-    name: 'Lego components',
+    name: 'Lego Components',
     features: [
       {
         type: 'Components',
@@ -143,11 +143,13 @@ const tabs = [
     ],
   },
   {
-    name: 'Notes',
+    name: 'Company details',
     features: [
       {
-        name: 'Additional notes',
-        para1: 'Coming soon...',
+        name: 'About Bombardier',
+        para1:
+          "Bombardier is a Canadian multinational company that specializes in the design, manufacturing, and support of innovative transportation solutions. The company operates in several industries, including aerospace, transportation, and recreation. Bombardier's aerospace division is a global leader in the production of business jets, regional aircraft, and commercial aircraft, and it has a strong presence in both the military and civil aviation markets. In the transportation sector, Bombardier is a leading manufacturer of trains and rail solutions, offering a wide range of products and services to customers worldwide. The company's recreational products division produces a diverse range of vehicles, including snowmobiles, watercraft, and all-terrain vehicles. With over 60,000 employees across its operations, Bombardier is committed to creating sustainable, innovative, and value-added products and services that meet the needs of its customers while promoting environmental responsibility and social well-being. Through its cutting-edge technology, engineering expertise, and customer-focused approach, Bombardier has earned a reputation as a trusted partner and leader in the transportation industry.",
+        link: 'https://bombardier.com/en',
       },
     ],
   },
@@ -161,7 +163,7 @@ export default function Project() {
   const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
     <SimpleLayout>
-      <div className="bg-white">
+      <div className="">
         <section
           aria-labelledby="features-heading"
           className="mx-auto max-w-7xl"
@@ -170,46 +172,42 @@ export default function Project() {
             <div className="max-w-3xl">
               <h1
                 id="features-heading"
-                className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
               >
                 Bombardier
               </h1>
-              <h2 className="mt-1 text-md font-medium tracking-tight text-gray-500 ">
-                mySmartRouter
-              </h2>
-              <h2 className=" text-md font-medium tracking-tight text-gray-500 ">
-                myPrinciple
-              </h2>
-              <h2 className=" text-md font-medium tracking-tight text-gray-500 ">
-                myOnlineProductOrdering (OPO)
+              <h2 className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
+                mySmartRouter, myPrinciple, myOnlineProductOrdering (OPO)
               </h2>
             </div>
 
             <Tab.Group
               as="div"
-              className="scroll-x- mt-12"
+              className="mt-10"
               value={selectedTab}
               onSelect={setSelectedTab}
             >
-              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                <div className="flex-auto border-b border-gray-200 px-4 sm:px-0">
-                  <Tab.List className="-mb-px flex space-x-10">
-                    {tabs.map((tab) => (
-                      <Tab
-                        key={tab.name}
-                        className={({ selected }) =>
-                          classNames(
-                            selected
-                              ? 'border-violet-700 text-base font-semibold text-violet-900 outline-none'
-                              : 'border-transparent text-base font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 ',
-                            'whitespace-nowrap border-b-2 px-2 outline-none visited:border-none '
-                          )
-                        }
-                      >
-                        {tab.name}
-                      </Tab>
-                    ))}
-                  </Tab.List>
+              <div className="overflow-x-hidden whitespace-nowrap">
+                <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                  <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                    <Tab.List className="-mb-px flex ">
+                      {tabs.map((tab) => (
+                        <Tab
+                          key={tab.name}
+                          className={({ selected }) =>
+                            classNames(
+                              selected
+                                ? 'border-blue-700 text-base font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-200'
+                                : 'dark:hover-gray-100 border-transparent font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 ',
+                              'whitespace-nowrap border-b-2 px-6 outline-none visited:border-none'
+                            )
+                          }
+                        >
+                          {tab.name}
+                        </Tab>
+                      ))}
+                    </Tab.List>
+                  </div>
                 </div>
               </div>
 
@@ -221,26 +219,26 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col  lg:gap-x-8"
+                            className="flex flex-col lg:gap-x-8"
                           >
-                            <div className="lg: mb-0 max-w-md lg:mb-8">
+                            <div className="lg: mb-0 mt-6 max-w-[200px] lg:my-4">
                               <Image
                                 src={feature.imageSrc}
                                 alt={feature.imageAlt}
-                                className="rounded-lg object-cover object-center"
+                                className="object-cover dark:invert "
                               />
                             </div>
                             <div className="mt-6 max-w-prose lg:mt-0">
-                              <h3 className="text-xl font-semibold text-gray-900">
+                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                                 {feature.name}
                               </h3>
-                              <p className="mt-2 text-tiny text-gray-700">
+                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para1}
                               </p>
-                              <p className="mt-4 text-tiny text-gray-700">
+                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para2}
                               </p>
-                              <p className="mt-4 text-tiny text-gray-700">
+                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para3}
                               </p>
                             </div>
@@ -251,10 +249,10 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col gap-y-2 bg-slate-100"
+                            className="flex flex-col gap-y-2 bg-slate-100 dark:bg-inherit"
                           >
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:p-6">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline">
+                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200">
                                 <h2>mySmartRouter</h2>
                               </div>
                               <div className="lg:col-span-2">
@@ -359,7 +357,7 @@ export default function Project() {
                               </div>
                             </div>
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:p-6">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline">
+                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200">
                                 <h2>myPrinciple</h2>
                               </div>
                               <div className="lg:col-span-2">
@@ -465,7 +463,7 @@ export default function Project() {
                             </div>
                           </div>
                         ))
-                      : tab.name === 'Lego components'
+                      : tab.name === 'Lego Components'
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div
@@ -473,20 +471,20 @@ export default function Project() {
                             className="flex flex-col  lg:gap-x-8"
                           >
                             <div className="my-6 lg:mt-0 lg:max-w-prose">
-                              <h3 className="text-lg font-medium text-gray-900">
+                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
                                 {feature.type}
                               </h3>
-                              <p className="mt-2 text-sm text-gray-500">
+                              <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
                                 {feature.component}
                               </p>
                             </div>
                             <div className=" mb-8 lg:max-w-full">
-                              <div className="mb-2 text-tiny">
+                              <div className="mb-2 text-tiny dark:text-gray-200">
                                 Select aircraft component -
                                 <Link
                                   href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=486%3A8043&t=ZNtgizfNIxMUnfdq-1"
                                   target="_blank"
-                                  className="px-1 text-tiny text-blue-800"
+                                  className="px-1 text-sm text-blue-800 dark:text-blue-500"
                                 >
                                   View Figma
                                 </Link>
@@ -498,12 +496,12 @@ export default function Project() {
                               />
                             </div>
                             <div className=" mb-8 lg:max-w-xl">
-                              <div className="mb-2 text-tiny">
+                              <div className="mb-2 text-tiny dark:text-gray-200">
                                 Card component -
                                 <Link
                                   href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=91%3A709&t=ZNtgizfNIxMUnfdq-1"
                                   target="_blank"
-                                  className="px-1 text-tiny text-blue-800"
+                                  className="px-1 text-sm text-blue-800 dark:text-blue-500"
                                 >
                                   View Figma
                                 </Link>
@@ -515,12 +513,12 @@ export default function Project() {
                               />
                             </div>
                             <div className=" lg:max-w-md">
-                              <div className="mb-2 text-tiny">
+                              <div className="mb-2 text-tiny dark:text-gray-200">
                                 Card component -
                                 <Link
                                   href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=145%3A1448&t=ZNtgizfNIxMUnfdq-1"
                                   target="_blank"
-                                  className="px-1 text-tiny text-blue-800"
+                                  className="px-1 text-sm text-blue-800 dark:text-blue-500"
                                 >
                                   View Figma
                                 </Link>
@@ -533,17 +531,24 @@ export default function Project() {
                             </div>
                           </div>
                         ))
-                      : tab.name === 'Notes'
+                      : tab.name === 'Company details'
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div key={feature.name}>
                             <div className="mt-6 lg:col-span-5 lg:mt-0">
-                              <h3 className="text-lg font-medium text-gray-900">
+                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
                                 {feature.name}
                               </h3>
-                              <p className="mt-2 text-sm text-gray-500">
+                              <p className="mt-0 mb-0 text-tiny font-normal text-gray-600 dark:text-gray-400">
                                 {feature.para1}
                               </p>
+                              <Link
+                                href={feature.link}
+                                target="_blank"
+                                className="text-blue-800 dark:text-blue-400"
+                              >
+                                Visit website
+                              </Link>
                             </div>
                           </div>
                         ))

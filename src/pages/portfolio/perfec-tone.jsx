@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import clsx from 'clsx'
 
-import { SimpleLayout } from '@/components/SimpleLayout'
-
-// Trip Support pages
+// Perfec-tone
 import screen1 from '@/images/projects/perfectone/perfectone-1.jpg'
 import screen2 from '@/images/projects/perfectone/perfectone-2.jpg'
 import screen3 from '@/images/projects/perfectone/perfectone-3.jpg'
@@ -14,100 +13,266 @@ import screen6 from '@/images/projects/perfectone/perfectone-6.jpg'
 import screen7 from '@/images/projects/perfectone/perfectone-7.jpg'
 import screen8 from '@/images/projects/perfectone/perfectone-8.jpg'
 
-export default function Speaking() {
+// Hydro One logo
+import logoPerfectone from '@/images/projects/perfectone/perfectone-logo.svg'
+
+import { SimpleLayout } from '@/components/SimpleLayout'
+import { Fragment, useState, useEffect } from 'react'
+import { Tab } from '@headlessui/react'
+
+const tabs = [
+  {
+    name: 'Summary',
+    features: [
+      {
+        name: 'Perfec-tone Responsive Web Design and Development',
+        para1:
+          'Perfec-Tone is a skincare company that offers a range of products designed to address various skin concerns. To help the company reach a wider audience and provide a seamless shopping experience for its customers, we designed a mobile responsive e-commerce website that emphasized both user interface (UI) and user experience (UX) design principles.',
+        para2:
+          "The website's UI was carefully crafted to highlight the brand's natural and organic ingredients, while also providing clear and concise product descriptions and easy-to-use navigation menus. We used high-quality product photography and incorporated soft, pastel colors to create a soothing and inviting aesthetic. The website's UX was designed to be intuitive and easy to use, with a simple checkout process and clear calls-to-action throughout the website. Additionally, we implemented responsive design principles to ensure that the website looked great and functioned well on both desktop and mobile devices, providing a seamless shopping experience for customers no matter where they accessed the website from. The result was an e-commerce website that not only looked great but also provided a seamless shopping experience for Perfec-Tone's customers.",
+
+        imageSrc: logoPerfectone,
+        imageAlt: 'Perfec-tone logo',
+      },
+    ],
+  },
+  {
+    name: 'Wireframes',
+    features: [
+      {
+        imageSrc1: screen1,
+        imageAlt1: '',
+        imageSrc2: screen2,
+        imageAlt2: '',
+        imageSrc3: screen3,
+        imageAlt3: '',
+        imageSrc4: screen4,
+        imageAlt4: '',
+        imageSrc5: screen5,
+        imageAlt5: '',
+        imageSrc6: screen6,
+        imageAlt6: '',
+        imageSrc7: screen7,
+        imageAlt7: '',
+        imageSrc8: screen8,
+        imageAlt8: '',
+      },
+    ],
+  },
+
+  {
+    name: 'Company details',
+    features: [
+      {
+        name: 'About Perfec-tone',
+        para1:
+          "Perfec-Tone is a skincare company that offers a range of products designed to address a wide range of skin concerns. The company was founded with the goal of providing effective and affordable skincare solutions for all skin types and tones. Perfec-Tone's products are formulated using natural and organic ingredients, and they are free from harsh chemicals and synthetic fragrances. The company's product line includes cleansers, toners, moisturizers, serums, and treatments that are designed to address common skin concerns such as acne, hyperpigmentation, and aging. Perfec-Tone is committed to promoting healthy and radiant skin, and it offers personalized skincare consultations to help customers find the right products for their individual needs. The company's mission is to provide high-quality skincare solutions that are accessible and affordable, while promoting natural beauty and self-confidence. Perfec-Tone continues to innovate and expand its product line to meet the evolving needs of its customers, and it has established itself as a trusted brand in the skincare industry.",
+        link: 'https://perfec-tone.com/',
+      },
+    ],
+  },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+export default function HydroOne() {
+  const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
     <>
       <Head>
         <title>Perfec-tone - Project</title>
-        <meta
-          name="description"
-          content="Trip Support graphic web and interaction design"
-        />
+        <meta title="Perfec-tone" intro="" />
       </Head>
-      <SimpleLayout
-        title="Perfec-tone"
-        intro="Anyone who has suffered from acne, dark spots, hyperpigmentation and melasma is desperately seeking solutions."
-      >
-        <div className="space-y-24">
-          <div className="container mx-auto ">
-            <section className="12">
-              <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  Web and product design
-                </h2>
-                <Link
-                  href="https://perfec-tone.com/"
-                  className="text-blue-800 dark:text-blue-300"
-                  target="_blank"
+      <SimpleLayout>
+        <div className="">
+          <section
+            aria-labelledby="features-heading"
+            className="mx-auto max-w-7xl"
+          >
+            <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
+              <div className="max-w-3xl">
+                <h1
+                  id="features-heading"
+                  className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
                 >
-                  www.perfec-tone.com
-                </Link>
+                  Perfec-tone
+                </h1>
+              </div>
 
-                <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  Product and graphic design with usability testing. Created
-                  custom logo, and mobile responsive e-commerce website.
-                </p>
-              </div>
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-3">
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen1}
-                    alt=""
-                  ></Image>
+              <Tab.Group
+                as="div"
+                className="mt-10"
+                value={selectedTab}
+                onSelect={setSelectedTab}
+              >
+                <div className="overflow-x-hidden whitespace-nowrap">
+                  <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                    <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                      <Tab.List className="-mb-px flex ">
+                        {tabs.map((tab) => (
+                          <Tab
+                            key={tab.name}
+                            className={({ selected }) =>
+                              classNames(
+                                selected
+                                  ? 'border-blue-700 text-base font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-200'
+                                  : 'dark:hover-gray-100 border-transparent font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 ',
+                                'whitespace-nowrap border-b-2 px-6 outline-none visited:border-none'
+                              )
+                            }
+                          >
+                            {tab.name}
+                          </Tab>
+                        ))}
+                      </Tab.List>
+                    </div>
+                  </div>
                 </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded bg-cover shadow-md"
-                    src={screen2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen3}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen4}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen5}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen6}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen7}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={screen8}
-                    alt=""
-                  ></Image>
-                </div>
-              </div>
-            </section>
-          </div>
+
+                <Tab.Panels as={Fragment}>
+                  {tabs.map((tab) => (
+                    <Tab.Panel
+                      key={tab.name}
+                      className="space-y-8 pt-4 lg:pt-8"
+                    >
+                      {tab.name === 'Summary'
+                        ? /* Render content for Summary tab */
+                          tab.features.map((feature) => (
+                            <div
+                              key={feature.name}
+                              className="flex flex-col lg:gap-x-8"
+                            >
+                              <div className="mb-4 max-w-[200px] sm:mt-0 lg:mt-4">
+                                <Image
+                                  src={feature.imageSrc}
+                                  alt={feature.imageAlt}
+                                  className="rounded-lg object-cover object-center dark:invert"
+                                />
+                              </div>
+
+                              <div className="mt-6 lg:mt-4 lg:max-w-prose">
+                                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
+                                  {feature.name}
+                                </h3>
+                                <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
+                                  {feature.para1}
+                                </p>
+                                <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
+                                  {feature.para2}
+                                </p>
+                              </div>
+                            </div>
+                          ))
+                        : tab.name === 'Wireframes'
+                        ? /* Render content for Wireframes tab */
+                          tab.features.map((feature) => (
+                            <div
+                              key={feature.name}
+                              className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:p-6"
+                            >
+                              <div className="lg:col-span-4">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc1}
+                                    alt={feature.imageAlt1}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc4}
+                                    alt={feature.imageAlt4}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc7}
+                                    alt={feature.imageAlt7}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-4">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc2}
+                                    alt={feature.imageAlt2}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc5}
+                                    alt={feature.imageAlt5}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc8}
+                                    alt={feature.imageAlt8}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="lg:col-span-4">
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc3}
+                                    alt={feature.imageAlt3}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc6}
+                                    alt={feature.imageAlt6}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                                <div className="mb-4">
+                                  <Image
+                                    src={feature.imageSrc9}
+                                    alt={feature.imageAlt9}
+                                    className="rounded-lg object-cover object-center"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          ))
+                        : tab.name === 'Company details'
+                        ? /* Render content for Wireframes tab */
+                          tab.features.map((feature) => (
+                            <div key={feature.name}>
+                              <div className="mt-6 lg:col-span-5 lg:mt-0">
+                                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
+                                  {feature.name}
+                                </h3>
+                                <p className="mt-0 mb-0 text-tiny font-normal text-gray-600 dark:text-gray-400">
+                                  {feature.para1}
+                                </p>
+                                <Link
+                                  href={feature.link}
+                                  target="_blank"
+                                  className="text-blue-800 dark:text-blue-400"
+                                >
+                                  Visit website
+                                </Link>
+                              </div>
+                            </div>
+                          ))
+                        : null}
+                    </Tab.Panel>
+                  ))}
+                </Tab.Panels>
+              </Tab.Group>
+            </div>
+          </section>
         </div>
       </SimpleLayout>
     </>

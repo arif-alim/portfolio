@@ -1,10 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-
-import { SimpleLayout } from '@/components/SimpleLayout'
-
-// Trip Support pages
+// MyPrinciple
+//
 import screen1 from '@/images/projects/tripsupport/tripsupport1.jpg'
 import screen2 from '@/images/projects/tripsupport/tripsupport2.jpg'
 import screen3 from '@/images/projects/tripsupport/tripsupport3.jpg'
@@ -23,10 +18,17 @@ import screen15 from '@/images/projects/tripsupport/tripsupport15.jpg'
 import screen16 from '@/images/projects/tripsupport/tripsupport16.jpg'
 import screen17 from '@/images/projects/tripsupport/tripsupport17.jpg'
 
-import logoTripSupport from '@/images/projects/tripsupport/TripSupport.svg'
+import logoTripSupport from '@/images/projects/tripsupport/tripsupport-logo.svg'
 
 import newSite from '@/images/projects/tripsupport/tripsupport-new.jpg'
 import oldSite from '@/images/projects/tripsupport/tripsupport-old.jpg'
+
+/* eslint-disable @next/next/no-img-element */
+
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { SimpleLayout } from '@/components/SimpleLayout'
 
 import { Fragment, useState } from 'react'
 import { Tab } from '@headlessui/react'
@@ -97,18 +99,19 @@ const tabs = [
       {
         heading: 'Trip Support Responsive Site',
         subheading: 'Mobile responsive web design',
-
         imgSrc21: newSite,
         imgSrc22: oldSite,
       },
     ],
   },
   {
-    name: 'Notes',
+    name: 'Company details',
     features: [
       {
-        name: 'Additional notes',
-        para1: 'Coming soon...',
+        name: 'About Trip Support',
+        para1:
+          "Trip Support is a global travel management company that provides a wide range of services to individual and corporate clients. The company specializes in offering personalized travel solutions, including flight bookings, hotel reservations, car rentals, and visa services. Trip Support aims to simplify the travel experience for its clients by providing a one-stop-shop for all their travel needs. With its global network of partners and suppliers, the company is able to offer competitive pricing and access to exclusive travel deals. Trip Support is committed to providing excellent customer service and support, and its team of experienced travel professionals is available 24/7 to assist clients with any questions or issues. The company's mission is to make travel easy, convenient, and affordable for everyone, and it continues to expand its offerings and services to meet the evolving needs of its clients.",
+        link: 'https://tripsupport.ca/',
       },
     ],
   },
@@ -122,7 +125,7 @@ export default function Project() {
   const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
     <SimpleLayout>
-      <div className="bg-white">
+      <div className="">
         <section
           aria-labelledby="features-heading"
           className="mx-auto max-w-7xl"
@@ -131,40 +134,42 @@ export default function Project() {
             <div className="max-w-3xl">
               <h1
                 id="features-heading"
-                className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
               >
                 Trip Support
               </h1>
-              <h2 className="mt-1 text-md font-medium tracking-tight text-gray-500 ">
+              <h2 className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
                 Responsive Mobile Design
               </h2>
             </div>
 
             <Tab.Group
               as="div"
-              className="scroll-x- mt-12"
+              className="mt-10"
               value={selectedTab}
               onSelect={setSelectedTab}
             >
-              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                <div className="flex-auto border-b border-gray-200 px-4 sm:px-0">
-                  <Tab.List className="-mb-px flex space-x-10">
-                    {tabs.map((tab) => (
-                      <Tab
-                        key={tab.name}
-                        className={({ selected }) =>
-                          classNames(
-                            selected
-                              ? 'border-violet-700 text-base font-semibold text-violet-900 outline-none'
-                              : 'border-transparent text-base font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 ',
-                            'whitespace-nowrap border-b-2 px-2 outline-none visited:border-none '
-                          )
-                        }
-                      >
-                        {tab.name}
-                      </Tab>
-                    ))}
-                  </Tab.List>
+              <div className="overflow-x-hidden whitespace-nowrap">
+                <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                  <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                    <Tab.List className="-mb-px flex ">
+                      {tabs.map((tab) => (
+                        <Tab
+                          key={tab.name}
+                          className={({ selected }) =>
+                            classNames(
+                              selected
+                                ? 'border-blue-700 text-base font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-200'
+                                : 'dark:hover-gray-100 border-transparent font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 ',
+                              'whitespace-nowrap border-b-2 px-6 outline-none visited:border-none'
+                            )
+                          }
+                        >
+                          {tab.name}
+                        </Tab>
+                      ))}
+                    </Tab.List>
+                  </div>
                 </div>
               </div>
 
@@ -176,29 +181,29 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col  lg:gap-x-8"
+                            className="flex flex-col lg:gap-x-8"
                           >
-                            <div className="lg: mb-0 max-w-md lg:mb-8">
+                            <div className="mb-4 max-w-[200px] sm:mt-0 lg:mt-4">
                               <Image
                                 src={feature.imageSrc}
                                 alt={feature.imageAlt}
-                                className="rounded-lg object-cover object-center"
+                                className="object-cover dark:invert"
                               />
                             </div>
-                            <div className="mt-6 max-w-prose lg:mt-0">
-                              <h3 className="text-xl font-semibold text-gray-900">
+                            <div className="mt-6 lg:mt-4 lg:max-w-prose">
+                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                                 {feature.name}
                               </h3>
-                              <p className="mt-2 text-tiny text-gray-700">
+                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para1}
                               </p>
-                              <p className="mt-4 text-tiny text-gray-700">
+                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para2}
                               </p>
-                              <p className="mt-4 text-tiny text-gray-700">
+                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para3}
                               </p>
-                              <p className="mt-4 text-tiny text-gray-700">
+                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para4}
                               </p>
                             </div>
@@ -209,9 +214,9 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col bg-slate-100"
+                            className="flex flex-col rounded-lg bg-slate-100 dark:bg-zinc-800"
                           >
-                            <div className="col-span-full pt-4 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:px-6 ">
+                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:p-5 ">
                               <div className="p-2 lg:col-span-4">
                                 <div className="mb-4">
                                   <Image
@@ -311,22 +316,22 @@ export default function Project() {
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div
-                            key={feature.heading}
-                            className="flex flex-col lg:gap-x-8"
+                            key={feature.type}
+                            className="flex flex-col  lg:gap-x-8"
                           >
                             <div className="my-6 lg:mt-0 lg:max-w-prose">
-                              <h3 className="text-lg font-medium text-gray-900">
+                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
                                 {feature.heading}
                               </h3>
-                              <p className="my-2 text-sm text-gray-500">
+                              <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
                                 {feature.subheading}
                               </p>
                             </div>
-                            <div className="lg:flex lg:flex-row lg:gap-12">
-                              <div className=" mb-4 lg:mb-0 lg:max-w-full">
+                            <div className=" lg:flex lg:flex-row lg:gap-12">
+                              <div className="mb-4 dark:text-gray-200 lg:mb-0 lg:max-w-full">
                                 New website link
                                 <Link
-                                  href="https://tripsupport.ca/"
+                                  href="https://tripsupport.ca/book-now-pay-later/"
                                   target="_blank"
                                   className="px-1 text-tiny text-blue-800"
                                 >
@@ -340,11 +345,10 @@ export default function Project() {
                                   />
                                 </div>
                               </div>
-
-                              <div className="text-tiny">
+                              <div className="mb-4 dark:text-gray-200 lg:mb-0 lg:max-w-full">
                                 Old website link
                                 <Link
-                                  href="https://tripsupport.com/"
+                                  href="https://tripsupport.com/book-now-pay-later"
                                   target="_blank"
                                   className="px-1 text-tiny text-blue-800"
                                 >
@@ -361,17 +365,24 @@ export default function Project() {
                             </div>
                           </div>
                         ))
-                      : tab.name === 'Notes'
+                      : tab.name === 'Company details'
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div key={feature.name}>
                             <div className="mt-6 lg:col-span-5 lg:mt-0">
-                              <h3 className="text-lg font-medium text-gray-900">
+                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
                                 {feature.name}
                               </h3>
-                              <p className="mt-2 text-sm text-gray-500">
+                              <p className="mt-0 mb-0 text-tiny font-normal text-gray-600 dark:text-gray-400">
                                 {feature.para1}
                               </p>
+                              <Link
+                                href={feature.link}
+                                target="_blank"
+                                className="text-blue-800 dark:text-blue-400"
+                              >
+                                Visit website
+                              </Link>
                             </div>
                           </div>
                         ))

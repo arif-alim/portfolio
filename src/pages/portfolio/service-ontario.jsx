@@ -1,11 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { SimpleLayout } from '@/components/SimpleLayout'
-
-// Trip Support pages
+// Service ONtario
+//
 import masthead from '@/images/projects/serviceontario/ServiceOntario.png'
 import screen1 from '@/images/projects/serviceontario/ddr1.jpg'
 import screen2 from '@/images/projects/serviceontario/ddr2.jpg'
@@ -32,7 +29,14 @@ import screen22 from '@/images/projects/serviceontario/ddr22.jpg'
 import screen23 from '@/images/projects/serviceontario/ddr23.jpg'
 import screen24 from '@/images/projects/serviceontario/ddr24.jpg'
 
-import { Fragment, useState } from 'react'
+import logoTripSupport from '@/images/projects/tripsupport/TripSupport.svg'
+
+import newSite from '@/images/projects/tripsupport/tripsupport-new.jpg'
+import oldSite from '@/images/projects/tripsupport/tripsupport-old.jpg'
+
+import { SimpleLayout } from '@/components/SimpleLayout'
+
+import { Fragment, useState, useEffect } from 'react'
 import { Tab } from '@headlessui/react'
 
 const tabs = [
@@ -121,11 +125,13 @@ const tabs = [
     ],
   },
   {
-    name: 'Notes',
+    name: 'Company details',
     features: [
       {
-        name: 'Additional notes',
-        para1: '',
+        name: 'About ServiceOntario',
+        para1:
+          "ServiceOntario is a government agency in the province of Ontario, Canada that provides a wide range of services to citizens and businesses. The agency is responsible for delivering essential services, such as driver and vehicle licensing, health card registration, birth and death certificates, and business registration, among others. ServiceOntario aims to provide these services in an efficient, accessible, and customer-focused manner, and it has implemented several initiatives to improve service delivery, including online service options and extended hours of operation. The agency has over 300 service locations across the province, including kiosks in grocery stores and shopping centers, making it easy for customers to access the services they need. ServiceOntario is committed to continuous improvement and innovation, and it works closely with its partners and stakeholders to identify new opportunities to enhance its services and make them more accessible to all Ontarians. The agency's mission is to be a trusted provider of high-quality services that meet the needs of its customers, while promoting public safety and security, and contributing to the economic growth and prosperity of the province.",
+        link: 'https://www.ontario.ca/page/digital-dealership-registration-program',
       },
     ],
   },
@@ -135,11 +141,37 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+// Iframe
+function MyComponent() {
+  const [iframeHeight, setIframeHeight] = useState(800)
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newHeight = window.innerWidth < 768 ? 450 : 1024
+      setIframeHeight(newHeight)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return (
+    <div className="mb-0 lg:mb-8 ">
+      <iframe
+        className="border-1 border-black border-opacity-10"
+        width="100%"
+        height={iframeHeight}
+        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FZstoHuYqSWOp5f5On03TAD%2FDesign---Truth-Clickable%3Fpage-id%3D0%253A1%26node-id%3D47-30142%26viewport%3D1242%252C221%252C0.08%26scaling%3Dscale-down-width%26starting-point-node-id%3D47%253A28004"
+      ></iframe>
+    </div>
+  )
+}
+
 export default function Project() {
   const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
     <SimpleLayout>
-      <div className="bg-white">
+      <div className="">
         <section
           aria-labelledby="features-heading"
           className="mx-auto max-w-7xl"
@@ -148,40 +180,42 @@ export default function Project() {
             <div className="max-w-3xl">
               <h1
                 id="features-heading"
-                className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
               >
                 ServiceOntario
               </h1>
-              <h2 className="mt-1 text-lg font-medium tracking-tight text-gray-500 sm:text-lg">
-                Digital Dealership Registration
+              <h2 className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
+                ServiceOntario
               </h2>
             </div>
 
             <Tab.Group
               as="div"
-              className="scroll-x- mt-12"
+              className="mt-10"
               value={selectedTab}
               onSelect={setSelectedTab}
             >
-              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                <div className="flex-auto border-b border-gray-200 px-4 sm:px-0">
-                  <Tab.List className="-mb-px flex space-x-10">
-                    {tabs.map((tab) => (
-                      <Tab
-                        key={tab.name}
-                        className={({ selected }) =>
-                          classNames(
-                            selected
-                              ? 'border-violet-700 text-base font-semibold text-violet-900 outline-none'
-                              : 'border-transparent text-base font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 ',
-                            'whitespace-nowrap border-b-2 px-2 outline-none visited:border-none '
-                          )
-                        }
-                      >
-                        {tab.name}
-                      </Tab>
-                    ))}
-                  </Tab.List>
+              <div className="overflow-x-hidden whitespace-nowrap">
+                <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                  <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                    <Tab.List className="-mb-px flex ">
+                      {tabs.map((tab) => (
+                        <Tab
+                          key={tab.name}
+                          className={({ selected }) =>
+                            classNames(
+                              selected
+                                ? 'border-blue-700 text-base font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-200'
+                                : 'dark:hover-gray-100 border-transparent font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 ',
+                              'whitespace-nowrap border-b-2 px-6 outline-none visited:border-none'
+                            )
+                          }
+                        >
+                          {tab.name}
+                        </Tab>
+                      ))}
+                    </Tab.List>
+                  </div>
                 </div>
               </div>
 
@@ -193,29 +227,29 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-x-8"
+                            className="flex flex-col lg:gap-x-8"
                           >
-                            <div className="mb-0 lg:col-span-8 lg:mb-8">
+                            <div className="mb-0 lg:mb-8 lg:max-w-prose">
                               <Image
                                 src={feature.imageSrc}
                                 alt={feature.imageAlt}
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
-                            <div className="mt-6 lg:col-span-9 lg:mt-0">
-                              <h3 className="text-xl font-semibold text-gray-900">
+                            <div className="mt-6 lg:mt-0 lg:max-w-prose">
+                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                                 {feature.name}
                               </h3>
-                              <p className="mt-2 text-tiny text-gray-700">
+                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
                                 {feature.para1}
                               </p>
-                              <p className="mt-4 text-tiny text-gray-700">
+                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
                                 {feature.para2}
                               </p>
-                              <p className="mt-4 text-tiny text-gray-700">
+                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
                                 {feature.para3}
                               </p>
-                              <p className="mt-4 text-tiny text-gray-700">
+                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
                                 {feature.para4}
                               </p>
                             </div>
@@ -226,7 +260,7 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col gap-2 bg-slate-100 p-4 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:p-6"
+                            className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:p-6"
                           >
                             <div className="lg:col-span-3">
                               <div className="mb-4">
@@ -385,14 +419,14 @@ export default function Project() {
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div
-                            key={feature.name}
-                            className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-x-8"
+                            key={feature.type}
+                            className="flex flex-col  lg:gap-x-8"
                           >
-                            <div className="mt-6 lg:col-span-6 lg:mt-0">
-                              <h3 className="text-lg font-medium text-gray-900">
+                            <div className="my-6 lg:mt-0 lg:max-w-prose">
+                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
                                 {feature.name}
                               </h3>
-                              <p className="mt-2 text-sm text-gray-500">
+                              <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
                                 {feature.protoLink}
                               </p>
                               <div className="mt-2 mb-6">
@@ -405,27 +439,27 @@ export default function Project() {
                                 </Link>
                               </div>
                             </div>
-                            <div className="mb-0 lg:col-span-12 lg:mb-8">
-                              <iframe
-                                className="border-1 border-black border-opacity-10"
-                                width="100%"
-                                height="800"
-                                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FZstoHuYqSWOp5f5On03TAD%2FDesign---Truth-Clickable%3Fpage-id%3D0%253A1%26node-id%3D47-30142%26viewport%3D1242%252C221%252C0.08%26scaling%3Dscale-down-width%26starting-point-node-id%3D47%253A28004"
-                              ></iframe>
-                            </div>
+                            <MyComponent></MyComponent>
                           </div>
                         ))
-                      : tab.name === 'Notes'
+                      : tab.name === 'Company details'
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div key={feature.name}>
                             <div className="mt-6 lg:col-span-5 lg:mt-0">
-                              <h3 className="text-lg font-medium text-gray-900">
+                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
                                 {feature.name}
                               </h3>
-                              <p className="mt-2 text-sm text-gray-500">
+                              <p className="mt-0 mb-0 text-tiny font-normal text-gray-600 dark:text-gray-400">
                                 {feature.para1}
                               </p>
+                              <Link
+                                href={feature.link}
+                                target="_blank"
+                                className="text-blue-800 dark:text-blue-400"
+                              >
+                                Visit website
+                              </Link>
                             </div>
                           </div>
                         ))

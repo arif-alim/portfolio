@@ -279,10 +279,10 @@ export default function Speakers() {
         />
       </Head>
       <SimpleLayout
-        title="My portfolio, a humble begining!"
-        intro="Started with graphical design at age 15 with Adobe Creative Cloud apps, and gradually progressed into interaction and user experience design. Sketch was the tool I heavily utilized in UI/UX portfolio until Figma came along. I've worked on small to large and complex enterprise applications such as Bombardiers MySmartRouter and MyPrinciple applications."
+        title="My portfolio"
+        intro="I have worked on a variety of projects, including high-profile government projects, where I have demonstrated my design and problem-solving skills by creating intuitive, user-friendly interfaces that meet user needs and technical requirements. My experience working with back-end engineers and my commitment to accessibility ensure that every website and application I work on is optimized for performance and usability."
       >
-        <div className="mt-10 grid grid-cols-1 items-start gap-y-8 gap-x-8 sm:mt-16 sm:gap-y-16  lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 items-start gap-y-10 gap-x-4 lg:grid-cols-4">
           {portfolio.map((project) => (
             <div key={project.id} unmount={false}>
               <div key={project.id}>
@@ -290,16 +290,17 @@ export default function Speakers() {
                   <div className="rounded-4xl group relative h-36 transform overflow-hidden ">
                     <div
                       className={clsx(
-                        'rounded-4xl absolute top-0 left-0 right-4 bottom-6 border transition duration-300 group-hover:scale-95 xl:right-6',
+                        'rounded-4xl absolute top-0 left-0 right-0 bottom-0 border transition duration-300 group-hover:scale-95 ',
                         [
-                          'border-blue-300',
+                          'border-emerald-300',
                           'border-indigo-300',
                           'border-sky-300',
-                        ][project.id % 3]
+                          'border-rose-300',
+                        ][project.id % 5]
                       )}
                     />
                     <div
-                      className="absolute inset-0 my-auto bg-blue-50"
+                      className="absolute inset-0 my-auto bg-zinc-100"
                       style={{ clipPath: `url(#${id}-${project.id % 3})` }}
                     >
                       <div className="flex h-full w-full flex-row items-center p-12 align-middle sm:p-4">
@@ -311,7 +312,7 @@ export default function Speakers() {
                       </div>
                     </div>
                   </div>
-                  <h3 className="font-display mt-8 text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+                  <h3 className="font-display mt-2 text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
                     {project.name}
                   </h3>
                   <p className="text-sm tracking-tight text-zinc-500 dark:font-light dark:text-zinc-100">
