@@ -185,7 +185,7 @@ export default function Project() {
                 ServiceOntario
               </h1>
               <h2 className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
-                ServiceOntario
+                Digital Dealership Registration (DDR)
               </h2>
             </div>
 
