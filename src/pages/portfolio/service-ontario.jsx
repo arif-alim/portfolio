@@ -29,11 +29,6 @@ import screen22 from '@/images/projects/serviceontario/ddr22.jpg'
 import screen23 from '@/images/projects/serviceontario/ddr23.jpg'
 import screen24 from '@/images/projects/serviceontario/ddr24.jpg'
 
-import logoTripSupport from '@/images/projects/tripsupport/TripSupport.svg'
-
-import newSite from '@/images/projects/tripsupport/tripsupport-new.jpg'
-import oldSite from '@/images/projects/tripsupport/tripsupport-old.jpg'
-
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 import { Fragment, useState, useEffect } from 'react'
