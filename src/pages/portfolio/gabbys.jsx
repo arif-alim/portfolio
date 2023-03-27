@@ -76,7 +76,7 @@ export default function HydroOne() {
   return (
     <>
       <Head>
-        <title>Gabby's - Project</title>
+        <title>Gabbys - Project</title>
         <meta
           name="description"
           content="At Lieber Group, we know how important timelines are. We have the capacity and the ability to work on complex projects. No matter how small or big the project is, we will always adhere to our clients timeline and budget. We take pride in showcasing our workmanship and delivering projects on time"
@@ -94,7 +94,7 @@ export default function HydroOne() {
                   id="features-heading"
                   className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
                 >
-                  Gabby's
+                  Gabbys
                 </h1>
                 <h2 className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
                   Graphic design, mobile repsonsive website and logo design.
