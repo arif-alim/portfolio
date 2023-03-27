@@ -1,7 +1,6 @@
 import nextMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 import rehypePrism from '@mapbox/rehype-prism'
-import { EXPORT_DETAIL } from 'next/constants'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,7 +19,6 @@ const withMDX = nextMDX({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypePrism],
   },
-  exportTrailingSlash: EXPORT_DETAIL,
 })
 
 export default withMDX(nextConfig)
