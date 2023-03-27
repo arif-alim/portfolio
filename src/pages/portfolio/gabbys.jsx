@@ -8,7 +8,6 @@ import screen3 from '@/images/projects/gabbys/gabbys-3.jpg'
 import screen4 from '@/images/projects/gabbys/gabbys-4.jpg'
 import screen5 from '@/images/projects/gabbys/gabbys-5.jpg'
 import screen6 from '@/images/projects/gabbys/gabbys-6.jpg'
-
 import logoGabbys from '@/images/projects/gabbys/gabbys.svg'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -22,14 +21,13 @@ const tabs = [
       {
         name: "Gabby's",
         para1:
-          'The Lieber Group website redesign is at the forefront of the latest UI trends and UX laws, resulting in a truly modern and user-friendly design that enhances accessibility and engagement.',
+          'In this case study, we will explore the user interface (UI) and user experience (UX) design of the website for Gabbys.ca, a Canadian online store that sells unique and handmade clothing, jewelry, and accessories.',
         para2:
-          'The use of responsive design and parallax scrolling improves accessibility and engagement by optimizing the website for mobile devices and creating a dynamic and immersive user experience. Users can access the website seamlessly on any device, and the engaging design keeps them interested and engaged with the content.',
+          'Gabbys.ca approached our team to revamp their existing website, which was outdated and not optimized for mobile devices. They wanted a modern, user-friendly design that showcased their products and made it easy for customers to shop and make purchases online.',
         para3:
-          'Overall, the Lieber Group website redesign is a perfect example of how the latest UI trends and UX laws can be utilized to create a modern and user-friendly design that enhances accessibility and engagement. The improved navigation and search functionality, coupled with the modern design, results in a significant improvement in user experience and customer satisfaction.',
-
+          'Based on our research, we developed a design strategy that focused on simplicity, clarity, and ease of use. We started with wireframes and prototypes to test and iterate on different design concepts and layouts. We also worked closely with the client to ensure that the design reflected their brand and vision.',
         imageSrc: logoGabbys,
-        imageAlt: 'Lieber group logo',
+        imageAlt: 'Gabbys logo',
       },
     ],
   },
@@ -59,9 +57,9 @@ const tabs = [
       {
         name: "Gabby's",
         para1:
-          "Lieber Group is a Canadian company that provides a wide range of consulting and advisory services to businesses of all sizes. Established in 1986, the company has built a strong reputation for its expertise and commitment to delivering high-quality solutions that meet the unique needs of each client. Lieber Group offers a range of services, including strategy consulting, project management, IT consulting, and business analysis, among others. With a focus on customer satisfaction and a team of highly skilled professionals, Lieber Group is committed to providing exceptional service and tailored solutions to help its clients achieve their business goals. With over 35 years of experience, Lieber Group has a deep understanding of the Canadian business landscape and is well-positioned to help businesses navigate the challenges of today's rapidly changing business environment.",
+          "Gabby's, founded in 1989, is a family-owned and operated business that offers fresh and delicious food in a welcoming environment. With over 30 years of experience, Gabby's has become a well-known and trusted brand in the food industry, serving its customers with the highest quality ingredients and exceptional customer service. The company takes pride in its commitment to sustainability and supporting local farmers and businesses. Gabby's has several locations in the Greater Toronto Area, offering a variety of menu options for breakfast, lunch, and dinner. With its warm and inviting atmosphere, Gabby's is a favorite destination for families, friends, and colleagues to gather and enjoy good food and good company.",
 
-        link: 'http://www.liebergroup.ca/',
+        link: 'https://gabbys.ca/',
       },
     ],
   },
@@ -77,10 +75,6 @@ export default function HydroOne() {
     <>
       <Head>
         <title>Gabbys - Project</title>
-        <meta
-          name="description"
-          content="At Lieber Group, we know how important timelines are. We have the capacity and the ability to work on complex projects. No matter how small or big the project is, we will always adhere to our clients timeline and budget. We take pride in showcasing our workmanship and delivering projects on time"
-        />
       </Head>
       <SimpleLayout>
         <div>
@@ -144,7 +138,7 @@ export default function HydroOne() {
                               key={feature.name}
                               className="flex flex-col lg:gap-x-8"
                             >
-                              <div className="mb-4 max-w-[200px] sm:mt-0 lg:mt-4">
+                              <div className="mb-4 max-w-[300px] sm:mt-0 lg:mt-4">
                                 <Image
                                   src={feature.imageSrc}
                                   alt={feature.imageAlt}
