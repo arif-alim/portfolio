@@ -200,9 +200,9 @@ export default function Project() {
                           className={({ selected }) =>
                             classNames(
                               selected
-                                ? 'border-blue-700 text-base font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-200'
-                                : 'dark:hover-gray-100 border-transparent font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 ',
-                              'whitespace-nowrap border-b-2 px-6 outline-none visited:border-none'
+                                ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
+                                : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
+                              'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
                             )
                           }
                         >
@@ -255,158 +255,105 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-2 lg:p-6"
+                            className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6"
                           >
-                            <div className="lg:col-span-3">
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc1}
-                                  alt={feature.imageAlt1}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc5}
-                                  alt={feature.imageAlt5}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc9}
-                                  alt={feature.imageAlt9}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc13}
-                                  alt={feature.imageAlt13}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc23}
-                                  alt={feature.imageAlt23}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                            <div className="flex flex-col gap-4 lg:col-span-4">
+                              <Image
+                                src={feature.imageSrc1}
+                                alt={feature.imageAlt1}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc5}
+                                alt={feature.imageAlt5}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc9}
+                                alt={feature.imageAlt9}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc13}
+                                alt={feature.imageAlt13}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc17}
+                                alt={feature.imageAlt17}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc21}
+                                alt={feature.imageAlt21}
+                                className="rounded-lg object-cover object-center"
+                              />
                             </div>
 
-                            <div className="lg:col-span-3">
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc2}
-                                  alt={feature.imageAlt2}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc6}
-                                  alt={feature.imageAlt6}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc10}
-                                  alt={feature.imageAlt10}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc14}
-                                  alt={feature.imageAlt14}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc18}
-                                  alt={feature.imageAlt18}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                            <div className="flex flex-col gap-4 lg:col-span-4">
+                              <Image
+                                src={feature.imageSrc2}
+                                alt={feature.imageAlt2}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc6}
+                                alt={feature.imageAlt6}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc10}
+                                alt={feature.imageAlt10}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc14}
+                                alt={feature.imageAlt14}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc18}
+                                alt={feature.imageAlt18}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc22}
+                                alt={feature.imageAlt22}
+                                className="rounded-lg object-cover object-center"
+                              />
                             </div>
 
-                            <div className="lg:col-span-3">
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc3}
-                                  alt={feature.imageAlt3}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc7}
-                                  alt={feature.imageAlt7}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc9}
-                                  alt={feature.imageAlt9}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc11}
-                                  alt={feature.imageAlt11}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc15}
-                                  alt={feature.imageAlt15}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-
-                            <div className="lg:col-span-3">
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc4}
-                                  alt={feature.imageAlt4}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc8}
-                                  alt={feature.imageAlt8}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc12}
-                                  alt={feature.imageAlt12}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc16}
-                                  alt={feature.imageAlt16}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="mb-4">
-                                <Image
-                                  src={feature.imageSrc20}
-                                  alt={feature.imageAlt20}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                            <div className="flex flex-col gap-4 lg:col-span-4">
+                              <Image
+                                src={feature.imageSrc3}
+                                alt={feature.imageAlt3}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc7}
+                                alt={feature.imageAlt7}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc11}
+                                alt={feature.imageAlt11}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc15}
+                                alt={feature.imageAlt15}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc19}
+                                alt={feature.imageAlt19}
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc23}
+                                alt={feature.imageAlt23}
+                                className="rounded-lg object-cover object-center"
+                              />
                             </div>
                           </div>
                         ))
@@ -441,20 +388,21 @@ export default function Project() {
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div key={feature.name}>
-                            <div className="mt-6 lg:col-span-5 lg:mt-0">
-                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
+                            <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                                 {feature.name}
                               </h3>
-                              <p className="mt-0 mb-0 text-tiny font-normal text-gray-600 dark:text-gray-400">
+                              <p className="mt-3 text-tiny font-normal text-gray-600 dark:text-gray-400">
                                 {feature.para1}
                               </p>
-                              <Link
-                                href={feature.link}
-                                target="_blank"
-                                className="text-blue-800 dark:text-blue-400"
+                              <button
+                                type="button"
+                                className="mt-4 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                               >
-                                Visit website
-                              </Link>
+                                <Link href={feature.link} target="_blank">
+                                  View Website
+                                </Link>
+                              </button>
                             </div>
                           </div>
                         ))

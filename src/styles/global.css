@@ -1,0 +1,32 @@
+/* Hide scrollbar for all elements */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for specific element */
+.element::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'new-order', sans-serif;
+}
+
+.tab-heading {
+  font-family: 'new-order', sans-serif;
+}
+
+nav ul li a {
+  font-family: 'new-order', sans-serif;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+button {
+  font-family: 'new-order', sans-serif;
+}

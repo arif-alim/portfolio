@@ -184,23 +184,26 @@ export function HydroFigma() {
   return (
     <ul
       role="list"
-      className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 xl:gap-x-8"
+      className="mt-[52px] grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 xl:gap-x-8"
     >
       {files.map((file) => (
         <li key={file.source} className="relative">
           <div className="group block w-full overflow-hidden rounded-lg border-2">
             <Image src={file.source} alt="" className="rounded-lg bg-cover" />
           </div>
-          <p className="pointer-events-none mt-2 block truncate text-base font-medium text-gray-900 dark:text-gray-300">
-            {file.title}
-          </p>
-          <Link
-            href={file.link}
-            target="_blank"
-            className="text-tiny text-blue-800 dark:text-blue-400"
-          >
-            View prototype in figma
-          </Link>
+          <div className="mt-4">
+            <p className="pointer-events-none block truncate text-base font-medium leading-tight text-gray-900 dark:text-gray-300">
+              {file.title}
+            </p>
+
+            <Link
+              href={file.link}
+              target="_blank"
+              className="font-base border-none text-sm tracking-tight text-indigo-800 dark:text-blue-500"
+            >
+              View prototype in figma
+            </Link>
+          </div>
         </li>
       ))}
     </ul>
@@ -250,9 +253,9 @@ export default function HydroOne() {
                             className={({ selected }) =>
                               classNames(
                                 selected
-                                  ? 'border-blue-700 text-base font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-200'
-                                  : 'dark:hover-gray-100 border-transparent font-normal text-gray-900 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 ',
-                                'whitespace-nowrap border-b-2 px-6 outline-none visited:border-none'
+                                  ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
+                                  : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
+                                'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
                               )
                             }
                           >
@@ -281,7 +284,7 @@ export default function HydroOne() {
                                 <Image
                                   src={feature.imageSrc}
                                   alt={feature.imageAlt}
-                                  className="rounded-lg object-cover object-center dark:invert"
+                                  className="dark:invert"
                                 />
                               </div>
 
@@ -303,19 +306,20 @@ export default function HydroOne() {
                                 <h2 className=" text-xl font-semibold dark:text-zinc-100">
                                   Sustainability 2021
                                 </h2>
-                                <Link
-                                  href="https://www.hydroone.com/sustainability"
-                                  className="text-blue-800 dark:text-blue-300"
-                                  target="_blank"
-                                >
-                                  hydroone.com/sustainability
-                                </Link>
 
                                 <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
                                   Created mobile and tablet responsive pages,
                                   sustainability page sustainability/community,
                                   sustainability/planet, sustainability/people.
                                 </p>
+                                <Link
+                                  href="https://www.hydroone.com/energy-hub"
+                                  target="_blank"
+                                  type="button"
+                                  className="mt-4  rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                >
+                                  View sustainability page
+                                </Link>
                               </div>
                               <div
                                 key={feature.name}
@@ -373,10 +377,11 @@ export default function HydroOne() {
                                     </h2>
                                     <Link
                                       href="https://www.hydroone.com/energy-hub"
-                                      className="text-blue-800 dark:text-blue-300"
                                       target="_blank"
+                                      type="button"
+                                      className="mt-4  rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                                     >
-                                      hydroone.com/energy-hub
+                                      View Energy Hub page
                                     </Link>
 
                                     <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
@@ -444,20 +449,21 @@ export default function HydroOne() {
                         ? /* Render content for Wireframes tab */
                           tab.features.map((feature) => (
                             <div key={feature.name}>
-                              <div className="mt-6 lg:col-span-5 lg:mt-0">
-                                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
+                              <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+                                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                                   {feature.name}
                                 </h3>
-                                <p className="mt-0 mb-0 text-tiny font-normal text-gray-600 dark:text-gray-400">
+                                <p className="mt-3 text-tiny font-normal text-gray-600 dark:text-gray-400">
                                   {feature.para1}
                                 </p>
-                                <Link
-                                  href={feature.link}
-                                  target="_blank"
-                                  className="text-blue-800 dark:text-blue-400"
+                                <button
+                                  type="button"
+                                  className="mt-4 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                                 >
-                                  Visit website
-                                </Link>
+                                  <Link href={feature.link} target="_blank">
+                                    View Website
+                                  </Link>
+                                </button>
                               </div>
                             </div>
                           ))

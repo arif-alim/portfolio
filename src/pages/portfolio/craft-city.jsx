@@ -1,20 +1,18 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-
-import { SimpleLayout } from '@/components/SimpleLayout'
+import Head from 'next/head'
 
 // Craft City Logo
-import ccLogo from '@/images/projects/craftcity/ccLogo.jpg'
-import ccLogo1 from '@/images/projects/craftcity/ccLogo1.jpg'
-import ccLogo2 from '@/images/projects/craftcity/ccLogo2.jpg'
-import ccLogo3 from '@/images/projects/craftcity/ccLogo3.jpg'
+import ccLogo1 from '@/images/projects/craftcity/ccLogo.jpg'
+import ccLogo2 from '@/images/projects/craftcity/ccLogo1.jpg'
+import ccLogo3 from '@/images/projects/craftcity/ccLogo2.jpg'
+import ccLogo4 from '@/images/projects/craftcity/ccLogo3.jpg'
 // Craft City Sticker
-import ccSticker1 from '@/images/projects/craftcity/ccSticker1.jpg'
-import ccSticker2 from '@/images/projects/craftcity/ccSticker2.jpg'
-import ccSticker3 from '@/images/projects/craftcity/ccSticker3.jpg'
+import ccSticker1 from '@/images/projects/craftcity/ccSticker1.png'
+import ccSticker2 from '@/images/projects/craftcity/ccSticker2.png'
+import ccSticker3 from '@/images/projects/craftcity/ccSticker3.png'
 // Craft City Can Design
-import ccCan from '@/images/projects/craftcity/ccCanDesign.jpg'
+import ccCan1 from '@/images/projects/craftcity/ccCanDesign.jpg'
 import ccCan2 from '@/images/projects/craftcity/ccCanDesign2.jpg'
 import ccCan3 from '@/images/projects/craftcity/ccCanDesign3.jpg'
 import ccCan4 from '@/images/projects/craftcity/ccCanDesign4.jpg'
@@ -24,267 +22,339 @@ import ccPromo1 from '@/images/projects/craftcity/ccPromo1.jpg'
 import ccPromo2 from '@/images/projects/craftcity/ccPromo2.jpg'
 import ccPromo3 from '@/images/projects/craftcity/ccPromo3.jpg'
 import ccPromo4 from '@/images/projects/craftcity/ccPromo4.jpg'
-// Craft City Cider
-import ccCiderLogo from '@/images/projects/craftcity/ciderLogo.jpg'
-import ccCider1 from '@/images/projects/craftcity/cider1.jpg'
-import ccCider2 from '@/images/projects/craftcity/cider2.jpg'
-import ccCider3 from '@/images/projects/craftcity/cider3.jpg'
+import ccPromo5 from '@/images/projects/craftcity/ccPromo4.jpg'
 
-export default function Speaking() {
+import logoCraftCity from '@/images/projects/craftcity/craftcity-logo.svg'
+
+import { SimpleLayout } from '@/components/SimpleLayout'
+
+import { Fragment, useState, useEffect } from 'react'
+import { Tab } from '@headlessui/react'
+
+const tabs = [
+  {
+    name: 'Summary',
+    features: [
+      {
+        heading: 'Designed the hard seltzer cans using Illustrator',
+        description:
+          'Craft City Hard Seltzer is a new hard seltzer brand based in Toronto, Canada. They are a small batch, handcrafted hard seltzer brand that is made with real fruit juice and natural flavours. They are currently available in Ontario, Canada.',
+        imageSrc: logoCraftCity,
+        imageAlt: 'Craft City logo',
+      },
+    ],
+  },
+  {
+    name: 'Logo',
+    features: [
+      {
+        heading: 'Logo Design',
+        description: 'Designed their custom logo and their e-commerce website',
+        imageSrc1: ccLogo1,
+        imageAlt1: 'Craft City logo',
+        imageSrc2: ccLogo2,
+        imageAlt2: 'Craft City logo',
+        imageSrc3: ccLogo3,
+        imageAlt3: 'Craft City logo',
+        imageSrc4: ccLogo4,
+        imageAlt4: 'Craft City logo',
+      },
+    ],
+  },
+  {
+    name: 'Sticker',
+    features: [
+      {
+        heading: 'Sticker Design',
+        description: 'Designed their custom logo and their e-commerce website',
+        imageSrc1: ccSticker1,
+        imageAlt1: 'Craft City logo',
+        imageSrc2: ccSticker2,
+        imageAlt2: 'Craft City logo',
+        imageSrc3: ccSticker3,
+        imageAlt3: 'Craft City logo',
+      },
+    ],
+  },
+  {
+    name: 'Can Design',
+    features: [
+      {
+        heading: 'Sticker Design',
+        description: 'Designed the hard seltzer cans using Illustrator',
+        imageSrc1: ccCan1,
+        imageAlt1: 'Craft City logo',
+        imageSrc2: ccCan2,
+        imageAlt2: 'Craft City logo',
+        imageSrc3: ccCan3,
+        imageAlt3: 'Craft City logo',
+        imageSrc3: ccCan4,
+        imageAlt3: 'Craft City logo',
+        imageSrc3: ccCan5,
+        imageAlt3: 'Craft City logo',
+      },
+    ],
+  },
+  {
+    name: 'Marketing',
+    features: [
+      {
+        heading: 'Marketing & Promotional Assets',
+        description:
+          'Designed and printed custom promotional assets such as banners, posters etc.',
+        imageSrc1: ccPromo1,
+        imageAlt1: 'Craft City logo',
+        imageSrc2: ccPromo2,
+        imageAlt2: 'Craft City logo',
+        imageSrc3: ccPromo3,
+        imageAlt3: 'Craft City logo',
+        imageSrc3: ccPromo4,
+        imageAlt3: 'Craft City logo',
+        imageSrc3: ccPromo5,
+        imageAlt3: 'Craft City logo',
+      },
+    ],
+  },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+export default function Project() {
+  const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
     <>
       <Head>
         <title>Craft City - Project</title>
         <meta name="description" content="Craft City Hard Seltzer" />
       </Head>
-      <SimpleLayout
-        title="Craft City"
-        intro="Locally Made & Globally Inspired. Hard seltzer that is all natural, made with real blueberries and electrolyte infused. First stop, Bondi Blueberry."
-      >
-        <div className="space-y-24">
-          <div className="container mx-auto ">
-            <section className="12">
-              <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  Logo Design
-                </h2>
-                {/* <Link
-                  href="#"
-                  className="text-blue-800 dark:text-blue-300"
-                  target="_blank"
+      <SimpleLayout>
+        <div>
+          <section
+            aria-labelledby="features-heading"
+            className="mx-auto max-w-7xl"
+          >
+            <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
+              <div className="max-w-3xl">
+                <h1
+                  id="features-heading"
+                  className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
                 >
-                  craft-city.ca
-                </Link> */}
-
-                <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
+                  Craft City
+                </h1>
+                <p className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
                   Designed their custom logo and their e-commerce website.
                 </p>
               </div>
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-4">
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccLogo}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded bg-cover shadow-md"
-                    src={ccLogo1}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccLogo2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccLogo3}
-                    alt=""
-                  ></Image>
-                </div>
-              </div>
-            </section>
-            <section className="my-8">
-              <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  Sticker design
-                </h2>
-                {/* <Link
-                  href="#"
-                  className="text-blue-800 dark:text-blue-300"
-                  target="_blank"
-                >
-                  craft-city.ca
-                </Link> */}
 
-                <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  Created promotional stickers
-                </p>
-              </div>
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-4">
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccSticker1}
-                    alt=""
-                  ></Image>
+              <Tab.Group
+                as="div"
+                className="mt-10"
+                value={selectedTab}
+                onSelect={setSelectedTab}
+              >
+                <div className="overflow-x-hidden whitespace-nowrap">
+                  <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                    <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                      <Tab.List className="-mb-px flex ">
+                        {tabs.map((tab) => (
+                          <Tab
+                            key={tab.name}
+                            className={({ selected }) =>
+                              classNames(
+                                selected
+                                  ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
+                                  : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
+                                'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
+                              )
+                            }
+                          >
+                            {tab.name}
+                          </Tab>
+                        ))}
+                      </Tab.List>
+                    </div>
+                  </div>
                 </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccSticker2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccSticker3}
-                    alt=""
-                  ></Image>
-                </div>
-              </div>
-            </section>
-            <section className="my-8">
-              <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  Can design
-                </h2>
-                {/* <Link
-                  href="#"
-                  className="text-blue-800 dark:text-blue-300"
-                  target="_blank"
-                >
-                  craft-city.ca
-                </Link> */}
 
-                <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  Designed the hard seltzer cans using Illustrator
-                </p>
-              </div>
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-3">
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan3}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan4}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCan5}
-                    alt=""
-                  ></Image>
-                </div>
-              </div>
-            </section>
-            <section className="my-8">
-              <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  Promotional assets
-                </h2>
-                {/* <Link
-                  href="#"
-                  className="text-blue-800 dark:text-blue-300"
-                  target="_blank"
-                >
-                  craft-city.ca
-                </Link> */}
+                <Tab.Panels as={Fragment}>
+                  {tabs.map((tab) => (
+                    <Tab.Panel
+                      key={tab.name}
+                      className="space-y-16 pt-4 lg:pt-8"
+                    >
+                      {tab.name === 'Summary'
+                        ? /* Render content for Summary tab */
+                          tab.features.map((feature) => (
+                            <div
+                              key={feature.heading}
+                              className="flex flex-col lg:gap-x-8"
+                            >
+                              <div className="mb-0 lg:mb-8 lg:max-w-[150px]">
+                                <Image
+                                  src={feature.imageSrc}
+                                  alt={feature.imageAlt}
+                                  className="dark:invert"
+                                />
+                              </div>
+                              <div className="mt-6 lg:mt-0 lg:max-w-prose">
+                                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
+                                  {feature.heading}
+                                </h3>
+                                <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
+                                  {feature.description}
+                                </p>
+                              </div>
+                            </div>
+                          ))
+                        : tab.name === 'Logo'
+                        ? /* Render content for Wireframes tab */
+                          tab.features.map((feature) => (
+                            <div
+                              key={feature.name}
+                              className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6"
+                            >
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc1}
+                                  alt={feature.imageAlt1}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
 
-                <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  Designed and printed custom promotional assets such as
-                  banners, posters etc.
-                </p>
-              </div>
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-4">
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccPromo1}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccPromo2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccPromo3}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccPromo4}
-                    alt=""
-                  ></Image>
-                </div>
-              </div>
-            </section>
-            <section className="my-8">
-              <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
-                <h2 className=" text-xl font-bold  dark:text-zinc-100">
-                  Craft City cider
-                </h2>
-                {/* <Link
-                  href="#"
-                  className="text-blue-800 dark:text-blue-300"
-                  target="_blank"
-                >
-                  craft-city.ca
-                </Link> */}
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc2}
+                                  alt={feature.imageAlt2}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
 
-                <p className="mt-4 max-w-3xl text-tiny text-zinc-700 dark:font-light dark:text-zinc-100">
-                  Helped create the logo and can design
-                </p>
-              </div>
-              <div className="mt-6 grid grid-cols-1 items-start gap-x-4 sm:mt-10 lg:grid-cols-4">
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCiderLogo}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCider1}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCider2}
-                    alt=""
-                  ></Image>
-                </div>
-                <div className="mb-12 px-0 sm:px-2 md:p-3">
-                  <Image
-                    className="rounded shadow-md"
-                    src={ccCider3}
-                    alt=""
-                  ></Image>
-                </div>
-              </div>
-            </section>
-          </div>
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc3}
+                                  alt={feature.imageAlt3}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc4}
+                                  alt={feature.imageAlt4}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                            </div>
+                          ))
+                        : tab.name === 'Sticker'
+                        ? /* Render content for Wireframes tab */
+                          tab.features.map((feature) => (
+                            <div
+                              key={feature.name}
+                              className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6"
+                            >
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc1}
+                                  alt={feature.imageAlt1}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc2}
+                                  alt={feature.imageAlt2}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc3}
+                                  alt={feature.imageAlt3}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc4}
+                                  alt={feature.imageAlt4}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                            </div>
+                          ))
+                        : tab.name === 'Can Design'
+                        ? /* Render content for Wireframes tab */
+                          tab.features.map((feature) => (
+                            <div
+                              key={feature.name}
+                              className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6"
+                            >
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc1}
+                                  alt={feature.imageAlt1}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc2}
+                                  alt={feature.imageAlt2}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc3}
+                                  alt={feature.imageAlt3}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                            </div>
+                          ))
+                        : tab.name === 'Marketing'
+                        ? /* Render content for Wireframes tab */
+                          tab.features.map((feature) => (
+                            <div
+                              key={feature.name}
+                              className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6"
+                            >
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc1}
+                                  alt={feature.imageAlt1}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc2}
+                                  alt={feature.imageAlt2}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                              <div className="flex flex-col gap-4 lg:col-span-3">
+                                <Image
+                                  src={feature.imageSrc3}
+                                  alt={feature.imageAlt3}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                            </div>
+                          ))
+                        : null}
+                    </Tab.Panel>
+                  ))}
+                </Tab.Panels>
+              </Tab.Group>
+            </div>
+          </section>
         </div>
       </SimpleLayout>
     </>
