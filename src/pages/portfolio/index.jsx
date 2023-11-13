@@ -5,10 +5,11 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Logo preset bg
 import logoCraftCity from '@/images/projects/craftcity.png'
+import logoCooperators from '@/images/projects/cooperators-logo.png'
 import logoTripSupport from '@/images/projects/tripsupport.png'
 import logoBombardier from '@/images/projects/bombardier.png'
 import logoChicasaDesign from '@/images/projects/chicasadesign.png'
-import logoDistrictEatery from '@/images/projects/districteatery.png'
+import logoDistrictEatery from '@/images/projects/district-logo.png'
 import logoEquityBank from '@/images/projects/equitybank.png'
 import logoHydroOne from '@/images/projects/hydroone.png'
 import logoIslandTraders from '@/images/projects/islandtraders.png'
@@ -19,12 +20,12 @@ import logoServiceOntario from '@/images/projects/serviceontario.png'
 import logoTitanGroup from '@/images/projects/titangroup.png'
 import logoUrbanDining from '@/images/projects/urbandining.png'
 import logoWolff from '@/images/projects/wolff.png'
-import logoCooper from '@/images/projects/cooper.png'
+import logoCooper from '@/images/projects/cooper-logo.png'
 import logoTritecSolutions from '@/images/projects/tritecsolutions.png'
-import logoLieberGroup from '@/images/projects/liebergroup.png'
+import logoLieberGroup from '@/images/projects/liebergroup-logo.png'
 import logoGabbys from '@/images/projects/gabbys.png'
 import logoHeyLucys from '@/images/projects/heylucys.png'
-import logoPerfectone from '@/images/projects/perfectone.png'
+import logoPerfectone from '@/images/projects/perfectone-logo.png'
 import logoAirbus from '@/images/projects/airbus.png'
 
 import { useEffect, useId, useState } from 'react'
@@ -34,6 +35,16 @@ import clsx from 'clsx'
 const portfolio = [
   {
     id: 0,
+    name: 'Co-operators',
+    about: 'Insurance company',
+    link: {
+      href: '/portfolio/co-operators',
+      label: 'View project',
+    },
+    image: logoCooperators,
+  },
+  {
+    id: 1,
     name: 'Bombardier',
     about: 'Manufacturer of business jets',
     link: {
@@ -43,7 +54,7 @@ const portfolio = [
     image: logoBombardier,
   },
   {
-    id: 1,
+    id: 2,
     name: 'Trip Support',
     about: 'Online Travel Agency',
     link: {
@@ -53,7 +64,7 @@ const portfolio = [
     image: logoTripSupport,
   },
   {
-    id: 2,
+    id: 3,
     name: 'Service Ontario',
     about: 'Government of Ontario',
     link: {
@@ -63,7 +74,7 @@ const portfolio = [
     image: logoServiceOntario,
   },
   {
-    id: 3,
+    id: 4,
     name: 'Hydro One',
     about: 'Electricity distribution utility',
     link: {
@@ -72,18 +83,8 @@ const portfolio = [
     },
     image: logoHydroOne,
   },
-  // {
-  //   id: 20,
-  //   name: 'Airbus',
-  //   about: 'Aerospace Industry',
-  //   link: {
-  //     href: '/portfolio/airbus',
-  //     label: 'View project',
-  //   },
-  //   image: logoAirbus,
-  // },
   {
-    id: 21,
+    id: 5,
     name: 'Perfec-tone',
     about: 'Aerospace Industry',
     link: {
@@ -92,18 +93,8 @@ const portfolio = [
     },
     image: logoPerfectone,
   },
-  // {
-  //   id: 4,
-  //   name: 'NBA Restaurant',
-  //   about: 'NBA courtside restaurant',
-  //   link: {
-  //     href: '/portfolio/nba-restaurant',
-  //     label: 'View project',
-  //   },
-  //   image: logoNBARestaurant,
-  // },
   {
-    id: 5,
+    id: 6,
     name: 'Chicasa Design',
     about: 'Custom Home Builders',
     link: {
@@ -123,7 +114,7 @@ const portfolio = [
     image: logoCraftCity,
   },
   {
-    id: 15,
+    id: 8,
     name: 'Cooper',
     about: 'Uber like app for Bahamas',
     link: {
@@ -133,7 +124,7 @@ const portfolio = [
     image: logoCooper,
   },
   {
-    id: 6,
+    id: 9,
     name: 'Titan Group',
     about: 'Custom home builders',
     link: {
@@ -143,7 +134,7 @@ const portfolio = [
     image: logoTitanGroup,
   },
   {
-    id: 8,
+    id: 10,
     name: 'Miss Bahamas',
     about: 'Bahamas beauty pageant',
     link: {
@@ -153,18 +144,18 @@ const portfolio = [
     image: logoMissBahamas,
   },
 
-  // {
-  //   id: 9,
-  //   name: 'District Eatery',
-  //   about: 'Chain of restaurants',
-  //   link: {
-  //     href: '/portfolio/district-eatery',
-  //     label: 'View project',
-  //   },
-  //   image: logoDistrictEatery,
-  // },
   {
-    id: 10,
+    id: 11,
+    name: 'District Eatery',
+    about: 'Chain of restaurants',
+    link: {
+      href: '/portfolio/district-eatery',
+      label: 'View project',
+    },
+    image: logoDistrictEatery,
+  },
+  {
+    id: 12,
     name: 'Equity Bank',
     about: 'Private banking Bahamas',
     link: {
@@ -174,7 +165,7 @@ const portfolio = [
     image: logoEquityBank,
   },
   {
-    id: 11,
+    id: 13,
     name: 'Island Traders',
     about: 'Courier service in Bahamas',
     link: {
@@ -184,7 +175,7 @@ const portfolio = [
     image: logoIslandTraders,
   },
   {
-    id: 12,
+    id: 14,
     name: 'Niagara Falls Craft Distillers',
     about: 'Spirit distillers',
     link: {
@@ -194,26 +185,16 @@ const portfolio = [
     image: logoNFCD,
   },
 
-  // {
-  //   id: 13,
-  //   name: 'Urban Dining',
-  //   about: 'Chain of restaurants',
-  //   link: {
-  //     href: '/portfolio/urban-dining',
-  //     label: 'View project',
-  //   },
-  //   image: logoUrbanDining,
-  // },
-  // {
-  //   id: 14,
-  //   name: 'Wolff Mechanical',
-  //   about: 'Construction company',
-  //   link: {
-  //     href: '/portfolio/wolff',
-  //     label: 'View project',
-  //   },
-  //   image: logoWolff,
-  // },
+  {
+    id: 15,
+    name: 'Urban Dining',
+    about: 'Chain of restaurants',
+    link: {
+      href: '/portfolio/urban-dining',
+      label: 'View project',
+    },
+    image: logoUrbanDining,
+  },
   {
     id: 16,
     name: 'Tritec Solutions',
@@ -282,12 +263,12 @@ export default function Speakers() {
         title="My portfolio"
         intro="I have worked on a variety of projects, including high-profile government projects, where I have demonstrated my design and problem-solving skills by creating intuitive, user-friendly interfaces that meet user needs and technical requirements. My experience working with back-end engineers and my commitment to accessibility ensure that every website and application I work on is optimized for performance and usability."
       >
-        <div className="mt-10 grid grid-cols-1 items-start gap-y-10 gap-x-4 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 items-start gap-y-10 gap-x-6 lg:grid-cols-3">
           {portfolio.map((project) => (
             <div key={project.id} unmount={false}>
               <div key={project.id}>
                 <Link href={project.link.href}>
-                  <div className="rounded-4xl group relative h-36 transform overflow-hidden ">
+                  <div className="rounded-4xl group relative h-[196px] transform overflow-hidden ">
                     <div
                       className={clsx(
                         'rounded-4xl absolute top-0 left-0 right-0 bottom-0 border transition duration-300 group-hover:scale-95 ',
