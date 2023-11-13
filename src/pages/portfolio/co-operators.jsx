@@ -1,29 +1,33 @@
 // Homepage
 //
-import homepage1 from '@/images/projects/co-operators/homepage1.png'
-import homepage2 from '@/images/projects/co-operators/homepage2.png'
-import homepage3 from '@/images/projects/co-operators/homepage3.png'
-import homepage4 from '@/images/projects/co-operators/homepage4.png'
-import homepage5 from '@/images/projects/co-operators/homepage5.png'
+import homepage1 from '@/images/projects/co-operators/homepage1.jpg'
+import homepage2 from '@/images/projects/co-operators/homepage2.jpg'
+import homepage3 from '@/images/projects/co-operators/homepage3.jpg'
+import homepage4 from '@/images/projects/co-operators/homepage4.jpg'
+import homepage5 from '@/images/projects/co-operators/homepage5.jpg'
 
 // Style guide
 //
-import sg1 from '@/images/projects/co-operators/sg1.png'
-import sg2 from '@/images/projects/co-operators/sg2.png'
-import sg3 from '@/images/projects/co-operators/sg3.png'
-import sg4 from '@/images/projects/co-operators/sg4.png'
+import sg1 from '@/images/projects/co-operators/sg1.jpg'
+import sg2 from '@/images/projects/co-operators/sg2.jpg'
+import sg3 from '@/images/projects/co-operators/sg3.jpg'
+import sg4 from '@/images/projects/co-operators/sg4.jpg'
 
 // Illustrations
 //
-import illustration1 from '@/images/projects/co-operators/illustration1.png'
-import illustration2 from '@/images/projects/co-operators/illustration2.png'
+import illustration1 from '@/images/projects/co-operators/illustration1.jpg'
+import illustration2 from '@/images/projects/co-operators/illustration2.jpg'
 
 // Design system
 //
-import component1 from '@/images/projects/co-operators/component1.png'
-import component2 from '@/images/projects/co-operators/component2.png'
-import component3 from '@/images/projects/co-operators/component3.png'
-import component4 from '@/images/projects/co-operators/component4.png'
+import component1 from '@/images/projects/co-operators/component1.jpg'
+import component2 from '@/images/projects/co-operators/component2.jpg'
+import component3 from '@/images/projects/co-operators/component3.jpg'
+import component4 from '@/images/projects/co-operators/component4.jpg'
+import component5 from '@/images/projects/co-operators/component5.jpg'
+import component6 from '@/images/projects/co-operators/component6.jpg'
+import component7 from '@/images/projects/co-operators/component7.jpg'
+import component8 from '@/images/projects/co-operators/component8.jpg'
 
 import logoCooperators from '@/images/projects/co-operators/cooperators-logo.svg'
 
@@ -58,7 +62,7 @@ const tabs = [
     name: 'Company details',
     features: [
       {
-        name: '',
+        name: 'About',
         para1:
           "Co-operators Group Limited is a reputable Canadian insurance co-operative, established in 1945. It's owned by 46 members, including various co-ops, credit union centrals, and representative farm organizations. Recognized as a premier Canadian-owned multi-line insurer, Co-operators offers a comprehensive range of insurance products such as auto, home, life, farm, travel, and commercial insurance, in addition to investment opportunities​​. The organization is a leading entity in Canadian insurance and financial services, managing over $59 billion in assets. ",
         link: 'https://www.cooperators.ca/en/',
@@ -121,6 +125,14 @@ const tabs = [
         imageSrc14Alt: 'Co-operators project screen 14',
         imageSrc15: component4,
         imageSrc15Alt: 'Co-operators project screen 15',
+        imageSrc16: component5,
+        imageSrc16Alt: 'Co-operators project screen 16',
+        imageSrc17: component6,
+        imageSrc17Alt: 'Co-operators project screen 17',
+        imageSrc18: component7,
+        imageSrc18Alt: 'Co-operators project screen 18',
+        imageSrc19: component8,
+        imageSrc19Alt: 'Co-operators project screen 19',
       },
     ],
   },
@@ -141,8 +153,13 @@ export default function Project() {
         >
           <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
             <div className="max-w-3xl">
-              <Image src={logoCooperators} className="dark:invert" />
-              <h2 className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
+              <h1
+                id="features-heading"
+                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
+              >
+                Co-operators
+              </h1>
+              <h2 className="mt-1 text-tiny font-medium tracking-tight text-gray-600 dark:text-gray-300">
                 Helped create Co-operators new visual identity.
               </h2>
             </div>
@@ -165,7 +182,7 @@ export default function Project() {
                               selected
                                 ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
                                 : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
-                              'whitespace-nowrap border-b-2 px-6 text-md outline-none visited:border-none'
+                              'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
                             )
                           }
                         >
@@ -187,24 +204,24 @@ export default function Project() {
                             key={feature.name}
                             className="flex flex-col lg:gap-x-8"
                           >
-                            {/* <div className="lg: mb-0 mt-6 max-w-[250px] lg:my-4">
+                            <div className="lg: mb-0 mt-6 max-w-[250px] lg:my-4">
                               <Image
                                 src={feature.imageSrc}
                                 alt={feature.imageAlt}
                                 className="dark:invert"
                               />
-                            </div> */}
+                            </div>
                             <div className="max-w-prose lg:mt-0">
                               <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                                 {feature.name}
                               </h3>
-                              <p className="text-md text-gray-700 dark:text-gray-400">
+                              <p className="text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para1}
                               </p>
-                              <p className="mt-4 text-md text-gray-700 dark:text-gray-400">
+                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para2}
                               </p>
-                              <p className="mt-4 text-md text-gray-700 dark:text-gray-400">
+                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para3}
                               </p>
                             </div>
@@ -218,7 +235,7 @@ export default function Project() {
                             className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
                           >
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Homepage</h2>
                               </div>
                               <div className="flex gap-8 lg:col-span-12">
@@ -235,7 +252,7 @@ export default function Project() {
                               </div>
                             </div>
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Sign-in and upgrade policy</h2>
                               </div>
                               <div className="flex gap-8 lg:col-span-12">
@@ -252,7 +269,7 @@ export default function Project() {
                               </div>
                             </div>
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>
                                   Auto policy and details coverage screens
                                 </h2>
@@ -275,8 +292,8 @@ export default function Project() {
                             className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
                           >
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
-                                <h2>Homepage</h2>
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                                <h2>Light and dark theme</h2>
                               </div>
                               <div className="flex gap-8 lg:col-span-12">
                                 <Image
@@ -292,7 +309,7 @@ export default function Project() {
                               </div>
                             </div>
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Sign-in and upgrade policy</h2>
                               </div>
                               <div className="flex gap-8 lg:col-span-12">
@@ -318,7 +335,7 @@ export default function Project() {
                             className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
                           >
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Illustrations</h2>
                               </div>
                               <div className="flex flex-col gap-8 lg:col-span-12">
@@ -344,8 +361,42 @@ export default function Project() {
                             className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
                           >
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
-                                <h2>Illustrations</h2>
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                                <h2>Banners</h2>
+                              </div>
+                              <div className="flex gap-8 lg:col-span-12">
+                                <Image
+                                  src={feature.imageSrc19}
+                                  alt={feature.imageSrc19Alt}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                                <Image
+                                  src={feature.imageSrc18}
+                                  alt={feature.imageSrc18Alt}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                            </div>
+                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                                <h2>Tile and snackbar component</h2>
+                              </div>
+                              <div className="flex gap-8 lg:col-span-12">
+                                <Image
+                                  src={feature.imageSrc15}
+                                  alt={feature.imageSrc15Alt}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                                <Image
+                                  src={feature.imageSrc16}
+                                  alt={feature.imageSrc16Alt}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                              </div>
+                            </div>
+                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                                <h2>Card and button component</h2>
                               </div>
                               <div className="flex gap-8 lg:col-span-12">
                                 <Image
@@ -361,13 +412,18 @@ export default function Project() {
                               </div>
                             </div>
                             <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
-                                <h2>Illustrations</h2>
+                              <div className="col-span-full mb-4 text-lg font-semibold  dark:text-gray-200 ">
+                                <h2>Slider and switch component</h2>
                               </div>
-                              <div className="flex flex-col gap-8 lg:col-span-12">
+                              <div className="flex gap-8 lg:col-span-12">
                                 <Image
                                   src={feature.imageSrc14}
                                   alt={feature.imageSrc14Alt}
+                                  className="rounded-lg object-cover object-center"
+                                />
+                                <Image
+                                  src={feature.imageSrc17}
+                                  alt={feature.imageSrc17Alt}
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -382,12 +438,12 @@ export default function Project() {
                               <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                                 {feature.name}
                               </h3>
-                              <p className="text-md text-gray-600 dark:text-gray-400">
+                              <p className="mt-2 text-tiny text-gray-600 dark:text-gray-400">
                                 {feature.para1}
                               </p>
                               <button
                                 type="button"
-                                className="mt-4 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                className="mt-8 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                               >
                                 <Link href={feature.link} target="_blank">
                                   View Website

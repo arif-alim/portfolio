@@ -214,10 +214,13 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col rounded-lg bg-slate-100 dark:bg-zinc-800"
+                            className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
                           >
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-5 ">
-                              <div className="flex flex-col gap-4 lg:col-span-4">
+                            <div className="col-span-full gap-4 p-2 lg:grid lg:grid-cols-12 lg:gap-x-8 ">
+                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
+                                <h2>Custom web pages</h2>
+                              </div>
+                              <div className="flex flex-col gap-8 lg:col-span-4">
                                 <Image
                                   src={feature.imageSrc1}
                                   alt={feature.imageAlt1}
@@ -240,7 +243,7 @@ export default function Project() {
                                 />
                               </div>
 
-                              <div className="flex flex-col gap-4 lg:col-span-4">
+                              <div className="flex flex-col gap-8 lg:col-span-4">
                                 <Image
                                   src={feature.imageSrc3}
                                   alt={feature.imageAlt3}
@@ -263,7 +266,7 @@ export default function Project() {
                                 />
                               </div>
 
-                              <div className="flex flex-col gap-4 lg:col-span-4">
+                              <div className="flex flex-col gap-8 lg:col-span-4">
                                 <Image
                                   src={feature.imageSrc10}
                                   alt={feature.imageAlt10}
@@ -293,15 +296,10 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.type}
-                            className="flex flex-col  lg:gap-x-8"
+                            className="flex flex-col bg-slate-100 dark:bg-inherit lg:p-8"
                           >
-                            <div className="my-6 lg:mt-0 lg:max-w-prose">
-                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
-                                {feature.heading}
-                              </h3>
-                              <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
-                                {feature.subheading}
-                              </p>
+                            <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200 ">
+                              <h2>Design comparison</h2>
                             </div>
                             <div className=" lg:flex lg:flex-row lg:gap-12">
                               <div className="mb-4 dark:text-gray-200 lg:mb-0 lg:max-w-full">
@@ -354,7 +352,7 @@ export default function Project() {
                               </p>
                               <button
                                 type="button"
-                                className="mt-4 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                className="mt-8 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                               >
                                 <Link href={feature.link} target="_blank">
                                   View Website
