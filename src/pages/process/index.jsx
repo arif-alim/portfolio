@@ -200,7 +200,7 @@ export default function Process() {
                       low-fidelity prototypes (prototypes that convey the basic
                       idea of the intended solution) and move towards
                       high-fidelity as you get more user feedback. There are
-                      different typs of prototypes for the different stages of
+                      different types of prototypes for the different stages of
                       design:
                       <div className="my-3 rounded-lg border border-gray-200 bg-gray-50 p-2 text-sm font-normal text-gray-500 dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300">
                         <ul className="list-disc px-4 ">
@@ -257,7 +257,7 @@ export default function Process() {
                 <h2 className="mb-2 text-xl font-bold text-gray-700 dark:border-gray-500 dark:text-gray-300 sm:text-2xl">
                   Understand your users
                 </h2>
-                <p className="text-base font-normal text-gray-500 dark:border-gray-500 dark:text-gray-300">
+                {/* <p className="text-base font-normal text-gray-500 dark:border-gray-500 dark:text-gray-300">
                   The discovery phase and understanding the user are pivotal in
                   the design process, forming the bedrock upon which all
                   successful products are built. This stage is crucial because
@@ -298,7 +298,7 @@ export default function Process() {
                   user&apos;s needs, ensuring that the final designs are not
                   only functional but truly resonate with users on a personal
                   level.
-                </p>
+                </p> */}
               </div>
             </section>
           </div>
