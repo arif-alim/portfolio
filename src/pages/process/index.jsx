@@ -33,7 +33,7 @@ export default function Process() {
       </Head>
       <SimpleLayout
         title="The process"
-        intro="Design plays a crucial role in a product’s success. A product that fails to meet its customers’ needs cannot be successful on the market. More and more companies are focusing on human-centred design to increase their chances of success. Put the end-user at the heart of product design and evaluate every design decision according to the user’s needs and wants."
+        intro="Design plays a crucial role in a product's success. A product that fails to meet its customers' needs cannot be successful on the market. More and more companies are focusing on human-centred design to increase their chances of success. Put the end-user at the heart of product design and evaluate every design decision according to the user's needs and wants."
       >
         <div className="space-y-24">
           <div className="container mx-auto ">
@@ -67,10 +67,10 @@ export default function Process() {
                       <h2 className="text-lg font-bold text-zinc-700">Story</h2>
                       Design thinking is a universal methodology that works
                       equally well for physical and digital design. No matter
-                      what you design, whether it’s a digital app or a physical
+                      what you design, whether it's a digital app or a physical
                       chair, design thinking allows you to set your assumptions
                       aside and build products tailored specifically for your
-                      users’ needs. Understanding our clients and their users
+                      users' needs. Understanding our clients and their users
                       and delivering high-quality work, we look at our process
                       dynamically as we iterate over different phases of the
                       process to successfully deliver and launch.
@@ -98,9 +98,9 @@ export default function Process() {
                       make users feel?). Emotions play a tremendous role in how
                       we think about products. When users develop positive
                       associations with products, they are more likely to
-                      continue using them. That’s why it’s essential to collect
+                      continue using them. That's why it's essential to collect
                       emotional responses (both positive and negative) that test
-                      participants’ experience when performing a particular task
+                      participants' experience when performing a particular task
                       in a product. We use the following techniques to help
                       define the problem and guide your process:
                       <div className="my-3 rounded-lg border border-gray-200 bg-gray-50 p-2 text-sm font-normal text-gray-500 dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300">
@@ -169,10 +169,10 @@ export default function Process() {
                         people who represent your target audience.
                       </p>
                       <p className="mt-3">
-                        During this stage, we do not judge the ideas. When it’s
+                        During this stage, we do not judge the ideas. When it's
                         time to generate ideas, we give ourselves and our team
                         creative freedom. The more ideas you generate, the
-                        better. Don’t judge your ideas’ technical feasibility or
+                        better. Don't judge your ideas' technical feasibility or
                         quality in this step.
                       </p>
                     </div>
