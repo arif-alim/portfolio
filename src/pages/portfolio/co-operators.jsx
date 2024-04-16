@@ -204,17 +204,10 @@ export default function Project() {
                             key={feature.name}
                             className="flex flex-col lg:gap-x-8"
                           >
-                            <div className="lg: mb-0 mt-6 max-w-[250px] lg:my-4">
-                              <Image
-                                src={feature.imageSrc}
-                                alt={feature.imageAlt}
-                                className="dark:invert"
-                              />
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                              <h2>Summary</h2>
                             </div>
                             <div className="max-w-prose lg:mt-0">
-                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                {feature.name}
-                              </h3>
                               <p className="text-tiny text-gray-700 dark:text-gray-400">
                                 {feature.para1}
                               </p>
@@ -232,13 +225,13 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
+                            className="flex flex-col gap-y-16  dark:bg-inherit"
                           >
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
                               <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Homepage</h2>
                               </div>
-                              <div className="flex gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc1}
                                   alt={feature.imageSrc1Alt}
@@ -255,7 +248,7 @@ export default function Project() {
                               <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Sign-in and upgrade policy</h2>
                               </div>
-                              <div className="flex gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc3}
                                   alt={feature.imageSrc3Alt}
@@ -274,7 +267,7 @@ export default function Project() {
                                   Auto policy and details coverage screens
                                 </h2>
                               </div>
-                              <div className="flex gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc5}
                                   alt={feature.imageSrc5Alt}
@@ -289,13 +282,13 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
+                            className="flex flex-col gap-y-16  dark:bg-inherit"
                           >
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
                               <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Light and dark theme</h2>
                               </div>
-                              <div className="flex gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc6}
                                   alt={feature.imageSrc6Alt}
@@ -312,7 +305,7 @@ export default function Project() {
                               <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Sign-in and upgrade policy</h2>
                               </div>
-                              <div className="flex gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc8}
                                   alt={feature.imageSrc8Alt}
@@ -332,13 +325,13 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
+                            className="flex flex-col gap-y-16  dark:bg-inherit"
                           >
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
                               <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Illustrations</h2>
                               </div>
-                              <div className="flex flex-col gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc10}
                                   alt={feature.imageSrc10Alt}
@@ -358,13 +351,13 @@ export default function Project() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
+                            className="flex flex-col gap-y-16  dark:bg-inherit"
                           >
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
                               <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Banners</h2>
                               </div>
-                              <div className="flex gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc19}
                                   alt={feature.imageSrc19Alt}
@@ -377,11 +370,11 @@ export default function Project() {
                                 />
                               </div>
                             </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
                               <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Tile and snackbar component</h2>
                               </div>
-                              <div className="flex gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc15}
                                   alt={feature.imageSrc15Alt}
@@ -394,11 +387,11 @@ export default function Project() {
                                 />
                               </div>
                             </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
                               <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Card and button component</h2>
                               </div>
-                              <div className="flex gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc12}
                                   alt={feature.imageSrc12Alt}
@@ -411,11 +404,11 @@ export default function Project() {
                                 />
                               </div>
                             </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold  dark:text-gray-200 ">
+                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                                 <h2>Slider and switch component</h2>
                               </div>
-                              <div className="flex gap-8 lg:col-span-12">
+                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
                                 <Image
                                   src={feature.imageSrc14}
                                   alt={feature.imageSrc14Alt}

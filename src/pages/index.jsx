@@ -75,8 +75,9 @@ export default function About() {
             </h1>
 
             <p className="mt-4 text-sm tracking-tight text-zinc-400 dark:text-zinc-100 sm:text-[15px]">
-              Honours Bachelor of Computer Science (BCS) from UW.BCS from
-              University of Waterloo and BBA from Wilfrid Laurier University.
+              Attended the double degree program - Honours Bachelor of Computer
+              Science (BCS) at University of Waterloo and Honours Business
+              Administration (BCA) at Wilfrid Laurier University.
             </p>
             <div className="mt-6 space-y-7 text-tiny text-zinc-600 dark:text-zinc-400">
               <p>

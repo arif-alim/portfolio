@@ -27,6 +27,7 @@ import logoGabbys from '@/images/projects/gabbys.png'
 import logoHeyLucys from '@/images/projects/heylucys.png'
 import logoPerfectone from '@/images/projects/perfectone-logo.png'
 import logoAirbus from '@/images/projects/airbus.png'
+import logoManulife from '@/images/projects/manulife/manulife.png'
 
 import { useEffect, useId, useState } from 'react'
 import Image from 'next/image'
@@ -45,6 +46,16 @@ const portfolio = [
   },
   {
     id: 1,
+    name: 'Manulife',
+    about: 'Multinational financial services company',
+    link: {
+      href: '/portfolio/manulife',
+      label: 'View project',
+    },
+    image: logoManulife,
+  },
+  {
+    id: 2,
     name: 'Bombardier',
     about: 'Manufacturer of business jets',
     link: {
@@ -54,7 +65,7 @@ const portfolio = [
     image: logoBombardier,
   },
   {
-    id: 2,
+    id: 3,
     name: 'Trip Support',
     about: 'Online Travel Agency',
     link: {
@@ -64,7 +75,7 @@ const portfolio = [
     image: logoTripSupport,
   },
   {
-    id: 3,
+    id: 4,
     name: 'Service Ontario',
     about: 'Government of Ontario',
     link: {
@@ -74,7 +85,7 @@ const portfolio = [
     image: logoServiceOntario,
   },
   {
-    id: 4,
+    id: 5,
     name: 'Hydro One',
     about: 'Electricity distribution utility',
     link: {
@@ -84,7 +95,7 @@ const portfolio = [
     image: logoHydroOne,
   },
   {
-    id: 5,
+    id: 6,
     name: 'Perfec-tone',
     about: 'Aerospace Industry',
     link: {
@@ -94,7 +105,7 @@ const portfolio = [
     image: logoPerfectone,
   },
   {
-    id: 6,
+    id: 7,
     name: 'Chicasa Design',
     about: 'Custom Home Builders',
     link: {
@@ -104,7 +115,7 @@ const portfolio = [
     image: logoChicasaDesign,
   },
   {
-    id: 7,
+    id: 8,
     name: 'Craft City',
     about: 'Hard seltzer brand',
     link: {
@@ -114,7 +125,7 @@ const portfolio = [
     image: logoCraftCity,
   },
   {
-    id: 8,
+    id: 9,
     name: 'Cooper',
     about: 'Uber like app for Bahamas',
     link: {
@@ -124,7 +135,7 @@ const portfolio = [
     image: logoCooper,
   },
   {
-    id: 9,
+    id: 10,
     name: 'Titan Group',
     about: 'Custom home builders',
     link: {
@@ -134,7 +145,7 @@ const portfolio = [
     image: logoTitanGroup,
   },
   {
-    id: 10,
+    id: 11,
     name: 'Miss Bahamas',
     about: 'Bahamas beauty pageant',
     link: {
@@ -145,7 +156,7 @@ const portfolio = [
   },
 
   {
-    id: 11,
+    id: 12,
     name: 'District Eatery',
     about: 'Chain of restaurants',
     link: {
@@ -155,7 +166,7 @@ const portfolio = [
     image: logoDistrictEatery,
   },
   {
-    id: 12,
+    id: 13,
     name: 'Equity Bank',
     about: 'Private banking Bahamas',
     link: {
@@ -165,7 +176,7 @@ const portfolio = [
     image: logoEquityBank,
   },
   {
-    id: 13,
+    id: 14,
     name: 'Island Traders',
     about: 'Courier service in Bahamas',
     link: {
@@ -175,7 +186,7 @@ const portfolio = [
     image: logoIslandTraders,
   },
   {
-    id: 14,
+    id: 15,
     name: 'Niagara Falls Craft Distillers',
     about: 'Spirit distillers',
     link: {
@@ -186,7 +197,7 @@ const portfolio = [
   },
 
   {
-    id: 15,
+    id: 16,
     name: 'Urban Dining',
     about: 'Chain of restaurants',
     link: {
@@ -196,7 +207,7 @@ const portfolio = [
     image: logoUrbanDining,
   },
   {
-    id: 16,
+    id: 17,
     name: 'Tritec Solutions',
     about: 'Uber like app for Bahamas',
     link: {
@@ -206,7 +217,7 @@ const portfolio = [
     image: logoTritecSolutions,
   },
   {
-    id: 17,
+    id: 18,
     name: 'Lieber Group',
     about: 'Uber like app for Bahamas',
     link: {
@@ -216,7 +227,7 @@ const portfolio = [
     image: logoLieberGroup,
   },
   {
-    id: 18,
+    id: 19,
     name: "Gabby's",
     about: 'Restaurant',
     link: {
