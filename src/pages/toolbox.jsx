@@ -340,13 +340,7 @@ export default function Toolbox() {
                   className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
                   <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
-                    <Image
-                      src={des.imageUrl}
-                      alt=""
-                      width={40}
-                      height={40}
-                      layout="responsive"
-                    />
+                    <Image src={des.imageUrl} alt="" width={40} height={40} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <Link
@@ -380,13 +374,7 @@ export default function Toolbox() {
                   className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
                   <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
-                    <Image
-                      src={front.imageUrl}
-                      alt=""
-                      width={40}
-                      height={40}
-                      layout="responsive"
-                    />
+                    <Image src={front.imageUrl} alt="" width={40} height={40} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <Link
@@ -418,13 +406,7 @@ export default function Toolbox() {
                   className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
                   <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
-                    <Image
-                      src={back.imageUrl}
-                      alt=""
-                      width={40}
-                      height={40}
-                      layout="responsive"
-                    />
+                    <Image src={back.imageUrl} alt="" width={40} height={40} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <Link

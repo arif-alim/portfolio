@@ -3,8 +3,43 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState } from 'react'
 import { Tab } from '@headlessui/react'
+
+// Import Design Certificates
+import designCert1 from '@/images/certificates/designCert1.jpg'
+import designCert2 from '@/images/certificates/designCert2.jpg'
+import designCert3 from '@/images/certificates/designCert3.jpg'
+import designCert4 from '@/images/certificates/designCert4.jpg'
+import designCert5 from '@/images/certificates/designCert5.jpg'
+import designCert6 from '@/images/certificates/designCert6.jpg'
+import designCert7 from '@/images/certificates/designCert7.jpg'
+import designCert8 from '@/images/certificates/designCert8.jpg'
+import designCert9 from '@/images/certificates/designCert9.jpg'
+import designCert10 from '@/images/certificates/designCert10.jpg'
+
+// Import Frontend Certificates
+import frontendCert1 from '@/images/certificates/frontendCert1.jpg'
+import frontendCert2 from '@/images/certificates/frontendCert2.jpg'
+import frontendCert3 from '@/images/certificates/frontendCert3.jpg'
+import frontendCert4 from '@/images/certificates/frontendCert4.jpg'
+import frontendCert5 from '@/images/certificates/frontendCert5.jpg'
+import frontendCert6 from '@/images/certificates/frontendCert6.jpg'
+import frontendCert7 from '@/images/certificates/frontendCert7.jpg'
+import frontendCert8 from '@/images/certificates/frontendCert8.jpg'
+import frontendCert9 from '@/images/certificates/frontendCert9.jpg'
+
+// Import Backend Certificates
+import backendCert1 from '@/images/certificates/backendCert1.jpg'
+import backendCert2 from '@/images/certificates/backendCert2.jpg'
+import backendCert3 from '@/images/certificates/backendCert3.jpg'
+import backendCert4 from '@/images/certificates/backendCert4.jpg'
+import backendCert5 from '@/images/certificates/backendCert5.jpg'
+import backendCert6 from '@/images/certificates/backendCert6.jpg'
+import backendCert7 from '@/images/certificates/backendCert7.jpg'
+import backendCert8 from '@/images/certificates/backendCert8.jpg'
+
+// Add imports for all other certificates.
 
 const tabs = [
   {
@@ -12,64 +47,45 @@ const tabs = [
     features: [
       {
         heading: 'UX Design 1: Overview',
-        imageSrc: cert21,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/5fab0db71cb46dabfd0882c06357fa29b4ee59e9b5afd3474d4982859454f8d3',
+        imageSrc: designCert1,
       },
       {
         heading: 'UX Design 2: Analyzing User Data',
-        imageSrc: cert22,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/80f3d24f527fe8bad60c4c1f907c6a3698e33f9f4b52ae660a364780cda598ea',
+        imageSrc: designCert2,
       },
       {
         heading: 'UX Design 3: Creating Personas',
-        imageSrc: cert23,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/21f61d3276e834d0e5c5e9084a6dfaec74ac027e485b57332626179867e30126',
+        imageSrc: designCert3,
       },
       {
         heading: 'UX Design 4: Ideation',
-        imageSrc: cert24,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/b7c9038a440c23b77329f3c6a82a17f09491d2065d3574bb7037e9ebc10654bb',
+        imageSrc: designCert4,
       },
       {
         heading: 'UX Design 5: Creating Scenerios and Storyboards',
-        imageSrc: cert25,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/443a78815d646eb3669025fdde0c7ae9786740da83abddcaa20a510aab363ca7',
+        imageSrc: designCert5,
       },
       {
         heading: 'UX Design 6: Paper Prototyping',
-        imageSrc: cert26,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/68c5d57bb50b72b74431b84090b8a25c73e7ab012730962594bfddada2ce449f',
+        imageSrc: designCert6,
       },
       {
         heading: 'UX Design 7: Implementation Planning',
-        imageSrc: cert27,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/36e47aec5f4e76002861a52bb987f69eaa84ae96082b1c3161f15b5c61c31fdf',
+        imageSrc: designCert7,
       },
       {
         heading: 'Interaction Design Flow',
-        imageSrc: cert4,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/a77b05ab15e5ca9f5f5eefdd220da1cc707be4f64ff7cd518c3e528b33ba9c64',
+        imageSrc: designCert8,
       },
       {
         heading: 'UX Foundations Prototyping',
-        imageSrc: cert5,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/341090ac241ac5329a6e090b89841b6e59941b26f217c16bddabd2af5573a210',
+        imageSrc: designCert9,
       },
       {
         heading: 'Graphic Design',
-        imageSrc: cert9,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/b4bfb24e779c15c910fcc63a913bff12609b6e1fb02cff7fc6fc973e9fb736f4',
+        imageSrc: designCert10,
       },
+      // Add more features as needed.
     ],
   },
   {
@@ -77,113 +93,51 @@ const tabs = [
     features: [
       {
         heading: 'JavaScript',
-        imageSrc: cert19,
-        linkedinUrl:
-          'https://www.codecademy.com/profiles/alim.arif/certificates/705dcb15de0da4dd9d9fc4f3274b430e',
-      },
-
-      {
-        heading: 'CSS Essential Training',
-        imageSrc: cert1,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/b1b557edc2dfbd904a16591bc932efe3d605671d74ba506f73b937606bd01b63',
+        imageSrc: frontendCert1,
       },
       {
-        heading: 'Wordpress CMBs',
-        imageSrc: cert2,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/acf9fb7994cf70536e9b701b4e95fd4fc090dddb8c2aa79146dd9be0da86ee6d',
+        heading: 'CSS Essentaial Training',
+        imageSrc: frontendCert2,
+      },
+      {
+        heading: 'Wordress CMBs',
+        imageSrc: frontendCert3,
       },
       {
         heading: 'CSS: Selectors',
-        imageSrc: cert3,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/1a387c6ff317d4fd0ee1655f68c08ca2e9eb490aae5788125bcbf57c72ada4db',
+        imageSrc: frontendCert4,
       },
       {
-        heading: 'ROR 6 Models',
-        imageSrc: cert6,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/f8095ced745c50d0a20730c9e3232d506f9c0cdcb48b841d8221f66f3e5dee5b',
+        heading: 'ROR 6: Models',
+        imageSrc: frontendCert5,
       },
       {
-        heading: 'ROR 6 Controllers & Views',
-        imageSrc: cert7,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/3bf851b7d50403271308322f12748736a28dbd83825c9110595573cb3b0afb20',
+        heading: 'ROR 6: Controllers',
+        imageSrc: frontendCert6,
       },
       {
-        heading: 'ROR 6 Essential Training',
-        imageSrc: cert8,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/4af725b6a15ebaf93e7b6c18fcaa874fe5198918e52658b665d0c63b3bd5cba9',
+        heading: 'ROR 6: Essential Training',
+        imageSrc: frontendCert7,
       },
       {
-        heading: 'HTML Essential Training',
-        imageSrc: cert17,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/025bf8cc4f8fe537ead3ec82072d6086462afc228a4d41431fcdeba5d81e6a44',
+        heading: 'HTML 5 Essential Training',
+        imageSrc: frontendCert8,
       },
       {
         heading: 'HTTP Essential Training',
-        imageSrc: cert18,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/b0516d54ad89af712d60673c57dd6e779f9b4302db170c0aa848587e0e84308f',
+        imageSrc: frontendCert9,
       },
+      // Add more features as needed.
     ],
   },
-
   {
     name: 'Backend',
     features: [
       {
         heading: 'Ruby',
-        imageSrc: cert20,
-        linkedinUrl:
-          'https://www.codecademy.com/profiles/alim.arif/certificates/1c05e0382bc5681c824c4cbe85c126fd',
+        imageSrc: backendCert1,
       },
-      {
-        heading: 'Ruby: Classes and Modules',
-        imageSrc: cert10,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/120dca4adbadd11ab3a15a4035fdb6404539d5aec2dbe4efe0384ac5b2b27e26',
-      },
-      {
-        heading: 'Ruby: Basics',
-        imageSrc: cert11,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/1b0b282142c120e0f887b4f40ff314b0e7e97d3a1651a70c26799c68769664b4',
-      },
-      {
-        heading: 'Databases',
-        imageSrc: cert12,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/f6933d48cbbd5932e758cd0bfe264459cd9797e78afc2b3c9057a1fe30288583',
-      },
-      {
-        heading: 'Regular Expressions',
-        imageSrc: cert13,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/2351993644888156867580df0a2eeac77ae75a3ea2a8b3b0911e12832b252ac9',
-      },
-      {
-        heading: 'Git: Brances and Merges',
-        imageSrc: cert14,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/5a5ea530753fe48ac01b564987d48900f165c29e60b514364d642f2b821a45cb',
-      },
-      {
-        heading: 'Linux Command Line',
-        imageSrc: cert15,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/555b9df4b227f2f69bcfe200946929de65e60054ba826a6b085f8b7e5ad5096d',
-      },
-      {
-        heading: 'Git Basics',
-        imageSrc: cert16,
-        linkedinUrl:
-          'https://www.linkedin.com/learning/certificates/c7da40da5ad3cfbfe1c09ac9ea6f64e7be4b717ef4a3399acc2a048ed92aa090',
-      },
+      // Add more features as needed.
     ],
   },
 ]
@@ -193,7 +147,8 @@ function classNames(...classes) {
 }
 
 export default function HydroOne() {
-  const [selectedTab, setSelectedTab] = useState('Wireframes')
+  const [selectedTab, setSelectedTab] = useState('Design')
+
   return (
     <>
       <Head>
@@ -205,222 +160,87 @@ export default function HydroOne() {
       </Head>
       <SimpleLayout
         title="Double Degree education and over a decade of industry experience in UI/UX Design and Frontend Development"
-        intro="Started graphic design at the age of 15 and soon progressed to user interaction and experience design. With extensive knowledge of industry standard javascript frameworks, it has helped me design with development in mind."
+        intro="Started graphic design at the age of 15 and soon progressed to user interaction and experience design. With extensive knowledge of industry-standard JavaScript frameworks, it has helped me design with development in mind."
       >
         <div className="education my-12">
           <div className="flex flex-col gap-6">
-            <div className="max-w-3xl">
-              <h2
-                id="features-heading"
-                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-              >
-                Education
-              </h2>
-            </div>
-            <div className="flex flex-row items-center justify-start sm:gap-12 ">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+              Education
+            </h2>
+            <div className="flex flex-row items-center justify-start gap-12">
               <Image
-                src={logoUW}
+                src="/path-to-uw-logo.png"
                 alt="University of Waterloo"
-                width={300}
-                height={200}
-                layout="responsive"
-              ></Image>
-
+                width={150}
+                height={80}
+              />
               <Image
-                src={logoWLU}
-                alt="University of Waterloo"
-                width={300}
-                height={200}
-                layout="responsive"
-              ></Image>
+                src="/path-to-wlu-logo.png"
+                alt="Wilfrid Laurier University"
+                width={150}
+                height={80}
+              />
             </div>
           </div>
         </div>
-        <div className="">
-          <section
-            aria-labelledby="features-heading"
-            className="mx-auto max-w-7xl"
+
+        <section
+          aria-labelledby="features-heading"
+          className="mx-auto max-w-7xl"
+        >
+          <Tab.Group
+            as="div"
+            selectedIndex={tabs.findIndex((tab) => tab.name === selectedTab)}
           >
-            <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
-              <div className="max-w-3xl">
-                <h2
-                  id="features-heading"
-                  className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-                >
-                  Certifications
-                </h2>
-              </div>
-
-              <Tab.Group
-                as="div"
-                className="mt-10"
-                value={selectedTab}
-                onSelect={setSelectedTab}
-              >
-                <div className="overflow-x-hidden whitespace-nowrap">
-                  <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                    <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
-                      <Tab.List className="-mb-px flex ">
-                        {tabs.map((tab) => (
-                          <Tab
-                            key={tab.name}
-                            className={({ selected }) =>
-                              classNames(
-                                selected
-                                  ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                                  : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
-                                'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
-                              )
-                            }
-                          >
-                            {tab.name}
-                          </Tab>
-                        ))}
-                      </Tab.List>
-                    </div>
-                  </div>
-                </div>
-
-                <Tab.Panels as={Fragment}>
-                  {tabs.map((tab) => (
-                    <Tab.Panel
-                      key={tab.name}
-                      className="mt-8 flex flex-col gap-8 lg:grid lg:grid-cols-12"
-                    >
-                      {tab.name === 'Design'
-                        ? /* Render content for Summary tab */
-                          tab.features.map((feature) => (
-                            <div key={feature.name} className="lg:col-span-4">
-                              <Image
-                                src={feature.imageSrc}
-                                alt={feature.imageAlt}
-                                width={300} // Added static width
-                                height={200} // Added static height
-                                layout="responsive" // Added layout attribute
-                                className="rounded-lg object-cover object-center"
-                              />
-
-                              <div className="mx-2 space-y-1">
-                                <h3 className="font-medium">
-                                  {feature.heading}
-                                </h3>
-                                <Link
-                                  href={feature.linkedinUrl}
-                                  className="flex items-center gap-3 text-tiny font-normal text-zinc-500 hover:text-blue-900 dark:text-zinc-400 dark:hover:text-blue-300"
-                                  target="_blank"
-                                >
-                                  <div>
-                                    <span className="sr-only">LinkedIn</span>
-                                    <svg
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
-                                    >
-                                      <path
-                                        fillRule="evenodd"
-                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                        clipRule="evenodd"
-                                      />
-                                    </svg>
-                                    View Certificate
-                                  </div>
-                                </Link>
-                              </div>
-                            </div>
-                          ))
-                        : tab.name === 'Frontend'
-                        ? /* Render content for Wireframes tab */
-                          tab.features.map((feature) => (
-                            <div key={feature.name} className="lg:col-span-4">
-                              <Image
-                                src={feature.imageSrc}
-                                alt={feature.imageAlt}
-                                width={300} // Added static width
-                                height={200} // Added static height
-                                layout="responsive" // Added layout attribute
-                                className="rounded-lg object-cover object-center"
-                              />
-
-                              <div className="mx-2 space-y-1">
-                                <h3 className="font-medium">
-                                  {feature.heading}
-                                </h3>
-                                <Link
-                                  href={feature.linkedinUrl}
-                                  className="flex items-center gap-3 text-tiny font-normal text-zinc-500 hover:text-blue-900 dark:text-zinc-400 dark:hover:text-blue-300"
-                                  target="_blank"
-                                >
-                                  <div>
-                                    <span className="sr-only">LinkedIn</span>
-                                    <svg
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
-                                    >
-                                      <path
-                                        fillRule="evenodd"
-                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                        clipRule="evenodd"
-                                      />
-                                    </svg>
-                                    View Certificate
-                                  </div>
-                                </Link>
-                              </div>
-                            </div>
-                          ))
-                        : tab.name === 'Backend'
-                        ? /* Render content for Wireframes tab */
-                          tab.features.map((feature) => (
-                            <div key={feature.name} className="lg:col-span-4">
-                              <Image
-                                src={feature.imageSrc}
-                                alt={feature.imageAlt}
-                                width={300} // Added static width
-                                height={200} // Added static height
-                                layout="responsive" // Added layout attribute
-                                className="rounded-lg object-cover object-center"
-                              />
-
-                              <div className="mx-2 space-y-1">
-                                <h3 className="font-medium">
-                                  {feature.heading}
-                                </h3>
-                                <Link
-                                  href={feature.linkedinUrl}
-                                  className="flex items-center gap-3 text-tiny font-normal text-zinc-500 hover:text-blue-900 dark:text-zinc-400 dark:hover:text-blue-300"
-                                  target="_blank"
-                                >
-                                  <div>
-                                    <span className="sr-only">LinkedIn</span>
-                                    <svg
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
-                                    >
-                                      <path
-                                        fillRule="evenodd"
-                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                        clipRule="evenodd"
-                                      />
-                                    </svg>
-                                    View Certificate
-                                  </div>
-                                </Link>
-                              </div>
-                            </div>
-                          ))
-                        : null}
-                    </Tab.Panel>
-                  ))}
-                </Tab.Panels>
-              </Tab.Group>
+            <div className="flex flex-wrap border-b">
+              <Tab.List className="flex flex-row">
+                {tabs.map((tab) => (
+                  <Tab
+                    key={tab.name}
+                    className={({ selected }) =>
+                      classNames(
+                        selected
+                          ? 'border-blue-500 text-blue-600'
+                          : 'text-gray-500 hover:text-gray-800',
+                        'px-4 py-2 font-medium'
+                      )
+                    }
+                  >
+                    {tab.name}
+                  </Tab>
+                ))}
+              </Tab.List>
             </div>
-          </section>
-        </div>
+
+            <Tab.Panels>
+              {tabs.map((tab) => (
+                <Tab.Panel key={tab.name}>
+                  <div className="grid gap-6 md:grid-cols-3">
+                    {tab.features.map((feature) => (
+                      <div
+                        key={feature.heading}
+                        className="rounded-lg shadow-md"
+                      >
+                        <Image
+                          src={feature.imageSrc}
+                          alt={feature.heading}
+                          width={300}
+                          height={200}
+                          className="rounded-t-lg"
+                        />
+                        <div className="p-4">
+                          <h3 className="text-lg font-medium">
+                            {feature.heading}
+                          </h3>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Tab.Panel>
+              ))}
+            </Tab.Panels>
+          </Tab.Group>
+        </section>
       </SimpleLayout>
     </>
   )
