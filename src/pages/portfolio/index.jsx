@@ -279,37 +279,39 @@ export default function Speakers() {
             <div key={project.id} unmount={false}>
               <div key={project.id}>
                 <Link href={project.link.href}>
-                  <div className="rounded-4xl group relative h-[196px] transform overflow-hidden ">
-                    <div
-                      className={clsx(
-                        'rounded-4xl absolute top-0 left-0 right-0 bottom-0 border transition duration-300 group-hover:scale-95 ',
-                        [
-                          'border-emerald-300',
-                          'border-indigo-300',
-                          'border-sky-300',
-                          'border-rose-300',
-                        ][project.id % 5]
-                      )}
-                    />
-                    <div
-                      className="absolute inset-0 my-auto bg-zinc-100"
-                      style={{ clipPath: `url(#${id}-${project.id % 3})` }}
-                    >
-                      <div className="flex h-full w-full flex-row items-center p-12 align-middle sm:p-4">
-                        <Image
-                          className=" transition duration-300 group-hover:scale-110"
-                          src={project.image}
-                          alt=""
-                        />
+                  <a>
+                    <div className="rounded-4xl group relative h-[196px] transform overflow-hidden ">
+                      <div
+                        className={clsx(
+                          'rounded-4xl absolute top-0 left-0 right-0 bottom-0 border transition duration-300 group-hover:scale-95 ',
+                          [
+                            'border-emerald-300',
+                            'border-indigo-300',
+                            'border-sky-300',
+                            'border-rose-300',
+                          ][project.id % 5]
+                        )}
+                      />
+                      <div
+                        className="absolute inset-0 my-auto bg-zinc-100"
+                        style={{ clipPath: `url(#${id}-${project.id % 3})` }}
+                      >
+                        <div className="flex h-full w-full flex-row items-center p-12 align-middle sm:p-4">
+                          <Image
+                            className=" transition duration-300 group-hover:scale-110"
+                            src={project.image}
+                            alt=""
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <h3 className="font-display mt-2 text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-                    {project.name}
-                  </h3>
-                  <p className="text-sm tracking-tight text-zinc-500 dark:font-light dark:text-zinc-100">
-                    {project.about}
-                  </p>
+                    <h3 className="font-display mt-2 text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+                      {project.name}
+                    </h3>
+                    <p className="text-sm tracking-tight text-zinc-500 dark:font-light dark:text-zinc-100">
+                      {project.about}
+                    </p>
+                  </a>
                 </Link>
               </div>
             </div>

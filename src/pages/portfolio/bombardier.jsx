@@ -444,6 +444,8 @@ export default function Project() {
                               <Image
                                 src={feature.imgSrc16}
                                 alt={feature.imgAlt16}
+                                width={300}
+                                height={300}
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
@@ -494,14 +496,13 @@ export default function Project() {
                               <p className="mt-2 text-tiny font-normal text-gray-600 dark:text-gray-400">
                                 {feature.para1}
                               </p>
-                              <button
-                                type="button"
-                                className="mt-8 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                              <Link
+                                href={feature.link}
+                                target="_blank"
+                                className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                               >
-                                <Link href={feature.link} target="_blank">
-                                  View Website
-                                </Link>
-                              </button>
+                                View Website
+                              </Link>
                             </div>
                           </div>
                         ))

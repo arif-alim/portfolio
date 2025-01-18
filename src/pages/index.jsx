@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import Head from 'next/head'
-import Image from 'next/future/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
@@ -35,10 +35,9 @@ const ProfileImage = () => (
   <div className="w-full max-w-xs px-2.5 lg:max-w-none">
     <Image
       src={portraitImage}
-      alt=""
-      sizes="(min-width: 1024px) 32rem, 23rem"
-      width={512} // Add width
-      height={512} // Add height
+      alt="Portrait of Arif Alim"
+      width={300} // Replace with the actual width of your image
+      height={300} // Replace with the actual height of your image
       className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
     />
   </div>
@@ -47,19 +46,6 @@ const ProfileImage = () => (
 export default function About() {
   return (
     <>
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
-          rel="stylesheet"
-        />
-        <title>About - Arif Alim</title>
-        <meta
-          name="description"
-          content="I’m Arif Alim. I live in New York City, where I design the future."
-        />
-      </Head>
       <Container className="mt-16 sm:mt-20">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">

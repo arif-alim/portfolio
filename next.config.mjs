@@ -1,29 +1,24 @@
-import nextMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-import rehypePrism from '@mapbox/rehype-prism'
 import withImages from 'next-images'
+import nextMDX from '@next/mdx'
+import rehypeHighlight from 'rehype-highlight'
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['jsx', 'mdx'],
   reactStrictMode: true,
-  swcMinify: true,
   experimental: {
-    newNextLinkBehavior: false,
-    scrollRestoration: false,
+    scrollRestoration: true,
   },
   images: {
-    domains: ['arifalim.com', 'www.arifalim.com'], // Add domains for external image fetching
-    formats: ['image/avif', 'image/webp'], // Only supported formats
-    disableStaticImages: true, // Disables automatic static image imports
+    domains: ['arifalim.com', 'www.arifalim.com'],
+    formats: ['image/avif', 'image/webp'],
+    disableStaticImages: true,
   },
 }
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
+    rehypePlugins: [rehypeHighlight],
   },
 })
 

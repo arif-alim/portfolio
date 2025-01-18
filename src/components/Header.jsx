@@ -1,11 +1,11 @@
-import Image from 'next/future/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import avatarImage from '@/images/arifalim.jpg'
+import avatarImage from '@/images/arifalim.jpeg'
 import { Fragment, useEffect, useRef } from 'react'
 
 function CloseIcon(props) {
@@ -230,16 +230,20 @@ function Avatar({ large = false, className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <Image
-        src={avatarImage}
-        alt=""
-        sizes={large ? '4rem' : '2.25rem'}
-        className={clsx(
-          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-10 w-10'
-        )}
-        priority
-      />
+      <div>
+        <Image
+          src={avatarImage}
+          alt=""
+          sizes={large ? '4rem' : '2.25rem'}
+          width={large ? 64 : 36} // Added static width
+          height={large ? 64 : 36} // Added static height
+          className={clsx(
+            'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+            large ? 'h-16 w-16' : 'h-10 w-10'
+          )}
+          priority
+        />
+      </div>
     </Link>
   )
 }

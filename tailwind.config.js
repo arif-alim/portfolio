@@ -8,7 +8,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/line-clamp'),
+    // require('@tailwindcss/line-clamp'), -> Remove Deprecated @tailwindcss/line-clamp Plugin
     require('@tailwindcss/forms'),
     require('flowbite/plugin'),
   ],
