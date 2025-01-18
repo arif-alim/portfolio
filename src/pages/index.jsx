@@ -5,9 +5,13 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import { VercelIcon, GithubIcon, LinkedInIcon } from '@/components/SocialIcons'
+import {
+  VercelIcon,
+  GithubIcon,
+  LinkedInIcon,
+  MailIcon,
+} from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.png'
-import { fontWeight } from 'tailwindcss/defaultTheme'
 
 const SocialLink = ({ className, href, children, icon: Icon }) => (
   <li className={clsx(className, 'flex')}>
@@ -33,6 +37,8 @@ const ProfileImage = () => (
       src={portraitImage}
       alt=""
       sizes="(min-width: 1024px) 32rem, 23rem"
+      width={512} // Add width
+      height={512} // Add height
       className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
     />
   </div>

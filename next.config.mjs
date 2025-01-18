@@ -1,6 +1,7 @@
 import nextMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 import rehypePrism from '@mapbox/rehype-prism'
+import withImages from 'next-images'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -12,8 +13,9 @@ const nextConfig = {
     scrollRestoration: false,
   },
   images: {
-    disableStaticImages: true,
-    domains: ['images.unsplash.com'], // Add any other domains if needed
+    domains: ['arifalim.com', 'www.arifalim.com'], // Add domains for external image fetching
+    formats: ['image/avif', 'image/webp'], // Only supported formats
+    disableStaticImages: true, // Disables automatic static image imports
   },
 }
 
@@ -25,4 +27,4 @@ const withMDX = nextMDX({
   },
 })
 
-export default withMDX(nextConfig)
+export default withImages(withMDX(nextConfig))
