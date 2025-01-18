@@ -65,13 +65,13 @@ export default function Process() {
                       <h2 className="text-lg font-bold text-zinc-700">Story</h2>
                       Design thinking is a universal methodology that works
                       equally well for physical and digital design. No matter
-                      what you design, whether it's a digital app or a physical
-                      chair, design thinking allows you to set your assumptions
-                      aside and build products tailored specifically for your
-                      users' needs. Understanding our clients and their users
-                      and delivering high-quality work, we look at our process
-                      dynamically as we iterate over different phases of the
-                      process to successfully deliver and launch.
+                      what you design, whether it&apos;s a digital app or a
+                      physical chair, design thinking allows you to set your
+                      assumptions aside and build products tailored specifically
+                      for your users&apos; needs. Understanding our clients and
+                      their users and delivering high-quality work, we look at
+                      our process dynamically as we iterate over different
+                      phases of the process to successfully deliver and launch.
                     </div>
                   </div>
                 </li>
@@ -96,11 +96,12 @@ export default function Process() {
                       make users feel?). Emotions play a tremendous role in how
                       we think about products. When users develop positive
                       associations with products, they are more likely to
-                      continue using them. That's why it's essential to collect
-                      emotional responses (both positive and negative) that test
-                      participants' experience when performing a particular task
-                      in a product. We use the following techniques to help
-                      define the problem and guide your process:
+                      continue using them. That&apos;s why it&apos;s essential
+                      to collect emotional responses (both positive and
+                      negative) that test participants&apos; experience when
+                      performing a particular task in a product. We use the
+                      following techniques to help define the problem and guide
+                      your process:
                       <div className="my-3 rounded-lg border border-gray-200 bg-gray-50 p-2 text-sm font-normal text-gray-500 dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300">
                         <ul className="list-disc px-4 ">
                           <li>User interviews</li>
@@ -167,11 +168,11 @@ export default function Process() {
                         people who represent your target audience.
                       </p>
                       <p className="mt-3">
-                        During this stage, we do not judge the ideas. When it's
-                        time to generate ideas, we give ourselves and our team
-                        creative freedom. The more ideas you generate, the
-                        better. Don't judge your ideas' technical feasibility or
-                        quality in this step.
+                        During this stage, we do not judge the ideas. When
+                        it&apos;s time to generate ideas, we give ourselves and
+                        our team creative freedom. The more ideas you generate,
+                        the better. Don&apos;t judge your ideas&apos; technical
+                        feasibility or quality in this step.
                       </p>
                     </div>
                   </div>
@@ -298,6 +299,31 @@ export default function Process() {
                   level.
                 </p>
               </div>
+              <p>
+                It&apos;s important to understand the client&apos;s needs and
+                goals before starting any project.
+              </p>
+              <p>
+                We&apos;ll work together to create a plan that meets your needs
+                and fits your budget.
+              </p>
+              <p>
+                I&apos;ve worked with clients from various industries, including
+                healthcare, finance, and education.
+              </p>
+              <p>Let&apos;s create something amazing together!</p>
+              <p>
+                I&apos;m passionate about creating beautiful and functional
+                designs that make a difference.
+              </p>
+              <p>
+                I&apos;ve been designing and developing websites for over 15
+                years.
+              </p>
+              <p>
+                Let&apos;s work together to create a website that you&apos;ll
+                love.
+              </p>
             </section>
           </div>
         </div>
