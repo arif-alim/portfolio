@@ -8,8 +8,12 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    newNextLinkBehavior: true,
-    scrollRestoration: true,
+    newNextLinkBehavior: false,
+    scrollRestoration: false,
+  },
+  images: {
+    disableStaticImages: true,
+    domains: ['images.unsplash.com'], // Add any other domains if needed
   },
 }
 
@@ -21,4 +25,4 @@ const withMDX = nextMDX({
   },
 })
 
-export default withMDX(nextConfig)
+module.exports = nextConfig
