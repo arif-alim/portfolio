@@ -11,6 +11,8 @@ import ideate from '@/images/process/ideate.svg'
 import prototype from '@/images/process/prototype.svg'
 import testing from '@/images/process/testing.svg'
 
+// Ensure any Link components in this file have exactly one child element
+
 export async function getStaticProps() {
   return {
     props: {

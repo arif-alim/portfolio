@@ -2,38 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// Perfec-tone
-import cert1 from '@/images/certificates/CSSEssentialTraining.jpg'
-import cert2 from '@/images/certificates/CustomMetaBoxesinWordPress.jpg'
-import cert3 from '@/images/certificates/CSSSelectors.jpg'
-import cert4 from '@/images/certificates/InteractionDesignFlow.jpg'
-import cert5 from '@/images/certificates/UXFoundationsPrototyping.jpg'
-import cert6 from '@/images/certificates/ROR6EssentialTrainingModelsandAssociations.jpg'
-import cert7 from '@/images/certificates/ROR6ControllersAndViews.jpg'
-import cert8 from '@/images/certificates/ROR6EssentialTraining.jpg'
-import cert9 from '@/images/certificates/GraphicDesignCareersFirstSteps.jpg'
-import cert10 from '@/images/certificates/RubyClassesandModules.jpg'
-import cert11 from '@/images/certificates/RubyBasics.jpg'
-import cert12 from '@/images/certificates/Databases.jpg'
-import cert13 from '@/images/certificates/RegularExpressions.jpg'
-import cert14 from '@/images/certificates/GitBranchesMergesRemotes.jpg'
-import cert15 from '@/images/certificates/LinuxCommandLine.jpg'
-import cert16 from '@/images/certificates/GitBasics.jpg'
-import cert17 from '@/images/certificates/HTMLEssentialTraining.jpg'
-import cert18 from '@/images/certificates/HTTPEssentialTraining.jpg'
-import cert19 from '@/images/certificates/JavaScript.jpg'
-import cert20 from '@/images/certificates/Ruby.jpg'
-import cert21 from '@/images/certificates/uxdesign1.jpg'
-import cert22 from '@/images/certificates/uxdesign2.jpg'
-import cert23 from '@/images/certificates/uxdesign3.jpg'
-import cert24 from '@/images/certificates/uxdesign4.jpg'
-import cert25 from '@/images/certificates/uxdesign5.jpg'
-import cert26 from '@/images/certificates/uxdesign6.jpg'
-import cert27 from '@/images/certificates/uxdesign7.jpg'
-
-import logoUW from '@/images/school/uw.svg'
-import logoWLU from '@/images/school/wlu.svg'
-
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { Fragment, useState, useEffect } from 'react'
 import { Tab } from '@headlessui/react'
@@ -250,9 +218,21 @@ export default function HydroOne() {
               </h2>
             </div>
             <div className="flex flex-row items-center justify-start sm:gap-12 ">
-              <Image src={logoUW} alt="University of Waterloo"></Image>
+              <Image
+                src={logoUW}
+                alt="University of Waterloo"
+                width={300}
+                height={200}
+                layout="responsive"
+              ></Image>
 
-              <Image src={logoWLU} alt="University of Waterloo"></Image>
+              <Image
+                src={logoWLU}
+                alt="University of Waterloo"
+                width={300}
+                height={200}
+                layout="responsive"
+              ></Image>
             </div>
           </div>
         </div>
@@ -314,6 +294,9 @@ export default function HydroOne() {
                               <Image
                                 src={feature.imageSrc}
                                 alt={feature.imageAlt}
+                                width={300} // Added static width
+                                height={200} // Added static height
+                                layout="responsive" // Added layout attribute
                                 className="rounded-lg object-cover object-center"
                               />
 
@@ -326,20 +309,22 @@ export default function HydroOne() {
                                   className="flex items-center gap-3 text-tiny font-normal text-zinc-500 hover:text-blue-900 dark:text-zinc-400 dark:hover:text-blue-300"
                                   target="_blank"
                                 >
-                                  <span className="sr-only">LinkedIn</span>
-                                  <svg
-                                    className="h-5 w-5"
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                  View Certificate
+                                  <div>
+                                    <span className="sr-only">LinkedIn</span>
+                                    <svg
+                                      className="h-5 w-5"
+                                      aria-hidden="true"
+                                      fill="currentColor"
+                                      viewBox="0 0 20 20"
+                                    >
+                                      <path
+                                        fillRule="evenodd"
+                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                                        clipRule="evenodd"
+                                      />
+                                    </svg>
+                                    View Certificate
+                                  </div>
                                 </Link>
                               </div>
                             </div>
@@ -351,6 +336,9 @@ export default function HydroOne() {
                               <Image
                                 src={feature.imageSrc}
                                 alt={feature.imageAlt}
+                                width={300} // Added static width
+                                height={200} // Added static height
+                                layout="responsive" // Added layout attribute
                                 className="rounded-lg object-cover object-center"
                               />
 
@@ -363,20 +351,22 @@ export default function HydroOne() {
                                   className="flex items-center gap-3 text-tiny font-normal text-zinc-500 hover:text-blue-900 dark:text-zinc-400 dark:hover:text-blue-300"
                                   target="_blank"
                                 >
-                                  <span className="sr-only">LinkedIn</span>
-                                  <svg
-                                    className="h-5 w-5"
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                  View Certificate
+                                  <div>
+                                    <span className="sr-only">LinkedIn</span>
+                                    <svg
+                                      className="h-5 w-5"
+                                      aria-hidden="true"
+                                      fill="currentColor"
+                                      viewBox="0 0 20 20"
+                                    >
+                                      <path
+                                        fillRule="evenodd"
+                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                                        clipRule="evenodd"
+                                      />
+                                    </svg>
+                                    View Certificate
+                                  </div>
                                 </Link>
                               </div>
                             </div>
@@ -388,6 +378,9 @@ export default function HydroOne() {
                               <Image
                                 src={feature.imageSrc}
                                 alt={feature.imageAlt}
+                                width={300} // Added static width
+                                height={200} // Added static height
+                                layout="responsive" // Added layout attribute
                                 className="rounded-lg object-cover object-center"
                               />
 
@@ -400,20 +393,22 @@ export default function HydroOne() {
                                   className="flex items-center gap-3 text-tiny font-normal text-zinc-500 hover:text-blue-900 dark:text-zinc-400 dark:hover:text-blue-300"
                                   target="_blank"
                                 >
-                                  <span className="sr-only">LinkedIn</span>
-                                  <svg
-                                    className="h-5 w-5"
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                  View Certificate
+                                  <div>
+                                    <span className="sr-only">LinkedIn</span>
+                                    <svg
+                                      className="h-5 w-5"
+                                      aria-hidden="true"
+                                      fill="currentColor"
+                                      viewBox="0 0 20 20"
+                                    >
+                                      <path
+                                        fillRule="evenodd"
+                                        d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                                        clipRule="evenodd"
+                                      />
+                                    </svg>
+                                    View Certificate
+                                  </div>
                                 </Link>
                               </div>
                             </div>

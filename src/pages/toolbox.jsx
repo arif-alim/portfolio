@@ -340,7 +340,13 @@ export default function Toolbox() {
                   className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
                   <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
-                    <Image src={des.imageUrl} alt="" />
+                    <Image
+                      src={des.imageUrl}
+                      alt=""
+                      width={40}
+                      height={40}
+                      layout="responsive"
+                    />
                   </div>
                   <div className="min-w-0 flex-1">
                     <Link
@@ -348,13 +354,15 @@ export default function Toolbox() {
                       target="_blank"
                       className="focus:outline-none"
                     >
-                      <span className="absolute inset-0" aria-hidden="true" />
-                      <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-50">
-                        {des.name}
-                      </p>
-                      <p className="truncate text-xs text-zinc-500 dark:text-zinc-300">
-                        {des.description}
-                      </p>
+                      <div>
+                        <span className="absolute inset-0" aria-hidden="true" />
+                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-50">
+                          {des.name}
+                        </p>
+                        <p className="truncate text-xs text-zinc-500 dark:text-zinc-300">
+                          {des.description}
+                        </p>
+                      </div>
                     </Link>
                   </div>
                 </div>
@@ -372,7 +380,13 @@ export default function Toolbox() {
                   className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
                   <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
-                    <Image src={front.imageUrl} alt="" />
+                    <Image
+                      src={front.imageUrl}
+                      alt=""
+                      width={40}
+                      height={40}
+                      layout="responsive"
+                    />
                   </div>
                   <div className="min-w-0 flex-1">
                     <Link
@@ -380,13 +394,15 @@ export default function Toolbox() {
                       target="_blank"
                       className="focus:outline-none"
                     >
-                      <span className="absolute inset-0" aria-hidden="true" />
-                      <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-50">
-                        {front.name}
-                      </p>
-                      <p className="truncate text-xs text-zinc-500 dark:text-zinc-300">
-                        {front.description}
-                      </p>
+                      <div>
+                        <span className="absolute inset-0" aria-hidden="true" />
+                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-50">
+                          {front.name}
+                        </p>
+                        <p className="truncate text-xs text-zinc-500 dark:text-zinc-300">
+                          {front.description}
+                        </p>
+                      </div>
                     </Link>
                   </div>
                 </div>
@@ -402,7 +418,13 @@ export default function Toolbox() {
                   className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
                   <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
-                    <Image src={back.imageUrl} alt="" />
+                    <Image
+                      src={back.imageUrl}
+                      alt=""
+                      width={40}
+                      height={40}
+                      layout="responsive"
+                    />
                   </div>
                   <div className="min-w-0 flex-1">
                     <Link
@@ -410,13 +432,15 @@ export default function Toolbox() {
                       target="_blank"
                       className="focus:outline-none"
                     >
-                      <span className="absolute inset-0" aria-hidden="true" />
-                      <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-50">
-                        {back.name}
-                      </p>
-                      <p className="truncate text-xs text-zinc-500 dark:text-zinc-300">
-                        {back.description}
-                      </p>
+                      <div>
+                        <span className="absolute inset-0" aria-hidden="true" />
+                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-50">
+                          {back.name}
+                        </p>
+                        <p className="truncate text-xs text-zinc-500 dark:text-zinc-300">
+                          {back.description}
+                        </p>
+                      </div>
                     </Link>
                   </div>
                 </div>

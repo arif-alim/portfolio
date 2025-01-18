@@ -1,3 +1,10 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { SimpleLayout } from '@/components/SimpleLayout'
+import { Fragment, useState } from 'react'
+import { Tab } from '@headlessui/react'
+
 // MyPrinciple
 //
 import screen1 from '@/images/projects/bombardier/myPrinciple/aircraft1.jpg'
@@ -38,14 +45,6 @@ import selectAircraftComponent from '@/images/projects/bombardier/components/Sel
 import flightHIstoryComponent from '@/images/projects/bombardier/components/FlightHistory.png'
 
 /* eslint-disable @next/next/no-img-element */
-
-import Image from 'next/image'
-import Link from 'next/link'
-
-import { SimpleLayout } from '@/components/SimpleLayout'
-
-import { Fragment, useState } from 'react'
-import { Tab } from '@headlessui/react'
 
 const tabs = [
   {
@@ -225,6 +224,9 @@ export default function Project() {
                               <Image
                                 src={feature.imageSrc}
                                 alt={feature.imageAlt}
+                                width={250} // Added static width
+                                height={250} // Added static height
+                                layout="responsive" // Added layout attribute
                                 className="dark:invert"
                               />
                             </div>
@@ -259,11 +261,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc18}
                                   alt={feature.imageAlt18}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc24}
                                   alt={feature.imageAlt24}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -272,11 +280,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc19}
                                   alt={feature.imageAlt19}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc25}
                                   alt={feature.imageAlt25}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -285,11 +299,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc20}
                                   alt={feature.imageAlt20}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc26}
                                   alt={feature.imageAlt26}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -298,11 +318,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc21}
                                   alt={feature.imageAlt21}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc27}
                                   alt={feature.imageAlt27}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -311,11 +337,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc22}
                                   alt={feature.imageAlt22}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc28}
                                   alt={feature.imageAlt28}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -323,11 +355,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc23}
                                   alt={feature.imageAlt23}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc29}
                                   alt={feature.imageAlt29}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -340,11 +378,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc1}
                                   alt={feature.imageAlt1}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc4}
                                   alt={feature.imageAlt4}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -353,11 +397,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc2}
                                   alt={feature.imageAlt2}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc5}
                                   alt={feature.imageAlt5}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -366,11 +416,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc3}
                                   alt={feature.imageAlt3}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc6}
                                   alt={feature.imageAlt6}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -379,11 +435,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc7}
                                   alt={feature.imageAlt7}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc8}
                                   alt={feature.imageAlt8}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -392,11 +454,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc10}
                                   alt={feature.imageAlt10}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc12}
                                   alt={feature.imageAlt12}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -404,11 +472,17 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc9}
                                   alt={feature.imageAlt9}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                                 <Image
                                   src={feature.imageSrc11}
                                   alt={feature.imageAlt11}
+                                  width={200} // Added static width
+                                  height={200} // Added static height
+                                  layout="responsive" // Added layout attribute
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -438,7 +512,7 @@ export default function Project() {
                                   target="_blank"
                                   className="px-1 text-sm text-blue-800 dark:text-blue-500"
                                 >
-                                  View Figma
+                                  <div>View Figma</div>
                                 </Link>
                               </div>
                               <Image
@@ -446,6 +520,7 @@ export default function Project() {
                                 alt={feature.imgAlt16}
                                 width={300}
                                 height={300}
+                                layout="responsive" // Added layout attribute
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
@@ -457,12 +532,15 @@ export default function Project() {
                                   target="_blank"
                                   className="px-1 text-sm text-blue-800 dark:text-blue-500"
                                 >
-                                  View Figma
+                                  <div>View Figma</div>
                                 </Link>
                               </div>
                               <Image
                                 src={feature.imgSrc15}
                                 alt={feature.imgAlt15}
+                                width={300}
+                                height={300}
+                                layout="responsive" // Added layout attribute
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
@@ -474,12 +552,15 @@ export default function Project() {
                                   target="_blank"
                                   className="px-1 text-sm text-blue-800 dark:text-blue-500"
                                 >
-                                  View Figma
+                                  <div>View Figma</div>
                                 </Link>
                               </div>
                               <Image
                                 src={feature.imgSrc17}
                                 alt={feature.imgAlt17}
+                                width={300}
+                                height={300}
+                                layout="responsive" // Added layout attribute
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
@@ -501,7 +582,7 @@ export default function Project() {
                                 target="_blank"
                                 className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                               >
-                                View Website
+                                <div>View Website</div>
                               </Link>
                             </div>
                           </div>
