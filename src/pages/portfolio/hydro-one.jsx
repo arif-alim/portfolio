@@ -7,28 +7,26 @@ import clsx from 'clsx'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Import assets
-import {
-  screen1,
-  // screen2,
-  // screen3,
-  // screen4,
-  // screen5,
-  // screen6,
-  // screen7,
-  // screen8,
-  // screen9,
-  // proto1,
-  // proto2,
-  // proto3,
-  // proto4,
-  // proto5,
-  // proto6,
-  // proto7,
-  // proto8,
-  // proto9,
-  // proto10,
-  logoHydroOne,
-} from '@/images/projects/hydroone'
+import screen1 from '@/images/projects/hydroone/screen1.jpg'
+import screen2 from '@/images/projects/hydroone/screen2.jpg'
+import screen3 from '@/images/projects/hydroone/screen3.jpg'
+import screen4 from '@/images/projects/hydroone/screen4.jpg'
+import screen5 from '@/images/projects/hydroone/screen5.jpg'
+import screen6 from '@/images/projects/hydroone/screen6.jpg'
+import screen7 from '@/images/projects/hydroone/screen7.jpg'
+import screen8 from '@/images/projects/hydroone/screen8.jpg'
+import screen9 from '@/images/projects/hydroone/screen9.jpg'
+import proto1 from '@/images/projects/hydroone/proto1.jpg'
+import proto2 from '@/images/projects/hydroone/proto2.jpg'
+import proto3 from '@/images/projects/hydroone/proto3.jpg'
+import proto4 from '@/images/projects/hydroone/proto4.jpg'
+import proto5 from '@/images/projects/hydroone/proto5.jpg'
+import proto6 from '@/images/projects/hydroone/proto6.jpg'
+import proto7 from '@/images/projects/hydroone/proto7.jpg'
+import proto8 from '@/images/projects/hydroone/proto8.jpg'
+import proto9 from '@/images/projects/hydroone/proto9.jpg'
+import proto10 from '@/images/projects/hydroone/proto10.jpg'
+import logoHydroOne from '@/images/projects/hydroone/logoHydroOne.jpg'
 
 // Tabs and content data
 const tabs = [
