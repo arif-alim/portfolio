@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { SimpleLayout } from '@/components/SimpleLayout'
 
 import { Container } from '@/components/Container'
 import {
@@ -65,40 +66,42 @@ export default function About() {
           content="Learn more about Arif Alim, a Canadian UI/UX Architect."
         />
       </Head>
-      <Container className="mt-16 sm:mt-20">
-        <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+      <SimpleLayout
+        title={
+          <>
+            Hi, I’m Arif Alim.
+            <br />A Seasoned UI & UX Designer!
+          </>
+        }
+        intro="Attended the double degree program - Honours Bachelor of
+                Computer Science (BCS) at University of Waterloo and Honours
+                Business Administration (BCA) at Wilfrid Laurier University."
+      >
+        <div className="mt-12 grid grid-cols-1 gap-y-16 text-sm  dark:text-zinc-50 sm:mt-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           {/* Profile Image */}
           <div className="lg:pl-20">
             <ProfileImage />
           </div>
-
           {/* Introduction Section */}
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-3xl font-extrabold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
-              Hi, I’m Arif Alim.
-              <br /> A Canadian UI/UX Architect!
-            </h1>
-            <p className="mt-4 text-sm tracking-tight text-zinc-400 dark:text-zinc-100 sm:text-[15px]">
-              Attended the double degree program - Honours Bachelor of Computer
-              Science (BCS) at University of Waterloo and Honours Business
-              Administration (BCA) at Wilfrid Laurier University.
-            </p>
-            <Section title="About My Work">
-              As an experienced UI/UX designer and frontend developer with over
-              15 years of expertise, I am well-regarded for my innovative and
-              creative design solutions. My portfolio includes designing
-              applications for a diverse range of clients, including Hydro One,
-              Trip Support, Service Ontario, and Bombardier, both for small
-              businesses and enterprise-level organizations.
-            </Section>
-            <Section>
-              My design process is guided by the latest industry trends,
-              accessibility guidelines, and user-centric methodologies. I can
-              help you achieve your UI/UX goals by creating thoughtful and
-              intuitive designs that prioritize the user experience.
-            </Section>
+            <div className="flex-row">
+              <h3 className="text-lg font-bold">About My Work</h3>
+              <p className="pt-4 ">
+                As an experienced UI/UX designer and frontend developer with
+                over 15 years of expertise, I am well-regarded for my innovative
+                and creative design solutions. My portfolio includes designing
+                applications for a diverse range of clients, including Hydro
+                One, Trip Support, Service Ontario, and Bombardier, both for
+                small businesses and enterprise-level organizations.
+              </p>
+              <p className="pt-4">
+                My design process is guided by the latest industry trends,
+                accessibility guidelines, and user-centric methodologies. I can
+                help you achieve your UI/UX goals by creating thoughtful and
+                intuitive designs that prioritize the user experience.
+              </p>
+            </div>
           </div>
-
           {/* Social Links */}
           <div className="lg:pl-20">
             <ul role="list" className="space-y-4">
@@ -129,7 +132,7 @@ export default function About() {
             </ul>
           </div>
         </div>
-      </Container>
+      </SimpleLayout>
     </>
   )
 }

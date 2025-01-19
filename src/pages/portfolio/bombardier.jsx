@@ -161,440 +161,391 @@ function classNames(...classes) {
 export default function Project() {
   const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
-    <SimpleLayout>
-      <div className="">
-        <section
-          aria-labelledby="features-heading"
-          className="mx-auto max-w-7xl"
-        >
-          <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
-            <div className="max-w-3xl">
-              <h1
-                id="features-heading"
-                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-              >
-                Bombardier
-              </h1>
-              <h2 className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
-                mySmartRouter, myPrinciple, myOnlineProductOrdering (OPO)
-              </h2>
-            </div>
-
-            <Tab.Group
-              as="div"
-              className="mt-10"
-              value={selectedTab}
-              onSelect={setSelectedTab}
-            >
-              <div className="overflow-x-hidden whitespace-nowrap">
-                <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                  <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
-                    <Tab.List className="-mb-px flex ">
-                      {tabs.map((tab) => (
-                        <Tab
-                          key={tab.name}
-                          className={({ selected }) =>
-                            classNames(
-                              selected
-                                ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                                : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
-                              'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
-                            )
-                          }
-                        >
-                          {tab.name}
-                        </Tab>
-                      ))}
-                    </Tab.List>
-                  </div>
+    <SimpleLayout
+      title={'Bombardier'}
+      intro={'mySmartRouter, myPrinciple, myOnlineProductOrdering (OPO)'}
+    >
+      <section aria-labelledby="features-heading" className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
+          <Tab.Group
+            as="div"
+            className="mt-10"
+            value={selectedTab}
+            onSelect={setSelectedTab}
+          >
+            <div className="overflow-x-hidden whitespace-nowrap">
+              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                  <Tab.List className="-mb-px flex ">
+                    {tabs.map((tab) => (
+                      <Tab
+                        key={tab.name}
+                        className={({ selected }) =>
+                          classNames(
+                            selected
+                              ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
+                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-zinc-50 border-transparent font-medium text-zinc-900 hover:border-zinc-50 dark:text-gray-300 ',
+                            'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
+                          )
+                        }
+                      >
+                        {tab.name}
+                      </Tab>
+                    ))}
+                  </Tab.List>
                 </div>
               </div>
+            </div>
 
-              <Tab.Panels as={Fragment}>
-                {tabs.map((tab) => (
-                  <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
-                    {tab.name === 'Summary'
-                      ? /* Render content for Summary tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col lg:gap-x-8"
-                          >
-                            <div className="lg: mb-0 mt-6 max-w-[250px] lg:my-4">
+            <Tab.Panels as={Fragment}>
+              {tabs.map((tab) => (
+                <Tab.Panel
+                  key={tab.name}
+                  className="space-y-16 pt-4 text-sm lg:pt-8"
+                >
+                  {tab.name === 'Summary'
+                    ? /* Render content for Summary tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col lg:gap-x-8"
+                        >
+                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                            <h2>Summary</h2>
+                          </div>
+                          <div className="flex max-w-prose flex-col gap-4 text-zinc-900 dark:font-thin dark:text-zinc-50 lg:mt-0">
+                            <p>{feature.para1}</p>
+                            <p>{feature.para2}</p>
+                            <p>{feature.para3}</p>
+                          </div>
+                        </div>
+                      ))
+                    : tab.name === 'Wireframes'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col gap-y-2 bg-slate-100 dark:bg-inherit"
+                        >
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6">
+                            <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200">
+                              <h2>mySmartRouter</h2>
+                            </div>
+                            <div className="flex flex-col gap-4 lg:col-span-2">
                               <Image
-                                src={feature.imageSrc}
-                                alt={feature.imageAlt}
-                                width={250} // Added static width
-                                height={250} // Added static height
-                                layout="responsive" // Added layout attribute
-                                className="dark:invert"
+                                src={feature.imageSrc18}
+                                alt={feature.imageAlt18}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
                               />
-                            </div>
-                            <div className="mt-6 max-w-prose lg:mt-0">
-                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                {feature.name}
-                              </h3>
-                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para1}
-                              </p>
-                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para2}
-                              </p>
-                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para3}
-                              </p>
-                            </div>
-                          </div>
-                        ))
-                      : tab.name === 'Wireframes'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col gap-y-2 bg-slate-100 dark:bg-inherit"
-                          >
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200">
-                                <h2>mySmartRouter</h2>
-                              </div>
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc18}
-                                  alt={feature.imageAlt18}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc24}
-                                  alt={feature.imageAlt24}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc19}
-                                  alt={feature.imageAlt19}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc25}
-                                  alt={feature.imageAlt25}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc20}
-                                  alt={feature.imageAlt20}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc26}
-                                  alt={feature.imageAlt26}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc21}
-                                  alt={feature.imageAlt21}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc27}
-                                  alt={feature.imageAlt27}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc22}
-                                  alt={feature.imageAlt22}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc28}
-                                  alt={feature.imageAlt28}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc23}
-                                  alt={feature.imageAlt23}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc29}
-                                  alt={feature.imageAlt29}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6">
-                              <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200">
-                                <h2>myPrinciple</h2>
-                              </div>
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc1}
-                                  alt={feature.imageAlt1}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc4}
-                                  alt={feature.imageAlt4}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc2}
-                                  alt={feature.imageAlt2}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc5}
-                                  alt={feature.imageAlt5}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc3}
-                                  alt={feature.imageAlt3}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc6}
-                                  alt={feature.imageAlt6}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc7}
-                                  alt={feature.imageAlt7}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc8}
-                                  alt={feature.imageAlt8}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc10}
-                                  alt={feature.imageAlt10}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc12}
-                                  alt={feature.imageAlt12}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="flex flex-col gap-4 lg:col-span-2">
-                                <Image
-                                  src={feature.imageSrc9}
-                                  alt={feature.imageAlt9}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc11}
-                                  alt={feature.imageAlt11}
-                                  width={200} // Added static width
-                                  height={200} // Added static height
-                                  layout="responsive" // Added layout attribute
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        ))
-                      : tab.name === 'Lego Components'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.type}
-                            className="flex flex-col  lg:gap-x-8"
-                          >
-                            <div className="my-6 lg:mt-0 lg:max-w-prose">
-                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
-                                {feature.type}
-                              </h3>
-                              <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
-                                {feature.component}
-                              </p>
-                            </div>
-                            <div className=" mb-8 lg:max-w-full">
-                              <div className="mb-2 text-tiny dark:text-gray-200">
-                                Select aircraft component -
-                                <Link
-                                  href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=486%3A8043&t=ZNtgizfNIxMUnfdq-1"
-                                  target="_blank"
-                                  className="px-1 text-sm text-blue-800 dark:text-blue-500"
-                                >
-                                  <div>View Figma</div>
-                                </Link>
-                              </div>
                               <Image
-                                src={feature.imgSrc16}
-                                alt={feature.imgAlt16}
-                                width={300}
-                                height={300}
-                                layout="responsive" // Added layout attribute
+                                src={feature.imageSrc24}
+                                alt={feature.imageAlt24}
+                                width={200} // Added static width
+                                height={200} // Added static height
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
-                            <div className=" mb-8 lg:max-w-xl">
-                              <div className="mb-2 text-tiny dark:text-gray-200">
-                                Card component -
-                                <Link
-                                  href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=91%3A709&t=ZNtgizfNIxMUnfdq-1"
-                                  target="_blank"
-                                  className="px-1 text-sm text-blue-800 dark:text-blue-500"
-                                >
-                                  <div>View Figma</div>
-                                </Link>
-                              </div>
+
+                            <div className="flex flex-col gap-4 lg:col-span-2">
                               <Image
-                                src={feature.imgSrc15}
-                                alt={feature.imgAlt15}
-                                width={300}
-                                height={300}
-                                layout="responsive" // Added layout attribute
+                                src={feature.imageSrc19}
+                                alt={feature.imageAlt19}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc25}
+                                alt={feature.imageAlt25}
+                                width={200} // Added static width
+                                height={200} // Added static height
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
-                            <div className=" lg:max-w-md">
-                              <div className="mb-2 text-tiny dark:text-gray-200">
-                                Card component -
-                                <Link
-                                  href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=145%3A1448&t=ZNtgizfNIxMUnfdq-1"
-                                  target="_blank"
-                                  className="px-1 text-sm text-blue-800 dark:text-blue-500"
-                                >
-                                  <div>View Figma</div>
-                                </Link>
-                              </div>
+
+                            <div className="flex flex-col gap-4 lg:col-span-2">
                               <Image
-                                src={feature.imgSrc17}
-                                alt={feature.imgAlt17}
-                                width={300}
-                                height={300}
-                                layout="responsive" // Added layout attribute
+                                src={feature.imageSrc20}
+                                alt={feature.imageAlt20}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc26}
+                                alt={feature.imageAlt26}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+
+                            <div className="flex flex-col gap-4 lg:col-span-2">
+                              <Image
+                                src={feature.imageSrc21}
+                                alt={feature.imageAlt21}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc27}
+                                alt={feature.imageAlt27}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+
+                            <div className="flex flex-col gap-4 lg:col-span-2">
+                              <Image
+                                src={feature.imageSrc22}
+                                alt={feature.imageAlt22}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc28}
+                                alt={feature.imageAlt28}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                            <div className="flex flex-col gap-4 lg:col-span-2">
+                              <Image
+                                src={feature.imageSrc23}
+                                alt={feature.imageAlt23}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc29}
+                                alt={feature.imageAlt29}
+                                width={200} // Added static width
+                                height={200} // Added static height
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
                           </div>
-                        ))
-                      : tab.name === 'Company details'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div key={feature.name}>
-                            <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
-                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                {feature.name}
-                              </h3>
-                              <p className="mt-2 text-tiny font-normal text-gray-600 dark:text-gray-400">
-                                {feature.para1}
-                              </p>
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6">
+                            <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200">
+                              <h2>myPrinciple</h2>
+                            </div>
+                            <div className="flex flex-col gap-4 lg:col-span-2">
+                              <Image
+                                src={feature.imageSrc1}
+                                alt={feature.imageAlt1}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc4}
+                                alt={feature.imageAlt4}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+
+                            <div className="flex flex-col gap-4 lg:col-span-2">
+                              <Image
+                                src={feature.imageSrc2}
+                                alt={feature.imageAlt2}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc5}
+                                alt={feature.imageAlt5}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+
+                            <div className="flex flex-col gap-4 lg:col-span-2">
+                              <Image
+                                src={feature.imageSrc3}
+                                alt={feature.imageAlt3}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc6}
+                                alt={feature.imageAlt6}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+
+                            <div className="flex flex-col gap-4 lg:col-span-2">
+                              <Image
+                                src={feature.imageSrc7}
+                                alt={feature.imageAlt7}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc8}
+                                alt={feature.imageAlt8}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+
+                            <div className="flex flex-col gap-4 lg:col-span-2">
+                              <Image
+                                src={feature.imageSrc10}
+                                alt={feature.imageAlt10}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc12}
+                                alt={feature.imageAlt12}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                            <div className="flex flex-col gap-4 lg:col-span-2">
+                              <Image
+                                src={feature.imageSrc9}
+                                alt={feature.imageAlt9}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                              <Image
+                                src={feature.imageSrc11}
+                                alt={feature.imageAlt11}
+                                width={200} // Added static width
+                                height={200} // Added static height
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    : tab.name === 'Lego Components'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.type}
+                          className="flex flex-col text-tiny dark:text-zinc-50 lg:gap-x-8"
+                        >
+                          <div className="my-6 lg:mt-0 ">
+                            <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+                              {feature.type}
+                            </h3>
+                            <p className="mt-2 ">{feature.component}</p>
+                          </div>
+                          <div className=" mb-16 lg:max-w-full">
+                            <div className="flex flex-col gap-1 pb-4">
+                              <div className="font-semibold">
+                                Select aircraft component
+                              </div>
                               <Link
-                                href={feature.link}
+                                href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=486%3A8043&t=ZNtgizfNIxMUnfdq-1"
                                 target="_blank"
-                                className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                className=" text-sm text-blue-800 dark:text-blue-500"
                               >
-                                <div>View Website</div>
+                                <div>View Figma</div>
                               </Link>
                             </div>
+                            <Image
+                              src={feature.imgSrc16}
+                              alt={feature.imgAlt16}
+                              width={500}
+                              height={500}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
                           </div>
-                        ))
-                      : null}
-                  </Tab.Panel>
-                ))}
-              </Tab.Panels>
-            </Tab.Group>
-          </div>
-        </section>
-      </div>
+                          <div className=" mb-16 lg:max-w-xl">
+                            <div className="flex flex-col gap-1 pb-4">
+                              <div className="font-semibold">
+                                Card Component
+                              </div>
+                              <Link
+                                href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=91%3A709&t=ZNtgizfNIxMUnfdq-1"
+                                target="_blank"
+                                className=" text-sm text-blue-800 dark:text-blue-500"
+                              >
+                                <div>View Figma</div>
+                              </Link>
+                            </div>
+                            <Image
+                              src={feature.imgSrc15}
+                              alt={feature.imgAlt15}
+                              width={500}
+                              height={500}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                          </div>
+                          <div className=" mb-16 lg:max-w-sm">
+                            <div className="flex flex-col gap-1 pb-4">
+                              <div className="font-semibold">Trip History</div>
+                              <Link
+                                href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=145%3A1448&t=ZNtgizfNIxMUnfdq-1"
+                                target="_blank"
+                                className=" text-sm text-blue-800 dark:text-blue-500"
+                              >
+                                <div>View Figma</div>
+                              </Link>
+                            </div>
+                            <Image
+                              src={feature.imgSrc17}
+                              alt={feature.imgAlt17}
+                              width={500}
+                              height={500}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                          </div>
+                        </div>
+                      ))
+                    : tab.name === 'Company details'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div key={feature.name}>
+                          <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+                              {feature.name}
+                            </h3>
+                            <p className="mt-2  font-normal text-zinc-900 dark:text-zinc-50">
+                              {feature.para1}
+                            </p>
+                            <Link
+                              href={feature.link}
+                              target="_blank"
+                              className="zinc-5ring-inset mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-zinc-900 shadow-sm ring-gray-300 hover:bg-gray-50"
+                            >
+                              <div>View Website</div>
+                            </Link>
+                          </div>
+                        </div>
+                      ))
+                    : null}
+                </Tab.Panel>
+              ))}
+            </Tab.Panels>
+          </Tab.Group>
+        </div>
+      </section>
     </SimpleLayout>
   )
 }

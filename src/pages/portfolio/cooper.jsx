@@ -156,7 +156,7 @@ export default function Project() {
             aria-labelledby="features-heading"
             className="mx-auto max-w-7xl"
           >
-            <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
+            <div className="mx-auto max-w-prose px-0 lg:max-w-none lg:px-0">
               <div className="max-w-3xl">
                 <h1
                   id="features-heading"

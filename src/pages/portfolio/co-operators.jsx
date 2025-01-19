@@ -145,314 +145,382 @@ function classNames(...classes) {
 export default function Project() {
   const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
-    <SimpleLayout>
-      <div className="">
-        <section
-          aria-labelledby="features-heading"
-          className="mx-auto max-w-7xl"
-        >
-          <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
-            <div className="max-w-3xl">
-              <h1
-                id="features-heading"
-                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-              >
-                Co-operators
-              </h1>
-              <h2 className="mt-1 text-tiny font-medium tracking-tight text-gray-600 dark:text-gray-300">
-                Helped create Co-operators new visual identity.
-              </h2>
-            </div>
-
-            <Tab.Group
-              as="div"
-              className="mt-10"
-              value={selectedTab}
-              onSelect={setSelectedTab}
-            >
-              <div className="overflow-x-hidden whitespace-nowrap">
-                <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                  <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
-                    <Tab.List className="-mb-px flex ">
-                      {tabs.map((tab) => (
-                        <Tab
-                          key={tab.name}
-                          className={({ selected }) =>
-                            classNames(
-                              selected
-                                ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                                : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
-                              'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
-                            )
-                          }
-                        >
-                          {tab.name}
-                        </Tab>
-                      ))}
-                    </Tab.List>
-                  </div>
+    <SimpleLayout
+      title={'Co-operators'}
+      intro={'Helped create Co-operators new visual identity.'}
+    >
+      <section aria-labelledby="features-heading" className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-prose px-0 lg:max-w-none lg:px-0">
+          <Tab.Group
+            as="div"
+            className="mt-10"
+            value={selectedTab}
+            onSelect={setSelectedTab}
+          >
+            <div className="overflow-x-hidden whitespace-nowrap">
+              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                  <Tab.List className="-mb-px flex ">
+                    {tabs.map((tab) => (
+                      <Tab
+                        key={tab.name}
+                        className={({ selected }) =>
+                          classNames(
+                            selected
+                              ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
+                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
+                            'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
+                          )
+                        }
+                      >
+                        {tab.name}
+                      </Tab>
+                    ))}
+                  </Tab.List>
                 </div>
               </div>
+            </div>
 
-              <Tab.Panels as={Fragment}>
-                {tabs.map((tab) => (
-                  <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
-                    {tab.name === 'Summary'
-                      ? /* Render content for Summary tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col lg:gap-x-8"
-                          >
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                              <h2>Summary</h2>
-                            </div>
-                            <div className="max-w-prose lg:mt-0">
-                              <p className="text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para1}
-                              </p>
-                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para2}
-                              </p>
-                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para3}
-                              </p>
-                            </div>
+            <Tab.Panels as={Fragment}>
+              {tabs.map((tab) => (
+                <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
+                  {tab.name === 'Summary'
+                    ? /* Render content for Summary tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col lg:gap-x-8"
+                        >
+                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                            <h2>Summary</h2>
                           </div>
-                        ))
-                      : tab.name === 'Wireframes'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col gap-y-16  dark:bg-inherit"
-                          >
-                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Homepage</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                          <div className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900 dark:font-thin dark:text-zinc-50 lg:mt-0">
+                            <p>{feature.para1}</p>
+                            <p>{feature.para2}</p>
+                            <p>{feature.para3}</p>
+                          </div>
+                        </div>
+                      ))
+                    : tab.name === 'Wireframes'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col gap-y-16 dark:bg-inherit"
+                        >
+                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Homepage</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc1}
                                   alt={feature.imageSrc1Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc2}
                                   alt={feature.imageSrc2Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Sign-in and upgrade policy</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                          </div>
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Sign-in and upgrade policy</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc3}
                                   alt={feature.imageSrc3Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc4}
                                   alt={feature.imageSrc4Alt}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>
-                                  Auto policy and details coverage screens
-                                </h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
-                                <Image
-                                  src={feature.imageSrc5}
-                                  alt={feature.imageSrc5Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
                           </div>
-                        ))
-                      : tab.name === 'Style guide'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col gap-y-16  dark:bg-inherit"
-                          >
-                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Light and dark theme</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Auto policy and details coverage screens</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <Image
+                                src={feature.imageSrc5}
+                                alt={feature.imageSrc5Alt}
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    : tab.name === 'Style guide'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col gap-y-16  dark:bg-inherit"
+                        >
+                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Light and dark theme</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc6}
                                   alt={feature.imageSrc6Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc7}
                                   alt={feature.imageSrc7Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Sign-in and upgrade policy</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                          </div>
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Sign-in and upgrade policy</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc8}
                                   alt={feature.imageSrc8Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc9}
                                   alt={feature.imageSrc9Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
                           </div>
-                        ))
-                      : tab.name === 'Illustrations'
-                      ? /* Render content for Illustrations tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col gap-y-16  dark:bg-inherit"
-                          >
-                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Illustrations</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                        </div>
+                      ))
+                    : tab.name === 'Illustrations'
+                    ? /* Render content for Illustrations tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col gap-y-16  dark:bg-inherit"
+                        >
+                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Illustrations</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc10}
                                   alt={feature.imageSrc10Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc11}
                                   alt={feature.imageSrc11Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
                           </div>
-                        ))
-                      : tab.name === 'Design system'
-                      ? /* Render content for Illustrations tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col gap-y-16  dark:bg-inherit"
-                          >
-                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Banners</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                        </div>
+                      ))
+                    : tab.name === 'Design system'
+                    ? /* Render content for Illustrations tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col gap-y-16  dark:bg-inherit"
+                        >
+                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Banners</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc19}
                                   alt={feature.imageSrc19Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc18}
                                   alt={feature.imageSrc18Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
-                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Tile and snackbar component</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                          </div>
+                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Tile and snackbar component</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc15}
                                   alt={feature.imageSrc15Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc16}
                                   alt={feature.imageSrc16Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
-                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Card and button component</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                          </div>
+                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Card and button component</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc12}
                                   alt={feature.imageSrc12Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc13}
                                   alt={feature.imageSrc13Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
-                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Slider and switch component</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                          </div>
+                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Slider and switch component</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc14}
                                   alt={feature.imageSrc14Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc17}
                                   alt={feature.imageSrc17Alt}
+                                  width={500}
+                                  height={500}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
                           </div>
-                        ))
-                      : tab.name === 'Company details'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div key={feature.name}>
-                            <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
-                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                {feature.name}
-                              </h3>
-                              <p className="mt-2 text-tiny text-gray-600 dark:text-gray-400">
-                                {feature.para1}
-                              </p>
-                              <button
-                                type="button"
-                                className="mt-8 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                              >
-                                <Link href={feature.link} target="_blank">
-                                  View Website
-                                </Link>
-                              </button>
-                            </div>
+                        </div>
+                      ))
+                    : tab.name === 'Company details'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div key={feature.name}>
+                          <div className="mt-6 max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-50 lg:col-span-5 lg:mt-0 ">
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
+                              {feature.name}
+                            </h3>
+                            <p className="mt-2">{feature.para1}</p>
+                            <Link
+                              href={feature.link}
+                              target="_blank"
+                              className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                            >
+                              <div>View Website</div>
+                            </Link>
                           </div>
-                        ))
-                      : null}
-                  </Tab.Panel>
-                ))}
-              </Tab.Panels>
-            </Tab.Group>
-          </div>
-        </section>
-      </div>
+                        </div>
+                      ))
+                    : null}
+                </Tab.Panel>
+              ))}
+            </Tab.Panels>
+          </Tab.Group>
+        </div>
+      </section>
     </SimpleLayout>
   )
 }

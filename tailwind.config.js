@@ -14,9 +14,9 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      xs: ['0.7125rem', { lineHeight: '1.4rem' }],
-      sm: ['0.875rem', { lineHeight: '1.5rem' }],
-      tiny: ['0.945rem', { lineHeight: '1.65rem' }],
+      xs: ['0.78rem', { lineHeight: '1.4rem' }],
+      sm: ['0.87rem', { lineHeight: '1.5rem' }],
+      tiny: ['0.94rem', { lineHeight: '1.65rem' }],
       base: ['1rem', { lineHeight: '1.75rem' }],
       md: ['1.075rem', { lineHeight: '1.8215rem' }],
       lg: ['1.125rem', { lineHeight: '1.9rem' }],

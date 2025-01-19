@@ -4,32 +4,48 @@ import Link from 'next/link'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 // Logo preset bg
-import logoCraftCity from '@/images/projects/craftcity.png'
-import logoCooperators from '@/images/projects/cooperators-logo.png'
-import logoTripSupport from '@/images/projects/tripsupport.png'
-import logoBombardier from '@/images/projects/bombardier.png'
-import logoChicasaDesign from '@/images/projects/chicasadesign.png'
-import logoDistrictEatery from '@/images/projects/district-logo.png'
-import logoEquityBank from '@/images/projects/equitybank.png'
-import logoHydroOne from '@/images/projects/hydroone.png'
-import logoIslandTraders from '@/images/projects/islandtraders.png'
-import logoMissBahamas from '@/images/projects/missbahamas.png'
-import logoNBARestaurant from '@/images/projects/nbarestaurant.png'
-import logoNFCD from '@/images/projects/nfcd.png'
-import logoServiceOntario from '@/images/projects/serviceontario.png'
-import logoTitanGroup from '@/images/projects/titangroup.png'
-import logoUrbanDining from '@/images/projects/urbandining.png'
-import logoWolff from '@/images/projects/wolff.png'
-import logoCooper from '@/images/projects/cooper-logo.png'
-import logoTritecSolutions from '@/images/projects/tritecsolutions.png'
-import logoLieberGroup from '@/images/projects/liebergroup-logo.png'
-import logoGabbys from '@/images/projects/gabbys.png'
-import logoHeyLucys from '@/images/projects/heylucys.png'
-import logoPerfectone from '@/images/projects/perfectone-logo.png'
-import logoAirbus from '@/images/projects/airbus.png'
-import logoManulife from '@/images/projects/manulife/manulife.png'
+import logoCraftCityLight from '@/images/projects/craftcity-logo-light.png'
+import logoCraftCityDark from '@/images/projects/craftcity-logo-dark.png'
+import logoCooperatorsLight from '@/images/projects/cooperators-logo-light.png'
+import logoCooperatorsDark from '@/images/projects/cooperators-logo-dark.png'
+import logoTripSupportLight from '@/images/projects/tripsupport-logo-light.png'
+import logoTripSupportDark from '@/images/projects/tripsupport-logo-dark.png'
+import logoBombardierLight from '@/images/projects/bombardier-logo-light.png'
+import logoBombardierDark from '@/images/projects/bombardier-logo-dark.png'
+import logoChicasaDesignLight from '@/images/projects/chicasadesign-logo-light.png'
+import logoChicasaDesignDark from '@/images/projects/chicasadesign-logo-dark.png'
+import logoDistrictEateryLight from '@/images/projects/district-logo-light.png'
+import logoDistrictEateryDark from '@/images/projects/district-logo-dark.png'
+import logoEquityBankLight from '@/images/projects/equitybank-logo-light.png'
+import logoEquityBankDark from '@/images/projects/equitybank-logo-dark.png'
+import logoHydroOneLight from '@/images/projects/hydroone-logo-light.png'
+import logoHydroOneDark from '@/images/projects/hydroone-logo-dark.png'
+import logoIslandTradersLight from '@/images/projects/islandtraders-logo-light.png'
+import logoIslandTradersDark from '@/images/projects/islandtraders-logo-dark.png'
+import logoMissBahamasLight from '@/images/projects/missbahamas-logo-light.png'
+import logoMissBahamasDark from '@/images/projects/missbahamas-logo-dark.png'
+import logoNFCDLight from '@/images/projects/nfcd-logo-light.png'
+import logoNFCDDark from '@/images/projects/nfcd-logo-dark.png'
+import logoServiceOntarioLight from '@/images/projects/serviceontario-logo-light.png'
+import logoServiceOntarioDark from '@/images/projects/serviceontario-logo-dark.png'
+import logoTitanGroupLight from '@/images/projects/titangroup-logo-light.png'
+import logoTitanGroupDark from '@/images/projects/titangroup-logo-dark.png'
+import logoUrbanDiningLight from '@/images/projects/urbandining-logo-light.png'
+import logoUrbanDiningDark from '@/images/projects/urbandining-logo-dark.png'
+import logoCooperLight from '@/images/projects/cooper-logo-light.png'
+import logoCooperDark from '@/images/projects/cooper-logo-dark.png'
+import logoTritecSolutionsLight from '@/images/projects/tritecsolutions-logo-light.png'
+import logoTritecSolutionsDark from '@/images/projects/tritecsolutions-logo-dark.png'
+import logoLieberGroupLight from '@/images/projects/liebergroup-logo-light.png'
+import logoLieberGroupDark from '@/images/projects/liebergroup-logo-dark.png'
+import logoGabbysLight from '@/images/projects/gabbys-logo-light.png'
+import logoGabbysDark from '@/images/projects/gabbys-logo-dark.png'
+import logoPerfectoneLight from '@/images/projects/perfectone-logo-light.png'
+import logoPerfectoneDark from '@/images/projects/perfectone-logo-dark.png'
+import logoManulifeLight from '@/images/projects/manulife-logo-light.png'
+import logoManulifeDark from '@/images/projects/manulife-logo-dark.png'
 
-import { useEffect, useId, useState } from 'react'
+import { useId } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 
@@ -42,7 +58,8 @@ const portfolio = [
       href: '/portfolio/co-operators',
       label: 'View project',
     },
-    image: logoCooperators,
+    imageLight: logoCooperatorsLight,
+    imageDark: logoCooperatorsDark,
   },
   {
     id: 1,
@@ -52,7 +69,8 @@ const portfolio = [
       href: '/portfolio/manulife',
       label: 'View project',
     },
-    image: logoManulife,
+    imageLight: logoManulifeLight,
+    imageDark: logoManulifeDark,
   },
   {
     id: 2,
@@ -62,7 +80,8 @@ const portfolio = [
       href: '/portfolio/bombardier',
       label: 'View project',
     },
-    image: logoBombardier,
+    imageLight: logoBombardierLight,
+    imageDark: logoBombardierDark,
   },
   {
     id: 3,
@@ -72,7 +91,8 @@ const portfolio = [
       href: '/portfolio/trip-support',
       label: 'View project',
     },
-    image: logoTripSupport,
+    imageLight: logoTripSupportLight,
+    imageDark: logoTripSupportDark,
   },
   {
     id: 4,
@@ -82,7 +102,8 @@ const portfolio = [
       href: '/portfolio/service-ontario',
       label: 'View project',
     },
-    image: logoServiceOntario,
+    imageLight: logoServiceOntarioLight,
+    imageDark: logoServiceOntarioDark,
   },
   {
     id: 5,
@@ -92,7 +113,8 @@ const portfolio = [
       href: '/portfolio/hydro-one',
       label: 'View project',
     },
-    image: logoHydroOne,
+    imageLight: logoHydroOneLight,
+    imageDark: logoHydroOneDark,
   },
   {
     id: 6,
@@ -102,7 +124,8 @@ const portfolio = [
       href: '/portfolio/perfec-tone',
       label: 'View project',
     },
-    image: logoPerfectone,
+    imageLight: logoPerfectoneLight,
+    imageDark: logoPerfectoneDark,
   },
   {
     id: 7,
@@ -112,7 +135,8 @@ const portfolio = [
       href: '/portfolio/chicasa-design',
       label: 'View project',
     },
-    image: logoChicasaDesign,
+    imageLight: logoChicasaDesignLight,
+    imageDark: logoChicasaDesignDark,
   },
   {
     id: 8,
@@ -122,7 +146,8 @@ const portfolio = [
       href: '/portfolio/craft-city',
       label: 'View project',
     },
-    image: logoCraftCity,
+    imageLight: logoCraftCityLight,
+    imageDark: logoCraftCityDark,
   },
   {
     id: 9,
@@ -132,7 +157,8 @@ const portfolio = [
       href: '/portfolio/cooper',
       label: 'View project',
     },
-    image: logoCooper,
+    imageLight: logoCooperLight,
+    imageDark: logoCooperDark,
   },
   {
     id: 10,
@@ -142,7 +168,8 @@ const portfolio = [
       href: '/portfolio/titan-group',
       label: 'View project',
     },
-    image: logoTitanGroup,
+    imageLight: logoTitanGroupLight,
+    imageDark: logoTitanGroupDark,
   },
   {
     id: 11,
@@ -152,9 +179,9 @@ const portfolio = [
       href: '/portfolio/miss-bahamas',
       label: 'View project',
     },
-    image: logoMissBahamas,
+    imageLight: logoMissBahamasLight,
+    imageDark: logoMissBahamasDark,
   },
-
   {
     id: 12,
     name: 'District Eatery',
@@ -163,7 +190,8 @@ const portfolio = [
       href: '/portfolio/district-eatery',
       label: 'View project',
     },
-    image: logoDistrictEatery,
+    imageLight: logoDistrictEateryLight,
+    imageDark: logoDistrictEateryDark,
   },
   {
     id: 13,
@@ -173,7 +201,8 @@ const portfolio = [
       href: '/portfolio/equity-bank',
       label: 'View project',
     },
-    image: logoEquityBank,
+    imageLight: logoEquityBankLight,
+    imageDark: logoEquityBankDark,
   },
   {
     id: 14,
@@ -183,7 +212,8 @@ const portfolio = [
       href: '/portfolio/island-traders',
       label: 'View project',
     },
-    image: logoIslandTraders,
+    imageLight: logoIslandTradersLight,
+    imageDark: logoIslandTradersDark,
   },
   {
     id: 15,
@@ -193,9 +223,9 @@ const portfolio = [
       href: '/portfolio/nfcd',
       label: 'View project',
     },
-    image: logoNFCD,
+    imageLight: logoNFCDLight,
+    imageDark: logoNFCDDark,
   },
-
   {
     id: 16,
     name: 'Urban Dining',
@@ -204,7 +234,8 @@ const portfolio = [
       href: '/portfolio/urban-dining',
       label: 'View project',
     },
-    image: logoUrbanDining,
+    imageLight: logoUrbanDiningLight,
+    imageDark: logoUrbanDiningDark,
   },
   {
     id: 17,
@@ -214,7 +245,8 @@ const portfolio = [
       href: '/portfolio/tritec-solutions',
       label: 'View project',
     },
-    image: logoTritecSolutions,
+    imageLight: logoTritecSolutionsLight,
+    imageDark: logoTritecSolutionsDark,
   },
   {
     id: 18,
@@ -224,7 +256,8 @@ const portfolio = [
       href: '/portfolio/lieber',
       label: 'View project',
     },
-    image: logoLieberGroup,
+    imageLight: logoLieberGroupLight,
+    imageDark: logoLieberGroupDark,
   },
   {
     id: 19,
@@ -234,7 +267,8 @@ const portfolio = [
       href: '/portfolio/gabbys',
       label: 'View project',
     },
-    image: logoGabbys,
+    imageLight: logoGabbysLight,
+    imageDark: logoGabbysDark,
   },
 ]
 
@@ -260,9 +294,7 @@ export default function Speakers() {
   let id = useId()
 
   return (
-    <section id="speakers" aria-labelledby="speakers-title">
-      <ImageClipPaths id={id} />
-
+    <div className="flex min-h-screen flex-col">
       <Head>
         <title>portfolio - Arif Alim</title>
         <meta
@@ -279,45 +311,55 @@ export default function Speakers() {
             <div key={project.id} unmount={false}>
               <div key={project.id}>
                 <Link href={project.link.href}>
-                  <a>
-                    <div className="rounded-4xl group relative h-[196px] transform overflow-hidden ">
-                      <div
-                        className={clsx(
-                          'rounded-4xl absolute top-0 left-0 right-0 bottom-0 border transition duration-300 group-hover:scale-95 ',
-                          [
-                            'border-emerald-300',
-                            'border-indigo-300',
-                            'border-sky-300',
-                            'border-rose-300',
-                          ][project.id % 5]
-                        )}
-                      />
-                      <div
-                        className="absolute inset-0 my-auto bg-zinc-100"
-                        style={{ clipPath: `url(#${id}-${project.id % 3})` }}
-                      >
-                        <div className="flex h-full w-full flex-row items-center p-12 align-middle sm:p-4">
-                          <Image
-                            className=" transition duration-300 group-hover:scale-110"
-                            src={project.image}
-                            alt=""
-                          />
-                        </div>
+                  <div className="rounded-4xl group relative h-[196px] transform overflow-hidden ">
+                    <div
+                      className={clsx(
+                        'rounded-4xl absolute top-0 left-0 right-0 bottom-0 border transition duration-300 group-hover:scale-95 ',
+                        [
+                          // 'border-emerald-300',
+                          // 'border-indigo-300',
+                          // 'border-sky-300',
+                          // 'border-rose-300',
+                        ][project.id % 5]
+                      )}
+                    />
+                    <div
+                      className="absolute inset-0 my-auto "
+                      // className="absolute inset-0 my-auto bg-zinc-100"
+                      // style={{ clipPath: `url(#${id}-${project.id % 3})` }}
+                    >
+                      <div className="flex h-full w-full flex-row items-center p-12 align-middle sm:p-4">
+                        <Image
+                          className=" transition duration-300 group-hover:scale-110 dark:hidden"
+                          src={project.imageLight}
+                          alt=""
+                          width={260}
+                          height={260}
+                          layout="responsive"
+                        />
+                        <Image
+                          className=" hidden transition duration-300 group-hover:scale-110 dark:block"
+                          src={project.imageDark}
+                          alt=""
+                          width={260}
+                          height={260}
+                          layout="responsive"
+                        />
                       </div>
                     </div>
-                    <h3 className="font-display mt-2 text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-                      {project.name}
-                    </h3>
-                    <p className="text-sm tracking-tight text-zinc-500 dark:font-light dark:text-zinc-100">
-                      {project.about}
-                    </p>
-                  </a>
+                  </div>
+                  <h3 className="font-display mt-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                    {project.name}
+                  </h3>
+                  <p className="text-sm text-zinc-500 dark:font-light dark:text-zinc-100">
+                    {project.about}
+                  </p>
                 </Link>
               </div>
             </div>
           ))}
         </div>
       </SimpleLayout>
-    </section>
+    </div>
   )
 }

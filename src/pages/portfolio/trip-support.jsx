@@ -183,29 +183,14 @@ export default function Project() {
                             key={feature.name}
                             className="flex flex-col lg:gap-x-8"
                           >
-                            <div className="mb-4 max-w-[300px] sm:mt-0 lg:mt-4">
-                              <Image
-                                src={feature.imageSrc}
-                                alt={feature.imageAlt}
-                                className="dark:invert"
-                              />
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                              <h2>Summary</h2>
                             </div>
-                            <div className="mt-6 lg:mt-4 lg:max-w-prose">
-                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                {feature.name}
-                              </h3>
-                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para1}
-                              </p>
-                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para2}
-                              </p>
-                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para3}
-                              </p>
-                              <p className="mt-4 text-tiny text-gray-700 dark:text-gray-400">
-                                {feature.para4}
-                              </p>
+                            <div className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900 dark:font-thin dark:text-zinc-50 lg:mt-0">
+                              <p>{feature.para1}</p>
+                              <p>{feature.para2}</p>
+                              <p>{feature.para3}</p>
+                              <p>{feature.para4}</p>
                             </div>
                           </div>
                         ))

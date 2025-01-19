@@ -109,287 +109,286 @@ function classNames(...classes) {
 export default function Project() {
   const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
-    <SimpleLayout>
-      <div className="">
-        <section
-          aria-labelledby="features-heading"
-          className="mx-auto max-w-7xl"
-        >
-          <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
-            <div className="max-w-3xl">
-              <h1
-                id="features-heading"
-                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-              >
-                Manulife
-              </h1>
-              <h2 className="mt-1 text-tiny font-medium tracking-tight text-gray-600 dark:text-gray-300">
-                Streamlined the user interface for the Plan Administrator and
-                Disability portal to enhance user experience.
-              </h2>
-            </div>
-
-            <Tab.Group
-              as="div"
-              className="mt-10"
-              value={selectedTab}
-              onSelect={setSelectedTab}
-            >
-              <div className="overflow-x-hidden whitespace-nowrap">
-                <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                  <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
-                    <Tab.List className="-mb-px flex ">
-                      {tabs.map((tab) => (
-                        <Tab
-                          key={tab.name}
-                          className={({ selected }) =>
-                            classNames(
-                              selected
-                                ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                                : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
-                              'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
-                            )
-                          }
-                        >
-                          {tab.name}
-                        </Tab>
-                      ))}
-                    </Tab.List>
-                  </div>
+    <SimpleLayout
+      title={'Manulife'}
+      intro={
+        'Streamlined the user interface for the Plan Administrator and Disability portal to enhance user experience.'
+      }
+    >
+      <section aria-labelledby="features-heading" className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
+          <Tab.Group
+            as="div"
+            className="mt-10"
+            value={selectedTab}
+            onSelect={setSelectedTab}
+          >
+            <div className="overflow-x-hidden whitespace-nowrap">
+              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                  <Tab.List className="-mb-px flex ">
+                    {tabs.map((tab) => (
+                      <Tab
+                        key={tab.name}
+                        className={({ selected }) =>
+                          classNames(
+                            selected
+                              ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
+                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
+                            'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
+                          )
+                        }
+                      >
+                        {tab.name}
+                      </Tab>
+                    ))}
+                  </Tab.List>
                 </div>
               </div>
+            </div>
 
-              <Tab.Panels as={Fragment}>
-                {tabs.map((tab) => (
-                  <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
-                    {tab.name === 'Summary'
-                      ? /* Render content for Summary tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col lg:gap-x-8"
-                          >
-                            {/* <div className="lg: mb-0 mt-6 max-w-[250px] lg:my-4">
-                              <Image
-                                src={feature.imageSrc}
-                                alt={feature.imageAlt}
-                                className="dark:invert"
-                              />
-                            </div> */}
+            <Tab.Panels as={Fragment}>
+              {tabs.map((tab) => (
+                <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
+                  {tab.name === 'Summary'
+                    ? /* Render content for Summary tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col lg:gap-x-8"
+                        >
+                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                            <h2>Summary</h2>
+                          </div>
+                          <div className="max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-50 lg:mt-0">
+                            <p>{feature.para1}</p>
+                            <ul className="list-disc pl-2 lg:pl-8">
+                              <li className="mt-4">{feature.li1}</li>
+                              <li>{feature.li2}</li>
+                              <li>{feature.li3}</li>
+                              <li>{feature.li4}</li>
+                              <li>{feature.li5}</li>
+                              <li>{feature.li6}</li>
+                              <li>{feature.li7}</li>
+                            </ul>
+                          </div>
+                          <div className="col-span-full my-4 text-lg font-semibold dark:text-gray-200 lg:mt-8 ">
+                            <h2>Contributions</h2>
+                          </div>
+                          <div className="max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-50 lg:mt-0">
+                            <ul className="list-disc pl-2 lg:pl-8">
+                              <li className="text-tiny text-slate-900 dark:text-gray-400">
+                                {feature.li8}
+                              </li>
+                              <li>{feature.li9}</li>
+                              <li>{feature.li10}</li>
+                              <li>{feature.li11}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      ))
+                    : tab.name === 'Wireframes'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col gap-y-16  dark:bg-inherit"
+                        >
+                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                              <h2>Responsibilities</h2>
+                              <h2>Plan Administrator Home (MVP)</h2>
                             </div>
-                            <div className="max-w-prose lg:mt-0">
-                              <p className="text-tiny text-slate-900 dark:text-gray-400">
-                                {feature.para1}
-                              </p>
-                              <ul className="list-disc pl-2 lg:pl-8">
-                                <li className="mt-4 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li1}
-                                </li>
-                                <li className="mt-1 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li2}
-                                </li>
-                                <li className="mt-1 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li3}
-                                </li>
-                                <li className="mt-1 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li4}
-                                </li>
-                                <li className="mt-1 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li5}
-                                </li>
-                                <li className="mt-1 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li6}
-                                </li>
-                                <li className="mt-1 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li7}
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="col-span-full my-4 text-lg font-semibold dark:text-gray-200 lg:mt-8 ">
-                              <h2>Contributions</h2>
-                            </div>
-                            <div className="max-w-prose lg:mt-0">
-                              <ul className="list-disc pl-2 lg:pl-8">
-                                <li className="text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li8}
-                                </li>
-                                <li className="mt-1 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li9}
-                                </li>
-                                <li className="mt-1 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li10}
-                                </li>
-                                <li className="mt-1 text-tiny text-slate-900 dark:text-gray-400">
-                                  {feature.li11}
-                                </li>
-                              </ul>
+                            <div
+                              className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
+                              <Image
+                                src={feature.imageSrc1}
+                                alt={feature.imageSrc1Alt}
+                                width={500}
+                                height={300}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
                             </div>
                           </div>
-                        ))
-                      : tab.name === 'Wireframes'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col gap-y-16  dark:bg-inherit"
-                          >
-                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Plan Administrator Home (MVP)</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
-                                <Image
-                                  src={feature.imageSrc1}
-                                  alt={feature.imageSrc1Alt}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                              <h2>Plan Administrator Home (PowerBi)</h2>
                             </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Plan Administrator Home (PowerBi)</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc2}
                                   alt={feature.imageSrc2Alt}
+                                  width={400}
+                                  height={300}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc3}
                                   alt={feature.imageSrc3Alt}
+                                  width={400}
+                                  height={300}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Coverage summary</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                          </div>
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                              <h2>Coverage summary</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <div>
                                 <Image
                                   src={feature.imageSrc4}
                                   alt={feature.imageSrc4Alt}
+                                  width={400}
+                                  height={300}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
+                              </div>
+                              <div>
                                 <Image
                                   src={feature.imageSrc5}
                                   alt={feature.imageSrc5Alt}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Status Update (Terminate a member)</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
-                                <Image
-                                  src={feature.imageSrc6}
-                                  alt={feature.imageSrc6Alt}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Status Update (Parental leave)</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
-                                <Image
-                                  src={feature.imageSrc7}
-                                  alt={feature.imageSrc7Alt}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Status Update (Other leave)</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
-                                <Image
-                                  src={feature.imageSrc8}
-                                  alt={feature.imageSrc8Alt}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                            <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Reinstate a member</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
-                                <Image
-                                  src={feature.imageSrc9}
-                                  alt={feature.imageSrc9Alt}
+                                  width={400}
+                                  height={300}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
                             </div>
                           </div>
-                        ))
-                      : tab.name === 'Design system'
-                      ? /* Render content for Illustrations tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col gap-y-16  dark:bg-inherit"
-                          >
-                            <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                              <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                                <h2>Datepicker</h2>
-                              </div>
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
-                                <Image
-                                  src={feature.imageSrc6}
-                                  alt={feature.imageSrc6Alt}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                              <h2>Status Update (Terminate a member)</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <Image
+                                src={feature.imageSrc6}
+                                alt={feature.imageSrc6Alt}
+                                width={300}
+                                height={300}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                          </div>
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                              <h2>Status Update (Parental leave)</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <Image
+                                src={feature.imageSrc7}
+                                alt={feature.imageSrc7Alt}
+                                width={300}
+                                height={300}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                          </div>
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                              <h2>Status Update (Other leave)</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <Image
+                                src={feature.imageSrc8}
+                                alt={feature.imageSrc8Alt}
+                                width={300}
+                                height={300}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                          </div>
+                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                              <h2>Reinstate a member</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <Image
+                                src={feature.imageSrc9}
+                                alt={feature.imageSrc9Alt}
+                                width={300}
+                                height={300}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    : tab.name === 'Design system'
+                    ? /* Render content for Illustrations tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col gap-y-16  dark:bg-inherit"
+                        >
+                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                              <h2>Datepicker</h2>
+                            </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <Image
+                                src={feature.imageSrc6}
+                                alt={feature.imageSrc6Alt}
+                                width={300}
+                                height={300}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
 
-                              <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
-                                <Image
-                                  src={feature.imageSrc7}
-                                  alt={feature.imageSrc7Alt}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                              <Image
+                                src={feature.imageSrc7}
+                                alt={feature.imageSrc7Alt}
+                                width={300}
+                                height={300}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
                             </div>
                           </div>
-                        ))
-                      : tab.name === 'Company details'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div key={feature.name}>
-                            <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
-                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                {feature.name}
-                              </h3>
-                              <p className="mt-2 text-tiny text-gray-600 dark:text-gray-400">
-                                {feature.para1}
-                              </p>
-                              <button
-                                type="button"
-                                className="mt-8 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                              >
-                                <Link href={feature.link} target="_blank">
-                                  View Website
-                                </Link>
-                              </button>
-                            </div>
+                        </div>
+                      ))
+                    : tab.name === 'Company details'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div key={feature.name}>
+                          <div className="mt-6 max-w-2xl text-sm text-zinc-900 dark:font-thin dark:text-zinc-50 lg:col-span-5 lg:mt-0">
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
+                              {feature.name}
+                            </h3>
+                            <p className="mt-2 ">{feature.para1}</p>
+                            <Link
+                              href={feature.link}
+                              target="_blank"
+                              className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                            >
+                              <div>View Website</div>
+                            </Link>
                           </div>
-                        ))
-                      : null}
-                  </Tab.Panel>
-                ))}
-              </Tab.Panels>
-            </Tab.Group>
-          </div>
-        </section>
-      </div>
+                        </div>
+                      ))
+                    : null}
+                </Tab.Panel>
+              ))}
+            </Tab.Panels>
+          </Tab.Group>
+        </div>
+      </section>
     </SimpleLayout>
   )
 }

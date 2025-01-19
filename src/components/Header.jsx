@@ -147,8 +147,8 @@ function NavItem({ href, children }) {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-blue-800 dark:text-blue-500'
-            : 'hover:text-blue-800 dark:hover:text-blue-300'
+            ? 'text-sky-700 dark:text-sky-300'
+            : 'hover:text-sky-700 dark:hover:text-sky-300'
         )}
       >
         {children}
@@ -163,7 +163,7 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-tiny font-normal text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="flex rounded-full bg-white/90 px-3 text-tiny text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800 dark:text-zinc-50 dark:ring-white/10">
         <NavItem href="/">About</NavItem>
         <NavItem href="/portfolio">Portfolio</NavItem>
         <NavItem href="/accolades">Accolades</NavItem>
@@ -237,7 +237,6 @@ function Avatar({ large = false, className, ...props }) {
           sizes={large ? '4rem' : '2.25rem'}
           width={large ? 64 : 36} // Added static width
           height={large ? 64 : 36} // Added static height
-          layout="responsive" // Added layout attribute
           className={clsx(
             'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
             large ? 'h-16 w-16' : 'h-10 w-10'

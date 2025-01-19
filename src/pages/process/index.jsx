@@ -23,7 +23,7 @@ export async function getStaticProps() {
 
 export default function Process() {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Head>
         <title>Design Process - Arif Alim</title>
         <meta
@@ -56,7 +56,8 @@ export default function Process() {
                     className="rounded shadow-lg"
                     src={story}
                     alt="Design thinking - story icon"
-                    layout="intrinsic"
+                    width={32}
+                    height={32}
                   />
                 </span>
                 <div className="items-start justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-700 sm:flex">
@@ -84,7 +85,8 @@ export default function Process() {
                     className="rounded shadow-lg"
                     src={empathize}
                     alt="Design thinking - story icon"
-                    layout="intrinsic"
+                    width={32}
+                    height={32}
                   />
                 </span>
                 <div className="items-start justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-700 sm:flex">
@@ -122,7 +124,8 @@ export default function Process() {
                     className="rounded shadow-lg"
                     src={define}
                     alt="Design thinking - story icon"
-                    layout="intrinsic"
+                    width={32}
+                    height={32}
                   />
                 </span>
                 <div className="items-start justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-700 sm:flex">
@@ -155,7 +158,8 @@ export default function Process() {
                     className="rounded shadow-lg"
                     src={ideate}
                     alt="Design thinking - story icon"
-                    layout="intrinsic"
+                    width={32}
+                    height={32}
                   />
                 </span>
                 <div className="items-start justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-700 sm:flex">
@@ -187,7 +191,8 @@ export default function Process() {
                     className="rounded shadow-lg"
                     src={prototype}
                     alt="Design thinking - story icon"
-                    layout="intrinsic"
+                    width={32}
+                    height={32}
                   />
                 </span>
                 <div className="items-start justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-700 sm:flex">
@@ -231,7 +236,8 @@ export default function Process() {
                     className="rounded shadow-lg"
                     src={testing}
                     alt="Design thinking - story icon"
-                    layout="intrinsic"
+                    width={32}
+                    height={32}
                   />
                 </span>
                 <div className="items-start justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-600 dark:bg-gray-700 sm:flex">
@@ -307,34 +313,9 @@ export default function Process() {
                 but truly resonate with users on a personal level.
               </p>
             </div>
-            <p>
-              It&apos;s important to understand the client&apos;s needs and
-              goals before starting any project.
-            </p>
-            <p>
-              We&apos;ll work together to create a plan that meets your needs
-              and fits your budget.
-            </p>
-            <p>
-              I&apos;ve worked with clients from various industries, including
-              healthcare, finance, and education.
-            </p>
-            <p>Let&apos;s create something amazing together!</p>
-            <p>
-              I&apos;m passionate about creating beautiful and functional
-              designs that make a difference.
-            </p>
-            <p>
-              I&apos;ve been designing and developing websites for over 15
-              years.
-            </p>
-            <p>
-              Let&apos;s work together to create a website that you&apos;ll
-              love.
-            </p>
           </section>
         </div>
       </SimpleLayout>
-    </>
+    </div>
   )
 }
