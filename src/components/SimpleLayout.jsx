@@ -11,12 +11,12 @@ export function SimpleLayout({
     <Container className="mt-16 sm:mt-20">
       <header className="max-w-3xl">
         <h1
-          className={`${titleFontSize} font-bold text-zinc-900 dark:text-zinc-50`}
+          className={`${titleFontSize} font-bold text-zinc-900 dark:text-zinc-200`}
         >
           {title}
         </h1>
         <p
-          className={`mt-6 ${introFontSize} leading-6  text-zinc-900 dark:text-zinc-50`}
+          className={`mt-6 ${introFontSize} leading-6  text-zinc-900 dark:text-zinc-200`}
         >
           {intro}
         </p>

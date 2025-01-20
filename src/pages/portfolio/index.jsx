@@ -304,7 +304,7 @@ export default function Speakers() {
       </Head>
       <SimpleLayout
         title="My portfolio"
-        intro="I have worked on a variety of projects, including high-profile government projects, where I have demonstrated my design and problem-solving skills by creating intuitive, user-friendly interfaces that meet user needs and technical requirements. My experience working with back-end engineers and my commitment to accessibility ensure that every website and application I work on is optimized for performance and usability."
+        intro="I have had the privilege of contributing to a wide range of projects, including high-profile government initiatives, where I applied my design expertise and problem-solving skills to craft intuitive, user-focused interfaces that balance user needs with technical requirements. Collaborating closely with back-end engineers, I ensure seamless integration, while my dedication to accessibility guarantees that every website and application I design is both highly functional and optimized for performance and usability."
       >
         <div className="mt-10 grid grid-cols-1 items-start gap-y-10 gap-x-6 lg:grid-cols-3">
           {portfolio.map((project) => (
@@ -351,7 +351,7 @@ export default function Speakers() {
                   <h3 className="font-display mt-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">
                     {project.name}
                   </h3>
-                  <p className="text-sm text-zinc-500 dark:font-light dark:text-zinc-100">
+                  <p className="text-zinc-2000 text-sm dark:font-light dark:text-zinc-100">
                     {project.about}
                   </p>
                 </Link>

@@ -184,7 +184,7 @@ export default function Project() {
                           classNames(
                             selected
                               ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-zinc-50 border-transparent font-medium text-zinc-900 hover:border-zinc-50 dark:text-gray-300 ',
+                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-zinc-200 border-transparent font-medium text-zinc-900 hover:border-zinc-50 dark:text-gray-300 ',
                             'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
                           )
                         }
@@ -210,10 +210,10 @@ export default function Project() {
                           key={feature.name}
                           className="flex flex-col lg:gap-x-8"
                         >
-                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                             <h2>Summary</h2>
                           </div>
-                          <div className="flex max-w-prose flex-col gap-4 text-zinc-900 dark:font-thin dark:text-zinc-50 lg:mt-0">
+                          <div className="flex max-w-prose flex-col gap-4 text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
                             <p>{feature.para1}</p>
                             <p>{feature.para2}</p>
                             <p>{feature.para3}</p>
@@ -444,10 +444,10 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.type}
-                          className="flex flex-col text-tiny dark:text-zinc-50 lg:gap-x-8"
+                          className="flex flex-col text-tiny dark:text-zinc-200 lg:gap-x-8"
                         >
                           <div className="my-6 lg:mt-0 ">
-                            <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+                            <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-200">
                               {feature.type}
                             </h3>
                             <p className="mt-2 ">{feature.component}</p>
@@ -523,10 +523,10 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div key={feature.name}>
                           <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
-                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
                               {feature.name}
                             </h3>
-                            <p className="mt-2  font-normal text-zinc-900 dark:text-zinc-50">
+                            <p className="mt-2  font-normal text-zinc-900 dark:text-zinc-200">
                               {feature.para1}
                             </p>
                             <Link

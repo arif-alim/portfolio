@@ -165,255 +165,297 @@ function MyComponent() {
 export default function Project() {
   const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
-    <SimpleLayout>
-      <div className="">
-        <section
-          aria-labelledby="features-heading"
-          className="mx-auto max-w-7xl"
-        >
-          <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
-            <div className="max-w-3xl">
-              <h1
-                id="features-heading"
-                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-              >
-                ServiceOntario
-              </h1>
-              <h2 className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
-                Digital Dealership Registration (DDR)
-              </h2>
-            </div>
-
-            <Tab.Group
-              as="div"
-              className="mt-10"
-              value={selectedTab}
-              onSelect={setSelectedTab}
-            >
-              <div className="overflow-x-hidden whitespace-nowrap">
-                <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                  <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
-                    <Tab.List className="-mb-px flex ">
-                      {tabs.map((tab) => (
-                        <Tab
-                          key={tab.name}
-                          className={({ selected }) =>
-                            classNames(
-                              selected
-                                ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                                : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
-                              'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
-                            )
-                          }
-                        >
-                          {tab.name}
-                        </Tab>
-                      ))}
-                    </Tab.List>
-                  </div>
+    <SimpleLayout
+      title={'ServiceOntario'}
+      intro={'Digital Dealership Registration (DDR)'}
+    >
+      <section aria-labelledby="features-heading" className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
+          <Tab.Group
+            as="div"
+            className="mt-10"
+            value={selectedTab}
+            onSelect={setSelectedTab}
+          >
+            <div className="overflow-x-hidden whitespace-nowrap">
+              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                  <Tab.List className="-mb-px flex ">
+                    {tabs.map((tab) => (
+                      <Tab
+                        key={tab.name}
+                        className={({ selected }) =>
+                          classNames(
+                            selected
+                              ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
+                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-zinc-900 hover:border-gray-300 dark:text-zinc-200 ',
+                            'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
+                          )
+                        }
+                      >
+                        {tab.name}
+                      </Tab>
+                    ))}
+                  </Tab.List>
                 </div>
               </div>
+            </div>
 
-              <Tab.Panels as={Fragment}>
-                {tabs.map((tab) => (
-                  <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
-                    {tab.name === 'Summary'
-                      ? /* Render content for Summary tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col lg:gap-x-8"
-                          >
-                            <div className="mb-0 lg:mb-8 lg:max-w-prose">
-                              <Image
-                                src={feature.imageSrc}
-                                alt={feature.imageAlt}
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
-                            <div className="mt-6 lg:mt-0 lg:max-w-prose">
-                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                {feature.name}
-                              </h3>
-                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
-                                {feature.para1}
-                              </p>
-                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
-                                {feature.para2}
-                              </p>
-                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
-                                {feature.para3}
-                              </p>
-                              <p className="mt-2 text-tiny text-gray-700 dark:text-gray-300">
-                                {feature.para4}
-                              </p>
-                            </div>
+            <Tab.Panels as={Fragment}>
+              {tabs.map((tab) => (
+                <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
+                  {tab.name === 'Summary'
+                    ? /* Render content for Summary tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col lg:gap-x-8"
+                        >
+                          <div className="mb-0 lg:mb-8 lg:max-w-prose">
+                            <Image
+                              src={feature.imageSrc}
+                              alt={feature.imageAlt}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
                           </div>
-                        ))
-                      : tab.name === 'Wireframes'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.name}
-                            className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6"
-                          >
-                            <div className="flex flex-col gap-4 lg:col-span-4">
-                              <Image
-                                src={feature.imageSrc1}
-                                alt={feature.imageAlt1}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc5}
-                                alt={feature.imageAlt5}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc9}
-                                alt={feature.imageAlt9}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc13}
-                                alt={feature.imageAlt13}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc17}
-                                alt={feature.imageAlt17}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc21}
-                                alt={feature.imageAlt21}
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
+                          <div className="mt-6 flex max-w-prose flex-col gap-4 text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0 lg:max-w-prose">
+                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
+                              {feature.name}
+                            </h3>
+                            <p className="">{feature.para1}</p>
+                            <p className="">{feature.para2}</p>
+                            <p className="">{feature.para3}</p>
+                            <p className="">{feature.para4}</p>
+                          </div>
+                        </div>
+                      ))
+                    : tab.name === 'Wireframes'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.name}
+                          className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6"
+                        >
+                          <div className="flex flex-col gap-4 lg:col-span-4">
+                            <Image
+                              src={feature.imageSrc1}
+                              alt={feature.imageAlt1}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc5}
+                              alt={feature.imageAlt5}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc9}
+                              alt={feature.imageAlt9}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc13}
+                              alt={feature.imageAlt13}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc17}
+                              alt={feature.imageAlt17}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc21}
+                              alt={feature.imageAlt21}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                          </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-4">
-                              <Image
-                                src={feature.imageSrc2}
-                                alt={feature.imageAlt2}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc6}
-                                alt={feature.imageAlt6}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc10}
-                                alt={feature.imageAlt10}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc14}
-                                alt={feature.imageAlt14}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc18}
-                                alt={feature.imageAlt18}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc22}
-                                alt={feature.imageAlt22}
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
+                          <div className="flex flex-col gap-4 lg:col-span-4">
+                            <Image
+                              src={feature.imageSrc2}
+                              alt={feature.imageAlt2}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc6}
+                              alt={feature.imageAlt6}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc10}
+                              alt={feature.imageAlt10}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc14}
+                              alt={feature.imageAlt14}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc18}
+                              alt={feature.imageAlt18}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc22}
+                              alt={feature.imageAlt22}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                          </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-4">
-                              <Image
-                                src={feature.imageSrc3}
-                                alt={feature.imageAlt3}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc7}
-                                alt={feature.imageAlt7}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc11}
-                                alt={feature.imageAlt11}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc15}
-                                alt={feature.imageAlt15}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc19}
-                                alt={feature.imageAlt19}
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc23}
-                                alt={feature.imageAlt23}
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
+                          <div className="flex flex-col gap-4 lg:col-span-4">
+                            <Image
+                              src={feature.imageSrc3}
+                              alt={feature.imageAlt3}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc7}
+                              alt={feature.imageAlt7}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc11}
+                              alt={feature.imageAlt11}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc15}
+                              alt={feature.imageAlt15}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc19}
+                              alt={feature.imageAlt19}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
+                            <Image
+                              src={feature.imageSrc23}
+                              alt={feature.imageAlt23}
+                              width={260}
+                              height={260}
+                              layout="responsive"
+                              className="rounded-lg object-cover object-center"
+                            />
                           </div>
-                        ))
-                      : tab.name === 'Prototypes'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div
-                            key={feature.type}
-                            className="flex flex-col  lg:gap-x-8"
-                          >
-                            <div className="my-6 lg:mt-0 lg:max-w-prose">
-                              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-200">
-                                {feature.name}
-                              </h3>
-                              <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
-                                {feature.protoLink}
-                              </p>
-                              <div className="mt-2 mb-6">
-                                <Link
-                                  className="text-blue-800"
-                                  href="https://www.figma.com/proto/ZstoHuYqSWOp5f5On03TAD/Design---Truth-Clickable?page-id=0%3A1&node-id=47-28658&starting-point-node-id=47%3A28004"
-                                  target="_blank"
-                                >
-                                  View clickable prototype
-                                </Link>
-                              </div>
-                            </div>
-                            <MyComponent></MyComponent>
-                          </div>
-                        ))
-                      : tab.name === 'Company details'
-                      ? /* Render content for Wireframes tab */
-                        tab.features.map((feature) => (
-                          <div key={feature.name}>
-                            <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
-                              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                {feature.name}
-                              </h3>
-                              <p className="mt-3 text-tiny font-normal text-gray-600 dark:text-gray-400">
-                                {feature.para1}
-                              </p>
-                              <button
-                                type="button"
-                                className="mt-4 rounded-full bg-white py-2 px-3.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                        </div>
+                      ))
+                    : tab.name === 'Prototypes'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div
+                          key={feature.type}
+                          className="flex flex-col  lg:gap-x-8"
+                        >
+                          <div className="my-6 lg:mt-0 lg:max-w-prose">
+                            <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-200">
+                              {feature.name}
+                            </h3>
+                            <p className="mt-2 text-sm text-gray-600 dark:text-zinc-200">
+                              {feature.protoLink}
+                            </p>
+                            <Link
+                              href="https://ddr-demo.vercel.app/"
+                              target="_blank"
+                              className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                            >
+                              <div>View web prototype</div>
+                            </Link>
+
+                            <div className="mt-10 ">
+                              <Link
+                                className="text-blue-800"
+                                href="https://www.figma.com/proto/ZstoHuYqSWOp5f5On03TAD/Design---Truth-Clickable?page-id=0%3A1&node-id=47-28658&starting-point-node-id=47%3A28004"
+                                target="_blank"
                               >
-                                <Link href={feature.link} target="_blank">
-                                  View Website
-                                </Link>
-                              </button>
+                                View clickable prototype
+                              </Link>
                             </div>
                           </div>
-                        ))
-                      : null}
-                  </Tab.Panel>
-                ))}
-              </Tab.Panels>
-            </Tab.Group>
-          </div>
-        </section>
-      </div>
+                          <MyComponent></MyComponent>
+                        </div>
+                      ))
+                    : tab.name === 'Company details'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div key={feature.name}>
+                          <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
+                              {feature.name}
+                            </h3>
+                            <p className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
+                              {feature.para1}
+                            </p>
+                            <Link
+                              href={feature.link}
+                              target="_blank"
+                              className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                            >
+                              <div>View Website</div>
+                            </Link>
+                          </div>
+                        </div>
+                      ))
+                    : null}
+                </Tab.Panel>
+              ))}
+            </Tab.Panels>
+          </Tab.Group>
+        </div>
+      </section>
     </SimpleLayout>
   )
 }

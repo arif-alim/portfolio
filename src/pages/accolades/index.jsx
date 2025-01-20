@@ -40,8 +40,10 @@ import backendCert7 from '@/images/certificates/backendCert7.jpg'
 import backendCert8 from '@/images/certificates/backendCert8.jpg'
 
 // Import School Icons
-import waterloo from '@/images/school/uw.svg'
-import laurier from '@/images/school/wlu.svg'
+import waterlooLight from '@/images/school/uw-light.svg'
+import waterlooDark from '@/images/school/uw-dark.svg'
+import laurierLight from '@/images/school/wlu-light.svg'
+import laurierDark from '@/images/school/wlu-dark.svg'
 
 // Add imports for all other certificates.
 
@@ -216,8 +218,8 @@ export default function HydroOne() {
         />
       </Head>
       <SimpleLayout
-        title="Double Degree education and over a decade of industry experience in UI/UX Design and Frontend Development"
-        intro="Started graphic design at the age of 15 and soon progressed to user interaction and experience design. With extensive knowledge of industry-standard JavaScript frameworks, it has helped me design with development in mind."
+        title="Almost two decades of UX design experience"
+        intro="I began my journey in graphic design at the age of 15, which quickly evolved into a passion for user interaction and experience design. My in-depth knowledge of industry-standard JavaScript frameworks enables me to approach design with a strong understanding of development, ensuring seamless integration between the two."
       >
         <div className="education my-12">
           <div className="flex flex-col gap-6">
@@ -225,18 +227,42 @@ export default function HydroOne() {
               Education
             </h2>
             <div className="flex flex-row items-center justify-start gap-16">
-              <Image
-                src={waterloo}
-                alt="University of Waterloo"
-                width={200}
-                height={80}
-              />
-              <Image
-                src={laurier}
-                alt="Wilfrid Laurier University"
-                width={150}
-                height={80}
-              />
+              <div className="dark:hidden">
+                <Image
+                  src={waterlooLight}
+                  alt="University of Waterloo"
+                  width={200}
+                  height={80}
+                  layout="responive"
+                />
+              </div>
+              <div className="hidden dark:block">
+                <Image
+                  src={waterlooDark}
+                  alt="University of Waterloo"
+                  width={200}
+                  height={80}
+                  layout="responive"
+                />
+              </div>
+              <div className="dark:hidden">
+                <Image
+                  src={laurierLight}
+                  alt="Wilfrid Laurier University"
+                  width={170}
+                  height={80}
+                  layout="responive"
+                />
+              </div>
+              <div className="hidden dark:block">
+                <Image
+                  src={laurierDark}
+                  alt="Wilfrid Laurier University"
+                  width={170}
+                  height={80}
+                  layout="responive"
+                />
+              </div>
             </div>
           </div>
         </div>

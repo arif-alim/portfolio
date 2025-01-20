@@ -157,10 +157,10 @@ export default function Project() {
                           key={feature.name}
                           className="flex flex-col lg:gap-x-8"
                         >
-                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-50 ">
+                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                             <h2>Summary</h2>
                           </div>
-                          <div className="max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-50 lg:mt-0">
+                          <div className="max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
                             <p>{feature.para1}</p>
                             <ul className="list-disc pl-2 lg:pl-8">
                               <li className="mt-4">{feature.li1}</li>
@@ -175,7 +175,7 @@ export default function Project() {
                           <div className="col-span-full my-4 text-lg font-semibold dark:text-gray-200 lg:mt-8 ">
                             <h2>Contributions</h2>
                           </div>
-                          <div className="max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-50 lg:mt-0">
+                          <div className="max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
                             <ul className="list-disc pl-2 lg:pl-8">
                               <li className="text-tiny text-slate-900 dark:text-gray-400">
                                 {feature.li8}
@@ -367,7 +367,7 @@ export default function Project() {
                     ? /* Render content for Wireframes tab */
                       tab.features.map((feature) => (
                         <div key={feature.name}>
-                          <div className="mt-6 max-w-2xl text-sm text-zinc-900 dark:font-thin dark:text-zinc-50 lg:col-span-5 lg:mt-0">
+                          <div className="mt-6 max-w-2xl text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:col-span-5 lg:mt-0">
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                               {feature.name}
                             </h3>

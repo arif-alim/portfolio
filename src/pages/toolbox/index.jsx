@@ -325,8 +325,8 @@ export default function Toolbox() {
         />
       </Head>
       <SimpleLayout
-        title="Softare, languages, and frameworks I prefer to use to create magical things!"
-        intro="I get asked a lot about the things I use for graphic, interaction and user experience design. Also, I get asked about my frontend and backend tools. I've provided a list of software, language and frameworks I currently use."
+        title="The tools and frameworks I use to bring ideas to life!"
+        intro="I’m often asked about the tools and technologies I use for graphic design, interaction design, and creating seamless user experiences, as well as the front-end and back-end tools I rely on to bring my ideas to life. I’ve put together a list of the software, languages, and frameworks that form the foundation of my workflow."
       >
         <div className="space-y-20">
           <div className="space-y-10">
@@ -350,10 +350,10 @@ export default function Toolbox() {
                     >
                       <div>
                         <span className="absolute inset-0" aria-hidden="true" />
-                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-50">
+                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-200">
                           {des.name}
                         </p>
-                        <p className="truncate text-xs text-zinc-500 dark:text-zinc-300">
+                        <p className="text-zinc-2000 truncate text-xs dark:text-zinc-300">
                           {des.description}
                         </p>
                       </div>
@@ -384,10 +384,10 @@ export default function Toolbox() {
                     >
                       <div>
                         <span className="absolute inset-0" aria-hidden="true" />
-                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-50">
+                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-200">
                           {front.name}
                         </p>
-                        <p className="truncate text-xs text-zinc-500 dark:text-zinc-300">
+                        <p className="text-zinc-2000 truncate text-xs dark:text-zinc-300">
                           {front.description}
                         </p>
                       </div>
@@ -416,10 +416,10 @@ export default function Toolbox() {
                     >
                       <div>
                         <span className="absolute inset-0" aria-hidden="true" />
-                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-50">
+                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-200">
                           {back.name}
                         </p>
-                        <p className="truncate text-xs text-zinc-500 dark:text-zinc-300">
+                        <p className="text-zinc-2000 truncate text-xs dark:text-zinc-300">
                           {back.description}
                         </p>
                       </div>

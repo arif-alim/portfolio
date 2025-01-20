@@ -15,16 +15,15 @@ import {
 import portraitImage from '@/images/portrait.png'
 
 /** SocialLink Component */
-const SocialLink = ({ className, href, children, icon: Icon, target }) => (
-  <li className={clsx(className, 'flex')}>
+const SocialLink = ({ className, href, icon: Icon, target }) => (
+  <li className={clsx(className, 'flex justify-center')}>
     <Link
       href={href}
       target={target}
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-      className="group flex items-center text-sm font-medium text-zinc-800 transition hover:text-sky-700 dark:text-zinc-200 dark:hover:text-sky-700"
+      className="group flex items-center text-sm text-zinc-900 transition hover:text-sky-700 dark:text-zinc-200 dark:hover:text-sky-700"
     >
       <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-sky-700" />
-      <span className="ml-4">{children}</span>
     </Link>
   </li>
 )
@@ -43,7 +42,7 @@ const Section = ({ title, children }) => (
 
 /** ProfileImage Component */
 const ProfileImage = () => (
-  <div className="w-full max-w-xs px-2.5 lg:max-w-none">
+  <div className="w-full max-w-full px-2.5 lg:max-w-none">
     <Image
       src={portraitImage}
       alt="Portrait of Arif Alim"
@@ -77,59 +76,64 @@ export default function About() {
                 Computer Science (BCS) at University of Waterloo and Honours
                 Business Administration (BCA) at Wilfrid Laurier University."
       >
-        <div className="mt-12 grid grid-cols-1 gap-y-16 text-sm  dark:text-zinc-50 sm:mt-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+        <div className="mt-8 grid grid-cols-1 gap-y-16 text-tiny dark:text-zinc-200 sm:mt-16 lg:grid-cols-12 lg:gap-y-12">
           {/* Profile Image */}
-          <div className="lg:pl-20">
+          <div className="col-span-4 mx-auto lg:mx-0 lg:pl-20">
             <ProfileImage />
-          </div>
-          {/* Introduction Section */}
-          <div className="lg:order-first lg:row-span-2">
-            <div className="flex-row">
-              <h3 className="text-lg font-bold">About My Work</h3>
-              <p className="pt-4 ">
-                As an experienced UI/UX designer and frontend developer with
-                over 15 years of expertise, I am well-regarded for my innovative
-                and creative design solutions. My portfolio includes designing
-                applications for a diverse range of clients, including Hydro
-                One, Trip Support, Service Ontario, and Bombardier, both for
-                small businesses and enterprise-level organizations.
-              </p>
-              <p className="pt-4">
-                My design process is guided by the latest industry trends,
-                accessibility guidelines, and user-centric methodologies. I can
-                help you achieve your UI/UX goals by creating thoughtful and
-                intuitive designs that prioritize the user experience.
-              </p>
+            {/* Social Links */}
+            <div className="mt-8">
+              <ul role="list" className="flex justify-center space-x-8">
+                <SocialLink
+                  href="https://github.com/arif-alim"
+                  target="_blank"
+                  icon={GithubIcon}
+                />
+                <SocialLink
+                  href="https://www.linkedin.com/in/arifalim/"
+                  target="_blank"
+                  icon={LinkedInIcon}
+                />
+                <SocialLink
+                  href="mailto:arif.alim@outlook.com"
+                  icon={MailIcon}
+                />
+              </ul>
             </div>
           </div>
-          {/* Social Links */}
-          <div className="lg:pl-20">
-            <ul role="list" className="space-y-4">
-              <SocialLink href="#" icon={VercelIcon}>
-                Follow on Vercel
-              </SocialLink>
-              <SocialLink
-                href="https://github.com/arif-alim"
-                target="_blank"
-                icon={GithubIcon}
-              >
-                Follow on GitHub
-              </SocialLink>
-              <SocialLink
-                href="https://www.linkedin.com/in/arifalim/"
-                target="_blank"
-                icon={LinkedInIcon}
-              >
-                Follow on LinkedIn
-              </SocialLink>
-              <SocialLink
-                href="mailto:arif.alim@outlook.com"
-                icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-              >
-                arif.alim@outlook.com
-              </SocialLink>
-            </ul>
+          {/* Introduction Section */}
+          <div className="col-span-8 lg:order-first">
+            <div className="flex-row">
+              <h3 className="text-xl font-bold">About Me</h3>
+              <p className="pt-4 ">
+                I’m a passionate UI, UX, Interaction, Service, and Product
+                Designer with over 15 years of experience creating user-friendly
+                designs and solving complex problems. I have a double degree in
+                Computer Science from the University of Waterloo and Business
+                Administration from Wilfrid Laurier University, which helps me
+                combine technical expertise with strategic thinking.
+              </p>
+              <p className="pt-4">
+                My extensive frontend development experience gives me a unique
+                edge in making smarter, more practical design decisions that
+                seamlessly integrate into development workflows. I’ve had the
+                chance to work on exciting projects for clients like Bombardier,
+                Airbus, Hydro One, and Service Ontario. Whether it’s designing
+                intuitive user interfaces, mapping customer journeys, or
+                building accessible systems that meet AODA and WCAG standards,
+                I’m passionate about crafting thoughtful solutions that make
+                life easier for people.
+              </p>
+              <p className="pt-4">
+                Over the years, I’ve sharpened my skills in user research,
+                service design, and creating high-fidelity prototypes with tools
+                like Figma. I enjoy working with teams, leading workshops, and
+                using feedback to make better designs. Outside of work, I’m
+                always exploring new ideas, sharing what I’ve learned, and
+                staying curious about the future of design. Check out my
+                portfolio to see some of my favorite projects — I’d love to
+                connect!
+              </p>
+            </div>
           </div>
         </div>
       </SimpleLayout>

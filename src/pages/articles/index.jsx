@@ -72,18 +72,21 @@ export function Blog() {
           className="flex max-w-xl flex-col items-start justify-between"
         >
           <div className="group relative">
-            <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+            <h3 className="mt-3 text-lg font-semibold leading-6 text-zinc-900 group-hover:text-zinc-600 dark:text-zinc-50">
               <Link href={post.href}>
                 <span className="absolute inset-0" />
                 {post.title}
               </Link>
             </h3>
             <div className="text-xs">
-              <time dateTime={post.datetime} className="text-gray-500">
+              <time
+                dateTime={post.datetime}
+                className="text-zinc-900 dark:text-zinc-50"
+              >
                 {post.date}
               </time>
             </div>
-            <p className="line-clamp-3 mt-5 text-tiny leading-6 text-gray-600">
+            <p className="line-clamp-3 mt-5 text-tiny leading-6 text-zinc-900 dark:text-zinc-50">
               {post.description}
             </p>
           </div>
@@ -96,8 +99,10 @@ export function Blog() {
               height={40}
             />
             <div className="text-sm leading-6">
-              <p className="font-semibold text-gray-900">{post.author.name}</p>
-              <p className="text-gray-600">{post.author.role}</p>
+              <p className="font-semibold text-zinc-900 dark:text-zinc-50">
+                {post.author.name}
+              </p>
+              <p className="text-zinc-900">{post.author.role}</p>
             </div>
           </div>
         </article>
