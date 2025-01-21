@@ -132,7 +132,7 @@ export default function HydroOne() {
 
               <Tab.Panels as={Fragment}>
                 {tabs.map((tab) => (
-                  <Tab.Panel key={tab.name} className="space-y-8 pt-4 lg:pt-8">
+                  <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
                     {tab.name === 'Summary'
                       ? /* Render content for Summary tab */
                         tab.features.map((feature) => (
