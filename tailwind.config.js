@@ -14,11 +14,11 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      xs: ['0.825rem', { lineHeight: '1.4rem' }],
-      sm: ['0.875rem', { lineHeight: '1.5rem' }],
-      tiny: ['0.95rem', { lineHeight: '1.65rem' }],
-      base: ['1rem', { lineHeight: '1.75rem' }],
-      md: ['1.075rem', { lineHeight: '1.8215rem' }],
+      xs: ['0.85rem', { lineHeight: '1.4rem' }],
+      sm: ['0.9rem', { lineHeight: '1.45rem' }],
+      tiny: ['0.925rem', { lineHeight: '1.57rem' }],
+      base: ['0.95rem', { lineHeight: '1.75rem' }],
+      md: ['1rem', { lineHeight: '1.8215rem' }],
       lg: ['1.125rem', { lineHeight: '1.9rem' }],
       xl: ['1.25rem', { lineHeight: '2rem' }],
       '2xl': ['1.5rem', { lineHeight: '2rem' }],

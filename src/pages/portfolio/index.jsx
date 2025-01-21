@@ -44,6 +44,8 @@ import logoPerfectoneLight from '@/images/projects/perfectone-logo-light.png'
 import logoPerfectoneDark from '@/images/projects/perfectone-logo-dark.png'
 import logoManulifeLight from '@/images/projects/manulife-logo-light.png'
 import logoManulifeDark from '@/images/projects/manulife-logo-dark.png'
+import logoCBSALight from '@/images/projects/cbsa-logo-light.png'
+import logoCBSADark from '@/images/projects/cbsa-logo-dark.png'
 
 import { useId } from 'react'
 import Image from 'next/image'
@@ -82,6 +84,17 @@ const portfolio = [
     },
     imageLight: logoBombardierLight,
     imageDark: logoBombardierDark,
+  },
+  {
+    id: 3,
+    name: 'CBSA',
+    about: 'Canadian Border Services Agency',
+    link: {
+      href: '/portfolio/cbsa',
+      label: 'View project',
+    },
+    imageLight: logoCBSALight,
+    imageDark: logoCBSADark,
   },
   {
     id: 3,
@@ -306,7 +319,7 @@ export default function Speakers() {
         title="My portfolio"
         intro="I have had the privilege of contributing to a wide range of projects, including high-profile government initiatives, where I applied my design expertise and problem-solving skills to craft intuitive, user-focused interfaces that balance user needs with technical requirements. Collaborating closely with back-end engineers, I ensure seamless integration, while my dedication to accessibility guarantees that every website and application I design is both highly functional and optimized for performance and usability."
       >
-        <div className="mt-10 grid grid-cols-1 items-start gap-y-10 gap-x-6 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 items-start gap-x-6 gap-y-10 lg:grid-cols-3">
           {portfolio.map((project) => (
             <div key={project.id} unmount={false}>
               <div key={project.id}>
@@ -314,7 +327,7 @@ export default function Speakers() {
                   <div className="rounded-4xl group relative h-[196px] transform overflow-hidden ">
                     <div
                       className={clsx(
-                        'rounded-4xl absolute top-0 left-0 right-0 bottom-0 border transition duration-300 group-hover:scale-95 ',
+                        'rounded-4xl absolute bottom-0 left-0 right-0 top-0 border transition duration-300 group-hover:scale-95 ',
                         [
                           // 'border-emerald-300',
                           // 'border-indigo-300',
@@ -325,7 +338,7 @@ export default function Speakers() {
                     />
                     <div
                       className="absolute inset-0 my-auto "
-                      // className="absolute inset-0 my-auto bg-zinc-100"
+                      // className="absolute inset-0 my-auto bg-zinc-100 dark:bg-zinc-800"
                       // style={{ clipPath: `url(#${id}-${project.id % 3})` }}
                     >
                       <div className="flex h-full w-full flex-row items-center p-12 align-middle sm:p-4">

@@ -56,45 +56,30 @@ const tabs = [
     name: 'Wireframes',
     features: [
       {
-        imageSrc1: screen1,
-        imageAlt1: 'Service Ontario project screen 1',
-        imageSrc2: screen2,
-        imageAlt2: 'Service Ontario project screen 2',
-        imageSrc3: screen3,
-        imageAlt3: 'Service Ontario project screen 3',
-        imageSrc4: screen4,
-        imageAlt4: 'Service Ontario project screen 4',
-        imageSrc5: screen5,
-        imageAlt5: 'Service Ontario project screen 1',
-        imageSrc6: screen6,
-        imageAlt6: 'Service Ontario project screen 1',
-        imageSrc7: screen7,
-        imageAlt7: 'Service Ontario project screen 1',
-        imageSrc8: screen8,
-        imageAlt8: 'Service Ontario project screen 1',
-        imageSrc9: screen9,
-        imageAlt9: 'Service Ontario project screen 1',
-        imageSrc10: screen10,
-        imageAlt10: 'Service Ontario project screen 1',
-        imageSrc11: screen11,
-        imageAlt11: 'Service Ontario project screen 1',
-        imageSrc12: screen12,
-        imageAlt12: 'Service Ontario project screen 1',
-        imageSrc13: screen13,
-        imageAlt13: 'Service Ontario project screen 1',
-        imageSrc14: screen14,
-        imageAlt14: 'Service Ontario project screen 1',
-        imageSrc18: screen15,
-        imageAlt18: 'Service Ontario project screen 1',
-        imageSrc19: screen16,
-        imageAlt19: 'Service Ontario project screen 1',
-        imageSrc20: screen17,
-        imageAlt20: 'Service Ontario project screen 1',
+        images: [
+          { src: screen1, alt: 'Trip Support project screen 1' },
+          { src: screen2, alt: 'Trip Support project screen 2' },
+          { src: screen3, alt: 'Trip Support project screen 3' },
+          { src: screen4, alt: 'Trip Support project screen 4' },
+          { src: screen5, alt: 'Trip Support project screen 5' },
+          { src: screen6, alt: 'Trip Support project screen 6' },
+          { src: screen7, alt: 'Trip Support project screen 7' },
+          { src: screen8, alt: 'Trip Support project screen 8' },
+          { src: screen9, alt: 'Trip Support project screen 9' },
+          { src: screen10, alt: 'Trip Support project screen 10' },
+          { src: screen11, alt: 'Trip Support project screen 11' },
+          { src: screen12, alt: 'Trip Support project screen 12' },
+          { src: screen13, alt: 'Trip Support project screen 13' },
+          { src: screen14, alt: 'Trip Support project screen 14' },
+          { src: screen15, alt: 'Trip Support project screen 15' },
+          { src: screen16, alt: 'Trip Support project screen 16' },
+          { src: screen17, alt: 'Trip Support project screen 17' },
+        ],
       },
     ],
   },
   {
-    name: 'Website',
+    name: 'Prototypes',
     features: [
       {
         heading: 'Trip Support Responsive Site',
@@ -121,6 +106,90 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+const Summary = ({ title, paragraphs }) => (
+  <div className="text-content flex flex-col lg:gap-x-8">
+    <div className="heading-lg col-span-full mb-4">
+      <h2>{title}</h2>
+    </div>
+    <div className="paragraph flex max-w-prose flex-col gap-4 lg:mt-0">
+      {paragraphs.map((para, index) => (
+        <p key={index}>{para}</p>
+      ))}
+    </div>
+  </div>
+)
+
+const Wireframes = ({ title, images }) => (
+  <div className="text-content flex flex-col gap-y-4">
+    <div className="heading-lg col-span-full mb-4">
+      <h2>{title}</h2>
+    </div>
+    <div className="dark:bg-zinc-800p-4 col-span-full gap-4 bg-zinc-100  lg:grid lg:grid-cols-12 lg:gap-8 lg:p-8">
+      {images.map((image, index) => (
+        <div key={index} className="lg:col-span-4">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={260}
+            height={260}
+            layout="responsive"
+            className="image-container"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+)
+
+const Prototype = ({ title, links }) => (
+  <div className="flex flex-col dark:bg-inherit">
+    <div className="heading-lg col-span-full mb-4 dark:text-gray-200">
+      <h2>{title}</h2>
+    </div>
+    <div className="flex flex-row flex-wrap gap-16 p-2">
+      {links.map((link, index) => (
+        <div key={index} className="mb-4 flex flex-col">
+          <Link
+            href={link.href}
+            target="_blank"
+            className=" text-tiny text-blue-800"
+          >
+            {link.label}
+          </Link>
+          <div className="my-2 max-w-md">
+            <Image
+              src={link.imageSrc}
+              alt={link.imageAlt}
+              width={260}
+              height={260}
+              layout="responsive"
+              className="image-container"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)
+
+const Details = ({ title, paragraph, link }) => (
+  <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+    <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-zinc-50">
+      {title}
+    </h3>
+    <div className="flex max-w-prose flex-col gap-4 text-sm lg:mt-0">
+      <p>{paragraph}</p>
+    </div>
+    <Link
+      href={link}
+      target="_blank"
+      className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold shadow-sm ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50"
+    >
+      View Website
+    </Link>
+  </div>
+)
+
 export default function Project() {
   const [selectedTab, setSelectedTab] = useState('Wireframes')
   return (
@@ -144,7 +213,7 @@ export default function Project() {
                           classNames(
                             selected
                               ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
+                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-zinc-50 ',
                             'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
                           )
                         }
@@ -160,218 +229,67 @@ export default function Project() {
             <Tab.Panels as={Fragment}>
               {tabs.map((tab) => (
                 <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
-                  {tab.name === 'Summary'
-                    ? /* Render content for Summary tab */
-                      tab.features.map((feature) => (
-                        <div
-                          key={feature.name}
-                          className="flex flex-col lg:gap-x-8"
-                        >
-                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
-                            <h2>Summary</h2>
-                          </div>
-                          <div className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
-                            <p>{feature.para1}</p>
-                            <p>{feature.para2}</p>
-                            <p>{feature.para3}</p>
-                            <p>{feature.para4}</p>
-                          </div>
-                        </div>
-                      ))
-                    : tab.name === 'Wireframes'
-                    ? /* Render content for Wireframes tab */
-                      tab.features.map((feature) => (
-                        <div
-                          key={feature.name}
-                          className="flex flex-col gap-y-16 bg-slate-100 dark:bg-inherit lg:p-8"
-                        >
-                          <div className="col-span-full gap-4 p-2 lg:grid lg:grid-cols-12 lg:gap-x-8 ">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                              <h2>Custom web pages</h2>
-                            </div>
-                            <div className="flex flex-col gap-8 lg:col-span-4">
-                              <Image
-                                src={feature.imageSrc1}
-                                alt={feature.imageAlt1}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc4}
-                                alt={feature.imageAlt4}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc2}
-                                alt={feature.imageAlt2}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc5}
-                                alt={feature.imageAlt5}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
+                  {tab.features.map((feature, featureIndex) => {
+                    switch (tab.name) {
+                      case 'Summary':
+                        return (
+                          <Summary
+                            key={feature.name}
+                            title="Summary"
+                            paragraphs={[
+                              feature.para1,
+                              feature.para2,
+                              feature.para3,
+                              feature.para4,
+                            ]}
+                          />
+                        )
 
-                            <div className="flex flex-col gap-8 lg:col-span-4">
-                              <Image
-                                src={feature.imageSrc3}
-                                alt={feature.imageAlt3}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc6}
-                                alt={feature.imageAlt6}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc7}
-                                alt={feature.imageAlt7}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc8}
-                                alt={feature.imageAlt8}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
+                      case 'Wireframes':
+                        return (
+                          <Wireframes
+                            key={feature.name}
+                            title="Custom web pages"
+                            images={feature.images}
+                          />
+                        )
 
-                            <div className="flex flex-col gap-8 lg:col-span-4">
-                              <Image
-                                src={feature.imageSrc10}
-                                alt={feature.imageAlt10}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc12}
-                                alt={feature.imageAlt12}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc9}
-                                alt={feature.imageAlt9}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                              <Image
-                                src={feature.imageSrc11}
-                                alt={feature.imageAlt11}
-                                width={260}
-                                height={260}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      ))
-                    : tab.name === 'Website'
-                    ? /* Render content for Wireframes tab */
-                      tab.features.map((feature) => (
-                        <div
-                          key={feature.type}
-                          className="flex flex-col bg-slate-100 dark:bg-inherit lg:p-8"
-                        >
-                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
-                            <h2>Design comparison</h2>
-                          </div>
-                          <div className=" lg:flex lg:flex-row lg:gap-12">
-                            <div className="mb-4 dark:text-gray-200 lg:mb-0 lg:max-w-full">
-                              New website link
-                              <Link
-                                href="https://tripsupport.ca/book-now-pay-later/"
-                                target="_blank"
-                                className="px-1 text-tiny text-blue-800"
-                              >
-                                CA website
-                              </Link>
-                              <div className="my-2 max-w-lg">
-                                <Image
-                                  src={feature.imgSrc21}
-                                  alt={feature.imgAlt16}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                            <div className="mb-4 dark:text-gray-200 lg:mb-0 lg:max-w-full">
-                              Old website link
-                              <Link
-                                href="https://tripsupport.com/book-now-pay-later"
-                                target="_blank"
-                                className="px-1 text-tiny text-blue-800"
-                              >
-                                US Website
-                              </Link>
-                              <div className="my-2 max-w-lg">
-                                <Image
-                                  src={feature.imgSrc22}
-                                  alt={feature.imgAlt16}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))
-                    : tab.name === 'Company details'
-                    ? /* Render content for Wireframes tab */
-                      tab.features.map((feature) => (
-                        <div key={feature.name}>
-                          <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                              {feature.name}
-                            </h3>
-                            <p className="mt-3 text-tiny font-normal text-gray-600 dark:text-gray-400">
-                              {feature.para1}
-                            </p>
-                            <Link
-                              href={feature.link}
-                              target="_blank"
-                              className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                            >
-                              <div>View Website</div>
-                            </Link>
-                          </div>
-                        </div>
-                      ))
-                    : null}
+                      case 'Prototypes':
+                        return (
+                          <Prototype
+                            key={feature.type}
+                            title="Design comparison"
+                            links={[
+                              {
+                                label: 'CA website',
+                                href: 'https://tripsupport.ca/book-now-pay-later/',
+                                imageSrc: feature.imgSrc21,
+                                imageAlt: feature.imgAlt16,
+                              },
+                              {
+                                label: 'US Website',
+                                href: 'https://tripsupport.com/book-now-pay-later',
+                                imageSrc: feature.imgSrc22,
+                                imageAlt: feature.imgAlt16,
+                              },
+                            ]}
+                          />
+                        )
+
+                      case 'Company details':
+                        return (
+                          <Details
+                            key={feature.name}
+                            title={feature.name}
+                            paragraph={feature.para1}
+                            link={feature.link}
+                          />
+                        )
+
+                      default:
+                        return null
+                    }
+                  })}
                 </Tab.Panel>
               ))}
             </Tab.Panels>

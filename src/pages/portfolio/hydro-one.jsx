@@ -1,12 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Tab } from '@headlessui/react'
-import clsx from 'clsx'
-
-import { SimpleLayout } from '@/components/SimpleLayout'
-
-// Import assets
+// MyPrinciple
+//
 import screen1 from '@/images/projects/hydroone/screen1.jpg'
 import screen2 from '@/images/projects/hydroone/screen2.jpg'
 import screen3 from '@/images/projects/hydroone/screen3.jpg'
@@ -26,43 +19,119 @@ import proto7 from '@/images/projects/hydroone/proto7.png'
 import proto8 from '@/images/projects/hydroone/proto8.png'
 import proto9 from '@/images/projects/hydroone/proto9.png'
 import proto10 from '@/images/projects/hydroone/proto10.png'
-import logoHydroOne from '@/images/projects/hydroone/logoHydroOne.svg'
 
-// Tabs and content data
+/* eslint-disable @next/next/no-img-element */
+
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { SimpleLayout } from '@/components/SimpleLayout'
+
+import { Fragment, useState } from 'react'
+import { Tab } from '@headlessui/react'
+
 const tabs = [
   {
     name: 'Summary',
     features: [
       {
-        name: 'Hydro One Responsive Web Design and Development',
+        name: 'Summary',
         description:
-          'As a Sr. UI/UX Designer working on a contract basis, I was responsible for creating a style guide and reusable components on Figma with multiple variants. I developed my UI Design using HTML5, CSS3, and JS and integrated the code into SharePoint. Using various technologies such as Figma, Sketch, and Axure, I also created high-fidelity UI prototypes. To address user pain points, I applied different variations of the design thinking process and conducted user research. Additionally, I ensured accessibility by incorporating recent contrast trends and using aria labels and alt tags for images to make the pages accessible to everyone. I completed daily tasks assigned on Wrike from cross-functional teams in a timely manner.',
-        imageSrc: logoHydroOne,
-        imageAlt: 'Hydro One logo',
+          'As a Senior Lead Designer at Hydro One, I played a pivotal role in enhancing the company’s digital presence by creating a comprehensive style guide and reusable design components using Figma. I developed high-fidelity UI prototypes and integrated accessible, responsive designs into SharePoint using HTML5, CSS3, and JavaScript. My contributions included conducting user research to address pain points, applying design thinking principles, and ensuring compliance with accessibility standards such as contrast trends, aria labels, and alt tags. Collaborating with cross-functional teams via Wrike, I delivered innovative, user-friendly solutions that improved the overall digital experience.',
       },
     ],
   },
   {
     name: 'Wireframes',
     features: [
-      { images: [screen1, screen2, screen3, screen4, screen5, screen6] },
-      { images: [screen7, screen8, screen9] },
+      {
+        section: 'Sustainability',
+        title: 'Sustainability Initiatives',
+        subheading: 'Our commitment to a greener future',
+        link: {
+          href: 'https://www.hydroone.com/Sustainability',
+          label: 'Learn more about our sustainability initiatives',
+        },
+        images: [
+          { src: screen1, alt: 'Sustainability screen 1' },
+
+          { src: screen3, alt: 'Sustainability screen 2' },
+          { src: screen5, alt: 'Sustainability screen 3' },
+        ],
+      },
+      {
+        section: 'Energy Hub',
+        title: 'Energy Hub',
+        subheading: 'Innovative energy solutions',
+        link: {
+          href: 'https://www.hydroone.com/energy-hub',
+          label: 'Explore our energy hub',
+        },
+        images: [
+          { src: screen7, alt: 'Energy Hub screen 1' },
+          { src: screen9, alt: 'Energy Hub screen 2' },
+        ],
+      },
     ],
   },
   {
-    name: 'Figma prototypes',
+    name: 'Prototypes',
     features: [
       {
-        name: 'HydroOne Figma Prototypes',
-        description:
-          'Some of the mobile responsive web pages designed and developed by me.',
-        prototypes: [
+        title: 'Mobile First Responsive Designs',
+        links: [
           {
-            title: 'Sustainability',
-            source: proto1,
-            link: 'https://www.figma.com/file/C63rTgdhnGR38HCokMK1fP/Sustainability-2021',
+            href: 'https://www.figma.com/design/C63rTgdhnGR38HCokMK1fP/Sustainability-2021?node-id=0-1&t=HbCS9TMWfWol79Al-1',
+            label: 'Sustainability',
           },
-          // Add other prototypes
+          {
+            href: 'href="https://www.figma.com/file/qlbk5r4jpix7dRdlxwHXO8/Vacation-Conservation-Tips?node-id=2%3A66&t=u0nfmNQO4Tm3IHaw-1"',
+            label: 'Vacation Conservation Tips',
+          },
+          {
+            href: 'https://www.figma.com/file/OWiuIOxVw4K1GnHxXzsdNN/Richview-to-Manby?node-id=0%3A1&t=44Yp4t5z6vJpwtBm-1',
+            label: 'Richview to Manby',
+          },
+          {
+            href: 'https://www.figma.com/file/YkdlTQIZduAtdhuV4CYrLL/Islington-TS-LP?node-id=0%3A1&t=qXdRMOZ82HqcHx6p-1',
+            label: 'Islington TSLP',
+          },
+          {
+            href: 'https://www.figma.com/file/mfkVcrjSymJWH26i5LlgyI/Sault-3-TS?node-id=0%3A1&t=ojhVZqJlEiLL2Re2-1',
+            label: 'Sault 3 TS',
+          },
+          {
+            href: 'https://www.figma.com/file/YUqmU8h7otbD7yKSPptRrM/Merivale?node-id=0%3A1&t=tE8P17VMrwyDev1w-1',
+            label: 'Merivale',
+          },
+          {
+            href: 'https://www.figma.com/file/aO52JoNiH7zpQyXXdLbcCV/Insulation-Tips?node-id=0%3A1&t=ircfMjDokfKHgn9X-1',
+            label: 'Insulation Tips',
+          },
+          {
+            href: 'https://www.figma.com/file/yhxLLF5WmzzBj1FwEtK2Sl/WTTLR?node-id=0%3A1&t=NfVxLuY6MN9NZqbg-1',
+            label: 'WTTLR',
+          },
+          {
+            href: 'https://www.figma.com/file/PkrAaCCp3lXDZ9iHuzkqIz/Lighting-Your-Home?node-id=0%3A1&t=fAXHXZtD7RAIdFt4-1',
+            label: 'Lighting Your Home',
+          },
+          {
+            href: 'https://www.figma.com/file/YbApoBKV60o7MAaZ3SJOHx/Saint-Clair?node-id=0%3A1&t=Fn3pBujvdF3u2lZw-1',
+            label: 'Saint Clair',
+          },
+        ],
+        images: [
+          { src: proto1, alt: 'Hydro One prototype screen 1' },
+          { src: proto2, alt: 'Hydro One prototype screen 2' },
+          { src: proto3, alt: 'Hydro One prototype screen 3' },
+          { src: proto4, alt: 'Hydro One prototype screen 4' },
+          { src: proto5, alt: 'Hydro One prototype screen 5' },
+          { src: proto6, alt: 'Hydro One prototype screen 6' },
+          { src: proto7, alt: 'Hydro One prototype screen 7' },
+          { src: proto8, alt: 'Hydro One prototype screen 8' },
+          { src: proto9, alt: 'Hydro One prototype screen 9' },
+          { src: proto10, alt: 'Hydro One prototype screen 10' },
         ],
       },
     ],
@@ -71,156 +140,213 @@ const tabs = [
     name: 'Company details',
     features: [
       {
-        name: 'About HydroOne',
-        description:
-          'Hydro One is a Canadian electric utility company that provides electricity transmission and distribution services to customers in the province of Ontario. The company is publicly owned and has been serving customers for more than 100 years. Hydro One is responsible for the operation of the largest transmission system in the province, which includes over 30,000 kilometers of high-voltage transmission lines and more than 1,000 transmission stations. In addition to its transmission operations, Hydro One also manages a distribution network that delivers electricity to homes and businesses across the province. The company is committed to ensuring a safe, reliable, and sustainable supply of electricity to its customers, and it has been recognized for its efforts in environmental stewardship and community engagement.',
-        link: 'https://www.hydroone.com/',
+        name: 'About Hydro One',
+        para1:
+          "Trip Support is a global travel management company that provides a wide range of services to individual and corporate clients. The company specializes in offering personalized travel solutions, including flight bookings, hotel reservations, car rentals, and visa services. Trip Support aims to simplify the travel experience for its clients by providing a one-stop-shop for all their travel needs. With its global network of partners and suppliers, the company is able to offer competitive pricing and access to exclusive travel deals. Trip Support is committed to providing excellent customer service and support, and its team of experienced travel professionals is available 24/7 to assist clients with any questions or issues. The company's mission is to make travel easy, convenient, and affordable for everyone, and it continues to expand its offerings and services to meet the evolving needs of its clients.",
+        link: 'https://tripsupport.ca/',
       },
     ],
   },
 ]
 
-/** SocialLink Component */
-const SocialLink = ({ href, children, className }) => (
-  <li className={clsx(className, 'flex')}>
-    <Link
-      href={href}
-      target="_blank"
-      className="group flex items-center text-sm font-medium text-zinc-800 transition hover:text-sky-700 dark:text-zinc-200 dark:hover:text-sky-700"
-    >
-      {children}
-    </Link>
-  </li>
-)
-
-/** Tab Content Renderer */
-const TabContent = ({ tab }) => {
-  if (tab.name === 'Summary') {
-    return tab.features.map((feature) => (
-      <div key={feature.name} className="flex flex-col gap-6 lg:flex-row">
-        <div className="w-1/3">
-          <Image
-            src={feature.imageSrc}
-            alt={feature.imageAlt}
-            className="rounded-lg"
-          />
-        </div>
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-            {feature.name}
-          </h3>
-          <p className="mt-4 text-tiny text-gray-700 dark:text-gray-300">
-            {feature.description}
-          </p>
-        </div>
-      </div>
-    ))
-  }
-
-  if (tab.name === 'Wireframes') {
-    return tab.features.map((feature, index) => (
-      <div key={index} className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-        {feature.images.map((src, i) => (
-          <Image
-            key={i}
-            src={src}
-            alt={`Wireframe ${i + 1}`}
-            className="rounded shadow-md"
-          />
-        ))}
-      </div>
-    ))
-  }
-
-  if (tab.name === 'Figma prototypes') {
-    return tab.features.map((feature) => (
-      <div key={feature.name}>
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-          {feature.name}
-        </h3>
-        <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-          {feature.description}
-        </p>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {feature.prototypes.map((proto) => (
-            <div key={proto.title}>
-              <Image src={proto.source} alt={proto.title} className="rounded" />
-              <Link
-                href={proto.link}
-                target="_blank"
-                className="text-sm text-blue-600 hover:underline"
-              >
-                {proto.title}
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-    ))
-  }
-
-  if (tab.name === 'Company details') {
-    return tab.features.map((feature) => (
-      <div key={feature.name}>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-          {feature.name}
-        </h3>
-        <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-          {feature.description}
-        </p>
-        <Link
-          href={feature.link}
-          target="_blank"
-          className="mt-4 inline-block rounded-full bg-white py-2 px-4 text-sm font-semibold text-gray-900 shadow-md hover:bg-gray-100"
-        >
-          Visit Website
-        </Link>
-      </div>
-    ))
-  }
-
-  return null
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
 }
 
-/** Main Component */
-export default function HydroOne() {
-  return (
-    <>
-      <Head>
-        <title>Hydro One Project</title>
-        <meta name="description" content="Hydro One Project Details" />
-      </Head>
-      <SimpleLayout>
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
-          Hydro One
-        </h1>
-        <Tab.Group>
-          <Tab.List className="mt-6 flex gap-4">
-            {tabs.map((tab) => (
-              <Tab
-                key={tab.name}
-                className={({ selected }) =>
-                  clsx(
-                    'py-2 px-4 text-sm font-semibold',
-                    selected
-                      ? 'border-b-2 border-blue-600 text-blue-600'
-                      : 'text-gray-700 hover:text-blue-600 dark:text-gray-300'
-                  )
-                }
+const Summary = ({ title, paragraphs }) => (
+  <div className="text-content flex flex-col lg:gap-x-8">
+    <div className="heading-lg col-span-full mb-4">
+      <h2>{title}</h2>
+    </div>
+    <div className="paragraph flex max-w-prose flex-col gap-4 lg:mt-0">
+      {paragraphs.map((para, index) => (
+        <p key={index}>{para}</p>
+      ))}
+    </div>
+  </div>
+)
+
+const Wireframes = ({ sections }) => (
+  <div className="text-content flex flex-col gap-y-8">
+    {sections?.length > 0 ? (
+      sections.map((section, index) => (
+        <div key={index} className="mb-8 text-zinc-900  dark:text-zinc-50">
+          {/* Section Title and Subheading */}
+          <h3 className="mb-4 text-xl font-semibold ">{section.title}</h3>
+          <div className="flex max-w-prose flex-col gap-4 text-sm lg:mt-0">
+            <p>{section.subheading}</p>
+          </div>
+
+          {/* Section Link */}
+          {section.link ? (
+            <Link
+              href={section.link.href}
+              className="mb-4 mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {section.link.label}
+            </Link>
+          ) : null}
+
+          {/* Section Images */}
+          {section.images?.length > 0 ? (
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+              {section.images.map((image, idx) => (
+                <div key={idx} className="overflow-hidden rounded-lg">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={260}
+                    height={260}
+                    layout="responsive"
+                    className="image-container"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-gray-500">
+              No images available for this section.
+            </p>
+          )}
+        </div>
+      ))
+    ) : (
+      <p className="text-center text-gray-500">
+        No wireframe sections available.
+      </p>
+    )}
+  </div>
+)
+
+const Prototypes = ({ title, images, links }) => (
+  <div className="flex flex-col dark:bg-inherit">
+    <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+      <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-zinc-50">
+        {title}
+      </h3>
+    </div>
+    <div className="mt-4 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+      {images &&
+        images.map((image, index) => (
+          <div key={index} className="overflow-hidden rounded-lg">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={260}
+              height={260}
+              layout="responsive"
+              className="image-container"
+            />
+            {links && links[index] && (
+              <Link
+                href={links[index].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 block text-sm  text-blue-800 hover:underline dark:text-blue-400 "
               >
-                {tab.name}
-              </Tab>
-            ))}
-          </Tab.List>
-          <Tab.Panels className="mt-6 space-y-8">
-            {tabs.map((tab) => (
-              <Tab.Panel key={tab.name}>
-                <TabContent tab={tab} />
-              </Tab.Panel>
-            ))}
-          </Tab.Panels>
-        </Tab.Group>
-      </SimpleLayout>
-    </>
+                {links[index].label}
+              </Link>
+            )}
+          </div>
+        ))}
+    </div>
+  </div>
+)
+
+const Details = ({ title, paragraph, link }) => (
+  <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+    <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-zinc-50">
+      {title}
+    </h3>
+    <div className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900  dark:text-zinc-50 lg:mt-0">
+      <p>{paragraph}</p>
+    </div>
+    <Link
+      href={link}
+      target="_blank"
+      className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50"
+    >
+      View Website
+    </Link>
+  </div>
+)
+
+export default function Project() {
+  const [selectedTab, setSelectedTab] = useState('Wireframes')
+  return (
+    <SimpleLayout title={'Hydro One'} intro={'Responsive Mobile Design'}>
+      <section aria-labelledby="features-heading" className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
+          <Tab.Group
+            as="div"
+            className="mt-10"
+            value={selectedTab}
+            onSelect={setSelectedTab}
+          >
+            <div className="overflow-x-hidden whitespace-nowrap">
+              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                  <Tab.List className="-mb-px flex ">
+                    {tabs.map((tab) => (
+                      <Tab
+                        key={tab.name}
+                        className={({ selected }) =>
+                          classNames(
+                            selected
+                              ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
+                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-zinc-50 ',
+                            'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
+                          )
+                        }
+                      >
+                        {tab.name}
+                      </Tab>
+                    ))}
+                  </Tab.List>
+                </div>
+              </div>
+            </div>
+
+            <Tab.Panels as={Fragment}>
+              {tabs.map((tab) => (
+                <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
+                  {tab.name === 'Summary' && (
+                    <Summary
+                      title={tab.features[0].name} // Summary expects a single feature
+                      paragraphs={[tab.features[0].description]}
+                    />
+                  )}
+
+                  {tab.name === 'Wireframes' && (
+                    <Wireframes
+                      title="Wireframes"
+                      sections={tab.features} // Pass all sections at once
+                    />
+                  )}
+
+                  {tab.name === 'Prototypes' && (
+                    <Prototypes
+                      title={tab.features[0].title} // Prototypes expects a single feature
+                      images={tab.features[0].images || []}
+                      links={tab.features[0].links || []}
+                    />
+                  )}
+
+                  {tab.name === 'Company details' && (
+                    <Details
+                      title={tab.features[0].name} // Company details expects a single feature
+                      paragraph={tab.features[0].para1}
+                      link={tab.features[0].link}
+                    />
+                  )}
+                </Tab.Panel>
+              ))}
+            </Tab.Panels>
+          </Tab.Group>
+        </div>
+      </section>
+    </SimpleLayout>
   )
 }

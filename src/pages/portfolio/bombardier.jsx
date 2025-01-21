@@ -210,10 +210,10 @@ export default function Project() {
                           key={feature.name}
                           className="flex flex-col lg:gap-x-8"
                         >
-                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
+                          <div className="col-span-full mb-4 text-lg font-semibold text-zinc-900 dark:text-zinc-50 ">
                             <h2>Summary</h2>
                           </div>
-                          <div className="flex max-w-prose flex-col gap-4 text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
+                          <div className="flex max-w-prose flex-col gap-4 text-zinc-900  dark:text-zinc-200 lg:mt-0">
                             <p>{feature.para1}</p>
                             <p>{feature.para2}</p>
                             <p>{feature.para3}</p>
@@ -228,7 +228,7 @@ export default function Project() {
                           className="flex flex-col gap-y-2 bg-slate-100 dark:bg-inherit"
                         >
                           <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6">
-                            <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200">
                               <h2>mySmartRouter</h2>
                             </div>
                             <div className="flex flex-col gap-4 lg:col-span-2">
@@ -333,7 +333,7 @@ export default function Project() {
                             </div>
                           </div>
                           <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6">
-                            <div className="col-span-full mb-4 text-lg font-semibold underline dark:text-gray-200">
+                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200">
                               <h2>myPrinciple</h2>
                             </div>
                             <div className="flex flex-col gap-4 lg:col-span-2">
@@ -523,7 +523,7 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div key={feature.name}>
                           <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
-                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
+                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
                               {feature.name}
                             </h3>
                             <p className="mt-2  font-normal text-zinc-900 dark:text-zinc-200">
@@ -532,7 +532,7 @@ export default function Project() {
                             <Link
                               href={feature.link}
                               target="_blank"
-                              className="zinc-5ring-inset mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-zinc-900 shadow-sm ring-gray-300 hover:bg-gray-50"
+                              className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                             >
                               <div>View Website</div>
                             </Link>

@@ -155,12 +155,12 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex flex-col lg:gap-x-8"
+                          className="flex flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8"
                         >
-                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
+                          <div className="col-span-full mb-4 text-lg font-semibold ">
                             <h2>Summary</h2>
                           </div>
-                          <div className="max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
+                          <div className="max-w-prose text-sm   lg:mt-0">
                             <p>{feature.para1}</p>
                             <ul className="list-disc pl-2 lg:pl-8">
                               <li className="mt-4">{feature.li1}</li>
@@ -175,7 +175,7 @@ export default function Project() {
                           <div className="col-span-full my-4 text-lg font-semibold dark:text-gray-200 lg:mt-8 ">
                             <h2>Contributions</h2>
                           </div>
-                          <div className="max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
+                          <div className="max-w-prose text-sm text-zinc-900  dark:text-zinc-200 lg:mt-0">
                             <ul className="list-disc pl-2 lg:pl-8">
                               <li className="text-tiny text-slate-900 dark:text-gray-400">
                                 {feature.li8}
@@ -199,7 +199,7 @@ export default function Project() {
                               <h2>Plan Administrator Home (MVP)</h2>
                             </div>
                             <div
-                              className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8"
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
                               layout="responsive"
                             >
                               <Image
@@ -216,7 +216,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Plan Administrator Home (PowerBi)</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc2}
@@ -243,7 +243,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Coverage summary</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc4}
@@ -270,7 +270,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Status Update (Terminate a member)</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <Image
                                 src={feature.imageSrc6}
                                 alt={feature.imageSrc6Alt}
@@ -285,7 +285,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Status Update (Parental leave)</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <Image
                                 src={feature.imageSrc7}
                                 alt={feature.imageSrc7Alt}
@@ -300,7 +300,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Status Update (Other leave)</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
                               <Image
                                 src={feature.imageSrc8}
                                 alt={feature.imageSrc8Alt}
@@ -315,7 +315,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Reinstate a member</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <Image
                                 src={feature.imageSrc9}
                                 alt={feature.imageSrc9Alt}
@@ -339,7 +339,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Datepicker</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <Image
                                 src={feature.imageSrc6}
                                 alt={feature.imageSrc6Alt}
@@ -350,7 +350,7 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <Image
                                 src={feature.imageSrc7}
                                 alt={feature.imageSrc7Alt}
@@ -367,7 +367,7 @@ export default function Project() {
                     ? /* Render content for Wireframes tab */
                       tab.features.map((feature) => (
                         <div key={feature.name}>
-                          <div className="mt-6 max-w-2xl text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:col-span-5 lg:mt-0">
+                          <div className="mt-6 max-w-2xl text-sm text-zinc-900  dark:text-zinc-200 lg:col-span-5 lg:mt-0">
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                               {feature.name}
                             </h3>
@@ -375,7 +375,7 @@ export default function Project() {
                             <Link
                               href={feature.link}
                               target="_blank"
-                              className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                              className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                             >
                               <div>View Website</div>
                             </Link>

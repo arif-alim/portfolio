@@ -129,25 +129,16 @@ export default function Project() {
         <title>Craft City - Project</title>
         <meta name="description" content="Craft City Hard Seltzer" />
       </Head>
-      <SimpleLayout>
+      <SimpleLayout
+        title={'Craft City'}
+        intro={'Designed their custom logo and their e-commerce website.'}
+      >
         <div>
           <section
             aria-labelledby="features-heading"
             className="mx-auto max-w-7xl"
           >
             <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
-              <div className="max-w-3xl">
-                <h1
-                  id="features-heading"
-                  className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-                >
-                  Craft City
-                </h1>
-                <p className="mt-1 text-md font-medium tracking-tight text-gray-600 dark:text-gray-300">
-                  Designed their custom logo and their e-commerce website.
-                </p>
-              </div>
-
               <Tab.Group
                 as="div"
                 className="mt-10"
@@ -189,16 +180,9 @@ export default function Project() {
                           tab.features.map((feature) => (
                             <div
                               key={feature.heading}
-                              className="flex flex-col lg:gap-x-8"
+                              className="flex max-w-prose flex-col text-sm text-zinc-900 dark:text-zinc-50 lg:gap-x-8 "
                             >
-                              <div className="mb-0 lg:mb-8 lg:max-w-[150px]">
-                                <Image
-                                  src={feature.imageSrc}
-                                  alt={feature.imageAlt}
-                                  className="dark:invert"
-                                />
-                              </div>
-                              <div className="mt-6 lg:mt-0 lg:max-w-prose">
+                              <div className="col-span-full  flex flex-col gap-4 ">
                                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                                   {feature.heading}
                                 </h3>
@@ -219,6 +203,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc1}
                                   alt={feature.imageAlt1}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -227,6 +214,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc2}
                                   alt={feature.imageAlt2}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -235,6 +225,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc3}
                                   alt={feature.imageAlt3}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -243,6 +236,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc4}
                                   alt={feature.imageAlt4}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -259,6 +255,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc1}
                                   alt={feature.imageAlt1}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -267,6 +266,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc2}
                                   alt={feature.imageAlt2}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -275,14 +277,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc3}
                                   alt={feature.imageAlt3}
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-
-                              <div className="flex flex-col gap-4 lg:col-span-3">
-                                <Image
-                                  src={feature.imageSrc4}
-                                  alt={feature.imageAlt4}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -299,6 +296,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc1}
                                   alt={feature.imageAlt1}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -306,6 +306,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc2}
                                   alt={feature.imageAlt2}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -313,6 +316,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc3}
                                   alt={feature.imageAlt3}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -329,6 +335,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc1}
                                   alt={feature.imageAlt1}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -336,6 +345,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc2}
                                   alt={feature.imageAlt2}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>
@@ -343,6 +355,9 @@ export default function Project() {
                                 <Image
                                   src={feature.imageSrc3}
                                   alt={feature.imageAlt3}
+                                  width={260}
+                                  height={260}
+                                  layout="responsive"
                                   className="rounded-lg object-cover object-center"
                                 />
                               </div>

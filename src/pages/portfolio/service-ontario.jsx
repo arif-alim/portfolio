@@ -221,7 +221,7 @@ export default function Project() {
                               className="rounded-lg object-cover object-center"
                             />
                           </div>
-                          <div className="mt-6 flex max-w-prose flex-col gap-4 text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0 lg:max-w-prose">
+                          <div className="mt-6 flex max-w-prose flex-col gap-4 text-sm text-zinc-900  dark:text-zinc-200 lg:mt-0 lg:max-w-prose">
                             <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
                               {feature.name}
                             </h3>
@@ -410,7 +410,7 @@ export default function Project() {
                             <Link
                               href="https://ddr-demo.vercel.app/"
                               target="_blank"
-                              className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                              className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                             >
                               <div>View web prototype</div>
                             </Link>
@@ -425,6 +425,9 @@ export default function Project() {
                               </Link>
                             </div>
                           </div>
+                          <h2 className="mb-4 text-lg font-semibold text-zinc-900 dark:text-zinc-50 ">
+                            Embedded Figma iFrame
+                          </h2>
                           <MyComponent></MyComponent>
                         </div>
                       ))
@@ -436,13 +439,13 @@ export default function Project() {
                             <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
                               {feature.name}
                             </h3>
-                            <p className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
+                            <p className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900  dark:text-zinc-200 lg:mt-0">
                               {feature.para1}
                             </p>
                             <Link
                               href={feature.link}
                               target="_blank"
-                              className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                              className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                             >
                               <div>View Website</div>
                             </Link>

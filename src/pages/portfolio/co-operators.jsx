@@ -168,7 +168,7 @@ export default function Project() {
                           classNames(
                             selected
                               ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
+                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-50-400 border-transparent font-medium text-zinc-900 hover:border-gray-300 dark:text-zinc-50 ',
                             'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
                           )
                         }
@@ -189,12 +189,12 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex flex-col lg:gap-x-8"
+                          className="flex flex-col text-sm text-zinc-900 dark:text-zinc-50 lg:gap-x-8"
                         >
-                          <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
+                          <div className="col-span-full mb-4 text-lg font-semibold">
                             <h2>Summary</h2>
                           </div>
-                          <div className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:mt-0">
+                          <div className="flex max-w-prose flex-col gap-4">
                             <p>{feature.para1}</p>
                             <p>{feature.para2}</p>
                             <p>{feature.para3}</p>
@@ -209,10 +209,10 @@ export default function Project() {
                           className="flex flex-col gap-y-16 dark:bg-inherit"
                         >
                           <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
+                            <div className="col-span-full mb-4 text-lg font-semibold text-zinc-900 dark:text-zinc-50">
                               <h2>Homepage</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc1}
@@ -239,7 +239,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Sign-in and upgrade policy</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc3}
@@ -266,7 +266,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Auto policy and details coverage screens</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
                               <Image
                                 src={feature.imageSrc5}
                                 alt={feature.imageSrc5Alt}
@@ -290,7 +290,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Light and dark theme</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc6}
@@ -317,7 +317,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Sign-in and upgrade policy</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc8}
@@ -353,7 +353,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Illustrations</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc10}
@@ -389,7 +389,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Banners</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc19}
@@ -416,7 +416,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Tile and snackbar component</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="flex gap-8 bg-zinc-100  dark:bg-zinc-800  lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc15}
@@ -443,7 +443,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Card and button component</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc12}
@@ -470,7 +470,7 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Slider and switch component</h2>
                             </div>
-                            <div className="flex gap-8 bg-slate-50 p-4 lg:col-span-12 lg:p-8">
+                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
                               <div>
                                 <Image
                                   src={feature.imageSrc14}
@@ -499,15 +499,15 @@ export default function Project() {
                     ? /* Render content for Wireframes tab */
                       tab.features.map((feature) => (
                         <div key={feature.name}>
-                          <div className="mt-6 max-w-prose text-sm text-zinc-900 dark:font-thin dark:text-zinc-200 lg:col-span-5 lg:mt-0 ">
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
+                          <div className="mt-6 max-w-prose text-sm text-zinc-900  dark:text-zinc-50 lg:col-span-5 lg:mt-0 ">
+                            <h3 className="text-xl font-semibold ">
                               {feature.name}
                             </h3>
-                            <p className="mt-2">{feature.para1}</p>
+                            <p className="mt-4">{feature.para1}</p>
                             <Link
                               href={feature.link}
                               target="_blank"
-                              className="mt-8 inline-block rounded-full bg-white py-2 px-3.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                              className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                             >
                               <div>View Website</div>
                             </Link>

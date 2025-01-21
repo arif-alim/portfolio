@@ -331,13 +331,13 @@ export default function Toolbox() {
         <div className="space-y-20">
           <div className="space-y-10">
             <h2 className="border-b-4 pb-2 text-md font-semibold tracking-normal dark:border-zinc-700 dark:text-zinc-300">
-              UI/UX Design tools
+              Design tools
             </h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
               {DesTools.map((des) => (
                 <div
                   key={des.name}
-                  className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
+                  className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pb-3 pt-4 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
                   <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
                     <Image src={des.imageUrl} alt="" width={40} height={40} />
@@ -365,13 +365,13 @@ export default function Toolbox() {
           </div>
           <div className="space-y-10">
             <h2 className="border-b-4 pb-2 text-md font-semibold tracking-normal dark:border-zinc-700 dark:text-zinc-300">
-              Front-end Development
+              Development tools
             </h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
               {Frontend.map((front) => (
                 <div
                   key={front.name}
-                  className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
+                  className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pb-3 pt-4 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
                 >
                   <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
                     <Image src={front.imageUrl} alt="" width={40} height={40} />
@@ -396,7 +396,7 @@ export default function Toolbox() {
                 </div>
               ))}
             </div>
-            <h2 className="border-b-4 pb-2 text-md font-semibold tracking-normal dark:border-zinc-700 dark:text-zinc-300">
+            {/* <h2 className="border-b-4 pb-2 text-md font-semibold tracking-normal dark:border-zinc-700 dark:text-zinc-300">
               Backend Development
             </h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
@@ -427,7 +427,7 @@ export default function Toolbox() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </SimpleLayout>
