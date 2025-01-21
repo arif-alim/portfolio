@@ -49,5 +49,8 @@
   },
   "resolutions": {
     "glob": "^10.4.5"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
