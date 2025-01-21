@@ -216,7 +216,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Plan Administrator Home (PowerBi)</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
                                   src={feature.imageSrc2}
@@ -243,7 +246,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Coverage summary</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
                                   src={feature.imageSrc4}
@@ -270,7 +276,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Status Update (Terminate a member)</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 sm:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <Image
                                 src={feature.imageSrc6}
                                 alt={feature.imageSrc6Alt}
@@ -285,7 +294,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Status Update (Parental leave)</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <Image
                                 src={feature.imageSrc7}
                                 alt={feature.imageSrc7Alt}
@@ -300,7 +312,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Status Update (Other leave)</h2>
                             </div>
-                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <Image
                                 src={feature.imageSrc8}
                                 alt={feature.imageSrc8Alt}
@@ -315,7 +330,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Reinstate a member</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <Image
                                 src={feature.imageSrc9}
                                 alt={feature.imageSrc9Alt}
@@ -339,7 +357,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
                               <h2>Datepicker</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <Image
                                 src={feature.imageSrc6}
                                 alt={feature.imageSrc6Alt}
@@ -350,7 +371,10 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <Image
                                 src={feature.imageSrc7}
                                 alt={feature.imageSrc7Alt}

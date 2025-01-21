@@ -114,7 +114,7 @@ const tabs = [
   },
 
   {
-    name: 'Design system',
+    name: 'Design systems',
     features: [
       {
         imageSrc12: component1,
@@ -212,7 +212,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold text-zinc-900 dark:text-zinc-50">
                               <h2>Homepage</h2>
                             </div>
-                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
                                   src={feature.imageSrc1}
@@ -239,7 +242,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Sign-in and upgrade policy</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
                                   src={feature.imageSrc3}
@@ -266,7 +272,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Auto policy and details coverage screens</h2>
                             </div>
-                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <Image
                                 src={feature.imageSrc5}
                                 alt={feature.imageSrc5Alt}
@@ -290,7 +299,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Light and dark theme</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
                                   src={feature.imageSrc6}
@@ -317,7 +329,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Sign-in and upgrade policy</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
                                   src={feature.imageSrc8}
@@ -353,7 +368,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Illustrations</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
                                   src={feature.imageSrc10}
@@ -378,7 +396,7 @@ export default function Project() {
                           </div>
                         </div>
                       ))
-                    : tab.name === 'Design system'
+                    : tab.name === 'Design systems'
                     ? /* Render content for Illustrations tab */
                       tab.features.map((feature) => (
                         <div
@@ -389,11 +407,14 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Banners</h2>
                             </div>
-                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
-                                  src={feature.imageSrc19}
-                                  alt={feature.imageSrc19Alt}
+                                  src={feature.imageSrc12}
+                                  alt={feature.imageSrc12Alt}
                                   width={500}
                                   height={500}
                                   layout="responsive"
@@ -402,8 +423,8 @@ export default function Project() {
                               </div>
                               <div>
                                 <Image
-                                  src={feature.imageSrc18}
-                                  alt={feature.imageSrc18Alt}
+                                  src={feature.imageSrc13}
+                                  alt={feature.imageSrc13Alt}
                                   width={500}
                                   height={500}
                                   layout="responsive"
@@ -416,11 +437,14 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Tile and snackbar component</h2>
                             </div>
-                            <div className="flex gap-8 bg-zinc-100  dark:bg-zinc-800  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
-                                  src={feature.imageSrc15}
-                                  alt={feature.imageSrc15Alt}
+                                  src={feature.imageSrc14}
+                                  alt={feature.imageSrc14Alt}
                                   width={500}
                                   height={500}
                                   layout="responsive"
@@ -429,8 +453,8 @@ export default function Project() {
                               </div>
                               <div>
                                 <Image
-                                  src={feature.imageSrc16}
-                                  alt={feature.imageSrc16Alt}
+                                  src={feature.imageSrc15}
+                                  alt={feature.imageSrc15Alt}
                                   width={500}
                                   height={500}
                                   layout="responsive"
@@ -443,7 +467,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Card and button component</h2>
                             </div>
-                            <div className="dark:bg-zinc-800p-4 flex gap-8 bg-zinc-100  lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
                                   src={feature.imageSrc12}
@@ -470,7 +497,10 @@ export default function Project() {
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-zinc-200 ">
                               <h2>Slider and switch component</h2>
                             </div>
-                            <div className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
+                            <div
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              layout="responsive"
+                            >
                               <div>
                                 <Image
                                   src={feature.imageSrc14}

@@ -124,7 +124,7 @@ const Wireframes = ({ title, images }) => (
     <div className="heading-lg col-span-full mb-4">
       <h2>{title}</h2>
     </div>
-    <div className="dark:bg-zinc-800p-4 col-span-full gap-4 bg-zinc-100  lg:grid lg:grid-cols-12 lg:gap-8 lg:p-8">
+    <div className="col-span-full gap-4 bg-zinc-100 p-4 dark:bg-zinc-800  lg:grid lg:grid-cols-12 lg:gap-8 lg:p-8">
       {images.map((image, index) => (
         <div key={index} className="lg:col-span-4">
           <Image

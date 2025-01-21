@@ -153,9 +153,9 @@ export default function HydroOne() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6"
+                            className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-6 lg:p-6"
                           >
-                            <div className="flex flex-col gap-4 lg:col-span-4">
+                            <div className="flex flex-col gap-6 lg:col-span-4">
                               <Image
                                 src={feature.imageSrc1}
                                 alt={feature.imageAlt1}
@@ -184,7 +184,7 @@ export default function HydroOne() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-4">
+                            <div className="flex flex-col gap-6 lg:col-span-4">
                               <Image
                                 src={feature.imageSrc2}
                                 alt={feature.imageAlt2}
@@ -204,7 +204,7 @@ export default function HydroOne() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-4">
+                            <div className="flex flex-col gap-6 lg:col-span-4">
                               <Image
                                 src={feature.imageSrc3}
                                 alt={feature.imageAlt3}

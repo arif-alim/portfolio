@@ -191,7 +191,7 @@ const Wireframes = ({ sections }) => (
 
           {/* Section Images */}
           {section.images?.length > 0 ? (
-            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            <div className="mt-4 grid grid-cols-1 gap-4 p-4 dark:bg-zinc-800 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:p-6">
               {section.images.map((image, idx) => (
                 <div key={idx} className="overflow-hidden rounded-lg">
                   <Image
