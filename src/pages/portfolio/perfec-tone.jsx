@@ -2,16 +2,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import screen1 from '@/images/projects/nfcd/nfcd1.jpg'
-import screen2 from '@/images/projects/nfcd/nfcd2.jpg'
-import screen3 from '@/images/projects/nfcd/nfcd3.jpg'
-import screen4 from '@/images/projects/nfcd/nfcd4.jpg'
-import screen5 from '@/images/projects/nfcd/nfcd5.jpg'
-import screen6 from '@/images/projects/nfcd/nfcd6.jpg'
-import screen7 from '@/images/projects/nfcd/nfcd7.jpg'
-import screen8 from '@/images/projects/nfcd/nfcd8.jpg'
+import screen1 from '@/images/projects/perfectone/perfectone-1.jpg'
+import screen2 from '@/images/projects/perfectone/perfectone-2.jpg'
+import screen3 from '@/images/projects/perfectone/perfectone-3.jpg'
+import screen4 from '@/images/projects/perfectone/perfectone-4.jpg'
+import screen5 from '@/images/projects/perfectone/perfectone-5.jpg'
+import screen6 from '@/images/projects/perfectone/perfectone-6.jpg'
+import screen7 from '@/images/projects/perfectone/perfectone-7.jpg'
+import screen8 from '@/images/projects/perfectone/perfectone-8.jpg'
 
-import logoNfcd from '@/images/projects/nfcd/nfcd-logo.svg'
+import logoPerfectone from '@/images/projects/perfectone/perfectone-logo.svg'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { Fragment, useState, useEffect } from 'react'
@@ -22,20 +22,14 @@ const tabs = [
     name: 'Summary',
     features: [
       {
-        name: 'Island traders responsive web design',
+        name: 'Summary',
         para1:
-          'The Niagara Falls Craft Distillers website underwent a complete overhaul, with a custom e-commerce responsive design that incorporates the laws of UX to enhance user experience and drive sales.',
+          'For Perfec-Tone, I developed a cohesive digital design strategy to enhance their online presence and create a seamless user experience. Starting with a style guide, I selected typography that balanced readability and elegance while curating a color palette that reflected the brand’s focus on natural beauty and organic ingredients. To ensure consistency and efficiency, I created reusable design components that streamlined the design process and maintained a unified look across all touchpoints.',
         para2:
-          "The homepage was redesigned to feature a full-screen banner showcasing the company's premium spirits, which immediately draws the user's attention. The design incorporates a scroll-down feature that allows the user to learn more about the company's products and brand story. The navigation was updated with clear labels and drop-down menus, and the addition of a search bar makes it easy for users to find specific products or information.",
-        para3:
-          "Custom pages were created to showcase the company's products and events, with optimized search functionality to help users find what they need quickly. The use of high-quality images and white space creates a clean and professional look, while the modern and premium design enhances the user experience and promotes brand recognition.",
-        para4:
-          'The website was optimized for mobile devices to ensure that users can access the website on any device and have a seamless experience. The custom e-commerce design allows for easy purchasing, with a streamlined checkout process and secure payment gateway to enhance user trust and drive sales.',
-        para5:
-          "Overall, the Niagara Falls Craft Distillers website redesign has resulted in a significant improvement in user experience and sales. The custom design incorporates the laws of UX to enhance user engagement and drive conversions, with a focus on showcasing the company's premium spirits and brand story.",
+          'The project culminated in the design and development of a mobile-responsive e-commerce website tailored to Perfec-Tone’s needs. The website was crafted to provide an intuitive shopping experience, featuring user-friendly navigation, clear product descriptions, and a seamless checkout process. By emphasizing responsive design principles, the site was optimized for both desktop and mobile devices, ensuring accessibility and usability for all users. This work helped Perfec-Tone elevate their digital presence and deliver a polished, customer-focused online experience.',
 
-        imageSrc: logoNfcd,
-        imageAlt: 'Niagara Falls Craft Distillers logo',
+        imageSrc: logoPerfectone,
+        imageAlt: 'Perfec-tone logo',
       },
     ],
   },
@@ -67,11 +61,10 @@ const tabs = [
     name: 'Company details',
     features: [
       {
-        name: 'Niagara Falls Craft Distillers (NFCD)',
+        name: 'About Perfec-tone',
         para1:
-          'Niagara Falls Craft Distillers is a premium craft distillery based in Niagara Falls, Canada. The company specializes in the production of premium spirits, including vodka, gin, and whiskey, using locally sourced ingredients and traditional distilling techniques. With a focus on quality and innovation, Niagara Falls Craft Distillers has established itself as a leading player in the craft spirits industry, winning numerous awards for its exceptional products. The company is committed to sustainability and ethical practices, with a focus on reducing its environmental impact and supporting the local community. With a dedication to quality, craftsmanship, and innovation, Niagara Falls Craft Distillers is a leading choice for discerning spirits enthusiasts and connoisseurs.',
-
-        link: 'https://niagarafallscraftdistillers.ca/',
+          "Perfec-Tone is a skincare company that offers a range of products designed to address a wide range of skin concerns. The company was founded with the goal of providing effective and affordable skincare solutions for all skin types and tones. Perfec-Tone's products are formulated using natural and organic ingredients, and they are free from harsh chemicals and synthetic fragrances. The company's product line includes cleansers, toners, moisturizers, serums, and treatments that are designed to address common skin concerns such as acne, hyperpigmentation, and aging. Perfec-Tone is committed to promoting healthy and radiant skin, and it offers personalized skincare consultations to help customers find the right products for their individual needs. The company's mission is to provide high-quality skincare solutions that are accessible and affordable, while promoting natural beauty and self-confidence. Perfec-Tone continues to innovate and expand its product line to meet the evolving needs of its customers, and it has established itself as a trusted brand in the skincare industry.",
+        link: 'https://perfec-tone.com/',
       },
     ],
   },
@@ -92,10 +85,7 @@ export default function HydroOne() {
           content="At Niagara Falls Craft Distillers, our products are made locally at our state-of-the-art distillery, including a 1,000-litre copper kettle with stainless steel fermenters. We use quality ingredients, employ local talent and are known for our community involvement. The pioneering spirit is our mission to blend high-quality spirits with the natural wonder of Niagara Falls."
         />
       </Head>
-      <SimpleLayout
-        title={'Niagara Falls Craft Distillers'}
-        intro={'Custom e-commerce mobile responsive web design'}
-      >
+      <SimpleLayout title={'Perfec-tone'} intro={'Add text here'}>
         <section
           aria-labelledby="features-heading"
           className="mx-auto max-w-7xl"
@@ -151,10 +141,6 @@ export default function HydroOne() {
                               <div className="flex max-w-prose flex-col gap-4">
                                 <p>{feature.para1}</p>
                                 <p>{feature.para2}</p>
-                                <p>{feature.para3}</p>
-                                <p>{feature.para4}</p>
-                                <p>{feature.para5}</p>
-                                <p>{feature.para6}</p>
                               </div>
                             </div>
                           </div>
@@ -177,8 +163,8 @@ export default function HydroOne() {
                               />
 
                               <Image
-                                src={feature.imageSrc4}
-                                alt={feature.imageAlt4}
+                                src={feature.imageSrc3}
+                                alt={feature.imageAlt3}
                                 width={500}
                                 height={500}
                                 layout="responsive"
