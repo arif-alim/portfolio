@@ -268,6 +268,7 @@ export default function Project() {
                               <div className="lg:col-span-3">
                                 <Image
                                   src={feature.imageSrc4}
+                                  alt={feature.imageAlt4}
                                   width={260}
                                   height={260}
                                   layout="responsive"
