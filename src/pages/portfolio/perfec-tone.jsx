@@ -1,20 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
-// Perfec-tone
-import screen1 from '@/images/projects/perfectone/perfectone-1.jpg'
-import screen2 from '@/images/projects/perfectone/perfectone-2.jpg'
-import screen3 from '@/images/projects/perfectone/perfectone-3.jpg'
-import screen4 from '@/images/projects/perfectone/perfectone-4.jpg'
-import screen5 from '@/images/projects/perfectone/perfectone-5.jpg'
-import screen6 from '@/images/projects/perfectone/perfectone-6.jpg'
-import screen7 from '@/images/projects/perfectone/perfectone-7.jpg'
-import screen8 from '@/images/projects/perfectone/perfectone-8.jpg'
+import screen1 from '@/images/projects/nfcd/nfcd1.jpg'
+import screen2 from '@/images/projects/nfcd/nfcd2.jpg'
+import screen3 from '@/images/projects/nfcd/nfcd3.jpg'
+import screen4 from '@/images/projects/nfcd/nfcd4.jpg'
+import screen5 from '@/images/projects/nfcd/nfcd5.jpg'
+import screen6 from '@/images/projects/nfcd/nfcd6.jpg'
+import screen7 from '@/images/projects/nfcd/nfcd7.jpg'
+import screen8 from '@/images/projects/nfcd/nfcd8.jpg'
 
-// Hydro One logo
-import logoPerfectone from '@/images/projects/perfectone/perfectone-logo.svg'
+import logoNfcd from '@/images/projects/nfcd/nfcd-logo.svg'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { Fragment, useState, useEffect } from 'react'
@@ -25,14 +22,20 @@ const tabs = [
     name: 'Summary',
     features: [
       {
-        title: 'Summary',
+        name: 'Island traders responsive web design',
         para1:
-          'Perfec-Tone is a skincare company that offers a range of products designed to address various skin concerns. To help the company reach a wider audience and provide a seamless shopping experience for its customers, we designed a mobile responsive e-commerce website that emphasized both user interface (UI) and user experience (UX) design principles.',
+          'The Niagara Falls Craft Distillers website underwent a complete overhaul, with a custom e-commerce responsive design that incorporates the laws of UX to enhance user experience and drive sales.',
         para2:
-          "The website's UI was carefully crafted to highlight the brand's natural and organic ingredients, while also providing clear and concise product descriptions and easy-to-use navigation menus. We used high-quality product photography and incorporated soft, pastel colors to create a soothing and inviting aesthetic. The website's UX was designed to be intuitive and easy to use, with a simple checkout process and clear calls-to-action throughout the website. Additionally, we implemented responsive design principles to ensure that the website looked great and functioned well on both desktop and mobile devices, providing a seamless shopping experience for customers no matter where they accessed the website from. The result was an e-commerce website that not only looked great but also provided a seamless shopping experience for Perfec-Tone's customers.",
+          "The homepage was redesigned to feature a full-screen banner showcasing the company's premium spirits, which immediately draws the user's attention. The design incorporates a scroll-down feature that allows the user to learn more about the company's products and brand story. The navigation was updated with clear labels and drop-down menus, and the addition of a search bar makes it easy for users to find specific products or information.",
+        para3:
+          "Custom pages were created to showcase the company's products and events, with optimized search functionality to help users find what they need quickly. The use of high-quality images and white space creates a clean and professional look, while the modern and premium design enhances the user experience and promotes brand recognition.",
+        para4:
+          'The website was optimized for mobile devices to ensure that users can access the website on any device and have a seamless experience. The custom e-commerce design allows for easy purchasing, with a streamlined checkout process and secure payment gateway to enhance user trust and drive sales.',
+        para5:
+          "Overall, the Niagara Falls Craft Distillers website redesign has resulted in a significant improvement in user experience and sales. The custom design incorporates the laws of UX to enhance user engagement and drive conversions, with a focus on showcasing the company's premium spirits and brand story.",
 
-        imageSrc: logoPerfectone,
-        imageAlt: 'Perfec-tone logo',
+        imageSrc: logoNfcd,
+        imageAlt: 'Niagara Falls Craft Distillers logo',
       },
     ],
   },
@@ -64,10 +67,11 @@ const tabs = [
     name: 'Company details',
     features: [
       {
-        name: 'About Perfec-tone',
+        name: 'Niagara Falls Craft Distillers (NFCD)',
         para1:
-          "Perfec-Tone is a skincare company that offers a range of products designed to address a wide range of skin concerns. The company was founded with the goal of providing effective and affordable skincare solutions for all skin types and tones. Perfec-Tone's products are formulated using natural and organic ingredients, and they are free from harsh chemicals and synthetic fragrances. The company's product line includes cleansers, toners, moisturizers, serums, and treatments that are designed to address common skin concerns such as acne, hyperpigmentation, and aging. Perfec-Tone is committed to promoting healthy and radiant skin, and it offers personalized skincare consultations to help customers find the right products for their individual needs. The company's mission is to provide high-quality skincare solutions that are accessible and affordable, while promoting natural beauty and self-confidence. Perfec-Tone continues to innovate and expand its product line to meet the evolving needs of its customers, and it has established itself as a trusted brand in the skincare industry.",
-        link: 'https://perfec-tone.com/',
+          'Niagara Falls Craft Distillers is a premium craft distillery based in Niagara Falls, Canada. The company specializes in the production of premium spirits, including vodka, gin, and whiskey, using locally sourced ingredients and traditional distilling techniques. With a focus on quality and innovation, Niagara Falls Craft Distillers has established itself as a leading player in the craft spirits industry, winning numerous awards for its exceptional products. The company is committed to sustainability and ethical practices, with a focus on reducing its environmental impact and supporting the local community. With a dedication to quality, craftsmanship, and innovation, Niagara Falls Craft Distillers is a leading choice for discerning spirits enthusiasts and connoisseurs.',
+
+        link: 'https://niagarafallscraftdistillers.ca/',
       },
     ],
   },
@@ -82,24 +86,21 @@ export default function HydroOne() {
   return (
     <>
       <Head>
-        <title>Perfec-tone - Project</title>
-        <meta title="Perfec-tone" intro="" />
+        <title>Niagara Falls Craft Distiller - Project</title>
+        <meta
+          name="description"
+          content="At Niagara Falls Craft Distillers, our products are made locally at our state-of-the-art distillery, including a 1,000-litre copper kettle with stainless steel fermenters. We use quality ingredients, employ local talent and are known for our community involvement. The pioneering spirit is our mission to blend high-quality spirits with the natural wonder of Niagara Falls."
+        />
       </Head>
-      <SimpleLayout>
+      <SimpleLayout
+        title={'Niagara Falls Craft Distillers'}
+        intro={'Custom e-commerce mobile responsive web design'}
+      >
         <section
           aria-labelledby="features-heading"
           className="mx-auto max-w-7xl"
         >
           <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
-            <div className="max-w-3xl">
-              <h1
-                id="features-heading"
-                className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-              >
-                Perfec-tone
-              </h1>
-            </div>
-
             <Tab.Group
               as="div"
               className="mt-10"
@@ -132,7 +133,10 @@ export default function HydroOne() {
 
               <Tab.Panels as={Fragment}>
                 {tabs.map((tab) => (
-                  <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
+                  <Tab.Panel
+                    key={tab.name}
+                    className="space-y-16 pt-4 text-gray-900 dark:text-zinc-50 lg:pt-8"
+                  >
                     {tab.name === 'Summary'
                       ? /* Render content for Summary tab */
                         tab.features.map((feature) => (
@@ -140,98 +144,104 @@ export default function HydroOne() {
                             key={feature.name}
                             className="flex flex-col lg:gap-x-8"
                           >
-                            <div className="max-w-prose text-sm text-zinc-900  dark:text-zinc-200 lg:mt-0">
-                              <h3 className="text-xl font-semibold">
-                                {feature.title}
+                            <div className="flex flex-col text-sm lg:gap-x-8 lg:gap-y-4">
+                              <h3 className="text-xl font-semibold ">
+                                {feature.name}
                               </h3>
-                              <p className="mt-2">{feature.para1}</p>
-                              <p className="mt-2">{feature.para2}</p>
+                              <div className="flex max-w-prose flex-col gap-4">
+                                <p>{feature.para1}</p>
+                                <p>{feature.para2}</p>
+                                <p>{feature.para3}</p>
+                                <p>{feature.para4}</p>
+                                <p>{feature.para5}</p>
+                                <p>{feature.para6}</p>
+                              </div>
                             </div>
                           </div>
                         ))
                       : tab.name === 'Wireframes'
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
-                          <div>
-                            <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-zinc-50">
-                              Wireframes
-                            </h3>
-                            <div
-                              key={feature.name}
-                              className="flex flex-col gap-4 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12  lg:gap-x-8 lg:p-8"
-                            >
-                              <div className="flex flex-col gap-8 lg:col-span-4">
-                                <Image
-                                  src={feature.imageSrc1}
-                                  alt={feature.imageAlt1}
-                                  width={300}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc4}
-                                  alt={feature.imageAlt4}
-                                  width={300}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc7}
-                                  alt={feature.imageAlt7}
-                                  width={300}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                          <div
+                            key={feature.name}
+                            className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-6 lg:p-6"
+                          >
+                            <div className="flex flex-col gap-6 lg:col-span-4">
+                              <Image
+                                src={feature.imageSrc1}
+                                alt={feature.imageAlt1}
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
 
-                              <div className="flex flex-col gap-8 lg:col-span-4">
-                                <Image
-                                  src={feature.imageSrc2}
-                                  alt={feature.imageAlt2}
-                                  width={300}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc5}
-                                  alt={feature.imageAlt5}
-                                  width={300}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc8}
-                                  alt={feature.imageAlt8}
-                                  width={300}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                              <Image
+                                src={feature.imageSrc4}
+                                alt={feature.imageAlt4}
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
 
-                              <div className="flex flex-col gap-8 lg:col-span-4">
-                                <Image
-                                  src={feature.imageSrc3}
-                                  alt={feature.imageAlt3}
-                                  width={300}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                                <Image
-                                  src={feature.imageSrc6}
-                                  alt={feature.imageAlt6}
-                                  width={300}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                              <Image
+                                src={feature.imageSrc7}
+                                alt={feature.imageAlt7}
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+
+                            <div className="flex flex-col gap-6 lg:col-span-4">
+                              <Image
+                                src={feature.imageSrc2}
+                                alt={feature.imageAlt2}
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+
+                              <Image
+                                src={feature.imageSrc5}
+                                alt={feature.imageAlt5}
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+
+                              <Image
+                                src={feature.imageSrc8}
+                                alt={feature.imageAlt8}
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+                            </div>
+
+                            <div className="flex flex-col gap-6 lg:col-span-4">
+                              <Image
+                                src={feature.imageSrc3}
+                                alt={feature.imageAlt3}
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
+
+                              <Image
+                                src={feature.imageSrc6}
+                                alt={feature.imageAlt6}
+                                width={500}
+                                height={500}
+                                layout="responsive"
+                                className="rounded-lg object-cover object-center"
+                              />
                             </div>
                           </div>
                         ))
@@ -239,17 +249,20 @@ export default function HydroOne() {
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div key={feature.name}>
-                            <div className="mt-6 max-w-2xl text-sm text-zinc-900  dark:text-zinc-200 lg:col-span-5 lg:mt-0">
+                            <div className="mt-6 max-w-prose text-sm text-zinc-900  dark:text-zinc-50 lg:col-span-5 lg:mt-0 ">
                               <h3 className="text-xl font-semibold">
                                 {feature.name}
                               </h3>
-                              <p className="mt-3">{feature.para1}</p>
+                              <div className="mt-4 flex flex-col gap-4 text-sm lg:gap-x-8">
+                                <p>{feature.para1}</p>
+                              </div>
+
                               <Link
                                 href={feature.link}
                                 target="_blank"
-                                className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50"
                               >
-                                <div>View Website</div>
+                                View Website
                               </Link>
                             </div>
                           </div>
