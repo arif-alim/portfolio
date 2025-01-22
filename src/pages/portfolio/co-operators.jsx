@@ -234,26 +234,6 @@ export default function Project() {
                                         )
                                     )}
                                 </div>
-
-                                <h2 className="mb-4 mt-8 text-lg font-semibold">
-                                  Auto policy and details coverage screens
-                                </h2>
-                                <div className="w-full gap-4 bg-zinc-100 p-4 dark:bg-zinc-800 lg:p-8">
-                                  {feature.images.slice(4, 6).map(
-                                    (img, imgIdx) =>
-                                      img.src && (
-                                        <Image
-                                          key={imgIdx}
-                                          src={img.src}
-                                          alt={img.alt || 'Image'}
-                                          layout="responsive"
-                                          width={100} // Use percentage width for responsive layout
-                                          height={50} // Adjust height to maintain aspect ratio
-                                          className="w-full rounded-lg object-cover"
-                                        />
-                                      )
-                                  )}
-                                </div>
                               </>
                             )}
 
