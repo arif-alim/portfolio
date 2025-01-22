@@ -3,7 +3,6 @@ import homepage1 from '@/images/projects/co-operators/homepage1.jpg'
 import homepage2 from '@/images/projects/co-operators/homepage2.jpg'
 import homepage3 from '@/images/projects/co-operators/homepage3.jpg'
 import homepage4 from '@/images/projects/co-operators/homepage4.jpg'
-import homepage5 from '@/images/projects/co-operators/homepage5.jpg'
 
 // Style guide
 import sg1 from '@/images/projects/co-operators/sg1.jpg'
@@ -59,7 +58,6 @@ const tabs = [
           { src: homepage2, alt: 'Homepage 2' },
           { src: homepage3, alt: 'Homepage 3' },
           { src: homepage4, alt: 'Homepage 4' },
-          { src: homepage5, alt: 'Homepage 5' },
         ],
       },
     ],
