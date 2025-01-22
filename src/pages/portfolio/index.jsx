@@ -361,10 +361,10 @@ export default function Speakers() {
                       </div>
                     </div>
                   </div>
-                  <h3 className="font-display mt-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h3 className="font-display mt-2 text-base font-semibold">
                     {project.name}
                   </h3>
-                  <p className="text-zinc-2000 text-sm dark:font-light dark:text-zinc-100">
+                  <p className="text-zinc-500 dark:text-zinc-300">
                     {project.about}
                   </p>
                 </Link>

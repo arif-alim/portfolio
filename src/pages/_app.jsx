@@ -31,7 +31,7 @@ export default function App({ Component, pageProps, router }) {
       </div>
       <div className="relative">
         <Header />
-        <main>
+        <main className="text-tiny text-zinc-900 dark:text-zinc-50 sm:text-sm">
           <Component previousPathname={previousPathname} {...pageProps} />
         </main>
         <Footer />

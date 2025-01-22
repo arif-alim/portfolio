@@ -35,13 +35,13 @@ export default function Process() {
         title="The process"
         intro="Design is at the core of every successful product. A product that fails to meet its users’ needs cannot thrive in today’s market. More organizations are embracing human-centered design, focusing on end users and evaluating every decision through their needs and goals. My design process is guided by the Stanford d.school framework and IDEO’s user-centric approach, which emphasizes empathy, iteration, and collaboration."
       >
-        <div className="space-y-24 text-zinc-900 dark:text-zinc-100">
+        <div className="space-y-24 ">
           <section>
             <div className="border-b-4 border-zinc-100 pb-4 dark:border-zinc-700">
               <h2 className="mb-2 text-lg font-semibold">
                 My Dynamic UI/UX Design Process
               </h2>
-              <p className="mt-4 max-w-3xl text-sm ">
+              <p className="mt-4 max-w-3xl ">
                 Inspired by the Stanford d.school design thinking framework and
                 IDEO’s user-centric approach, my process blends creativity,
                 empathy, and iteration to deliver impactful designs.
@@ -61,15 +61,15 @@ export default function Process() {
                     height={32}
                   />
                 </span>
-                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 sm:flex">
+                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800  sm:flex">
                   <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">
                     Step 1
                   </time>
-                  <div className="max-w-3xl text-xs font-normal  dark:text-zinc-100">
+                  <div className="max-w-3xl text-xs font-normal  ">
                     <h2 className="mb-2 text-lg font-semibold">
                       Discovery & Research
                     </h2>
-                    <p className="dark:text-zinc-300">
+                    <p className="">
                       The first step in any successful design journey is
                       understanding the problem at its core. I begin by
                       conducting stakeholder interviews and workshops (using
@@ -97,15 +97,15 @@ export default function Process() {
                     height={32}
                   />
                 </span>
-                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 sm:flex">
+                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800  sm:flex">
                   <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">
                     Step 2
                   </time>
-                  <div className="max-w-3xl text-sm font-normal  dark:text-gray-300">
+                  <div className="max-w-3xl font-normal  ">
                     <h2 className="mb-2 text-lg font-semibold">
                       Define & Ideate
                     </h2>
-                    <p className="dark:text-zinc-300">
+                    <p className="">
                       With a clear understanding of the problem, I identify key
                       user personas and map their customer journeys to ensure
                       the solution addresses real-world needs. Problem
@@ -116,7 +116,7 @@ export default function Process() {
                       and alignment with OPS policies, ensuring that the
                       solution is both practical and impactful.
                     </p>
-                    {/* <div className="my-3 rounded-lg border border-gray-200 bg-gray-50 p-2 text-sm font-normal  dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300">
+                    {/* <div className="my-3 rounded-lg border border-gray-200 bg-gray-50 p-2 font-normal  dark:border-gray-500 dark:bg-gray-600 ">
                       <ul className="list-disc px-4">
                         <li>User interviews</li>
                         <li>Contextual inquiry</li>
@@ -137,15 +137,15 @@ export default function Process() {
                     height={32}
                   />
                 </span>
-                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 sm:flex">
+                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800  sm:flex">
                   <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">
                     Step 3
                   </time>
-                  <div className="max-w-3xl text-sm font-normal  dark:text-gray-300">
+                  <div className="max-w-3xl font-normal  ">
                     <h2 className="mb-2 text-lg font-semibold">
                       Prototyping & Testing
                     </h2>
-                    <p className="dark:text-zinc-300">
+                    <p className="">
                       Prototyping transforms ideas into tangible solutions.
                       High-fidelity prototypes are created in Figma for
                       interactive testing, and iterative design cycles
@@ -157,7 +157,7 @@ export default function Process() {
                       and IT teams guarantees technical feasibility and
                       alignment with project goals.
                     </p>
-                    {/* <div className="my-3 rounded-lg border border-gray-200 bg-gray-50 p-2 text-sm font-normal  dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300">
+                    {/* <div className="my-3 rounded-lg border border-gray-200 bg-gray-50 p-2 font-normal  dark:border-gray-500 dark:bg-gray-600 ">
                       <ul className="list-disc px-4">
                         <li>User journey analysis</li>
                         <li>How might we technique</li>
@@ -177,15 +177,15 @@ export default function Process() {
                     height={32}
                   />
                 </span>
-                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 sm:flex">
+                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800  sm:flex">
                   <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">
                     Step 4
                   </time>
-                  <div className="max-w-3xl text-sm font-normal  dark:text-gray-300">
+                  <div className="max-w-3xl font-normal  ">
                     <h2 className="mb-2 text-lg font-semibold">
                       Implementation & Development Support
                     </h2>
-                    <p className="dark:text-zinc-300">
+                    <p className="">
                       During implementation, I work closely with developers,
                       business analysts, and QA teams to ensure the design
                       intent is preserved. Detailed service blueprints and
@@ -209,15 +209,15 @@ export default function Process() {
                     height={32}
                   />
                 </span>
-                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 sm:flex">
+                <div className="items-start justify-between rounded-lg border bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-800  sm:flex">
                   <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">
                     Step 5
                   </time>
-                  <div className="max-w-3xl text-sm font-normal text-zinc-700 dark:text-zinc-300">
+                  <div className="max-w-3xl font-normal ">
                     <h2 className="mb-2 text-lg font-semibold">
                       Post-Launch Evaluation & Continuous Improvement
                     </h2>
-                    <p className="dark:text-zinc-300">
+                    <p className="">
                       The design process doesn’t end at launch. Post-launch, I
                       track user engagement metrics to evaluate performance and
                       identify areas for iteration. User feedback is collected
@@ -227,7 +227,7 @@ export default function Process() {
                       ensures that the solution evolves alongside user needs,
                       maintaining its relevance and impact over time.
                     </p>
-                    {/* <div className="my-3 rounded-lg border border-gray-200 bg-gray-50 p-2 text-sm font-normal  dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300">
+                    {/* <div className="my-3 rounded-lg border border-gray-200 bg-gray-50 p-2 font-normal  dark:border-gray-500 dark:bg-gray-600 ">
                       <ul className="list-disc px-4">
                         <li>Mock-ups</li>
                         <li>low-fidelity prototypes</li>
@@ -248,10 +248,10 @@ export default function Process() {
           </section>
           <section className="max-w-3xl ">
             <div>
-              <h2 className="mb-2 text-xl font-bold text-gray-700 dark:border-gray-500 dark:text-gray-300 sm:text-2xl">
+              <h2 className="mb-2 text-xl font-bold dark:border-gray-500  sm:text-2xl">
                 A Dynamic, Iterative Process
               </h2>
-              <p className="text-sm text-zinc-900 dark:border-gray-500 dark:text-gray-300">
+              <p className="dark:border-gray-500 ">
                 The design thinking process is inherently dynamic—a cyclical
                 journey of exploration, ideation, prototyping, and refinement.
                 It’s not a linear path but a collaborative dialogue between

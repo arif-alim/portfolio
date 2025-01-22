@@ -173,7 +173,7 @@ const Wireframes = ({ sections }) => (
         <div key={index} className="mb-8 text-zinc-900  dark:text-zinc-50">
           {/* Section Title and Subheading */}
           <h3 className="mb-4 text-xl font-semibold ">{section.title}</h3>
-          <div className="flex max-w-prose flex-col gap-4 text-sm lg:mt-0">
+          <div className="flex max-w-prose flex-col gap-4 lg:mt-0">
             <p>{section.subheading}</p>
           </div>
 
@@ -244,7 +244,7 @@ const Prototypes = ({ title, images, links }) => (
                 href={links[index].href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 block text-sm  text-blue-800 hover:underline dark:text-blue-400 "
+                className="mt-2 block  text-blue-800 hover:underline dark:text-blue-400 "
               >
                 {links[index].label}
               </Link>
@@ -260,7 +260,7 @@ const Details = ({ title, paragraph, link }) => (
     <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-zinc-50">
       {title}
     </h3>
-    <div className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900  dark:text-zinc-50 lg:mt-0">
+    <div className="flex max-w-prose flex-col gap-4 text-zinc-900  dark:text-zinc-50 lg:mt-0">
       <p>{paragraph}</p>
     </div>
     <Link

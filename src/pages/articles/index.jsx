@@ -65,30 +65,23 @@ const posts = [
 
 export function Blog() {
   return (
-    <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8  pt-10   lg:mx-0 lg:max-w-none lg:grid-cols-3">
+    <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16  pt-10   lg:mx-0 lg:max-w-none lg:grid-cols-3">
       {posts.map((post) => (
         <article
           key={post.id}
           className="flex max-w-xl flex-col items-start justify-between"
         >
           <div className="group relative">
-            <h3 className="mt-3 text-lg font-semibold leading-6 text-zinc-900 group-hover:text-zinc-600 dark:text-zinc-50">
+            <h3 className="mt-3 text-lg font-semibold leading-6 group-hover:text-zinc-600 ">
               <Link href={post.href}>
                 <span className="absolute inset-0" />
                 {post.title}
               </Link>
             </h3>
             <div className="text-xs">
-              <time
-                dateTime={post.datetime}
-                className="text-zinc-900 dark:text-zinc-50"
-              >
-                {post.date}
-              </time>
+              <time dateTime={post.datetime}>{post.date}</time>
             </div>
-            <p className="line-clamp-3 mt-5 text-tiny leading-6 text-zinc-900 dark:text-zinc-50">
-              {post.description}
-            </p>
+            <p className="mt-5 line-clamp-3 leading-6 ">{post.description}</p>
           </div>
           <div className="relative mt-8 flex items-center gap-x-4">
             <Image
@@ -98,11 +91,9 @@ export function Blog() {
               width={40}
               height={40}
             />
-            <div className="text-sm leading-6">
-              <p className="font-semibold text-zinc-900 dark:text-zinc-50">
-                {post.author.name}
-              </p>
-              <p className="text-zinc-900">{post.author.role}</p>
+            <div className="leading-6">
+              <p className="font-semibold ">{post.author.name}</p>
+              <p className="text-xxs">{post.author.role}</p>
             </div>
           </div>
         </article>

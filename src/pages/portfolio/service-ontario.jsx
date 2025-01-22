@@ -221,7 +221,7 @@ export default function Project() {
                               className="rounded-lg object-cover object-center"
                             />
                           </div>
-                          <div className="mt-6 flex max-w-prose flex-col gap-4 text-sm text-zinc-900  dark:text-zinc-200 lg:mt-0 lg:max-w-prose">
+                          <div className="mt-6 flex max-w-prose flex-col gap-4 text-zinc-900  dark:text-zinc-200 lg:mt-0 lg:max-w-prose">
                             <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
                               {feature.name}
                             </h3>
@@ -404,7 +404,7 @@ export default function Project() {
                             <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-200">
                               {feature.name}
                             </h3>
-                            <p className="mt-2 text-sm text-gray-600 dark:text-zinc-200">
+                            <p className="mt-2 text-gray-600 dark:text-zinc-200">
                               {feature.protoLink}
                             </p>
                             <Link
@@ -439,9 +439,9 @@ export default function Project() {
                             <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
                               {feature.name}
                             </h3>
-                            <p className="flex max-w-prose flex-col gap-4 text-sm text-zinc-900  dark:text-zinc-200 lg:mt-0">
-                              {feature.para1}
-                            </p>
+                            <div className="mt-4 flex flex-col gap-4 lg:gap-x-8">
+                              <p>{feature.para1}</p>
+                            </div>
                             <Link
                               href={feature.link}
                               target="_blank"

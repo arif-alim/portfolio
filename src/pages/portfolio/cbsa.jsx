@@ -135,14 +135,14 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex max-w-prose flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8"
+                          className="flex max-w-prose flex-col lg:gap-x-8"
                         >
                           <div className="col-span-full mb-4 ">
                             <h2 className="text-lg font-semibold">
                               {feature.heading1}
                             </h2>
                           </div>
-                          <div className="flex flex-col gap-4 text-sm ">
+                          <div className="flex flex-col gap-4 ">
                             <p>{feature.para1}</p>
                             <p>{feature.para2}</p>
                           </div>
@@ -153,7 +153,7 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex max-w-prose flex-col text-sm text-zinc-900 dark:text-zinc-50 lg:gap-x-8 "
+                          className="flex max-w-prose flex-col lg:gap-x-8 "
                         >
                           <div>
                             <div className="col-span-full mb-8 flex flex-col gap-4 ">
@@ -176,7 +176,7 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex max-w-prose flex-col text-sm text-zinc-900 dark:text-zinc-50 lg:gap-x-8 "
+                          className="flex max-w-prose flex-col lg:gap-x-8 "
                         >
                           <div>
                             <div className="col-span-full flex flex-col">
@@ -234,7 +234,7 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex max-w-prose flex-col text-sm text-zinc-900 dark:text-zinc-50 lg:gap-x-8 "
+                          className="flex max-w-prose flex-col lg:gap-x-8 "
                         >
                           <div>
                             <div className="col-span-full  flex flex-col gap-4">

@@ -12,15 +12,14 @@ const ListItem = ({ title, description }) => (
       aria-hidden="true"
     />
     <span>
-      <strong className="font-semibold text-gray-900">{title}</strong>{' '}
-      {description}
+      <strong className="font-semibold">{title}</strong> {description}
     </span>
   </li>
 )
 
 const Section = ({ title, children }) => (
   <div className="mt-16 max-w-2xl">
-    <h2 className="text-2xl font-bold tracking-tight text-gray-900">{title}</h2>
+    <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
     <p className="mt-6">{children}</p>
   </div>
 )
@@ -28,12 +27,12 @@ const Section = ({ title, children }) => (
 // Ensure any Link components in this file have exactly one child element
 export default function Example() {
   return (
-    <div className="bg-white py-32 px-6 lg:px-8">
+    <div className="bg-white px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
         <p className="text-base font-semibold leading-7 text-indigo-600">
           Introducing
         </p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
           JavaScript for Beginners
         </h1>
         <p className="mt-6 text-xl leading-8">
@@ -81,7 +80,7 @@ export default function Example() {
             diam.
           </Section>
           <figure className="mt-10 border-l border-indigo-600 pl-9">
-            <blockquote className="font-semibold text-gray-900">
+            <blockquote className="font-semibold">
               <p>
                 “Vel ultricies morbi odio facilisi ultrices accumsan donec lacus
                 purus. Lectus nibh ullamcorper ac dictum justo in euismod. Risus
@@ -97,10 +96,8 @@ export default function Example() {
                 layout="intrinsic"
               />
               <div className="text-sm leading-6">
-                <strong className="font-semibold text-gray-900">
-                  Maria Hill
-                </strong>{' '}
-                – Marketing Manager
+                <strong className="font-semibold">Maria Hill</strong> –
+                Marketing Manager
               </div>
             </figcaption>
           </figure>

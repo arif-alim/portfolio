@@ -199,10 +199,7 @@ export default function Project() {
 
             <Tab.Panels as={Fragment}>
               {tabs.map((tab) => (
-                <Tab.Panel
-                  key={tab.name}
-                  className="space-y-16 pt-4 text-sm lg:pt-8"
-                >
+                <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
                   {tab.name === 'Summary'
                     ? /* Render content for Summary tab */
                       tab.features.map((feature) => (
@@ -210,10 +207,10 @@ export default function Project() {
                           key={feature.name}
                           className="flex flex-col lg:gap-x-8"
                         >
-                          <div className="col-span-full mb-4 text-lg font-semibold text-zinc-900 dark:text-zinc-50 ">
+                          <div className="col-span-full mb-4 text-lg font-semibold ">
                             <h2>Summary</h2>
                           </div>
-                          <div className="flex max-w-prose flex-col gap-4 text-zinc-900  dark:text-zinc-200 lg:mt-0">
+                          <div className="flex max-w-prose flex-col gap-4 lg:mt-0">
                             <p>{feature.para1}</p>
                             <p>{feature.para2}</p>
                             <p>{feature.para3}</p>
@@ -225,13 +222,13 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex flex-col gap-y-2 bg-slate-100 dark:bg-inherit"
+                          className="flex flex-col gap-y-8 "
                         >
-                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6">
+                          <div className="col-span-full bg-zinc-100 p-2 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-6 lg:p-6">
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200">
                               <h2>mySmartRouter</h2>
                             </div>
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc18}
                                 alt={feature.imageAlt18}
@@ -248,7 +245,7 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc19}
                                 alt={feature.imageAlt19}
@@ -265,7 +262,7 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc20}
                                 alt={feature.imageAlt20}
@@ -282,7 +279,7 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc21}
                                 alt={feature.imageAlt21}
@@ -299,7 +296,7 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc22}
                                 alt={feature.imageAlt22}
@@ -315,7 +312,7 @@ export default function Project() {
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc23}
                                 alt={feature.imageAlt23}
@@ -332,11 +329,11 @@ export default function Project() {
                               />
                             </div>
                           </div>
-                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6">
+                          <div className="col-span-full bg-zinc-100 p-2 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-4 lg:p-6">
                             <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200">
                               <h2>myPrinciple</h2>
                             </div>
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc1}
                                 alt={feature.imageAlt1}
@@ -353,7 +350,7 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc2}
                                 alt={feature.imageAlt2}
@@ -370,7 +367,7 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc3}
                                 alt={feature.imageAlt3}
@@ -387,7 +384,7 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc7}
                                 alt={feature.imageAlt7}
@@ -404,7 +401,7 @@ export default function Project() {
                               />
                             </div>
 
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc10}
                                 alt={feature.imageAlt10}
@@ -420,7 +417,7 @@ export default function Project() {
                                 className="rounded-lg object-cover object-center"
                               />
                             </div>
-                            <div className="flex flex-col gap-4 lg:col-span-2">
+                            <div className="flex flex-col gap-6 lg:col-span-2">
                               <Image
                                 src={feature.imageSrc9}
                                 alt={feature.imageAlt9}
@@ -444,7 +441,7 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.type}
-                          className="flex flex-col text-tiny dark:text-zinc-200 lg:gap-x-8"
+                          className="flex flex-col dark:text-zinc-200 lg:gap-x-8"
                         >
                           <div className="my-6 lg:mt-0 ">
                             <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-200">
@@ -460,7 +457,7 @@ export default function Project() {
                               <Link
                                 href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=486%3A8043&t=ZNtgizfNIxMUnfdq-1"
                                 target="_blank"
-                                className=" text-sm text-blue-800 dark:text-blue-500"
+                                className=" text-blue-800 dark:text-blue-500"
                               >
                                 <div>View Figma</div>
                               </Link>
@@ -482,7 +479,7 @@ export default function Project() {
                               <Link
                                 href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=91%3A709&t=ZNtgizfNIxMUnfdq-1"
                                 target="_blank"
-                                className=" text-sm text-blue-800 dark:text-blue-500"
+                                className=" text-blue-800 dark:text-blue-500"
                               >
                                 <div>View Figma</div>
                               </Link>
@@ -502,7 +499,7 @@ export default function Project() {
                               <Link
                                 href="https://www.figma.com/file/sd0WWtKuZiTgQmjZ6MSn5n/MyPrinciple-Design-System?node-id=145%3A1448&t=ZNtgizfNIxMUnfdq-1"
                                 target="_blank"
-                                className=" text-sm text-blue-800 dark:text-blue-500"
+                                className=" text-blue-800 dark:text-blue-500"
                               >
                                 <div>View Figma</div>
                               </Link>
@@ -526,9 +523,9 @@ export default function Project() {
                             <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
                               {feature.name}
                             </h3>
-                            <p className="mt-2  font-normal text-zinc-900 dark:text-zinc-200">
-                              {feature.para1}
-                            </p>
+                            <div className="mt-4 flex flex-col gap-4 lg:gap-x-8">
+                              <p>{feature.para1}</p>
+                            </div>
                             <Link
                               href={feature.link}
                               target="_blank"

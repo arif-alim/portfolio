@@ -14,6 +14,7 @@ module.exports = {
   ],
   theme: {
     fontSize: {
+      xxs: ['0.75rem', { lineHeight: '1.2rem' }],
       xs: ['0.85rem', { lineHeight: '1.4rem' }],
       sm: ['0.9rem', { lineHeight: '1.45rem' }],
       tiny: ['0.925rem', { lineHeight: '1.57rem' }],

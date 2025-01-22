@@ -155,12 +155,12 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8"
+                          className="flex flex-col lg:gap-x-8"
                         >
                           <div className="col-span-full mb-4 text-lg font-semibold ">
                             <h2>Summary</h2>
                           </div>
-                          <div className="max-w-prose text-sm   lg:mt-0">
+                          <div className="max-w-prose lg:mt-0">
                             <p>{feature.para1}</p>
                             <ul className="list-disc pl-2 lg:pl-8">
                               <li className="mt-4">{feature.li1}</li>
@@ -172,14 +172,12 @@ export default function Project() {
                               <li>{feature.li7}</li>
                             </ul>
                           </div>
-                          <div className="col-span-full my-4 text-lg font-semibold dark:text-gray-200 lg:mt-8 ">
+                          <div className="col-span-full my-4 text-lg font-semibold lg:mt-8 ">
                             <h2>Contributions</h2>
                           </div>
-                          <div className="max-w-prose text-sm text-zinc-900  dark:text-zinc-200 lg:mt-0">
+                          <div className="max-w-prose lg:mt-0">
                             <ul className="list-disc pl-2 lg:pl-8">
-                              <li className="text-tiny text-slate-900 dark:text-gray-400">
-                                {feature.li8}
-                              </li>
+                              <li>{feature.li8}</li>
                               <li>{feature.li9}</li>
                               <li>{feature.li10}</li>
                               <li>{feature.li11}</li>
@@ -192,10 +190,10 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex flex-col gap-y-16  dark:bg-inherit"
+                          className="flex flex-col gap-y-16"
                         >
                           <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                            <div className="col-span-full mb-4 text-lg font-semibold ">
                               <h2>Plan Administrator Home (MVP)</h2>
                             </div>
                             <div
@@ -213,7 +211,7 @@ export default function Project() {
                             </div>
                           </div>
                           <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                            <div className="col-span-full mb-4 text-lg font-semibold ">
                               <h2>Plan Administrator Home (PowerBi)</h2>
                             </div>
                             <div
@@ -243,7 +241,7 @@ export default function Project() {
                             </div>
                           </div>
                           <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                            <div className="col-span-full mb-4 text-lg font-semibold ">
                               <h2>Coverage summary</h2>
                             </div>
                             <div
@@ -273,7 +271,7 @@ export default function Project() {
                             </div>
                           </div>
                           <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                            <div className="col-span-full mb-4 text-lg font-semibold ">
                               <h2>Status Update (Terminate a member)</h2>
                             </div>
                             <div
@@ -291,7 +289,7 @@ export default function Project() {
                             </div>
                           </div>
                           <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                            <div className="col-span-full mb-4 text-lg font-semibold ">
                               <h2>Status Update (Parental leave)</h2>
                             </div>
                             <div
@@ -309,7 +307,7 @@ export default function Project() {
                             </div>
                           </div>
                           <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                            <div className="col-span-full mb-4 text-lg font-semibold ">
                               <h2>Status Update (Other leave)</h2>
                             </div>
                             <div
@@ -327,7 +325,7 @@ export default function Project() {
                             </div>
                           </div>
                           <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                            <div className="col-span-full mb-4 text-lg font-semibold ">
                               <h2>Reinstate a member</h2>
                             </div>
                             <div
@@ -351,10 +349,10 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex flex-col gap-y-16  dark:bg-inherit"
+                          className="flex flex-col gap-y-16 "
                         >
-                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold dark:text-gray-200 ">
+                          <div className="col-span-full gap-y-4 lg:grid lg:grid-cols-12 lg:gap-x-4">
+                            <div className="col-span-full mb-4 text-lg font-semibold ">
                               <h2>Datepicker</h2>
                             </div>
                             <div
@@ -372,7 +370,7 @@ export default function Project() {
                             </div>
 
                             <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
+                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800  lg:col-span-12 lg:p-8"
                               layout="responsive"
                             >
                               <Image
@@ -391,8 +389,8 @@ export default function Project() {
                     ? /* Render content for Wireframes tab */
                       tab.features.map((feature) => (
                         <div key={feature.name}>
-                          <div className="mt-6 max-w-2xl text-sm text-zinc-900  dark:text-zinc-200 lg:col-span-5 lg:mt-0">
-                            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
+                          <div className="mt-6 max-w-2xl  lg:col-span-5 lg:mt-0">
+                            <h3 className="text-xl font-semibold">
                               {feature.name}
                             </h3>
                             <p className="mt-2 ">{feature.para1}</p>

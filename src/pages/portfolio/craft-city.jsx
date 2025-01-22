@@ -180,7 +180,7 @@ export default function Project() {
                           tab.features.map((feature) => (
                             <div
                               key={feature.heading}
-                              className="flex max-w-prose flex-col text-sm text-zinc-900 dark:text-zinc-50 lg:gap-x-8 "
+                              className="flex max-w-prose flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8 "
                             >
                               <div className="col-span-full  flex flex-col gap-4 ">
                                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">

@@ -262,58 +262,6 @@ const Frontend = [
   },
 ]
 
-const Backend = [
-  {
-    name: 'Python',
-    description:
-      'Python is a programming language that lets you work quickly and integrate systems more effectively.',
-    link: {
-      href: 'https://www.python.org/',
-      label: 'Visit website',
-    },
-    imageUrl: iconPython,
-  },
-  {
-    name: 'Ruby',
-    description:
-      'A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.',
-    link: {
-      href: 'https://www.ruby-lang.org/en/',
-      label: 'Visit website',
-    },
-    imageUrl: iconRuby,
-  },
-  {
-    name: 'GraphQL',
-    description:
-      'GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.',
-    link: {
-      href: 'https://graphql.org/',
-      label: 'Visit website',
-    },
-    imageUrl: iconGraphQL,
-  },
-  {
-    name: 'Rust',
-    description:
-      'A language empowering everyone to build reliable and efficient software.',
-    link: {
-      href: 'https://www.rust-lang.org/',
-      label: 'Visit website',
-    },
-    imageUrl: iconRust,
-  },
-  // {
-  //   name: 'C++',
-  //   description: 'Hello World',
-  //   link: {
-  //     href: 'https://www.figma.com/',
-  //     label: 'Visit website',
-  //   },
-  //   imageUrl: iconCPlusPlus,
-  // },
-]
-
 export default function Toolbox() {
   return (
     <>
@@ -330,7 +278,7 @@ export default function Toolbox() {
       >
         <div className="space-y-20">
           <div className="space-y-10">
-            <h2 className="border-b-4 pb-2 text-md font-semibold tracking-normal dark:border-zinc-700 dark:text-zinc-300">
+            <h2 className="border-b-4 pb-2 text-md font-semibold tracking-normal dark:border-zinc-700 ">
               Design tools
             </h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
@@ -350,12 +298,10 @@ export default function Toolbox() {
                     >
                       <div>
                         <span className="absolute inset-0" aria-hidden="true" />
-                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-200">
+                        <p className=" font-medium leading-snug  ">
                           {des.name}
                         </p>
-                        <p className="text-zinc-2000 truncate text-xs dark:text-zinc-300">
-                          {des.description}
-                        </p>
+                        <p className="truncate text-xxs ">{des.description}</p>
                       </div>
                     </Link>
                   </div>
@@ -364,7 +310,7 @@ export default function Toolbox() {
             </div>
           </div>
           <div className="space-y-10">
-            <h2 className="border-b-4 pb-2 text-md font-semibold tracking-normal dark:border-zinc-700 dark:text-zinc-300">
+            <h2 className="border-b-4 pb-2 text-md font-semibold tracking-normal dark:border-zinc-700 ">
               Development tools
             </h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
@@ -384,10 +330,10 @@ export default function Toolbox() {
                     >
                       <div>
                         <span className="absolute inset-0" aria-hidden="true" />
-                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-200">
+                        <p className=" font-medium leading-snug  ">
                           {front.name}
                         </p>
-                        <p className="text-zinc-2000 truncate text-xs dark:text-zinc-300">
+                        <p className="truncate text-xxs ">
                           {front.description}
                         </p>
                       </div>
@@ -396,38 +342,6 @@ export default function Toolbox() {
                 </div>
               ))}
             </div>
-            {/* <h2 className="border-b-4 pb-2 text-md font-semibold tracking-normal dark:border-zinc-700 dark:text-zinc-300">
-              Backend Development
-            </h2>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
-              {Backend.map((back) => (
-                <div
-                  key={back.name}
-                  className="relative flex items-center space-x-6 rounded-lg border  bg-white px-6 pt-4 pb-3 shadow-sm  hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
-                >
-                  <div className=" relative w-1/6 flex-shrink bg-cover sm:h-auto sm:w-10 ">
-                    <Image src={back.imageUrl} alt="" width={40} height={40} />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <Link
-                      href={back.link.href}
-                      target="_blank"
-                      className="focus:outline-none"
-                    >
-                      <div>
-                        <span className="absolute inset-0" aria-hidden="true" />
-                        <p className="text-sm font-medium leading-snug text-zinc-900 dark:text-zinc-200">
-                          {back.name}
-                        </p>
-                        <p className="text-zinc-2000 truncate text-xs dark:text-zinc-300">
-                          {back.description}
-                        </p>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div> */}
           </div>
         </div>
       </SimpleLayout>

@@ -21,7 +21,7 @@ const SocialLink = ({ className, href, icon: Icon, target }) => (
       href={href}
       target={target}
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-      className="group flex items-center text-sm text-zinc-900 transition hover:text-blue-700 dark:text-zinc-200 dark:hover:text-sky-700"
+      className="group flex items-center transition hover:text-blue-700  dark:hover:text-sky-700"
     >
       <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-blue-700" />
     </Link>
@@ -30,12 +30,8 @@ const SocialLink = ({ className, href, icon: Icon, target }) => (
 
 /** Section Component */
 const Section = ({ title, children }) => (
-  <div className="mt-6 space-y-7 text-tiny text-zinc-600 dark:text-zinc-400">
-    {title && (
-      <h2 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">
-        {title}
-      </h2>
-    )}
+  <div className="mt-6 space-y-7 ">
+    {title && <h2 className="text-lg font-semibold">{title}</h2>}
     <p>{children}</p>
   </div>
 )
@@ -76,7 +72,7 @@ export default function About() {
                 Computer Science (BCS) at University of Waterloo and Honours
                 Business Administration (BCA) at Wilfrid Laurier University."
       >
-        <div className="mt-8 grid grid-cols-1 gap-y-16 text-sm  dark:text-zinc-200 sm:mt-16 lg:grid-cols-12 lg:gap-y-12">
+        <div className="mt-8 grid grid-cols-1 gap-y-16    sm:mt-16 lg:grid-cols-12 lg:gap-y-12">
           {/* Profile Image */}
           <div className="col-span-4 mx-auto lg:mx-0 lg:pl-20">
             <ProfileImage />

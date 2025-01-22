@@ -149,11 +149,7 @@ const Prototype = ({ title, links }) => (
     <div className="flex flex-row flex-wrap gap-16 p-2">
       {links.map((link, index) => (
         <div key={index} className="mb-4 flex flex-col">
-          <Link
-            href={link.href}
-            target="_blank"
-            className=" text-tiny text-blue-800"
-          >
+          <Link href={link.href} target="_blank" className="text-blue-800">
             {link.label}
           </Link>
           <div className="my-2 max-w-md">
@@ -174,16 +170,14 @@ const Prototype = ({ title, links }) => (
 
 const Details = ({ title, paragraph, link }) => (
   <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
-    <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-zinc-50">
-      {title}
-    </h3>
-    <div className="flex max-w-prose flex-col gap-4 text-sm lg:mt-0">
+    <h3 className="mb-4 text-xl font-semibold ">{title}</h3>
+    <div className="flex max-w-prose flex-col gap-4 lg:mt-0">
       <p>{paragraph}</p>
     </div>
     <Link
       href={link}
       target="_blank"
-      className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold shadow-sm ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50"
+      className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-zinc-900 shadow-sm ring-1 ring-inset ring-zinc-300 hover:bg-zinc-50"
     >
       View Website
     </Link>
