@@ -317,7 +317,8 @@ export default function Speakers() {
       </Head>
       <SimpleLayout
         title="My portfolio"
-        intro="I have had the privilege of contributing to a wide range of projects, including high-profile government initiatives, where I applied my design expertise and problem-solving skills to craft intuitive, user-focused interfaces that balance user needs with technical requirements. Collaborating closely with back-end engineers, I ensure seamless integration, while my dedication to accessibility guarantees that every website and application I design is both highly functional and optimized for performance and usability."
+        intro="I’ve worked across government, enterprise, aviation, and product teams, creating intuitive, user-centered interfaces that balance usability with technical feasibility. By partnering closely with engineers, I ensure smooth implementation, while my focus on accessibility and performance delivers inclusive, reliable experiences.
+"
       >
         <div className="mt-10 grid grid-cols-1 items-start gap-x-6 gap-y-10 lg:grid-cols-3">
           {portfolio.map((project) => (

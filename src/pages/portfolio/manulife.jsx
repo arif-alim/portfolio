@@ -100,6 +100,14 @@ const tabs = [
       },
     ],
   },
+  {
+    name: 'Case Study',
+    features: [
+      {
+        name: 'Coming Soon...',
+      },
+    ],
+  },
 ]
 
 function classNames(...classes) {
@@ -401,6 +409,17 @@ export default function Project() {
                             >
                               <div>View Website</div>
                             </Link>
+                          </div>
+                        </div>
+                      ))
+                    : tab.name === 'Case Study'
+                    ? /* Render content for Wireframes tab */
+                      tab.features.map((feature) => (
+                        <div key={feature.name}>
+                          <div className="mt-6 max-w-2xl  lg:col-span-5 lg:mt-0">
+                            <h3 className="text-xl font-semibold">
+                              {feature.name}
+                            </h3>
                           </div>
                         </div>
                       ))

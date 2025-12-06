@@ -65,7 +65,11 @@ export default function About() {
         title={
           <>
             Hi, I’m Arif Alim.
-            <br />A Seasoned UI & UX Designer!
+            <br />
+            <span className="text-xl font-semibold">
+              A Seasoned Designer specializing in UI, UX, Service, and Product
+              Design!
+            </span>
           </>
         }
         intro="Attended the double degree program - Honours Bachelor of
@@ -103,42 +107,35 @@ export default function About() {
               <p className="pt-4 ">
                 I am a seasoned UI, UX, Interaction, Service, and Product
                 Designer with over 15 years of experience transforming complex
-                challenges into user-centered, impactful solutions. My academic
-                background in Computer Science from the University of Waterloo
-                and Business Administration from Wilfrid Laurier University has
-                been instrumental in shaping my design decision-making process.
-                This unique academic foundation allows me to approach design
-                from both a technology-driven and business-driven perspective,
-                ensuring that my solutions are not only innovative and
-                functional but also strategically aligned with business
-                objectives.
+                challenges into intuitive, user-centered solutions. My dual
+                academic background in Computer Science and Business
+                Administration shapes the way I design—balancing technical
+                feasibility, business strategy, and thoughtful user experience
+                to create solutions that are both impactful and scalable.
               </p>
               <p className="pt-4">
-                With a strong foundation in frontend development, I bring a
-                unique perspective to design, ensuring that my solutions are not
-                only visually compelling but also technically practical and
-                seamlessly integrated into development workflows. I’ve had the
-                privilege of collaborating on high-profile projects for clients
-                like Bombardier, Airbus, Hydro One, and Service Ontario, where
-                I’ve created intuitive interfaces, mapped user journeys, and
-                developed accessible systems that meet AODA and WCAG standards.
+                With a strong foundation in front-end development, I design with
+                implementation in mind. My work is visually compelling,
+                technically practical, and seamlessly aligned with engineering
+                workflows. I’ve collaborated on high-profile projects for
+                organizations such as Bombardier, Airbus, Hydro One, and
+                ServiceOntario—crafting intuitive interfaces, mapping end-to-end
+                user journeys, and developing accessible systems that meet AODA
+                and WCAG standards.
               </p>
               <p className="pt-4">
-                My approach is rooted in empathy and collaboration. Over the
-                years, I’ve honed my skills in user research, service design,
-                and high-fidelity prototyping using tools like Figma. I thrive
-                in team settings—leading workshops, facilitating
-                cross-functional collaboration, and using feedback to iterate
-                and improve designs.
+                My approach is rooted in empathy, systems thinking, and
+                collaboration. I’ve honed my skills in user research, service
+                design, and high-fidelity prototyping in Figma, and I thrive in
+                cross-functional settings—facilitating workshops, aligning
+                stakeholders, and iterating quickly based on insights and
+                feedback.
               </p>
               <p className="pt-4">
-                Design isn’t just my profession—it’s my passion. I’m constantly
-                exploring new ideas, staying ahead of trends, and sharing
-                insights to inspire others. If you’re looking for a designer who
-                combines technical depth, strategic thinking, and a
-                user-centered approach, take a look at my portfolio to see some
-                of my favorite projects. Let’s connect—I’d love to help bring
-                your vision to life.
+                Design isn’t just what I do—it’s what I love. I stay curious,
+                explore new ideas, and continuously evolve my craft. I blend
+                technical depth, strategic thinking, and human-centered design
+                to create meaningful, practical, and scalable experiences.
               </p>
             </div>
           </div>

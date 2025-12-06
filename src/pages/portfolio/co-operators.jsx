@@ -110,6 +110,14 @@ const tabs = [
       },
     ],
   },
+  {
+    name: 'Case Study',
+    features: [
+      {
+        name: 'Coming Soon...',
+      },
+    ],
+  },
 ]
 
 function classNames(...classes) {
