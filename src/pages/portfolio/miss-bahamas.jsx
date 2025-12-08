@@ -141,7 +141,7 @@ export default function HydroOne() {
                               <h3 className="text-xl font-semibold ">
                                 {feature.name}
                               </h3>
-                              <div className="flex max-w-prose flex-col gap-4">
+                              <div className="flex max-w-3xl flex-col gap-4">
                                 <p>{feature.para1}</p>
                                 <p>{feature.para2}</p>
                               </div>
@@ -229,7 +229,7 @@ export default function HydroOne() {
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div key={feature.name}>
-                            <div className="mt-6 max-w-prose text-zinc-900  dark:text-zinc-50 lg:col-span-5 lg:mt-0 ">
+                            <div className="mt-6 max-w-3xl text-zinc-900  dark:text-zinc-50 lg:col-span-5 lg:mt-0 ">
                               <h3 className="text-xl font-semibold">
                                 {feature.name}
                               </h3>

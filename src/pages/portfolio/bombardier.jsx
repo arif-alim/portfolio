@@ -152,14 +152,6 @@ const tabs = [
       },
     ],
   },
-  {
-    name: 'Case Study',
-    features: [
-      {
-        name: 'Coming Soon...',
-      },
-    ],
-  },
 ]
 
 function classNames(...classes) {
@@ -218,7 +210,7 @@ export default function Project() {
                           <div className="col-span-full mb-4 text-lg font-semibold ">
                             <h2>Summary</h2>
                           </div>
-                          <div className="flex max-w-prose flex-col gap-4 lg:mt-0">
+                          <div className="flex max-w-3xl flex-col gap-4 lg:mt-0">
                             <p>{feature.para1}</p>
                             <p>{feature.para2}</p>
                             <p>{feature.para3}</p>
@@ -527,7 +519,7 @@ export default function Project() {
                     ? /* Render content for Wireframes tab */
                       tab.features.map((feature) => (
                         <div key={feature.name}>
-                          <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+                          <div className="mt-6 max-w-3xl lg:col-span-5 lg:mt-0">
                             <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
                               {feature.name}
                             </h3>
@@ -541,17 +533,6 @@ export default function Project() {
                             >
                               <div>View Website</div>
                             </Link>
-                          </div>
-                        </div>
-                      ))
-                    : tab.name === 'Case Study'
-                    ? /* Render content for Wireframes tab */
-                      tab.features.map((feature) => (
-                        <div key={feature.name}>
-                          <div className="mt-6 max-w-2xl  lg:col-span-5 lg:mt-0">
-                            <h3 className="text-xl font-semibold">
-                              {feature.name}
-                            </h3>
                           </div>
                         </div>
                       ))

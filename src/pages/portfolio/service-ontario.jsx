@@ -219,7 +219,7 @@ export default function Project() {
                           key={feature.name}
                           className="flex flex-col lg:gap-x-8"
                         >
-                          <div className="mb-0 lg:mb-8 lg:max-w-prose">
+                          <div className="mb-0 lg:mb-8 lg:max-w-3xl">
                             <Image
                               src={feature.imageSrc}
                               alt={feature.imageAlt}
@@ -229,7 +229,7 @@ export default function Project() {
                               className="rounded-lg object-cover object-center"
                             />
                           </div>
-                          <div className="mt-6 flex max-w-prose flex-col gap-4 text-zinc-900  dark:text-zinc-200 lg:mt-0 lg:max-w-prose">
+                          <div className="mt-6 flex max-w-3xl flex-col gap-4 text-zinc-900  dark:text-zinc-200 lg:mt-0 lg:max-w-3xl">
                             <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
                               {feature.name}
                             </h3>
@@ -408,7 +408,7 @@ export default function Project() {
                           key={feature.type}
                           className="flex flex-col  lg:gap-x-8"
                         >
-                          <div className="my-6 lg:mt-0 lg:max-w-prose">
+                          <div className="my-6 lg:mt-0 lg:max-w-3xl">
                             <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-200">
                               {feature.name}
                             </h3>
@@ -443,7 +443,7 @@ export default function Project() {
                     ? /* Render content for Wireframes tab */
                       tab.features.map((feature) => (
                         <div key={feature.name}>
-                          <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+                          <div className="mt-6 max-w-3xl lg:col-span-5 lg:mt-0">
                             <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-200">
                               {feature.name}
                             </h3>

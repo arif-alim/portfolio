@@ -158,7 +158,7 @@ const Summary = ({ title, paragraphs }) => (
     <div className="heading-lg col-span-full mb-4">
       <h2>{title}</h2>
     </div>
-    <div className="paragraph flex max-w-prose flex-col gap-4 lg:mt-0">
+    <div className="paragraph flex max-w-3xl flex-col gap-4 lg:mt-0">
       {paragraphs.map((para, index) => (
         <p key={index}>{para}</p>
       ))}
@@ -173,7 +173,7 @@ const Wireframes = ({ sections }) => (
         <div key={index} className="mb-8 text-zinc-900  dark:text-zinc-50">
           {/* Section Title and Subheading */}
           <h3 className="mb-4 text-xl font-semibold ">{section.title}</h3>
-          <div className="flex max-w-prose flex-col gap-4 lg:mt-0">
+          <div className="flex max-w-3xl flex-col gap-4 lg:mt-0">
             <p>{section.subheading}</p>
           </div>
 
@@ -222,7 +222,7 @@ const Wireframes = ({ sections }) => (
 
 const Prototypes = ({ title, images, links }) => (
   <div className="flex flex-col dark:bg-inherit">
-    <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+    <div className="mt-6 max-w-3xl lg:col-span-5 lg:mt-0">
       <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-zinc-50">
         {title}
       </h3>
@@ -256,11 +256,11 @@ const Prototypes = ({ title, images, links }) => (
 )
 
 const Details = ({ title, paragraph, link }) => (
-  <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+  <div className="mt-6 max-w-3xl lg:col-span-5 lg:mt-0">
     <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-zinc-50">
       {title}
     </h3>
-    <div className="flex max-w-prose flex-col gap-4 text-zinc-900  dark:text-zinc-50 lg:mt-0">
+    <div className="flex max-w-3xl flex-col gap-4 text-zinc-900  dark:text-zinc-50 lg:mt-0">
       <p>{paragraph}</p>
     </div>
     <Link

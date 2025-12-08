@@ -111,7 +111,7 @@ const Summary = ({ title, paragraphs }) => (
     <div className="heading-lg col-span-full mb-4">
       <h2>{title}</h2>
     </div>
-    <div className="paragraph flex max-w-prose flex-col gap-4 lg:mt-0">
+    <div className="paragraph flex max-w-3xl flex-col gap-4 lg:mt-0">
       {paragraphs.map((para, index) => (
         <p key={index}>{para}</p>
       ))}
@@ -169,9 +169,9 @@ const Prototype = ({ title, links }) => (
 )
 
 const Details = ({ title, paragraph, link }) => (
-  <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+  <div className="mt-6 max-w-3xl lg:col-span-5 lg:mt-0">
     <h3 className="mb-4 text-xl font-semibold ">{title}</h3>
-    <div className="flex max-w-prose flex-col gap-4 lg:mt-0">
+    <div className="flex max-w-3xl flex-col gap-4 lg:mt-0">
       <p>{paragraph}</p>
     </div>
     <Link

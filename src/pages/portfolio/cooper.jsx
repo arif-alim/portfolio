@@ -161,7 +161,7 @@ export default function Project() {
             aria-labelledby="features-heading"
             className="mx-auto max-w-7xl"
           >
-            <div className="mx-auto max-w-prose px-0 lg:max-w-none lg:px-0">
+            <div className="mx-auto max-w-3xl px-0 lg:max-w-none lg:px-0">
               <Tab.Group
                 as="div"
                 className="mt-10"
@@ -203,7 +203,7 @@ export default function Project() {
                           tab.features.map((feature) => (
                             <div
                               key={feature.heading}
-                              className="flex max-w-prose flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8"
+                              className="flex max-w-3xl flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8"
                             >
                               <div className="my-8 lg:max-w-[220px]">
                                 <Image

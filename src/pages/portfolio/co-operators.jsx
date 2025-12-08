@@ -181,7 +181,7 @@ export default function Project() {
                             <h2 className="mb-4 text-lg font-semibold">
                               {feature.heading1}
                             </h2>
-                            <div className="flex max-w-prose flex-col gap-4">
+                            <div className="flex max-w-3xl flex-col gap-4">
                               {[
                                 feature.para1,
                                 feature.para2,

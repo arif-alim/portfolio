@@ -143,7 +143,7 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex max-w-prose flex-col lg:gap-x-8"
+                          className="flex max-w-3xl flex-col lg:gap-x-8"
                         >
                           <div className="col-span-full mb-4 ">
                             <h2 className="text-lg font-semibold">
@@ -161,7 +161,7 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex max-w-prose flex-col lg:gap-x-8 "
+                          className="flex max-w-3xl flex-col lg:gap-x-8 "
                         >
                           <div>
                             <div className="col-span-full mb-8 flex flex-col gap-4 ">
@@ -184,7 +184,7 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex max-w-prose flex-col lg:gap-x-8 "
+                          className="flex max-w-3xl flex-col lg:gap-x-8 "
                         >
                           <div>
                             <div className="col-span-full flex flex-col">
@@ -242,7 +242,7 @@ export default function Project() {
                       tab.features.map((feature) => (
                         <div
                           key={feature.name}
-                          className="flex max-w-prose flex-col lg:gap-x-8 "
+                          className="flex max-w-3xl flex-col lg:gap-x-8 "
                         >
                           <div>
                             <div className="col-span-full  flex flex-col gap-4">

@@ -8,8 +8,8 @@
     "os": false
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint"
   },
@@ -29,7 +29,7 @@
     "flowbite": "^1.5.4",
     "flowbite-react": "^0.3.5",
     "focus-visible": "^5.2.0",
-    "next": "^15.1.5",
+    "next": "^16.0.7",
     "next-images": "^1.8.5",
     "postcss": "^8.5.1",
     "postcss-focus-visible": "^6.0.4",

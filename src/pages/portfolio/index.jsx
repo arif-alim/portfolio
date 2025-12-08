@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
+import Badge from '@/components/Badge'
 
 // Logo preset bg
 import logoCraftCityLight from '@/images/projects/craftcity-logo-light.png'
@@ -53,17 +54,6 @@ import clsx from 'clsx'
 
 const portfolio = [
   {
-    id: 0,
-    name: 'Co-operators',
-    about: 'Insurance company',
-    link: {
-      href: '/portfolio/co-operators',
-      label: 'View project',
-    },
-    imageLight: logoCooperatorsLight,
-    imageDark: logoCooperatorsDark,
-  },
-  {
     id: 1,
     name: 'Manulife',
     about: 'Multinational financial services company',
@@ -73,6 +63,43 @@ const portfolio = [
     },
     imageLight: logoManulifeLight,
     imageDark: logoManulifeDark,
+    badge: { label: 'Case Study Coming Soon', color: 'blue' },
+  },
+  {
+    id: 5,
+    name: 'Service Ontario',
+    about: 'Government of Ontario',
+    link: {
+      href: '/portfolio/service-ontario',
+      label: 'View project',
+    },
+    imageLight: logoServiceOntarioLight,
+    imageDark: logoServiceOntarioDark,
+    badge: { label: 'Case Study Coming Soon', color: 'blue' },
+  },
+  {
+    id: 3,
+    name: 'CBSA',
+    about: 'Canadian Border Services Agency',
+    link: {
+      href: '/portfolio/cbsa',
+      label: 'View project',
+    },
+    imageLight: logoCBSALight,
+    imageDark: logoCBSADark,
+    badge: { label: 'Case Study Coming Soon', color: 'blue' },
+  },
+  {
+    id: 6,
+    name: 'Hydro One',
+    about: 'Electricity distribution utility',
+    link: {
+      href: '/portfolio/hydro-one',
+      label: 'View project',
+    },
+    imageLight: logoHydroOneLight,
+    imageDark: logoHydroOneDark,
+    badge: { label: 'Case Study Coming Soon', color: 'blue' },
   },
   {
     id: 2,
@@ -86,18 +113,18 @@ const portfolio = [
     imageDark: logoBombardierDark,
   },
   {
-    id: 3,
-    name: 'CBSA',
-    about: 'Canadian Border Services Agency',
+    id: 0,
+    name: 'Co-operators',
+    about: 'Insurance company',
     link: {
-      href: '/portfolio/cbsa',
+      href: '/portfolio/co-operators',
       label: 'View project',
     },
-    imageLight: logoCBSALight,
-    imageDark: logoCBSADark,
+    imageLight: logoCooperatorsLight,
+    imageDark: logoCooperatorsDark,
   },
   {
-    id: 3,
+    id: 4,
     name: 'Trip Support',
     about: 'Online Travel Agency',
     link: {
@@ -108,29 +135,7 @@ const portfolio = [
     imageDark: logoTripSupportDark,
   },
   {
-    id: 4,
-    name: 'Service Ontario',
-    about: 'Government of Ontario',
-    link: {
-      href: '/portfolio/service-ontario',
-      label: 'View project',
-    },
-    imageLight: logoServiceOntarioLight,
-    imageDark: logoServiceOntarioDark,
-  },
-  {
-    id: 5,
-    name: 'Hydro One',
-    about: 'Electricity distribution utility',
-    link: {
-      href: '/portfolio/hydro-one',
-      label: 'View project',
-    },
-    imageLight: logoHydroOneLight,
-    imageDark: logoHydroOneDark,
-  },
-  {
-    id: 6,
+    id: 7,
     name: 'Perfec-tone',
     about: 'Aerospace Industry',
     link: {
@@ -141,7 +146,7 @@ const portfolio = [
     imageDark: logoPerfectoneDark,
   },
   {
-    id: 7,
+    id: 8,
     name: 'Chicasa Design',
     about: 'Custom Home Builders',
     link: {
@@ -152,7 +157,7 @@ const portfolio = [
     imageDark: logoChicasaDesignDark,
   },
   {
-    id: 8,
+    id: 9,
     name: 'Craft City',
     about: 'Hard seltzer brand',
     link: {
@@ -163,7 +168,7 @@ const portfolio = [
     imageDark: logoCraftCityDark,
   },
   {
-    id: 9,
+    id: 10,
     name: 'Cooper',
     about: 'Uber like app for Bahamas',
     link: {
@@ -174,7 +179,7 @@ const portfolio = [
     imageDark: logoCooperDark,
   },
   {
-    id: 10,
+    id: 11,
     name: 'Titan Group',
     about: 'Custom home builders',
     link: {
@@ -185,7 +190,7 @@ const portfolio = [
     imageDark: logoTitanGroupDark,
   },
   {
-    id: 11,
+    id: 12,
     name: 'Miss Bahamas',
     about: 'Bahamas beauty pageant',
     link: {
@@ -196,7 +201,7 @@ const portfolio = [
     imageDark: logoMissBahamasDark,
   },
   {
-    id: 12,
+    id: 13,
     name: 'District Eatery',
     about: 'Chain of restaurants',
     link: {
@@ -207,7 +212,7 @@ const portfolio = [
     imageDark: logoDistrictEateryDark,
   },
   {
-    id: 13,
+    id: 14,
     name: 'Equity Bank',
     about: 'Private banking Bahamas',
     link: {
@@ -218,7 +223,7 @@ const portfolio = [
     imageDark: logoEquityBankDark,
   },
   {
-    id: 14,
+    id: 15,
     name: 'Island Traders',
     about: 'Courier service in Bahamas',
     link: {
@@ -229,7 +234,7 @@ const portfolio = [
     imageDark: logoIslandTradersDark,
   },
   {
-    id: 15,
+    id: 16,
     name: 'Niagara Falls Craft Distillers',
     about: 'Spirit distillers',
     link: {
@@ -240,7 +245,7 @@ const portfolio = [
     imageDark: logoNFCDDark,
   },
   {
-    id: 16,
+    id: 17,
     name: 'Urban Dining',
     about: 'Chain of restaurants',
     link: {
@@ -251,7 +256,7 @@ const portfolio = [
     imageDark: logoUrbanDiningDark,
   },
   {
-    id: 17,
+    id: 18,
     name: 'Tritec Solutions',
     about: 'Uber like app for Bahamas',
     link: {
@@ -262,7 +267,7 @@ const portfolio = [
     imageDark: logoTritecSolutionsDark,
   },
   {
-    id: 18,
+    id: 19,
     name: 'Lieber Group',
     about: 'Uber like app for Bahamas',
     link: {
@@ -273,7 +278,7 @@ const portfolio = [
     imageDark: logoLieberGroupDark,
   },
   {
-    id: 19,
+    id: 20,
     name: "Gabby's",
     about: 'Restaurant',
     link: {
@@ -326,6 +331,14 @@ export default function Speakers() {
               <div key={project.id}>
                 <Link href={project.link.href}>
                   <div className="rounded-4xl group relative h-[196px] transform overflow-hidden ">
+                    {/* ✅ Badge, only if project.badge exists */}
+                    {project.badge && (
+                      <div className="absolute right-4 top-4 z-10">
+                        <Badge color={project.badge.color}>
+                          {project.badge.label}
+                        </Badge>
+                      </div>
+                    )}
                     <div
                       className={clsx(
                         'rounded-4xl absolute bottom-0 left-0 right-0 top-0 border transition duration-300 group-hover:scale-95 ',

@@ -130,7 +130,7 @@ export default function HydroOne() {
                         tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="flex max-w-prose flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8 "
+                            className="flex max-w-3xl flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8 "
                           >
                             <div className="col-span-full  flex flex-col gap-4 ">
                               <h3 className="text-xl font-semibold">
@@ -226,7 +226,7 @@ export default function HydroOne() {
                       ? /* Render content for Wireframes tab */
                         tab.features.map((feature) => (
                           <div key={feature.name}>
-                            <div className="mt-6 max-w-prose lg:col-span-5 lg:mt-0">
+                            <div className="mt-6 max-w-3xl lg:col-span-5 lg:mt-0">
                               <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
                                 {feature.name}
                               </h3>
