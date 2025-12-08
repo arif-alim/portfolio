@@ -63,7 +63,7 @@ const portfolio = [
     },
     imageLight: logoManulifeLight,
     imageDark: logoManulifeDark,
-    badge: { label: 'Case Study Coming Soon', color: 'blue' },
+    badge: { label: 'Case Study In Progress', color: 'blue' },
   },
   {
     id: 5,
@@ -87,7 +87,6 @@ const portfolio = [
     },
     imageLight: logoCBSALight,
     imageDark: logoCBSADark,
-    badge: { label: 'Case Study Coming Soon', color: 'blue' },
   },
   {
     id: 6,
