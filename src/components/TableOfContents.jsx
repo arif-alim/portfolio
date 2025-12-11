@@ -81,7 +81,7 @@ export default function TableOfContents({ contentId }) {
       {/* <h2 className="text-sm/6 font-semibold text-gray-950 dark:text-white">
         Case Study
       </h2> */}
-      <ul className="mt-3 flex flex-col gap-3 border-l border-gray-950/10 text-sm/6 text-gray-700 dark:border-white/10 dark:text-gray-400">
+      <ul className="mt-3 flex flex-col gap-3 border-l border-gray-950/10 text-sm/6 font-normal text-gray-700 dark:border-white/10 dark:text-gray-400">
         {headings.map((heading) => (
           <li
             key={heading.id}
@@ -96,7 +96,7 @@ export default function TableOfContents({ contentId }) {
               aria-current={heading.active ? 'location' : undefined}
               className={clsx(
                 heading.level === 3 && 'pl-4',
-                'block aria-[current=location]:font-medium aria-[current=location]:text-gray-950 dark:aria-[current=location]:text-white'
+                'block font-medium aria-[current=location]:font-semibold aria-[current=location]:text-gray-950 dark:aria-[current=location]:text-white'
               )}
             >
               {heading.text}

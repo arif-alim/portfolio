@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
+import { useId } from 'react'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 import Badge from '@/components/Badge'
 
-// Logo preset bg
 import logoCraftCityLight from '@/images/projects/craftcity-logo-light.png'
 import logoCraftCityDark from '@/images/projects/craftcity-logo-dark.png'
 import logoCooperatorsLight from '@/images/projects/cooperators-logo-light.png'
@@ -48,9 +49,13 @@ import logoManulifeDark from '@/images/projects/manulife-logo-dark.png'
 import logoCBSALight from '@/images/projects/cbsa-logo-light.png'
 import logoCBSADark from '@/images/projects/cbsa-logo-dark.png'
 
-import { useId } from 'react'
-import Image from 'next/image'
 import clsx from 'clsx'
+
+/* -------------------------------------------------------------------------- */
+/*                                     Data                                   */
+/* -------------------------------------------------------------------------- */
+
+const CARD_BORDER_COLOR = 'border-blue-300'
 
 const portfolio = [
   {
@@ -63,7 +68,19 @@ const portfolio = [
     },
     imageLight: logoManulifeLight,
     imageDark: logoManulifeDark,
-    badge: { label: 'Case Study In Progress', color: 'blue' },
+    badge: { label: 'With Case Study', color: 'emerald' },
+  },
+  {
+    id: 3,
+    name: 'CBSA',
+    about: 'Canadian Border Services Agency',
+    link: {
+      href: '/portfolio/cbsa',
+      label: 'View project',
+    },
+    imageLight: logoCBSALight,
+    imageDark: logoCBSADark,
+    badge: { label: 'Case Study Coming Soon', color: 'blue' },
   },
   {
     id: 5,
@@ -76,17 +93,6 @@ const portfolio = [
     imageLight: logoServiceOntarioLight,
     imageDark: logoServiceOntarioDark,
     badge: { label: 'Case Study Coming Soon', color: 'blue' },
-  },
-  {
-    id: 3,
-    name: 'CBSA',
-    about: 'Canadian Border Services Agency',
-    link: {
-      href: '/portfolio/cbsa',
-      label: 'View project',
-    },
-    imageLight: logoCBSALight,
-    imageDark: logoCBSADark,
   },
   {
     id: 6,
@@ -110,6 +116,7 @@ const portfolio = [
     },
     imageLight: logoBombardierLight,
     imageDark: logoBombardierDark,
+    badge: { label: 'Case Study Coming Soon', color: 'blue' },
   },
   {
     id: 0,
@@ -121,6 +128,7 @@ const portfolio = [
     },
     imageLight: logoCooperatorsLight,
     imageDark: logoCooperatorsDark,
+    badge: { label: 'Case Study Coming Soon', color: 'blue' },
   },
   {
     id: 4,
@@ -136,7 +144,7 @@ const portfolio = [
   {
     id: 7,
     name: 'Perfec-tone',
-    about: 'Aerospace Industry',
+    about: 'Skin care brand',
     link: {
       href: '/portfolio/perfec-tone',
       label: 'View project',
@@ -147,7 +155,7 @@ const portfolio = [
   {
     id: 8,
     name: 'Chicasa Design',
-    about: 'Custom Home Builders',
+    about: 'Custom home builders',
     link: {
       href: '/portfolio/chicasa-design',
       label: 'View project',
@@ -169,7 +177,7 @@ const portfolio = [
   {
     id: 10,
     name: 'Cooper',
-    about: 'Uber like app for Bahamas',
+    about: 'Driver / delivery app for Bahamas',
     link: {
       href: '/portfolio/cooper',
       label: 'View project',
@@ -202,7 +210,7 @@ const portfolio = [
   {
     id: 13,
     name: 'District Eatery',
-    about: 'Chain of restaurants',
+    about: 'Restaurant & bar',
     link: {
       href: '/portfolio/district-eatery',
       label: 'View project',
@@ -213,7 +221,7 @@ const portfolio = [
   {
     id: 14,
     name: 'Equity Bank',
-    about: 'Private banking Bahamas',
+    about: 'Private banking in Bahamas',
     link: {
       href: '/portfolio/equity-bank',
       label: 'View project',
@@ -235,7 +243,7 @@ const portfolio = [
   {
     id: 16,
     name: 'Niagara Falls Craft Distillers',
-    about: 'Spirit distillers',
+    about: 'Craft spirits distillery',
     link: {
       href: '/portfolio/nfcd',
       label: 'View project',
@@ -246,7 +254,7 @@ const portfolio = [
   {
     id: 17,
     name: 'Urban Dining',
-    about: 'Chain of restaurants',
+    about: 'Restaurant group',
     link: {
       href: '/portfolio/urban-dining',
       label: 'View project',
@@ -257,7 +265,7 @@ const portfolio = [
   {
     id: 18,
     name: 'Tritec Solutions',
-    about: 'Uber like app for Bahamas',
+    about: 'IT & digital solutions',
     link: {
       href: '/portfolio/tritec-solutions',
       label: 'View project',
@@ -268,7 +276,7 @@ const portfolio = [
   {
     id: 19,
     name: 'Lieber Group',
-    about: 'Uber like app for Bahamas',
+    about: 'Real estate & investment',
     link: {
       href: '/portfolio/lieber',
       label: 'View project',
@@ -289,100 +297,89 @@ const portfolio = [
   },
 ]
 
-function ImageClipPaths({ id, ...props }) {
+/* -------------------------------------------------------------------------- */
+/*                               Helper Components                            */
+/* -------------------------------------------------------------------------- */
+
+function PortfolioCard({ project }) {
   return (
-    <svg aria-hidden="true" width={0} height={0} {...props}>
-      <defs>
-        <clipPath id={`${id}-0`} clipPathUnits="objectBoundingBox">
-          <path d="M0,0 h0.729 v0.129 h0.121 l-0.016,0.032 C0.815,0.198,0.843,0.243,0.885,0.243 H1 v0.757 H0.271 v-0.086 l-0.121,0.057 v-0.214 c0,-0.032,-0.026,-0.057,-0.057,-0.057 H0 V0" />
-        </clipPath>
-        <clipPath id={`${id}-1`} clipPathUnits="objectBoundingBox">
-          <path d="M1,1 H0.271 v-0.129 H0.15 l0.016,-0.032 C0.185,0.802,0.157,0.757,0.115,0.757 H0 V0 h0.729 v0.086 l0.121,-0.057 v0.214 c0,0.032,0.026,0.057,0.057,0.057 h0.093 v0.7" />
-        </clipPath>
-        <clipPath id={`${id}-2`} clipPathUnits="objectBoundingBox">
-          <path d="M1,0 H0.271 v0.129 H0.15 l0.016,0.032 C0.185,0.198,0.157,0.243,0.115,0.243 H0 v0.757 h0.729 v-0.086 l0.121,0.057 v-0.214 c0,-0.032,0.026,-0.057,0.057,-0.057 h0.093 V0" />
-        </clipPath>
-      </defs>
-    </svg>
+    <div>
+      <Link href={project.link.href}>
+        <div className="rounded-4xl group relative h-[196px] transform overflow-hidden">
+          {project.badge && (
+            <div className="absolute right-4 top-4 z-10">
+              <Badge color={project.badge.color}>{project.badge.label}</Badge>
+            </div>
+          )}
+
+          {/* Blue border */}
+          <div
+            className={clsx(
+              'rounded-4xl absolute inset-0 border transition duration-300 group-hover:scale-95',
+              CARD_BORDER_COLOR
+            )}
+          />
+
+          <div className="absolute inset-0 my-auto">
+            <div className="flex h-full w-full items-center p-8 sm:p-6">
+              {/* Light mode logo */}
+              <Image
+                className="transition duration-300 group-hover:scale-110 dark:hidden"
+                src={project.imageLight}
+                alt={`${project.name} logo`}
+                width={260}
+                height={260}
+                layout="responsive"
+              />
+
+              {/* Dark mode logo */}
+              <Image
+                className="hidden transition duration-300 group-hover:scale-110 dark:block"
+                src={project.imageDark}
+                alt={`${project.name} logo`}
+                width={260}
+                height={260}
+                layout="responsive"
+              />
+            </div>
+          </div>
+        </div>
+
+        <h3 className="font-display mt-2 text-base font-semibold">
+          {project.name}
+        </h3>
+        <p className="text-sm text-zinc-500 dark:text-zinc-300">
+          {project.about}
+        </p>
+      </Link>
+    </div>
   )
 }
 
-export default function Speakers() {
-  let id = useId()
+/* -------------------------------------------------------------------------- */
+/*                                    Page                                    */
+/* -------------------------------------------------------------------------- */
+
+export default function PortfolioPage() {
+  const id = useId() // currently not used, but kept if you later re-enable clipPaths
 
   return (
     <div className="flex min-h-screen flex-col">
       <Head>
-        <title>portfolio - Arif Alim</title>
+        <title>Portfolio - Arif Alim</title>
         <meta
           name="description"
           content="Things I’ve made trying to put my dent in the universe."
         />
       </Head>
+
       <SimpleLayout
         title="My portfolio"
-        intro="I’ve worked across government, enterprise, aviation, and product teams, creating intuitive, user-centered interfaces that balance usability with technical feasibility. By partnering closely with engineers, I ensure smooth implementation, while my focus on accessibility and performance delivers inclusive, reliable experiences.
-"
+        intro="I’ve worked across government, enterprise, aviation, and product teams, creating intuitive, user-centered interfaces that balance usability with technical feasibility. By partnering closely with engineers, I ensure smooth implementation, while my focus on accessibility and performance delivers inclusive, reliable experiences."
       >
         <div className="mt-10 grid grid-cols-1 items-start gap-x-6 gap-y-10 lg:grid-cols-3">
           {portfolio.map((project) => (
-            <div key={project.id} unmount={false}>
-              <div key={project.id}>
-                <Link href={project.link.href}>
-                  <div className="rounded-4xl group relative h-[196px] transform overflow-hidden ">
-                    {/* ✅ Badge, only if project.badge exists */}
-                    {project.badge && (
-                      <div className="absolute right-4 top-4 z-10">
-                        <Badge color={project.badge.color}>
-                          {project.badge.label}
-                        </Badge>
-                      </div>
-                    )}
-                    <div
-                      className={clsx(
-                        'rounded-4xl absolute bottom-0 left-0 right-0 top-0 border transition duration-300 group-hover:scale-95 ',
-                        [
-                          // 'border-emerald-300',
-                          // 'border-indigo-300',
-                          // 'border-sky-300',
-                          // 'border-rose-300',
-                        ][project.id % 5]
-                      )}
-                    />
-                    <div
-                      className="absolute inset-0 my-auto "
-                      // className="absolute inset-0 my-auto bg-zinc-100 dark:bg-zinc-800"
-                      // style={{ clipPath: `url(#${id}-${project.id % 3})` }}
-                    >
-                      <div className="flex h-full w-full flex-row items-center p-12 align-middle sm:p-4">
-                        <Image
-                          className=" transition duration-300 group-hover:scale-110 dark:hidden"
-                          src={project.imageLight}
-                          alt=""
-                          width={260}
-                          height={260}
-                          layout="responsive"
-                        />
-                        <Image
-                          className=" hidden transition duration-300 group-hover:scale-110 dark:block"
-                          src={project.imageDark}
-                          alt=""
-                          width={260}
-                          height={260}
-                          layout="responsive"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="font-display mt-2 text-base font-semibold">
-                    {project.name}
-                  </h3>
-                  <p className="text-zinc-500 dark:text-zinc-300">
-                    {project.about}
-                  </p>
-                </Link>
-              </div>
-            </div>
+            <PortfolioCard key={project.id} project={project} clipBaseId={id} />
           ))}
         </div>
       </SimpleLayout>

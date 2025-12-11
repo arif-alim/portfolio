@@ -1,13 +1,16 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import Head from 'next/head'
+import { Fragment, useState } from 'react'
+import { Tab } from '@headlessui/react'
 
-// Coooper designs
+import { SimpleLayout } from '@/components/SimpleLayout'
+
+// Cooper designs
 import logo1 from '@/images/projects/cooper/cooper-1.jpg'
 import logo2 from '@/images/projects/cooper/cooper-2.jpg'
 import logo3 from '@/images/projects/cooper/cooper-3.jpg'
 import logo4 from '@/images/projects/cooper/cooper-4.jpg'
-import logo5 from '@/images/projects/cooper/cooper-5.jpg'
 import app1 from '@/images/projects/cooper/cooper-6.jpg'
 import app2 from '@/images/projects/cooper/cooper-7.jpg'
 import app3 from '@/images/projects/cooper/cooper-8.jpg'
@@ -32,96 +35,58 @@ import web6 from '@/images/projects/cooper/cooper-26.jpg'
 
 import logoCooper from '@/images/projects/cooper/coooper-logo.svg'
 
-import { SimpleLayout } from '@/components/SimpleLayout'
+/* -------------------------------------------------------------------------- */
+/*                             Shared Screenshot UI                           */
+/* -------------------------------------------------------------------------- */
 
-import { Fragment, useState, useEffect } from 'react'
-import { Tab } from '@headlessui/react'
+const FALLBACK_WIDTH = 1200
+const FALLBACK_HEIGHT = 800
+
+function Screenshot({ src, alt, className = '', width, height }) {
+  const finalWidth =
+    typeof width === 'number'
+      ? width
+      : src && typeof src === 'object' && typeof src.width === 'number'
+      ? src.width
+      : FALLBACK_WIDTH
+
+  const finalHeight =
+    typeof height === 'number'
+      ? height
+      : src && typeof src === 'object' && typeof src.height === 'number'
+      ? src.height
+      : FALLBACK_HEIGHT
+
+  return (
+    <Image
+      src={src}
+      alt={alt || ''}
+      width={finalWidth}
+      height={finalHeight}
+      className={className}
+    />
+  )
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Data                                    */
+/* -------------------------------------------------------------------------- */
 
 const tabs = [
   {
     name: 'Summary',
     features: [
       {
-        heading: 'Designed the hard seltzer cans using Illustrator',
-        para1:
+        title: '',
+        logo: {
+          src: logoCooper,
+          alt: 'Cooper logo',
+        },
+        paragraphs: [
           'As the designer of the Cooper Driver mobile app, my focus was on creating a user-friendly and efficient user experience that would meet the needs of both drivers and clients. The app features a simple and intuitive interface that makes it easy for users to request and track transportation services, with real-time updates and delivery confirmation for added convenience.',
-        para2:
           'The design of the Cooper Driver app incorporates the latest UI/UX mobile app design trends to enhance user experience, including the use of white space, high-quality images, and simplified navigation. The use of clear labeling and bold icons ensures that users can easily navigate the app and access the features they need, while the incorporation of real-time tracking and delivery confirmation improves transparency and user trust.',
-        para3:
           'Overall, the Cooper Driver mobile app redesign has resulted in a significant improvement in user experience and customer satisfaction. The user-friendly design and efficient functionality have helped to increase engagement and improve the overall user experience, making it easier for drivers and clients to access the information and services they need while on the go.',
-        imageSrc: logoCooper,
-        imageAlt: 'Craft City logo',
-      },
-    ],
-  },
-  {
-    name: 'Logo',
-    features: [
-      {
-        imageSrc1: logo1,
-        imageAlt1: 'Cooper logo design version 1',
-        imageSrc2: logo2,
-        imageAlt2: 'Cooper logo design version 2',
-        imageSrc3: logo3,
-        imageAlt3: 'Cooper logo design version 3',
-        imageSrc4: logo4,
-        imageAlt4: 'Cooper logo design version 4',
-      },
-    ],
-  },
-  {
-    name: 'Mobile App',
-    features: [
-      {
-        imageSrc1: app1,
-        imageAlt1: 'Cooper app design 1',
-        imageSrc2: app2,
-        imageAlt2: 'Cooper app design 2',
-        imageSrc3: app3,
-        imageAlt3: 'Cooper app design 3',
-        imageSrc4: app4,
-        imageAlt4: 'Cooper app design 4',
-        imageSrc5: app5,
-        imageAlt5: 'Cooper app design 5',
-        imageSrc6: app6,
-        imageAlt6: 'Cooper app design 6',
-        imageSrc7: app7,
-        imageAlt7: 'Cooper app design 7',
-        imageSrc8: app8,
-        imageAlt8: 'Cooper app design 8',
-        imageSrc9: app9,
-        imageAlt9: 'Cooper app design 9',
-        imageSrc10: app10,
-        imageAlt10: 'Cooper app design 10',
-        imageSrc11: app11,
-        imageAlt11: 'Cooper app design 11',
-        imageSrc12: app12,
-        imageAlt12: 'Cooper app design 12',
-        imageSrc13: app13,
-        imageAlt13: 'Cooper app design 13',
-        imageSrc14: app14,
-        imageAlt14: 'Cooper app design 14',
-        imageSrc15: app15,
-        imageAlt15: 'Cooper app design 15',
-      },
-    ],
-  },
-  {
-    name: 'Responsive Website',
-    features: [
-      {
-        imageSrc1: web1,
-        imageAlt1: 'Craft City logo',
-        imageSrc2: web2,
-        imageAlt2: 'Craft City logo',
-        imageSrc3: web3,
-        imageAlt3: 'Craft City logo',
-        imageSrc4: web4,
-        imageAlt4: 'Craft City logo',
-        imageSrc5: web5,
-        imageAlt5: 'Craft City logo',
-        imageSrc6: web6,
-        imageAlt6: 'Craft City logo',
+        ],
       },
     ],
   },
@@ -136,382 +101,274 @@ const tabs = [
       },
     ],
   },
+  {
+    name: 'Logo',
+    features: [
+      {
+        images: [
+          { src: logo1, alt: 'Cooper logo design version 1' },
+          { src: logo2, alt: 'Cooper logo design version 2' },
+          { src: logo3, alt: 'Cooper logo design version 3' },
+          { src: logo4, alt: 'Cooper logo design version 4' },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Mobile App',
+    features: [
+      {
+        images: [
+          { src: app1, alt: 'Cooper app design 1' },
+          { src: app2, alt: 'Cooper app design 2' },
+          { src: app3, alt: 'Cooper app design 3' },
+          { src: app4, alt: 'Cooper app design 4' },
+          { src: app5, alt: 'Cooper app design 5' },
+          { src: app6, alt: 'Cooper app design 6' },
+          { src: app7, alt: 'Cooper app design 7' },
+          { src: app8, alt: 'Cooper app design 8' },
+          { src: app9, alt: 'Cooper app design 9' },
+          { src: app10, alt: 'Cooper app design 10' },
+          { src: app11, alt: 'Cooper app design 11' },
+          { src: app12, alt: 'Cooper app design 12' },
+          { src: app13, alt: 'Cooper app design 13' },
+          { src: app14, alt: 'Cooper app design 14' },
+          { src: app15, alt: 'Cooper app design 15' },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Responsive Website',
+    features: [
+      {
+        images: [
+          { src: web1, alt: 'Cooper responsive website 1' },
+          { src: web2, alt: 'Cooper responsive website 2' },
+          { src: web3, alt: 'Cooper responsive website 3' },
+          { src: web4, alt: 'Cooper responsive website 4' },
+          { src: web5, alt: 'Cooper responsive website 5' },
+          { src: web6, alt: 'Cooper responsive website 6' },
+        ],
+      },
+    ],
+  },
 ]
+
+/* -------------------------------------------------------------------------- */
+/*                                 Utilities                                  */
+/* -------------------------------------------------------------------------- */
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+/* -------------------------------------------------------------------------- */
+/*                              Section Components                             */
+/* -------------------------------------------------------------------------- */
+
+function SummarySection({ feature }) {
+  return (
+    <div className="flex max-w-3xl flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8">
+      {/* Logo + title – stacked on mobile, inline on larger screens */}
+      <div className="mb-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+        {feature.logo && (
+          <div className="shrink-0">
+            <Screenshot
+              src={feature.logo.src}
+              alt={feature.logo.alt}
+              width={64}
+              height={64}
+              className="h-10 w-auto dark:invert"
+            />
+          </div>
+        )}
+        <h3 className="text-xl font-semibold leading-tight text-gray-900 dark:text-gray-100">
+          {feature.title}
+        </h3>
+      </div>
+
+      <div className="flex flex-col gap-4">
+        {feature.paragraphs?.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function CompanyDetailsSection({ feature }) {
+  return (
+    <div className="mt-6 max-w-2xl text-zinc-900 dark:text-zinc-200 lg:mt-0">
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+        {feature.name}
+      </h3>
+      <p className="mt-4">{feature.para1}</p>
+      {feature.link && (
+        <Link
+          href={feature.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+        >
+          View Website
+        </Link>
+      )}
+    </div>
+  )
+}
+
+function LogoGrid({ images }) {
+  return (
+    <div className="bg-slate-100 p-4 dark:bg-zinc-800 lg:p-6">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {images.map((img, idx) => (
+          <Screenshot
+            key={idx}
+            src={img.src}
+            alt={img.alt}
+            width={260}
+            height={260}
+            className="rounded-lg object-cover object-center"
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function MobileAppGrid({ images }) {
+  return (
+    <div className="bg-slate-100 p-4 dark:bg-zinc-800 lg:p-8">
+      {/* Multi-column grid instead of hard-coded columns */}
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6">
+        {images.map((img, idx) => (
+          <Screenshot
+            key={idx}
+            src={img.src}
+            alt={img.alt}
+            width={260}
+            height={260}
+            className="rounded-lg object-cover object-center"
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function ResponsiveWebsiteGrid({ images }) {
+  return (
+    <div className="bg-slate-100 p-4 dark:bg-zinc-800 lg:p-6">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {images.map((img, idx) => (
+          <Screenshot
+            key={idx}
+            src={img.src}
+            alt={img.alt}
+            width={260}
+            height={260}
+            className="rounded-lg object-cover object-center"
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Page                                      */
+/* -------------------------------------------------------------------------- */
+
 export default function Project() {
-  const [selectedTab, setSelectedTab] = useState('Wireframes')
+  // default to first tab – Summary
+  const [selectedTab, setSelectedTab] = useState('Summary')
+
   return (
     <>
       <Head>
         <title>Cooper - Project</title>
-        <meta name="description" content="Craft City Hard Seltzer" />
+        <meta name="description" content="Cooper Driver app and brand design" />
       </Head>
+
       <SimpleLayout
-        title={'Cooper Apps'}
-        intro={
-          'Extensive user research followed with affinity map and user journey. I had to account to Google maps unable to pick-up some of the locations in Bahamas and create a custom app design.'
-        }
+        title="Cooper Apps"
+        intro="Extensive user research followed with affinity mapping and user journeys. I had to account for Google Maps not picking up some Bahamas locations and designed a custom app experience."
       >
-        <div>
-          <section
-            aria-labelledby="features-heading"
-            className="mx-auto max-w-7xl"
-          >
-            <div className="mx-auto max-w-3xl px-0 lg:max-w-none lg:px-0">
-              <Tab.Group
-                as="div"
-                className="mt-10"
-                value={selectedTab}
-                onSelect={setSelectedTab}
-              >
-                <div className="overflow-x-hidden whitespace-nowrap">
-                  <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                    <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
-                      <Tab.List className="-mb-px flex ">
-                        {tabs.map((tab) => (
-                          <Tab
-                            key={tab.name}
-                            className={({ selected }) =>
-                              classNames(
-                                selected
-                                  ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                                  : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
-                                'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
-                              )
-                            }
-                          >
-                            {tab.name}
-                          </Tab>
-                        ))}
-                      </Tab.List>
-                    </div>
+        <section
+          aria-labelledby="features-heading"
+          className="mx-auto max-w-7xl"
+        >
+          <div className="mx-auto max-w-3xl px-0 lg:max-w-none lg:px-0">
+            <Tab.Group
+              selectedIndex={tabs.findIndex((t) => t.name === selectedTab)}
+              onChange={(index) => setSelectedTab(tabs[index].name)}
+            >
+              {/* ------------------------------ Tab List ------------------------------ */}
+              <div className="overflow-x-hidden whitespace-nowrap">
+                <div className="-mx-4 flex overflow-x-auto sm:mx-0">
+                  <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
+                    <Tab.List className="-mb-px flex">
+                      {tabs.map((tab) => (
+                        <Tab
+                          key={tab.name}
+                          className={({ selected }) =>
+                            classNames(
+                              selected
+                                ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
+                                : 'border-transparent font-medium text-gray-900 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100',
+                              'whitespace-nowrap border-b-2 px-6 text-tiny outline-none'
+                            )
+                          }
+                        >
+                          {tab.name}
+                        </Tab>
+                      ))}
+                    </Tab.List>
                   </div>
                 </div>
+              </div>
 
-                <Tab.Panels as={Fragment}>
-                  {tabs.map((tab) => (
-                    <Tab.Panel
-                      key={tab.name}
-                      className="space-y-16 pt-4 lg:pt-8"
-                    >
-                      {tab.name === 'Summary'
-                        ? /* Render content for Summary tab */
-                          tab.features.map((feature) => (
-                            <div
-                              key={feature.heading}
-                              className="flex max-w-3xl flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8"
-                            >
-                              <div className="my-8 lg:max-w-[220px]">
-                                <Image
-                                  src={feature.imageSrc}
-                                  alt={feature.imageAlt}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="dark:invert"
-                                />
-                              </div>
-                              <div className="col-span-full  flex flex-col gap-4 ">
-                                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                  {feature.heading}
-                                </h3>
-                                <p>{feature.para1}</p>
-                                <p>{feature.para2}</p>
-                                <p>{feature.para3}</p>
-                              </div>
-                            </div>
-                          ))
-                        : tab.name === 'Logo'
-                        ? /* Render content for Wireframes tab */
-                          tab.features.map((feature) => (
-                            <div
-                              key={feature.name}
-                              className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:p-6"
-                            >
-                              <div className="lg:col-span-3">
-                                <Image
-                                  src={feature.imageSrc1}
-                                  alt={feature.imageAlt1}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+              {/* ----------------------------- Tab Panels ----------------------------- */}
+              <Tab.Panels as={Fragment}>
+                {tabs.map((tab) => (
+                  <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
+                    {tab.name === 'Summary' &&
+                      tab.features.map((feature, idx) => (
+                        <SummarySection key={idx} feature={feature} />
+                      ))}
 
-                              <div className="lg:col-span-3">
-                                <Image
-                                  src={feature.imageSrc2}
-                                  alt={feature.imageAlt2}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                    {tab.name === 'Company details' &&
+                      tab.features.map((feature, idx) => (
+                        <CompanyDetailsSection key={idx} feature={feature} />
+                      ))}
 
-                              <div className="lg:col-span-3">
-                                <Image
-                                  src={feature.imageSrc3}
-                                  alt={feature.imageAlt3}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
+                    {tab.name === 'Logo' &&
+                      tab.features.map((feature, idx) => (
+                        <LogoGrid key={idx} images={feature.images || []} />
+                      ))}
 
-                              <div className="lg:col-span-3">
-                                <Image
-                                  src={feature.imageSrc4}
-                                  alt={feature.imageAlt4}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                          ))
-                        : tab.name === 'Mobile App'
-                        ? /* Render content for Wireframes tab */
-                          tab.features.map((feature) => (
-                            <div
-                              key={feature.name}
-                              className="lg: flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800  lg:flex-row lg:gap-x-8 lg:p-8"
-                            >
-                              <div className="flex flex-col gap-8 ">
-                                <Image
-                                  src={feature.imageSrc1}
-                                  alt={feature.imageAlt1}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
+                    {tab.name === 'Mobile App' &&
+                      tab.features.map((feature, idx) => (
+                        <MobileAppGrid
+                          key={idx}
+                          images={feature.images || []}
+                        />
+                      ))}
 
-                                <Image
-                                  src={feature.imageSrc6}
-                                  alt={feature.imageAlt6}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc11}
-                                  alt={feature.imageAlt11}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="flex flex-col gap-8 ">
-                                <Image
-                                  src={feature.imageSrc2}
-                                  alt={feature.imageAlt2}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc7}
-                                  alt={feature.imageAlt7}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc12}
-                                  alt={feature.imageAlt12}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="flex flex-col gap-8 ">
-                                <Image
-                                  src={feature.imageSrc3}
-                                  alt={feature.imageAlt3}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc8}
-                                  alt={feature.imageAlt8}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc13}
-                                  alt={feature.imageAlt13}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="flex flex-col gap-8 ">
-                                <Image
-                                  src={feature.imageSrc4}
-                                  alt={feature.imageAlt4}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc9}
-                                  alt={feature.imageAlt9}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc14}
-                                  alt={feature.imageAlt14}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="flex flex-col gap-8 ">
-                                <Image
-                                  src={feature.imageSrc5}
-                                  alt={feature.imageAlt5}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc10}
-                                  alt={feature.imageAlt10}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc15}
-                                  alt={feature.imageAlt15}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                          ))
-                        : tab.name === 'Responsive Website'
-                        ? /* Render content for Wireframes tab */
-                          tab.features.map((feature) => (
-                            <div
-                              key={feature.name}
-                              className="flex flex-col gap-2 bg-slate-100 p-4 dark:bg-zinc-800 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:p-6"
-                            >
-                              <div className="flex flex-col gap-8 lg:col-span-4">
-                                <Image
-                                  src={feature.imageSrc1}
-                                  alt={feature.imageAlt1}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc4}
-                                  alt={feature.imageAlt4}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="flex flex-col gap-8 lg:col-span-4">
-                                <Image
-                                  src={feature.imageSrc2}
-                                  alt={feature.imageAlt2}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc5}
-                                  alt={feature.imageAlt5}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div className="flex flex-col gap-8 lg:col-span-4">
-                                <Image
-                                  src={feature.imageSrc3}
-                                  alt={feature.imageAlt3}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-
-                                <Image
-                                  src={feature.imageSrc6}
-                                  alt={feature.imageAlt6}
-                                  width={260}
-                                  height={260}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                          ))
-                        : tab.name === 'Company details'
-                        ? /* Render content for Wireframes tab */
-                          tab.features.map((feature) => (
-                            <div key={feature.name}>
-                              <div className="mt-6 max-w-2xl text-zinc-900  dark:text-zinc-200 lg:col-span-5 lg:mt-0">
-                                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-300">
-                                  {feature.name}
-                                </h3>
-                                <p className="mt-4 ">{feature.para1}</p>
-                              </div>
-                            </div>
-                          ))
-                        : null}
-                    </Tab.Panel>
-                  ))}
-                </Tab.Panels>
-              </Tab.Group>
-            </div>
-          </section>
-        </div>
+                    {tab.name === 'Responsive Website' &&
+                      tab.features.map((feature, idx) => (
+                        <ResponsiveWebsiteGrid
+                          key={idx}
+                          images={feature.images || []}
+                        />
+                      ))}
+                  </Tab.Panel>
+                ))}
+              </Tab.Panels>
+            </Tab.Group>
+          </div>
+        </section>
       </SimpleLayout>
     </>
   )
