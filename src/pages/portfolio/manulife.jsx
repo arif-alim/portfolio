@@ -1,7 +1,8 @@
-import TableOfContents from '@/components/TableOfContents' // Homepage
+import TableOfContents from '@/components/TableOfContents'
 import Divider from '@/components/Divider'
+import { PortfolioTemplate, Screenshot } from '@/components/portfolio'
 
-//
+// Wireframes
 import wireframe1 from '@/images/projects/manulife/home-mvp.png'
 import wireframe2 from '@/images/projects/manulife/home-future-1.png'
 import wireframe3 from '@/images/projects/manulife/home-future-2.png'
@@ -12,788 +13,459 @@ import wireframe7 from '@/images/projects/manulife/status-parental.png'
 import wireframe8 from '@/images/projects/manulife/status-other.png'
 import wireframe9 from '@/images/projects/manulife/reinstate-member.png'
 
-// Coverage summary
-
 // Design system
-//
 import component1 from '@/images/projects/manulife/datepicker-1.png'
 import component2 from '@/images/projects/manulife/datepicker-2.png'
 
-import component3 from '@/images/projects/co-operators/component3.jpg'
+// Custom Summary Section
+function SummarySectionCustom() {
+  const responsibilities = [
+    'Document detailed user experience specifications.',
+    'Design user interfaces by applying the fundamental principles of user experience design, research experience, industry best practices and balancing those against system constraints and business objectives.',
+    'Create and revise user flows, sitemaps and low and high-fidelity wireframes based on specifications, goals, needs and limitations.',
+    'Develop rapid interactional UX prototypes; verify design assumptions through concept and usability testing.',
+    'Lead design review sessions with project teams, acquiring consensus and approval on designs and documentation.',
+    'Create final visual mockups against wireframes, in keeping with the company brand standards, UX guidelines and accessibility legislation (AODA/WCAG).',
+    'Provide final design assets and documentation to the development team; liaise to ensure final output matches UX specifications and visual design.',
+  ]
 
-/* eslint-disable @next/next/no-img-element */
+  const contributions = [
+    "Collaborated with Product, Marketing, Business, and IS teams to gather comprehensive requirements for Manulife's Plan Administrator Site, translating into strategic UX redesigns that align with business objectives to enhance overall usability.",
+    'Simplified the user journey by streamlining navigation flows, reducing steps to key destinations, and restructuring content hierarchy for improved access and user engagement.',
+    "Coordinated and led UX design reviews, ensuring project alignment with business goals while adhering to Manulife's brand standards and accessibility requirements (AODA/WCAG).",
+    "Developed clickable prototypes for usability testing on UserTesting.com and leveraged Google Analytics data to gather both qualitative and quantitative feedback, driving data-informed iterative improvements to enhance user experience and interface functionality for Manulife's Plan Administrator Site and Disability Portal.",
+  ]
 
-import Image from 'next/image'
-import Link from 'next/link'
+  return (
+    <div className="flex flex-col lg:gap-x-8">
+      <div className="col-span-full mb-4 text-lg font-semibold">
+        <h2>Summary</h2>
+      </div>
+      <div className="max-w-3xl lg:mt-0">
+        <p>
+          Work with Product, Marketing, Business and IS teams to obtain and understand business, functional and technical requirements.
+        </p>
+        <ul className="list-disc pl-2 lg:pl-8">
+          {responsibilities.map((item, idx) => (
+            <li key={idx} className={idx === 0 ? 'mt-4' : ''}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="col-span-full my-4 text-lg font-semibold lg:mt-8">
+        <h2>Contributions</h2>
+      </div>
+      <div className="max-w-3xl lg:mt-0">
+        <ul className="list-disc pl-2 lg:pl-8">
+          {contributions.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
 
-import { SimpleLayout } from '@/components/SimpleLayout'
+// Custom Wireframes Section
+function WireframesSectionCustom() {
+  const sections = [
+    {
+      title: 'Plan Administrator Home (MVP)',
+      images: [wireframe1],
+      columns: 1,
+    },
+    {
+      title: 'Plan Administrator Home (PowerBi)',
+      images: [wireframe2, wireframe3],
+      columns: 2,
+    },
+    {
+      title: 'Coverage summary',
+      images: [wireframe4, wireframe5],
+      columns: 2,
+    },
+    {
+      title: 'Status Update (Terminate a member)',
+      images: [wireframe6],
+      columns: 1,
+    },
+    {
+      title: 'Status Update (Parental leave)',
+      images: [wireframe7],
+      columns: 1,
+    },
+    {
+      title: 'Status Update (Other leave)',
+      images: [wireframe8],
+      columns: 1,
+    },
+    {
+      title: 'Reinstate a member',
+      images: [wireframe9],
+      columns: 1,
+    },
+  ]
 
-import { Fragment, useState } from 'react'
-import { Tab } from '@headlessui/react'
+  return (
+    <div className="flex flex-col gap-y-16">
+      {sections.map((section, idx) => (
+        <div key={idx} className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
+          <div className="col-span-full mb-4 text-lg font-semibold">
+            <h2>{section.title}</h2>
+          </div>
+          <div
+            className={`flex gap-8 rounded-lg bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8`}
+          >
+            {section.images.map((img, imgIdx) => (
+              <div key={imgIdx} className={section.columns === 1 ? 'w-full' : ''}>
+                <Screenshot src={img} alt={section.title} />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
 
-const tabs = [
-  {
-    name: 'Summary',
-    features: [
-      {
-        heading1: 'Responsibilites',
-        para1:
-          'Work with Product, Marketing, Business and IS teams to obtain and understand business, functional and technical requirements.',
-        li1: `Document detailed user experience specifications.`,
-        li2: `Design user interfaces by applying the fundamental principles of user experience design, research experience, industry best practices and balancing those against system constraints and business objectives.`,
-        li3: `Create and revise user flows, sitemaps and low and high-fidelity wireframes based on specifications, goals, needs and limitations.`,
-        li4: `Develop rapid interactional UX prototypes; verify design assumptions through concept and usability testing.`,
-        li5: `Lead design review sessions with project teams, acquiring consensus and approval on designs and documentation.`,
-        li6: `Create final visual mockups against wireframes, in keeping with the company brand standards, UX guidelines and accessibility legislation (AODA/WCAG).`,
-        li7: `Provide final design assets and documentation to the development team; liaise to ensure final output matches UX specifications and visual design.`,
-        li8: `Collaborated with Product, Marketing, Business, and IS teams to gather comprehensive requirements for Manulife’s Plan Administrator Site, translating into strategic UX redesigns that align with business objectives to enhance overall usability.`,
-        li9: `Simplified the user journey by streamlining navigation flows, reducing steps to key destinations, and restructuring content hierarchy for improved access and user engagement.`,
-        li10: `Coordinated and led UX design reviews, ensuring project alignment with business goals while adhering to Manulife’s brand standards and accessibility requirements (AODA/WCAG).`,
-        li11: `Developed clickable prototypes for usability testing on UserTesting.com and leveraged Google Analytics data to gather both qualitative and quantitative feedback, driving data-informed iterative improvements to enhance user experience and interface functionality for Manulife's Plan Administrator Site and Disability Portal.`,
-      },
-    ],
+// Custom Design System Section
+function DesignSystemSectionCustom() {
+  return (
+    <div className="flex flex-col gap-y-16">
+      <div className="col-span-full gap-y-4 lg:grid lg:grid-cols-12 lg:gap-x-4">
+        <div className="col-span-full mb-4 text-lg font-semibold">
+          <h2>Datepicker</h2>
+        </div>
+        <div className="flex gap-8 rounded-lg bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
+          <Screenshot src={component1} alt="Datepicker component 1" />
+        </div>
+        <div className="flex gap-8 rounded-lg bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8">
+          <Screenshot src={component2} alt="Datepicker component 2" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Custom Case Study Section with TableOfContents
+function CaseStudySectionCustom() {
+  return (
+    <div className="lg:grid lg:grid-cols-[250px_1fr] lg:gap-12">
+      {/* LEFT SIDEBAR — TOC */}
+      <aside className="hidden lg:block">
+        <TableOfContents contentId="manulife-case-study-content" />
+      </aside>
+
+      {/* RIGHT SIDE — CASE STUDY CONTENT */}
+      <main id="manulife-case-study-content">
+        <h2
+          id="overview"
+          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
+        >
+          01. Overview
+        </h2>
+        <p>
+          Manulife provides group health benefits to enterprises across Canada. Plan Administrators (typically HR professionals) handle employee enrollment, updates, policy changes, billing, and compliance — but their legacy tools were fragmented, unintuitive, and time-consuming.
+        </p>
+        <p className="pt-4">
+          This case study outlines how I redesigned the Plan Administrator Portal to deliver:
+        </p>
+        <ul className="list-disc pl-2 lg:pl-8">
+          <li className="pt-2">
+            <strong>Simplified workflows</strong> for daily administrative tasks
+          </li>
+          <li>
+            <strong>Clear dashboards</strong> powered by Power BI for data-driven decisions
+          </li>
+          <li>
+            <strong>Modern UI</strong> consistent with Manulife&apos;s design system
+          </li>
+          <li>
+            <strong>A unified experience</strong> for both administrators and employees
+          </li>
+        </ul>
+        <p className="pt-4">
+          The result is a scalable, accessible, and future-ready portal for enterprise benefits management.
+        </p>
+
+        <Divider />
+
+        <h2
+          id="problem"
+          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
+        >
+          02. The Problem
+        </h2>
+        <p>
+          Through heuristic evaluation, stakeholder interviews, and workflow audits, several critical issues emerged:
+        </p>
+
+        <h3
+          id="app"
+          className="pb-1 pt-4 font-semibold text-black dark:text-white"
+        >
+          Admin Pain Points
+        </h3>
+        <ul className="list-disc pl-2 lg:pl-8">
+          <li>Member search required too many inputs and produced inconsistent results</li>
+          <li>High dependency on email and spreadsheets for updates</li>
+          <li>No centralized dashboard showing plan trends, activity, or tasks</li>
+          <li>Reporting required manually exporting data</li>
+          <li>No standardized UI components across pages</li>
+          <li>Time-consuming multi-step tasks (add members, update certificates, manage terminated employees)</li>
+        </ul>
+
+        <h3
+          id="epp"
+          className="pb-1 pt-4 font-semibold text-black dark:text-white"
+        >
+          Employee Pain Points
+        </h3>
+        <ul className="list-disc pl-2 lg:pl-8">
+          <li>Confusing benefit structures</li>
+          <li>No unified place to view claims, balances, or eligibility</li>
+          <li>Enrollment lacked guidance and transparency</li>
+        </ul>
+
+        <h3
+          id="bpp"
+          className="pb-1 pt-4 font-semibold text-black dark:text-white"
+        >
+          Business Pain Points
+        </h3>
+        <ul className="list-disc pl-2 lg:pl-8">
+          <li>Support centers received high call volume</li>
+          <li>No way to surface trends or risks in real time</li>
+          <li>Fragmented systems increased training time for HR teams</li>
+        </ul>
+
+        <Divider />
+
+        <h2
+          id="goals"
+          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
+        >
+          03. Project Goals
+        </h2>
+
+        <h3
+          id="egoals"
+          className="pb-1 pt-4 font-semibold text-black dark:text-white"
+        >
+          Experience Goals
+        </h3>
+        <ul className="list-disc pl-2 lg:pl-8">
+          <li>Simplify navigation and reduce cognitive load</li>
+          <li>Provide clear end-to-end workflows for admins</li>
+          <li>Improve employee understanding of their benefits</li>
+          <li>Enable self-serve tools for HR teams and employees</li>
+        </ul>
+
+        <h3
+          id="bgoals"
+          className="pb-1 pt-4 font-semibold text-black dark:text-white"
+        >
+          Business Goals
+        </h3>
+        <ul className="list-disc pl-2 lg:pl-8">
+          <li>Lower support costs</li>
+          <li>Increase efficiency of plan-management tasks</li>
+          <li>Provide data visualization via Power BI for deeper insights</li>
+          <li>Improve user satisfaction and platform adoption</li>
+        </ul>
+
+        <Divider />
+
+        <h2
+          id="research"
+          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
+        >
+          04. Research & Discovery
+        </h2>
+
+        <h3
+          id="methods"
+          className="py-1 text-md font-semibold text-black dark:text-white lg:pl-4"
+        >
+          Methods Used
+        </h3>
+        <ul className="list-disc pl-2 lg:pl-8">
+          <li>Stakeholder interviews (Ops, HR, Support, Sales)</li>
+          <li>Competitive analysis (Sun Life, Canada Life, Workday, Benepass)</li>
+          <li>Legacy system audit</li>
+          <li>Workflow mapping (current vs. optimized)</li>
+          <li>Data requirements workshops for Power BI integration</li>
+        </ul>
+
+        <h3
+          id="insights"
+          className="py-1 pt-3 text-md font-semibold text-black dark:text-white lg:pl-4"
+        >
+          Key Insights
+        </h3>
+        <ol className="list-disc pl-2 lg:pl-8">
+          <li>
+            <strong>Admins spend 60–70% of their time searching or verifying member info.</strong>
+          </li>
+          <li>
+            <strong>Most errors occur due to unclear field hierarchy</strong> (Client → Policy → Member → Plan).
+          </li>
+          <li>
+            <strong>Admins rely on external spreadsheets</strong> to track plan activity, resulting in outdated and inconsistent data.
+          </li>
+          <li>
+            <strong>Dashboards must provide meaning, not just charts</strong> — actionable insights are essential.
+          </li>
+          <li>
+            <strong>Complex organizations need bulk actions</strong>, filtered lists, and high-performance search.
+          </li>
+        </ol>
+        <p className="pt-4">These insights guided the redesign strategy.</p>
+
+        <Divider />
+
+        <h2
+          id="approach"
+          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
+        >
+          05. UX Approach
+        </h2>
+
+        <h3
+          id="ia"
+          className="py-1 text-md font-semibold text-black dark:text-white lg:pl-4"
+        >
+          Information Architecture Redesign
+        </h3>
+        <div className="pl-4">
+          Home
+          <br />→ Dashboard (Power BI) <br /> → Member Search <br /> → Manage Members <br /> → Billing & Statements <br /> → Documents <br />
+          → Send a Note <br /> → Help & Resources
+          <p className="pt-4">This ensured:</p>
+          <ul className="list-disc pl-2 lg:pl-4">
+            <li>fewer clicks</li>
+            <li>clearer structure</li>
+            <li>consistent paths across tasks</li>
+          </ul>
+        </div>
+
+        <h3
+          id="powerbi"
+          className="py-1 pt-4 text-md font-semibold text-black dark:text-white lg:pl-4"
+        >
+          Power BI Integration
+        </h3>
+        <div className="pl-4">
+          <p>
+            This was one of the largest parts of the redesign. Admins needed <strong>actionable insights</strong> not raw data.
+          </p>
+          <p className="pt-2 font-semibold">Power BI cards integrated directly into the UI</p>
+          <ul className="list-disc pl-2 lg:pl-4">
+            <li>Recent activity</li>
+            <li>Plan utilization</li>
+            <li>Enrollment trends</li>
+            <li>Member movement logs (additions, terminations, class changes)</li>
+            <li>Billing discrepancies</li>
+            <li>Missing-document alerts</li>
+          </ul>
+        </div>
+
+        <h3
+          id="considerations"
+          className="py-1 pt-4 text-md font-semibold text-black dark:text-white lg:pl-4"
+        >
+          Design Considerations
+        </h3>
+        <div className="pl-4">
+          <ul className="list-disc pl-2 lg:pl-4">
+            <li>Charts must align visually with Manulife&apos;s DS</li>
+            <li>Tiles are embeddable, scalable modules</li>
+            <li>Each chart supports drill-down</li>
+            <li>Accessible color palette</li>
+            <li>Clear labeling and tooltips</li>
+            <li>Avoid overloading users with &quot;chart clutter&quot;</li>
+          </ul>
+          <p className="pt-4">
+            <strong>UX Outcome</strong>
+            <br />
+            Admins now see issues before they become problems.
+          </p>
+          <p className="pt-4">
+            Example:
+            <br />
+            Instead of exporting spreadsheets weekly, an HR admin sees:
+          </p>
+          <p className="pt-4">
+            ❗ 12 employees missing certification documents
+            <br />❗ 4 terminated members still being billed
+            <br />✔ 89% plan utilization this quarter
+          </p>
+          <p className="pt-4">
+            These insights appear immediately on the dashboard — without needing Power BI training.
+          </p>
+        </div>
+
+        <h3
+          id="search"
+          className="py-1 pt-4 text-md font-semibold text-black dark:text-white lg:pl-4"
+        >
+          Member Search Redesign
+        </h3>
+        <div className="pl-4">
+          <p>The wireframes tab reflect these improvements:</p>
+          <ul className="list-disc pl-2 pt-4 lg:pl-4">
+            <li>Single multi-purpose search bar</li>
+            <li>Optional filters (Location, Class, Plan)</li>
+            <li>Auto-complete suggestions</li>
+            <li>&quot;Include terminated members&quot; toggle</li>
+            <li>Cleaner layout with consistent spacing</li>
+            <li>Accessible labels, improved hierarchy</li>
+          </ul>
+          <p className="pt-4">Result: search times decreased significantly.</p>
+        </div>
+      </main>
+    </div>
+  )
+}
+
+const projectData = {
+  layout: {
+    title: 'Manulife',
+    intro: 'Streamlined the user interface for the Plan Administrator and Disability portal to enhance user experience.',
   },
-  {
-    name: 'Company details',
-    features: [
-      {
+  defaultTab: 'Wireframes',
+  tabs: [
+    {
+      name: 'Summary',
+      render: () => <SummarySectionCustom />,
+    },
+    {
+      name: 'Company details',
+      type: 'companyDetails',
+      content: {
         name: 'About',
-        para1: `Manulife is a leading international financial services group that helps people make their decisions easier and lives better. We operate primarily as John Hancock in the United States and Manulife elsewhere. We provide financial advice, insurance, as well as wealth and asset management solutions for individuals, groups and institutions.`,
-        link: `https://www.manulife.ca/personal.html`,
+        paragraphs: [
+          'Manulife is a leading international financial services group that helps people make their decisions easier and lives better. We operate primarily as John Hancock in the United States and Manulife elsewhere. We provide financial advice, insurance, as well as wealth and asset management solutions for individuals, groups and institutions.',
+        ],
+        link: 'https://www.manulife.ca/personal.html',
       },
-    ],
-  },
-  {
-    name: 'Wireframes',
-    features: [
-      {
-        imageSrc1: wireframe1,
-        imageSrc1Alt: 'Manulife project screen 1',
-        imageSrc2: wireframe2,
-        imageSrc2Alt: 'Manulife project screen 2',
-        imageSrc3: wireframe3,
-        imageSrc3Alt: 'Manulife project screen 3',
-        imageSrc4: wireframe4,
-        imageSrc4Alt: 'Manulife project screen 4',
-        imageSrc5: wireframe5,
-        imageSrc5Alt: 'Manulife project screen 5',
-        imageSrc6: wireframe6,
-        imageSrc6Alt: 'Manulife project screen 6',
-        imageSrc7: wireframe7,
-        imageSrc7Alt: 'Manulife project screen 7',
-        imageSrc8: wireframe8,
-        imageSrc8Alt: 'Manulife project screen 8',
-        imageSrc9: wireframe9,
-        imageSrc9Alt: 'Manulife project screen 9',
-      },
-    ],
-  },
-
-  {
-    name: 'Design system',
-    features: [
-      {
-        imageSrc6: component1,
-        imageSrc6Alt: 'Co-operators project screen 12',
-        imageSrc7: component2,
-        imageSrc7Alt: 'Co-operators project screen 13',
-        imageSrc8: component3,
-        imageSrc8Alt: 'Co-operators project screen 14',
-      },
-    ],
-  },
-  {
-    name: 'Case Study',
-    features: [
-      {
-        name: 'Coming Soon...',
-      },
-    ],
-  },
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+    },
+    {
+      name: 'Wireframes',
+      render: () => <WireframesSectionCustom />,
+    },
+    {
+      name: 'Design system',
+      render: () => <DesignSystemSectionCustom />,
+    },
+    {
+      name: 'Case Study',
+      render: () => <CaseStudySectionCustom />,
+    },
+  ],
 }
 
 export default function Project() {
-  const [selectedTab, setSelectedTab] = useState('Wireframes')
-  return (
-    <SimpleLayout
-      title={'Manulife'}
-      intro={
-        'Streamlined the user interface for the Plan Administrator and Disability portal to enhance user experience.'
-      }
-    >
-      <section aria-labelledby="features-heading" className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">
-          <Tab.Group
-            as="div"
-            className="mt-10"
-            value={selectedTab}
-            onSelect={setSelectedTab}
-          >
-            <div className="overflow-x-hidden whitespace-nowrap">
-              <div className="-mx-4 flex overflow-x-auto sm:mx-0">
-                <div className="flex-auto border-b border-gray-200 px-4 dark:border-gray-500 sm:px-0">
-                  <Tab.List className="-mb-px flex ">
-                    {tabs.map((tab) => (
-                      <Tab
-                        key={tab.name}
-                        className={({ selected }) =>
-                          classNames(
-                            selected
-                              ? 'border-blue-700 font-semibold text-blue-900 outline-none dark:border-blue-500 dark:text-gray-50'
-                              : 'dark:hover-gray-100 hover:text-gray-700dark:text-gray-400 border-transparent font-medium text-gray-900 hover:border-gray-300 dark:text-gray-300 ',
-                            'whitespace-nowrap border-b-2 px-6 text-tiny outline-none visited:border-none'
-                          )
-                        }
-                      >
-                        {tab.name}
-                      </Tab>
-                    ))}
-                  </Tab.List>
-                </div>
-              </div>
-            </div>
-
-            <Tab.Panels as={Fragment}>
-              {tabs.map((tab) => (
-                <Tab.Panel key={tab.name} className="space-y-16 pt-4 lg:pt-8">
-                  {tab.name === 'Summary'
-                    ? /* Render content for Summary tab */
-                      tab.features.map((feature) => (
-                        <div
-                          key={feature.name}
-                          className="flex flex-col lg:gap-x-8"
-                        >
-                          <div className="col-span-full mb-4 text-lg font-semibold ">
-                            <h2>Summary</h2>
-                          </div>
-                          <div className="max-w-3xl lg:mt-0">
-                            <p>{feature.para1}</p>
-                            <ul className="list-disc pl-2 lg:pl-8">
-                              <li className="mt-4">{feature.li1}</li>
-                              <li>{feature.li2}</li>
-                              <li>{feature.li3}</li>
-                              <li>{feature.li4}</li>
-                              <li>{feature.li5}</li>
-                              <li>{feature.li6}</li>
-                              <li>{feature.li7}</li>
-                            </ul>
-                          </div>
-                          <div className="col-span-full my-4 text-lg font-semibold lg:mt-8 ">
-                            <h2>Contributions</h2>
-                          </div>
-                          <div className="max-w-3xl lg:mt-0">
-                            <ul className="list-disc pl-2 lg:pl-8">
-                              <li>{feature.li8}</li>
-                              <li>{feature.li9}</li>
-                              <li>{feature.li10}</li>
-                              <li>{feature.li11}</li>
-                            </ul>
-                          </div>
-                        </div>
-                      ))
-                    : tab.name === 'Wireframes'
-                    ? /* Render content for Wireframes tab */
-                      tab.features.map((feature) => (
-                        <div
-                          key={feature.name}
-                          className="flex flex-col gap-y-16"
-                        >
-                          <div className="col-span-full lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold ">
-                              <h2>Plan Administrator Home (MVP)</h2>
-                            </div>
-                            <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
-                              layout="responsive"
-                            >
-                              <Image
-                                src={feature.imageSrc1}
-                                alt={feature.imageSrc1Alt}
-                                width={500}
-                                height={300}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold ">
-                              <h2>Plan Administrator Home (PowerBi)</h2>
-                            </div>
-                            <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
-                              layout="responsive"
-                            >
-                              <div>
-                                <Image
-                                  src={feature.imageSrc2}
-                                  alt={feature.imageSrc2Alt}
-                                  width={400}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div>
-                                <Image
-                                  src={feature.imageSrc3}
-                                  alt={feature.imageSrc3Alt}
-                                  width={400}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold ">
-                              <h2>Coverage summary</h2>
-                            </div>
-                            <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
-                              layout="responsive"
-                            >
-                              <div>
-                                <Image
-                                  src={feature.imageSrc4}
-                                  alt={feature.imageSrc4Alt}
-                                  width={400}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                              <div>
-                                <Image
-                                  src={feature.imageSrc5}
-                                  alt={feature.imageSrc5Alt}
-                                  width={400}
-                                  height={300}
-                                  layout="responsive"
-                                  className="rounded-lg object-cover object-center"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold ">
-                              <h2>Status Update (Terminate a member)</h2>
-                            </div>
-                            <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 sm:col-span-12 lg:p-8"
-                              layout="responsive"
-                            >
-                              <Image
-                                src={feature.imageSrc6}
-                                alt={feature.imageSrc6Alt}
-                                width={300}
-                                height={300}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold ">
-                              <h2>Status Update (Parental leave)</h2>
-                            </div>
-                            <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
-                              layout="responsive"
-                            >
-                              <Image
-                                src={feature.imageSrc7}
-                                alt={feature.imageSrc7Alt}
-                                width={300}
-                                height={300}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold ">
-                              <h2>Status Update (Other leave)</h2>
-                            </div>
-                            <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
-                              layout="responsive"
-                            >
-                              <Image
-                                src={feature.imageSrc8}
-                                alt={feature.imageSrc8Alt}
-                                width={300}
-                                height={300}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-span-full p-2 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold ">
-                              <h2>Reinstate a member</h2>
-                            </div>
-                            <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
-                              layout="responsive"
-                            >
-                              <Image
-                                src={feature.imageSrc9}
-                                alt={feature.imageSrc9Alt}
-                                width={300}
-                                height={300}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      ))
-                    : tab.name === 'Design system'
-                    ? /* Render content for Illustrations tab */
-                      tab.features.map((feature) => (
-                        <div
-                          key={feature.name}
-                          className="flex flex-col gap-y-16 "
-                        >
-                          <div className="col-span-full gap-y-4 lg:grid lg:grid-cols-12 lg:gap-x-4">
-                            <div className="col-span-full mb-4 text-lg font-semibold ">
-                              <h2>Datepicker</h2>
-                            </div>
-                            <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800 lg:col-span-12 lg:p-8"
-                              layout="responsive"
-                            >
-                              <Image
-                                src={feature.imageSrc6}
-                                alt={feature.imageSrc6Alt}
-                                width={300}
-                                height={300}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
-
-                            <div
-                              className="flex gap-8 bg-zinc-100 p-4 dark:bg-zinc-800  lg:col-span-12 lg:p-8"
-                              layout="responsive"
-                            >
-                              <Image
-                                src={feature.imageSrc7}
-                                alt={feature.imageSrc7Alt}
-                                width={300}
-                                height={300}
-                                layout="responsive"
-                                className="rounded-lg object-cover object-center"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      ))
-                    : tab.name === 'Company details'
-                    ? /* Render content for Wireframes tab */
-                      tab.features.map((feature) => (
-                        <div key={feature.name}>
-                          <div className="mt-6 max-w-2xl  lg:col-span-5 lg:mt-0">
-                            <h3 className="text-xl font-semibold">
-                              {feature.name}
-                            </h3>
-                            <p className="mt-2 ">{feature.para1}</p>
-                            <Link
-                              href={feature.link}
-                              target="_blank"
-                              className="mt-8 inline-block rounded-full bg-white px-3.5 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                            >
-                              <div>View Website</div>
-                            </Link>
-                          </div>
-                        </div>
-                      ))
-                    : tab.name === 'Case Study'
-                    ? tab.features.map((feature) => (
-                        <div
-                          key={feature.name}
-                          className="lg:grid lg:grid-cols-[250px_1fr] lg:gap-12"
-                        >
-                          {/* LEFT SIDEBAR — TOC */}
-                          <aside className="hidden lg:block">
-                            <TableOfContents contentId="manulife-case-study-content" />
-                          </aside>
-
-                          {/* RIGHT SIDE — CASE STUDY CONTENT */}
-                          <main id="manulife-case-study-content">
-                            <h2
-                              id="overview"
-                              className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-                            >
-                              01. Overview
-                            </h2>
-                            <p>
-                              Manulife provides group health benefits to
-                              enterprises across Canada. Plan Administrators
-                              (typically HR professionals) handle employee
-                              enrollment, updates, policy changes, billing, and
-                              compliance — but their legacy tools were
-                              fragmented, unintuitive, and time-consuming.
-                            </p>
-                            <p className="pt-4">
-                              This case study outlines how I redesigned the Plan
-                              Administrator Portal to deliver:
-                            </p>
-                            <ul className="list-disc pl-2 lg:pl-8">
-                              <li className="pt-2">
-                                <strong>Simplified workflows</strong> for daily
-                                administrative tasks
-                              </li>
-                              <li>
-                                <strong>Clear dashboards</strong> powered by
-                                Power BI for data-driven decisions
-                              </li>
-                              <li>
-                                <strong>Modern UI</strong> consistent with
-                                Manulife’s design system
-                              </li>
-                              <li>
-                                <strong>A unified experience</strong> for both
-                                administrators and employees
-                              </li>
-                            </ul>
-                            <p className="pt-4">
-                              The result is a scalable, accessible, and
-                              future-ready portal for enterprise benefits
-                              management.
-                            </p>
-                            <Divider />
-                            <h2
-                              id="problem"
-                              className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-                            >
-                              02. The Problem
-                            </h2>
-                            <p>
-                              Through heuristic evaluation, stakeholder
-                              interviews, and workflow audits, several critical
-                              issues emerged:
-                            </p>
-
-                            <h3
-                              id="app"
-                              className="pb-1 pt-4 font-semibold text-black dark:text-white"
-                            >
-                              Admin Pain Points
-                            </h3>
-                            <ul className="list-disc pl-2 lg:pl-8">
-                              <li>
-                                Member search required too many inputs and
-                                produced inconsistent results
-                              </li>
-                              <li>
-                                High dependency on email and spreadsheets for
-                                updates
-                              </li>
-                              <li>
-                                No centralized dashboard showing plan trends,
-                                activity, or tasks
-                              </li>
-                              <li>
-                                Reporting required manually exporting data
-                              </li>
-                              <li>
-                                No standardized UI components across pages
-                              </li>
-                              <li>
-                                Time-consuming multi-step tasks (add members,
-                                update certificates, manage terminated
-                                employees)
-                              </li>
-                            </ul>
-                            <h3
-                              id="epp"
-                              className="pb-1 pt-4 font-semibold text-black dark:text-white"
-                            >
-                              Employee Pain Points
-                            </h3>
-                            <ul className="list-disc pl-2 lg:pl-8">
-                              <li>Confusing benefit structures</li>
-                              <li>
-                                No unified place to view claims, balances, or
-                                eligibility
-                              </li>
-                              <li>
-                                Enrollment lacked guidance and transparency
-                              </li>
-                            </ul>
-                            <h3
-                              id="bpp"
-                              className="pb-1 pt-4 font-semibold text-black dark:text-white"
-                            >
-                              Business Pain Points
-                            </h3>
-                            <ul className="list-disc pl-2 lg:pl-8">
-                              <li>Support centers received high call volume</li>
-                              <li>
-                                No way to surface trends or risks in real time
-                              </li>
-                              <li>
-                                Fragmented systems increased training time for
-                                HR teams
-                              </li>
-                            </ul>
-
-                            <Divider />
-                            <h2
-                              id="goals"
-                              className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-                            >
-                              03. Project Goals
-                            </h2>
-                            <h3
-                              id="egoals"
-                              className="pb-1 pt-4 font-semibold text-black dark:text-white"
-                            >
-                              Experience Goals
-                            </h3>
-                            <ul className="list-disc pl-2 lg:pl-8">
-                              <li>
-                                Simplify navigation and reduce cognitive load
-                              </li>
-                              <li>
-                                Provide clear end-to-end workflows for admins
-                              </li>
-                              <li>
-                                Improve employee understanding of their benefits
-                              </li>
-                              <li>
-                                Enable self-serve tools for HR teams and
-                                employees
-                              </li>
-                            </ul>
-                            <h3
-                              id="bgoals"
-                              className="pb-1 pt-4 font-semibold text-black dark:text-white"
-                            >
-                              Business Goals
-                            </h3>
-                            <ul className="list-disc pl-2 lg:pl-8">
-                              <li>Lower support costs</li>
-                              <li>
-                                Increase efficiency of plan-management tasks
-                              </li>
-                              <li>
-                                Provide data visualization via Power BI for
-                                deeper insights
-                              </li>
-                              <li>
-                                Improve user satisfaction and platform adoption
-                              </li>
-                            </ul>
-                            <Divider />
-                            <h2
-                              id="research"
-                              className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-                            >
-                              04. Research & Discovery
-                            </h2>
-                            <h3
-                              id="methods"
-                              className="py-1 text-md font-semibold text-black dark:text-white lg:pl-4"
-                            >
-                              Methods Used
-                            </h3>
-                            <ul className="list-disc pl-2 lg:pl-8">
-                              <li>
-                                Stakeholder interviews (Ops, HR, Support, Sales)
-                              </li>
-                              <li>
-                                Competitive analysis (Sun Life, Canada Life,
-                                Workday, Benepass)
-                              </li>
-                              <li>Legacy system audit</li>
-                              <li>Workflow mapping (current vs. optimized)</li>
-                              <li>
-                                Data requirements workshops for Power BI
-                                integration
-                              </li>
-                            </ul>
-                            <h3
-                              id="insights"
-                              className="py-1 pt-3 text-md font-semibold text-black dark:text-white lg:pl-4"
-                            >
-                              Key Insights
-                            </h3>
-                            <ol className="list-disc pl-2 lg:pl-8">
-                              <li>
-                                <strong>
-                                  Admins spend 60–70% of their time searching or
-                                  verifying member info.
-                                </strong>{' '}
-                              </li>
-                              <li>
-                                <strong>
-                                  Most errors occur due to unclear field
-                                  hierarchy
-                                </strong>{' '}
-                                (Client → Policy → Member → Plan).
-                              </li>
-                              <li>
-                                <strong>
-                                  Admins rely on external spreadsheets
-                                </strong>{' '}
-                                to track plan activity, resulting in outdated
-                                and inconsistent data.
-                              </li>
-                              <li>
-                                <strong>
-                                  Dashboards must provide meaning, not just
-                                  charts
-                                </strong>{' '}
-                                — actionable insights are essential.
-                              </li>
-                              <li>
-                                <strong>
-                                  Complex organizations need bulk actions
-                                </strong>
-                                , filtered lists, and high-performance search.
-                              </li>
-                            </ol>
-                            <p className="pt-4">
-                              These insights guided the redesign strategy.
-                            </p>
-                            <Divider />
-                            <h2
-                              id="approach"
-                              className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-                            >
-                              05. UX Approach
-                            </h2>
-                            <h3
-                              id="ia"
-                              className="py-1 text-md font-semibold text-black dark:text-white lg:pl-4"
-                            >
-                              Information Architecture Redesign
-                            </h3>
-                            <div className="pl-4">
-                              Home
-                              <br />→ Dashboard (Power BI) <br /> → Member
-                              Search <br /> → Manage Members <br /> → Billing &
-                              Statements <br /> → Documents <br />
-                              → Send a Note <br /> → Help & Resources
-                              <p className="pt-4">This ensured:</p>
-                              <ul className="list-disc pl-2 lg:pl-4">
-                                <li>fewer clicks</li>
-                                <li>clearer structure</li>
-                                <li>consistent paths across tasks</li>
-                              </ul>
-                            </div>
-                            <h3
-                              id="powerbi"
-                              className="py-1 pt-4 text-md font-semibold text-black dark:text-white lg:pl-4"
-                            >
-                              Power BI Integration
-                            </h3>
-                            <div className="pl-4">
-                              <p>
-                                This was one of the largest parts of the
-                                redesign. Admins needed{' '}
-                                <strong>actionable insights</strong> not raw
-                                data.
-                              </p>
-                              <p className="pt-2 font-semibold">
-                                Power BI cards integrated directly into the UI
-                              </p>
-                              <ul className="list-disc pl-2 lg:pl-4">
-                                <li>Recent activity</li>
-                                <li>Plan utilization</li>
-                                <li>Enrollment trends</li>
-                                <li>
-                                  Member movement logs (additions, terminations,
-                                  class changes)
-                                </li>
-                                <li>Billing discrepancies</li>
-                                <li>Missing-document alerts</li>
-                              </ul>
-                            </div>
-                            <h3
-                              id="considerations"
-                              className="py-1 pt-4 text-md font-semibold text-black dark:text-white lg:pl-4"
-                            >
-                              Design Considerations
-                            </h3>
-                            <div className="pl-4">
-                              <ul className="list-disc pl-2 lg:pl-4">
-                                <li>
-                                  Charts must align visually with Manulife’s DS
-                                </li>
-                                <li>Tiles are embeddable, scalable modules</li>
-                                <li>Each chart supports drill-down</li>
-                                <li>Accessible color palette</li>
-                                <li>Clear labeling and tooltips</li>
-                                <li>
-                                  Avoid overloading users with “chart clutter”
-                                </li>
-                              </ul>
-                              <p className="pt-4">
-                                <strong>UX Outcome</strong>
-                                <br />
-                                Admins now see issues before they become
-                                problems.
-                              </p>
-                              <p className="pt-4">
-                                Example:
-                                <br />
-                                Instead of exporting spreadsheets weekly, an HR
-                                admin sees:
-                              </p>
-                              <p className="pt-4">
-                                ❗ 12 employees missing certification documents
-                                <br />❗ 4 terminated members still being billed
-                                <br />✔ 89% plan utilization this quarter
-                              </p>
-                              <p className="pt-4">
-                                These insights appear immediately on the
-                                dashboard — without needing Power BI training.
-                              </p>
-                            </div>
-                            <h3
-                              id="search"
-                              className="py-1 pt-4 text-md font-semibold text-black dark:text-white lg:pl-4"
-                            >
-                              Member Search Redesign
-                            </h3>
-                            <div className="pl-4">
-                              <p>
-                                The wireframes tab reflect these improvements:
-                              </p>
-                              <ul className="list-disc pl-2 pt-4 lg:pl-4">
-                                <li>Single multi-purpose search bar</li>
-                                <li>
-                                  Optional filters (Location, Class, Plan)
-                                </li>
-                                <li>Auto-complete suggestions</li>
-                                <li>“Include terminated members” toggle</li>
-                                <li>Cleaner layout with consistent spacing</li>
-                                <li>Accessible labels, improved hierarchy</li>
-                              </ul>
-
-                              <p className="pt-4">
-                                Result: search times decreased significantly.
-                              </p>
-                            </div>
-                          </main>
-                        </div>
-                      ))
-                    : null}
-                </Tab.Panel>
-              ))}
-            </Tab.Panels>
-          </Tab.Group>
-        </div>
-      </section>
-    </SimpleLayout>
-  )
+  return <PortfolioTemplate {...projectData} />
 }

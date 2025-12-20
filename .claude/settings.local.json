@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew update:*)",
+      "Bash(brew upgrade:*)",
+      "Bash(tree:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(git -C /Users/arifalim/Arif/Portfolio/Site/aalim log --oneline)",
+      "Bash(npm run build:*)",
+      "Bash(for file in src/pages/portfolio/*.jsx)",
+      "Bash(do sed -i '' \"s/''/''/g\" \"$file\")",
+      "Bash(done)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nRefactor portfolio pages with reusable component system\n\n- Create shared PortfolioTemplate, PortfolioTabs, and Screenshot components\n- Add section components: SummarySection, ImageGridSection, CompanyDetailsSection, WireframesSection\n- Migrate all 21 portfolio pages to use new template system\n- Remove unused portfolio pages \\(airbus, nba-restaurant, wolff\\)\n- Extract classNames utility to src/lib\n- Fix Next.js lockfile warning with outputFileTracingRoot config\n- Fix curly apostrophe syntax errors across portfolio pages\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
