@@ -13,14 +13,14 @@ import logoIslandTraders from '@/images/projects/islandtraders/islandtraders-log
 
 const projectData = {
   meta: {
-    title: 'Island Traders - Project',
+    title: 'Responsive Website Design — Island Traders | Arif Alim',
     description:
-      'Designed and developed Island Traders front-facing pages and custom logo.',
+      'Website and logo design for 242 Island Traders, including responsive layouts for its shop-and-ship service.',
   },
   layout: {
     title: 'Island Traders',
     intro:
-      'Complete redesign of the 242 Island Traders website, with a focus on responsive, accessible UI and a modern visual system.',
+      'Redesign of the 242 Island Traders website, with a focus on responsive UI.',
   },
   tabs: [
     {
@@ -32,10 +32,9 @@ const projectData = {
           alt: 'Island Traders logo',
         },
         paragraphs: [
-          "The 242 Island Traders website was in need of a complete overhaul, as the previous version was not responsive, not accessible, and had an outdated design. The objective of the UI/UX redesign was to create a visually appealing and intuitive website that showcases the company's products and services while improving user experience.",
-          "The homepage was redesigned to feature a full-screen banner that highlights the company's products and services, providing users with an engaging experience. The navigation was updated to simplify the user journey, with clear labels, drop-down menus, and a search bar for easy access to specific products and services.",
-          'The color scheme and typography were also updated to create a modern, visually appealing design that uses high-quality images and white space to create a clean and professional look.',
-          'The main focus of the redesign was on mobile responsiveness, ensuring that the website is optimized for mobile devices, and users can access it seamlessly on any device. The redesign has resulted in a significant improvement in user experience, with a modern, user-friendly website that makes it easier for customers to access the information and products they need. The improved navigation and search functionality have also helped to increase engagement and improve customer satisfaction.',
+          'I redesigned the 242 Island Traders website with a focus on mobile-responsive layouts.',
+          'The homepage design includes a banner, navigation, and calls to action for the shop-and-ship service.',
+          'I updated the color scheme and typography, using imagery and white space across the website layouts.',
         ],
       },
     },
@@ -63,7 +62,7 @@ const projectData = {
       content: {
         name: 'About 242 Island Traders',
         paragraphs: [
-          '242 Island Traders is a Bahamian company that offers a range of products and services, including home appliances, electronics, building materials, and industrial equipment. The company has been in business for over 50 years and has established itself as a trusted provider of high-quality products and exceptional customer service. With multiple locations across the Bahamas, 242 Island Traders is committed to serving the needs of its customers, offering competitive prices and flexible payment options. The company is also actively involved in supporting the local community through various charitable initiatives and events.',
+          '242 Island Traders provides shop-and-ship and courier services in the Bahamas.',
         ],
         link: 'https://www.242islandtraders.com/',
       },

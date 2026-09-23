@@ -1,5 +1,3 @@
-'use client'
-
 import { clsx } from 'clsx'
 import { useEffect, useState } from 'react'
 
@@ -10,14 +8,14 @@ function useTableOfContents(contentId) {
     let root = document.getElementById(contentId)
     if (!root) return
 
-    setHeadings(
-      Array.from(root.querySelectorAll('h2, h3')).map((heading) => ({
-        id: heading.id,
-        text: heading.textContent || '',
-        level: parseInt(heading.tagName[1]),
-        active: false,
-      }))
-    )
+    const contentHeadings = Array.from(
+      root.querySelectorAll('h2[id], h3[id]')
+    ).map((heading) => ({
+      id: heading.id,
+      text: heading.textContent || '',
+      level: parseInt(heading.tagName[1]),
+      active: false,
+    }))
 
     let contentElements = new Map()
     let currentHeadingId = null
@@ -49,8 +47,8 @@ function useTableOfContents(contentId) {
           contentElements.entries()
         ).find(([element]) => visibleElements.has(element))
 
-        setHeadings((current) =>
-          current.map((heading) => ({
+        setHeadings(
+          contentHeadings.map((heading) => ({
             ...heading,
             active: heading.id === firstVisibleContentElement?.[1],
           }))

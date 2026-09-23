@@ -87,19 +87,60 @@ function WireframesSectionCustom() {
 // Custom Prototypes Section with Figma links
 function PrototypesSectionCustom() {
   const figmaLinks = [
-    { href: 'https://www.figma.com/design/C63rTgdhnGR38HCokMK1fP/Sustainability-2021?node-id=0-1&t=HbCS9TMWfWol79Al-1', label: 'Sustainability' },
-    { href: 'https://www.figma.com/file/qlbk5r4jpix7dRdlxwHXO8/Vacation-Conservation-Tips?node-id=2%3A66&t=u0nfmNQO4Tm3IHaw-1', label: 'Vacation Conservation Tips' },
-    { href: 'https://www.figma.com/file/OWiuIOxVw4K1GnHxXzsdNN/Richview-to-Manby?node-id=0%3A1&t=44Yp4t5z6vJpwtBm-1', label: 'Richview to Manby' },
-    { href: 'https://www.figma.com/file/YkdlTQIZduAtdhuV4CYrLL/Islington-TS-LP?node-id=0%3A1&t=qXdRMOZ82HqcHx6p-1', label: 'Islington TSLP' },
-    { href: 'https://www.figma.com/file/mfkVcrjSymJWH26i5LlgyI/Sault-3-TS?node-id=0%3A1&t=ojhVZqJlEiLL2Re2-1', label: 'Sault 3 TS' },
-    { href: 'https://www.figma.com/file/YUqmU8h7otbD7yKSPptRrM/Merivale?node-id=0%3A1&t=tE8P17VMrwyDev1w-1', label: 'Merivale' },
-    { href: 'https://www.figma.com/file/aO52JoNiH7zpQyXXdLbcCV/Insulation-Tips?node-id=0%3A1&t=ircfMjDokfKHgn9X-1', label: 'Insulation Tips' },
-    { href: 'https://www.figma.com/file/yhxLLF5WmzzBj1FwEtK2Sl/WTTLR?node-id=0%3A1&t=NfVxLuY6MN9NZqbg-1', label: 'WTTLR' },
-    { href: 'https://www.figma.com/file/PkrAaCCp3lXDZ9iHuzkqIz/Lighting-Your-Home?node-id=0%3A1&t=fAXHXZtD7RAIdFt4-1', label: 'Lighting Your Home' },
-    { href: 'https://www.figma.com/file/YbApoBKV60o7MAaZ3SJOHx/Saint-Clair?node-id=0%3A1&t=Fn3pBujvdF3u2lZw-1', label: 'Saint Clair' },
+    {
+      href: 'https://www.figma.com/design/C63rTgdhnGR38HCokMK1fP/Sustainability-2021?node-id=0-1&t=HbCS9TMWfWol79Al-1',
+      label: 'Sustainability',
+    },
+    {
+      href: 'https://www.figma.com/file/qlbk5r4jpix7dRdlxwHXO8/Vacation-Conservation-Tips?node-id=2%3A66&t=u0nfmNQO4Tm3IHaw-1',
+      label: 'Vacation Conservation Tips',
+    },
+    {
+      href: 'https://www.figma.com/file/OWiuIOxVw4K1GnHxXzsdNN/Richview-to-Manby?node-id=0%3A1&t=44Yp4t5z6vJpwtBm-1',
+      label: 'Richview to Manby',
+    },
+    {
+      href: 'https://www.figma.com/file/YkdlTQIZduAtdhuV4CYrLL/Islington-TS-LP?node-id=0%3A1&t=qXdRMOZ82HqcHx6p-1',
+      label: 'Islington TSLP',
+    },
+    {
+      href: 'https://www.figma.com/file/mfkVcrjSymJWH26i5LlgyI/Sault-3-TS?node-id=0%3A1&t=ojhVZqJlEiLL2Re2-1',
+      label: 'Sault 3 TS',
+    },
+    {
+      href: 'https://www.figma.com/file/YUqmU8h7otbD7yKSPptRrM/Merivale?node-id=0%3A1&t=tE8P17VMrwyDev1w-1',
+      label: 'Merivale',
+    },
+    {
+      href: 'https://www.figma.com/file/aO52JoNiH7zpQyXXdLbcCV/Insulation-Tips?node-id=0%3A1&t=ircfMjDokfKHgn9X-1',
+      label: 'Insulation Tips',
+    },
+    {
+      href: 'https://www.figma.com/file/yhxLLF5WmzzBj1FwEtK2Sl/WTTLR?node-id=0%3A1&t=NfVxLuY6MN9NZqbg-1',
+      label: 'WTTLR',
+    },
+    {
+      href: 'https://www.figma.com/file/PkrAaCCp3lXDZ9iHuzkqIz/Lighting-Your-Home?node-id=0%3A1&t=fAXHXZtD7RAIdFt4-1',
+      label: 'Lighting Your Home',
+    },
+    {
+      href: 'https://www.figma.com/file/YbApoBKV60o7MAaZ3SJOHx/Saint-Clair?node-id=0%3A1&t=Fn3pBujvdF3u2lZw-1',
+      label: 'Saint Clair',
+    },
   ]
 
-  const images = [proto1, proto2, proto3, proto4, proto5, proto6, proto7, proto8, proto9, proto10]
+  const images = [
+    proto1,
+    proto2,
+    proto3,
+    proto4,
+    proto5,
+    proto6,
+    proto7,
+    proto8,
+    proto9,
+    proto10,
+  ]
 
   return (
     <div className="flex flex-col">
@@ -134,7 +175,9 @@ function PrototypesSectionCustom() {
 
 const projectData = {
   meta: {
-    title: 'Hydro One – Responsive Mobile Design',
+    title: 'Responsive Website Design — Hydro One | Arif Alim',
+    description:
+      'Responsive UI design for Hydro One, including Figma components, prototypes, and SharePoint integration using HTML, CSS, and JavaScript.',
   },
   layout: {
     title: 'Hydro One',
@@ -147,9 +190,9 @@ const projectData = {
       content: {
         title: 'Hydro One – Responsive Site & Components',
         paragraphs: [
-          "As a Senior Lead Designer at Hydro One, I played a pivotal role in enhancing the company's digital presence by creating a comprehensive style guide and reusable design components using Figma.",
-          "I developed high-fidelity UI prototypes and integrated accessible, responsive designs into SharePoint using HTML5, CSS3, and JavaScript. My contributions included conducting user research to address pain points, applying design thinking principles, and ensuring compliance with accessibility standards such as contrast trends, aria labels, and alt tags.",
-          "Collaborating with cross-functional teams via Wrike, I delivered innovative, user-friendly solutions that improved the overall digital experience.",
+          'As a Senior Lead Designer at Hydro One, I created a style guide and reusable design components using Figma.',
+          'I developed high-fidelity UI prototypes and integrated responsive designs into SharePoint using HTML5, CSS3, and JavaScript. My work included user research and attention to color contrast, ARIA labels, and alt text.',
+          'I collaborated with cross-functional teams using Wrike.',
         ],
       },
     },
@@ -167,7 +210,7 @@ const projectData = {
       content: {
         name: 'About Hydro One',
         paragraphs: [
-          "Hydro One is Ontario's largest electricity transmission and distribution provider, delivering power to homes, businesses, and communities across the province. With a commitment to safety, reliability, and sustainability, Hydro One plays a critical role in Ontario's energy infrastructure and economic development.",
+          'Hydro One provides electricity transmission and distribution services in Ontario.',
         ],
         link: 'https://www.hydroone.com/',
       },

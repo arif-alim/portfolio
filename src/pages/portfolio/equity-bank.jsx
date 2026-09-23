@@ -13,8 +13,9 @@ import logoEquityBank from '@/images/projects/equitybank/equitybank-logo.svg'
 
 const projectData = {
   meta: {
-    title: 'Equity Bank Bahamas - Project',
-    description: 'Equity Bank is a leading financial institution in the Bahamas.',
+    title: 'Responsive Website Design — Equity Bank Bahamas | Arif Alim',
+    description:
+      'UI/UX redesign of the Equity Bank Bahamas website, including responsive layouts, navigation, and typography.',
   },
   layout: {
     title: 'Equity Bank Bahamas',
@@ -31,11 +32,9 @@ const projectData = {
           alt: 'Equity Bank Bahamas logo',
         },
         paragraphs: [
-          "The Equity Bank Bahamas website underwent a UI/UX redesign to improve its user experience and better meet the needs of its customers.",
-          "The homepage was redesigned to provide a more streamlined and user-friendly experience. The new design features clear and concise messaging, simplified navigation, and prominent calls to action that guide users towards their desired actions.",
-          "The color scheme and typography were also updated to create a more modern and visually appealing design. The use of white space and high-quality images helps to create a clean and professional look that is easy on the eyes. One of the main objectives of the redesign was to improve the website's accessibility and mobile responsiveness. The new design is optimized for mobile devices, ensuring that users can access the website on any device and have a seamless experience.",
-          "The navigation was also updated to improve the user journey and make it easier for users to find what they need. The new navigation features clear labels and drop-down menus that provide quick access to the most important pages on the website.",
-          "Overall, the Equity Bank Bahamas website redesign has resulted in a significant improvement in the user experience. The new design is modern, user-friendly, and optimized for mobile devices, making it easier for customers to access the information and services they need. The improved accessibility and streamlined navigation have also helped to increase engagement and improve customer satisfaction.",
+          'I redesigned the Equity Bank Bahamas website with a focus on responsive UI and navigation.',
+          'The homepage design includes messaging, calls to action, and updated color and typography choices.',
+          'The work included mobile layouts and navigation with labels and drop-down menus.',
         ],
       },
     },
@@ -65,10 +64,9 @@ const projectData = {
       content: {
         name: 'About Equity Bank Bahamas',
         paragraphs: [
-          'Equity Bank Bahamas is a commercial bank that provides a wide range of financial services to individuals, businesses, and organizations in the Bahamas. The bank offers various products and services such as personal and business banking, loans and mortgages, credit cards, and investment services.',
-          'Equity Bank Bahamas is committed to providing exceptional customer service and innovative financial solutions to help its clients achieve their financial goals. The bank is also actively involved in various community initiatives and supports social responsibility programs aimed at improving the lives of Bahamians.',
+          'Equity Bank Bahamas provides banking and financial services in the Bahamas.',
         ],
-        link: 'https://www.missbahamas.net/',
+        // TODO(Arif): Confirm the project/company website URL. See docs/content-credibility-report.md.
       },
     },
   ],

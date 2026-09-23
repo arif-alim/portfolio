@@ -10,11 +10,13 @@ import screen7 from '@/images/projects/tritec/tritec-7.jpg'
 import screen8 from '@/images/projects/tritec/tritec-8.jpg'
 import screen9 from '@/images/projects/tritec/tritec-9.jpg'
 
+// TODO(Arif): Confirm detailed scope and ownership before expanding this overview.
+// Evidence and open questions: docs/content-credibility-report.md.
 const projectData = {
   meta: {
-    title: 'Tritec Solutions - Project',
+    title: 'Website & Logo Design — Tritec Solutions | Arif Alim',
     description:
-      'Tritec Solutions is a Canadian IT solutions provider that specializes in delivering innovative and cost-effective technology solutions to businesses of all sizes.',
+      'Custom logo and responsive website design for Tritec Solutions, including a service request widget.',
   },
   layout: {
     title: 'Tritec Solutions',
@@ -29,11 +31,7 @@ const projectData = {
       content: {
         heading: 'Tritec Solutions responsive web design',
         paragraphs: [
-          'The Niagara Falls Craft Distillers website underwent a complete overhaul, with a custom e-commerce responsive design that incorporates the laws of UX to enhance user experience and drive sales.',
-          "The homepage was redesigned to feature a full-screen banner showcasing the company's premium spirits, which immediately draws the user's attention. The design incorporates a scroll-down feature that allows the user to learn more about the company's products and brand story. The navigation was updated with clear labels and drop-down menus, and the addition of a search bar makes it easy for users to find specific products or information.",
-          "Custom pages were created to showcase the company's products and events, with optimized search functionality to help users find what they need quickly. The use of high-quality images and white space creates a clean and professional look, while the modern and premium design enhances the user experience and promotes brand recognition.",
-          'The website was optimized for mobile devices to ensure that users can access the website on any device and have a seamless experience. The custom e-commerce design allows for easy purchasing, with a streamlined checkout process and secure payment gateway to enhance user trust and drive sales.',
-          "Overall, the Niagara Falls Craft Distillers website redesign has resulted in a significant improvement in user experience and sales. The custom design incorporates the laws of UX to enhance user engagement and drive conversions, with a focus on showcasing the company's premium spirits and brand story.",
+          'I created a custom logo and mobile-responsive website for Tritec Solutions, including a service request widget.',
         ],
       },
     },
@@ -61,7 +59,7 @@ const projectData = {
       content: {
         name: 'Tritec Solutions',
         paragraphs: [
-          "Tritec Solutions is a Canadian company that provides innovative IT solutions and support to businesses of all sizes. Established in 1997, the company has built a strong reputation for its reliable and cost-effective services, including managed IT services, cybersecurity solutions, cloud solutions, and software development. Tritec Solutions prides itself on its team of highly skilled professionals who are committed to delivering exceptional customer service and IT solutions that meet the unique needs of each client. The company's focus on innovation and continuous improvement has helped it to stay at the forefront of the rapidly evolving technology landscape. With a commitment to excellence and customer satisfaction, Tritec Solutions is a trusted partner for businesses seeking to leverage technology to achieve their goals.",
+          'Tritec Solutions provides IT solutions and support for businesses.',
         ],
         link: 'https://tritecsolutions.ca/',
       },

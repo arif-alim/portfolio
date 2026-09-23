@@ -10,7 +10,9 @@ import screen7 from '@/images/projects/mbo/mbo-7.jpeg'
 
 const projectData = {
   meta: {
-    title: 'Miss Bahamas - Project',
+    title: 'Web & Mobile Design — Miss Bahamas | Arif Alim',
+    description:
+      'Web and mobile interface design for the Miss Bahamas Organization, with user stories, epics, and developer collaboration.',
   },
   layout: {
     title: 'Miss Bahamas Organization (MBO)',
@@ -24,8 +26,8 @@ const projectData = {
       content: {
         heading: 'Summary',
         paragraphs: [
-          "I led the design efforts for the Miss Bahamas Organization's webpage and mobile app, creating a cohesive and engaging digital presence. I began by defining user stories and epics to ensure the design aligned with the needs of both users and stakeholders. Using these foundations, I crafted intuitive and visually appealing web and mobile app designs that emphasized accessibility and responsiveness.",
-          "I collaborated closely with developers to translate the designs into functional interfaces, ensuring a seamless user experience across all devices. Throughout the process, I facilitated clear communication and alignment between design and development teams, enabling efficient iterations and timely delivery of the project.",
+          "I led design work for the Miss Bahamas Organization's webpage and mobile app. I defined user stories and epics and created web and mobile interface designs with a focus on accessibility and responsiveness.",
+          'I collaborated with developers to translate the designs into interfaces and worked with the design and development teams through revisions.',
         ],
       },
     },
@@ -51,9 +53,7 @@ const projectData = {
       content: {
         name: 'About MBO',
         paragraphs: [
-          'The Miss Bahamas Organization (MBO) is dedicated to empowering women by fostering their passions, self-image, and education. Their mission is to help women achieve their personal bests in an environment that encourages purpose, discipline, and strong character.',
-          'MBO accomplishes this through an annual national beauty pageant system that includes intensive grooming, coaching, and preparation, culminating in the coronation of Miss World Bahamas. The organization prepares participants to become women who understand the power of fulfilling their purpose and use that power to positively impact humanity.',
-          'MBO also engages in charitable endeavors, such as establishing a $25,000 scholarship endowment at the University of The Bahamas, demonstrating their commitment to "Beauty with a Purpose."',
+          'The Miss Bahamas Organization (MBO) runs a national beauty pageant program in the Bahamas.',
         ],
         link: 'https://www.missbahamas.net/',
       },

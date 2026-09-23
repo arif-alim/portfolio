@@ -1,0 +1,171 @@
+[
+  {
+    "path": "/accolades",
+    "tabs": ["Design", "Frontend", "Backend"],
+    "defaultTab": "Design"
+  },
+  {
+    "path": "/",
+    "tabs": [],
+    "defaultTab": null
+  },
+  {
+    "path": "/example",
+    "tabs": [],
+    "defaultTab": null
+  },
+  {
+    "path": "/portfolio/cbsa",
+    "tabs": ["Summary", "Scope of work", "Contributions", "Deliverables"],
+    "defaultTab": "Summary"
+  },
+  {
+    "path": "/portfolio/bombardier",
+    "tabs": ["Summary", "Wireframes", "Lego Components", "Company details"],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/portfolio/chicasa-design",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/portfolio/cooper",
+    "tabs": [
+      "Summary",
+      "Company details",
+      "Logo",
+      "Mobile App",
+      "Responsive Website"
+    ],
+    "defaultTab": "Summary"
+  },
+  {
+    "path": "/portfolio/co-operators",
+    "tabs": [
+      "Summary",
+      "Wireframes",
+      "Style guide",
+      "Illustrations",
+      "Design systems",
+      "Company details"
+    ],
+    "defaultTab": "Summary"
+  },
+  {
+    "path": "/portfolio/district-eatery",
+    "tabs": [],
+    "defaultTab": null
+  },
+  {
+    "path": "/portfolio/craft-city",
+    "tabs": ["Summary", "Logo", "Sticker", "Can Design", "Marketing"],
+    "defaultTab": "Summary"
+  },
+  {
+    "path": "/portfolio/hydro-one",
+    "tabs": ["Summary", "Wireframes", "Prototypes", "Company details"],
+    "defaultTab": "Summary"
+  },
+  {
+    "path": "/portfolio/equity-bank",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Summary"
+  },
+  {
+    "path": "/portfolio",
+    "tabs": [],
+    "defaultTab": null
+  },
+  {
+    "path": "/portfolio/gabbys",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Summary"
+  },
+  {
+    "path": "/portfolio/lieber",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Summary"
+  },
+  {
+    "path": "/portfolio/island-traders",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Summary"
+  },
+  {
+    "path": "/portfolio/nfcd",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/portfolio/manulife",
+    "tabs": [
+      "Summary",
+      "Company details",
+      "Wireframes",
+      "Design system",
+      "Case Study"
+    ],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/portfolio/miss-bahamas",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/portfolio/service-ontario",
+    "tabs": ["Summary", "Wireframes", "Prototypes", "Company details"],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/portfolio/perfec-tone",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/portfolio/trip-support",
+    "tabs": ["Summary", "Wireframes", "Prototypes", "Company details"],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/portfolio/titan-group",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/portfolio/urban-dining",
+    "tabs": [],
+    "defaultTab": null
+  },
+  {
+    "path": "/portfolio/tritec-solutions",
+    "tabs": ["Summary", "Wireframes", "Company details"],
+    "defaultTab": "Wireframes"
+  },
+  {
+    "path": "/toolbox",
+    "tabs": [],
+    "defaultTab": null
+  },
+  {
+    "path": "/articles",
+    "tabs": [],
+    "defaultTab": null
+  },
+  {
+    "path": "/articles/coming-soon",
+    "tabs": [],
+    "defaultTab": null
+  },
+  {
+    "path": "/process",
+    "tabs": [
+      "UI/UX Design",
+      "Service Design",
+      "Accessibility",
+      "Frontend Development"
+    ],
+    "defaultTab": "UI/UX Design"
+  }
+]

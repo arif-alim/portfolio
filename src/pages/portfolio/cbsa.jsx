@@ -26,8 +26,7 @@ function SummaryTabCustom() {
           needs and business objectives while adhering to Federal Digital
           Service Standards. While I am unable to share the designs due to
           confidentiality, my work at CBSA demonstrates my ability to design
-          secure, user-focused solutions that meet the stringent requirements of
-          government services.
+          user-focused interfaces within government service constraints.
         </p>
       </div>
     </div>
@@ -41,10 +40,10 @@ function ScopeTabCustom() {
         <h2 className="mb-4 text-lg font-semibold">Overview</h2>
         <p>
           Project Epsilon focused on delivering a user-centered solution that
-          seamlessly integrated complex backend data with an intuitive front-end
-          design. The goal was to create a scalable, efficient, and visually
-          cohesive interface that simplified development workflows while
-          enhancing the user experience.
+          connected complex backend data with front-end interface design. The
+          goal was to create a scalable, efficient, and visually cohesive
+          interface that simplified development workflows while enhancing the
+          user experience.
         </p>
       </div>
       <div className="flex max-w-3xl flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8">
@@ -67,29 +66,29 @@ function ContributionsTabCustom() {
       title: 'Data-Driven Design Decisions:',
       items: [
         'By studying the structure of the JSON objects, including arrays of data points, I devised a design solution that dynamically adjusted to varying data sets.',
-        'The design leveraged a single card component, which could be replicated for each object in the array, ensuring scalability and consistency across the interface.',
+        'The design used a single card component that could be repeated for each object in the array.',
       ],
     },
     {
       title: 'Simplifying Development Through Design:',
       items: [
-        'The card-based layout minimized the complexity of the development process by standardizing how data was displayed. This approach eliminated the need for developers to create multiple components for different data scenarios, reducing both development time and potential errors.',
-        'Dynamic data-binding principles were incorporated, allowing the card design to automatically populate with data from the JSON object, ensuring seamless integration between the front-end and back-end.',
+        'I used a card-based layout to standardize how data was displayed across different data scenarios.',
+        'I designed the card layout around fields in the JSON objects to support collaboration with the development team.',
       ],
     },
     {
       title: 'User-Centered Enhancements:',
       items: [
-        'The card design not only simplified development but also improved usability by presenting information in a clear, organized format that users could easily interact with and understand.',
-        'The modular nature of the design ensured that future API changes or additional data fields could be accommodated without disrupting the user experience.',
+        'I organized information within the card design using a consistent structure and hierarchy.',
+        'The modular design was intended to accommodate additional data fields.',
       ],
     },
   ]
 
   const summaryItems = [
-    'Efficiency Gains: Reduced development time by creating a reusable and dynamic component that adapts to incoming data.',
-    'Scalability: Enabled the interface to handle large and variable data sets without requiring significant redesign or additional development effort.',
-    'Enhanced Usability: Delivered a streamlined user interface that presented complex data in a visually clear and accessible manner.',
+    'Reusable Components: Designed a card pattern around incoming data.',
+    'Variable Data: Designed the layout for repeated objects and varying data sets.',
+    'Information Hierarchy: Organized complex data into a consistent interface structure.',
   ]
 
   return (
@@ -109,7 +108,7 @@ function ContributionsTabCustom() {
       </ol>
 
       <div className="mt-8">
-        <h3 className="mb-2 text-md font-semibold">Impact</h3>
+        <h3 className="mb-2 text-md font-semibold">Design Deliverables</h3>
         <ul className="ml-6 list-inside list-disc space-y-2">
           {summaryItems.map((item, iIdx) => (
             <li key={iIdx}>{item}</li>
@@ -122,14 +121,14 @@ function ContributionsTabCustom() {
 
 function ResultTabCustom() {
   const items = [
-    'Efficiency Gains: Reduced development time by creating a reusable and dynamic component that adapts to incoming data.',
-    'Scalability: Enabled the interface to handle large and variable data sets without requiring significant redesign or additional development effort.',
-    'Enhanced Usability: Delivered a streamlined user interface that presented complex data in a visually clear and accessible manner.',
+    'Reusable Components: Designed a card pattern around incoming data.',
+    'Variable Data: Designed the layout for repeated objects and varying data sets.',
+    'Information Hierarchy: Organized complex data into a consistent interface structure.',
   ]
 
   return (
     <div className="flex max-w-3xl flex-col text-zinc-900 dark:text-zinc-50 lg:gap-x-8">
-      <h2 className="mb-4 text-lg font-semibold">Outcomes</h2>
+      <h2 className="mb-4 text-lg font-semibold">Design Deliverables</h2>
       <ul className="ml-6 list-inside list-disc space-y-2">
         {items.map((item, iIdx) => (
           <li key={iIdx}>{item}</li>
@@ -140,10 +139,15 @@ function ResultTabCustom() {
 }
 
 const projectData = {
+  meta: {
+    title: 'Service & Interface Design — CBSA | Arif Alim',
+    description:
+      'Lead UX design work for CBSA, including user research, service blueprints, prototypes, and reusable interface patterns.',
+  },
   layout: {
     title: 'CBSA',
     intro:
-      'Streamlined the user interface for the Plan Administrator and Disability portal to enhance user experience.',
+      'User research, service design, and interface design as a Lead UX Designer at the Canada Border Services Agency.',
   },
   tabs: [
     {
@@ -159,18 +163,8 @@ const projectData = {
       render: () => <ContributionsTabCustom />,
     },
     {
-      name: 'Result',
+      name: 'Deliverables',
       render: () => <ResultTabCustom />,
-    },
-    {
-      name: 'Case Study',
-      render: () => (
-        <div className="mt-6 max-w-2xl lg:col-span-5 lg:mt-0">
-          <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-            Coming Soon...
-          </h3>
-        </div>
-      ),
     },
   ],
 }

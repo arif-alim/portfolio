@@ -5,15 +5,6 @@ import Link from 'next/link'
 import authorImage from '@/images/author-image.png'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { getAllArticles } from '@/lib/getAllArticles'
-
-export async function getStaticProps() {
-  return {
-    props: {
-      articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
-    },
-  }
-}
 
 const posts = [
   {
@@ -102,7 +93,7 @@ export function Blog() {
   )
 }
 
-export default function Process() {
+export default function Articles() {
   return (
     <div className="flex min-h-screen flex-col">
       <Head>

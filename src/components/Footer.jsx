@@ -9,7 +9,7 @@ export function Footer() {
             <Container.Inner>
               <div className="flex flex-col justify-between text-xs text-zinc-700 dark:text-zinc-400 sm:flex-row  sm:gap-6">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:gap-6">
-                  <p className="">© 2007-2025</p>
+                  <p className="">© 2007-{new Date().getFullYear()}</p>
                 </div>
                 <p className="">Built with Next, React, Tailwind and Vercel</p>
               </div>

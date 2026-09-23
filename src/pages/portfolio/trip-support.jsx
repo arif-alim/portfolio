@@ -72,6 +72,11 @@ function PrototypesContent() {
 }
 
 const projectData = {
+  meta: {
+    title: 'Responsive Website Design — Trip Support | Arif Alim',
+    description:
+      'UI/UX design and frontend development for Trip Support, including responsive website work using Svelte and Tailwind CSS.',
+  },
   layout: {
     title: 'Trip Support',
     intro: 'Responsive Mobile Design',
@@ -84,10 +89,10 @@ const projectData = {
       content: {
         heading: 'Summary',
         paragraphs: [
-          'As a Lead UI/UX Designer & Frontend Developer, I have extensive experience designing and developing high-quality digital assets for various projects. I utilized Sketch, Figma, and Axure to create high-fidelity prototypes, ensuring that the user interface was intuitive and aligned with project requirements.',
-          'I also have expertise in converting digital assets to vector files and redesigning footer logos with Illustrator, adhering to branding guidelines and improving the overall visual design of the assets. I used Photoshop to edit photos/images, adjusting resolution and applying lossless compression to optimize file size and improve performance.',
-          "Additionally, I designed Trip Support's new mobile-responsive website using Svelte (JS framework) and Tailwind CSS, optimizing the user interface for mobile devices and delivering an intuitive user experience. I collaborated closely with back-end engineers, assisting in writing scripts that improved business logic.",
-          'Ensuring that every page on the website complied with AODA and WCAG standards, I prioritized information and communication standards to ensure that the website was accessible to all users. My skills and expertise have been crucial in developing high-quality digital assets and delivering exceptional user experiences across various projects.',
+          'As a Lead UI/UX Designer & Frontend Developer, I used Sketch, Figma, and Axure to create high-fidelity prototypes.',
+          'I converted digital assets to vector files and redesigned footer logos in Illustrator. I also edited images in Photoshop, adjusting resolution and applying lossless compression to reduce file size.',
+          "I worked on Trip Support's mobile-responsive website using Svelte and Tailwind CSS. I collaborated with back-end engineers and assisted with writing scripts for business logic.",
+          'I considered AODA and WCAG requirements as part of the design work, with a focus on information and communication accessibility.',
         ],
       },
     },
@@ -128,7 +133,7 @@ const projectData = {
       content: {
         name: 'About Trip Support',
         paragraphs: [
-          "Trip Support is a global travel management company that provides a wide range of services to individual and corporate clients. The company specializes in offering personalized travel solutions, including flight bookings, hotel reservations, car rentals, and visa services. Trip Support aims to simplify the travel experience for its clients by providing a one-stop-shop for all their travel needs. With its global network of partners and suppliers, the company is able to offer competitive pricing and access to exclusive travel deals. Trip Support is committed to providing excellent customer service and support, and its team of experienced travel professionals is available 24/7 to assist clients with any questions or issues. The company's mission is to make travel easy, convenient, and affordable for everyone, and it continues to expand its offerings and services to meet the evolving needs of its clients.",
+          'Trip Support is a travel company offering flight bookings and hotel reservations.',
         ],
         link: 'https://tripsupport.ca/',
       },

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { PortfolioTemplate, Screenshot } from '@/components/portfolio'
 
 // Homepage
@@ -105,7 +104,14 @@ function DesignSystemsSectionCustom() {
   )
 }
 
+// TODO(Arif): Confirm detailed scope and ownership before expanding this overview.
+// Evidence and open questions: docs/content-credibility-report.md.
 const projectData = {
+  meta: {
+    title: 'Digital Interface Design — Co-operators | Arif Alim',
+    description:
+      'UI design contributions for Co-operators, including homepage and sign-in screens, a style guide, illustrations, and components.',
+  },
   layout: {
     title: 'Co-operators',
     intro: "Helped create Co-operators' new visual identity.",
@@ -117,10 +123,8 @@ const projectData = {
       content: {
         heading: 'Summary',
         paragraphs: [
-          'During my tenure at Co-operators, I developed user-centric digital experiences...',
-          "In my tenure with Co-operators, I harnessed my deep understanding of the insurance sector to develop intuitive and user-friendly digital experiences...",
-          "I also employed tools like Miro and Figma's extensive plugins and integrations...",
-          'In addition to these responsibilities, I contributed to the creation of a comprehensive style guide...',
+          "I helped create Co-operators' new visual identity, with designs for the homepage, sign-in, and policy upgrade screens.",
+          'I contributed to a style guide covering light and dark themes, alongside illustrations, banners, and tile and snackbar components.',
         ],
       },
     },
@@ -146,20 +150,10 @@ const projectData = {
       content: {
         name: 'About Co-operators',
         paragraphs: [
-          'Co-operators Group Limited is a reputable Canadian insurance co-operative that provides a wide range of insurance and financial services to individuals and businesses across Canada.',
+          'Co-operators is a Canadian insurance co-operative providing insurance and financial services.',
         ],
         link: 'https://www.cooperators.ca/en/',
       },
-    },
-    {
-      name: 'Case Study',
-      render: () => (
-        <div className="mt-6 max-w-2xl lg:col-span-5 lg:mt-0">
-          <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-            Coming Soon...
-          </h3>
-        </div>
-      ),
     },
   ],
 }

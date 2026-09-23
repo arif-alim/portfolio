@@ -13,11 +13,13 @@ import screen8 from '@/images/projects/chicasa/chicasa-8.jpg'
 // Brand
 import logoChicasaDesign from '@/images/projects/chicasa/chicasa-design-logo.svg'
 
+// TODO(Arif): Confirm detailed scope and ownership before expanding this overview.
+// Evidence and open questions: docs/content-credibility-report.md.
 const projectData = {
   meta: {
-    title: 'Chicasa Design - Project',
+    title: 'Website Design — Chicasa Design | Arif Alim',
     description:
-      'Dynamic web and e-commerce design for Chicasa Design / Perfec-Tone.',
+      'Selected web design work for Chicasa Design, a renovation and custom home building company.',
   },
   layout: {
     title: 'Chicasa Design',
@@ -35,8 +37,7 @@ const projectData = {
           alt: 'Chicasa Design logo',
         },
         paragraphs: [
-          'Perfec-Tone is a skincare company that offers a range of products designed to address various skin concerns. To help the company reach a wider audience and provide a seamless shopping experience for its customers, we designed a mobile responsive e-commerce website that emphasized both user interface (UI) and user experience (UX) design principles.',
-          "The website's UI was carefully crafted to highlight the brand's natural and organic ingredients, while also providing clear and concise product descriptions and easy-to-use navigation menus. We used high-quality product photography and incorporated soft, pastel colors to create a soothing and inviting aesthetic. The website's UX was designed to be intuitive and easy to use, with a simple checkout process and clear calls-to-action throughout the website. Additionally, we implemented responsive design principles to ensure that the website looked great and functioned well on both desktop and mobile devices, providing a seamless shopping experience for customers no matter where they accessed the website from. The result was an e-commerce website that not only looked great but also provided a seamless shopping experience for Perfec-Tone's customers.",
+          'Web design for Chicasa Design. The selected website layouts are shown in the Wireframes tab.',
         ],
       },
     },
@@ -67,8 +68,7 @@ const projectData = {
       content: {
         name: 'About Chicasa Design',
         paragraphs: [
-          "Chicasa Design is a professional renovation contracting company based in Toronto and the GTA that specializes in creating bespoke homes and investment opportunities. With over 20 years of experience in the industry, the company was founded on the belief that homes should be more than just a place to live, they should be a work of living art. The company's goal is to unlock the dreams of their clients and to provide a world-class, bespoke home building experience.",
-          "Chicasa Design has built a world-class team of designers, craftsmen, and suppliers to ensure that every project is done to perfection. They take into account their clients' requirements, budget, and timeline to ensure complete satisfaction with the finished product. From the initial design to the final touches, Chicasa Design is efficient, diligent, and always focused on their clients' satisfaction. The company offers a proven process that minimizes mistakes and costs while delivering the highest quality results. Their staff is composed of certified professional designers and renovators who put the same focus and detail into each project they work on. The company offers a warranty on all labor performed on their clients' properties, providing peace of mind that the work is done to last for generations.",
+          'Chicasa Design is a renovation and custom home building company serving Toronto and the GTA.',
         ],
         link: 'http://www.chicasadesign.com/',
       },

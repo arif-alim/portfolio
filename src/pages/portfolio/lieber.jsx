@@ -10,14 +10,14 @@ import screen7 from '@/images/projects/lieber/lieber-7.jpg'
 
 const projectData = {
   meta: {
-    title: 'Lieber Group - Project',
+    title: 'Responsive Website Design — Lieber Group | Arif Alim',
     description:
-      'Modern, responsive redesign of the Lieber Group website, focused on accessibility, UI trends, and improved engagement.',
+      'Responsive website redesign for Lieber Group, including parallax scrolling and layouts for its construction services.',
   },
   layout: {
     title: 'Lieber Group',
     intro:
-      "Responsive, parallax-driven marketing site redesign that brings Lieber Group's consulting practice in line with modern UX and accessibility standards.",
+      'Responsive website redesign with parallax scrolling for Lieber Group.',
   },
   tabs: [
     {
@@ -26,9 +26,7 @@ const projectData = {
       content: {
         title: 'Lieber Group responsive web design',
         paragraphs: [
-          'The Lieber Group website redesign is at the forefront of the latest UI trends and UX laws, resulting in a truly modern and user-friendly design that enhances accessibility and engagement.',
-          'The use of responsive design and parallax scrolling improves accessibility and engagement by optimizing the website for mobile devices and creating a dynamic and immersive user experience. Users can access the website seamlessly on any device, and the engaging design keeps them interested and engaged with the content.',
-          'Overall, the Lieber Group website redesign is a perfect example of how the latest UI trends and UX laws can be utilized to create a modern and user-friendly design that enhances accessibility and engagement. The improved navigation and search functionality, coupled with the modern design, results in a significant improvement in user experience and customer satisfaction.',
+          'I redesigned the Lieber Group website using responsive layouts and parallax scrolling. The selected screens include navigation and pages for the company and its services.',
         ],
       },
     },
@@ -55,7 +53,7 @@ const projectData = {
       content: {
         name: 'Lieber Group',
         paragraphs: [
-          "Lieber Group is a Canadian company that provides a wide range of consulting and advisory services to businesses of all sizes. Established in 1986, the company has built a strong reputation for its expertise and commitment to delivering high-quality solutions that meet the unique needs of each client. Lieber Group offers a range of services, including strategy consulting, project management, IT consulting, and business analysis, among others. With a focus on customer satisfaction and a team of highly skilled professionals, Lieber Group is committed to providing exceptional service and tailored solutions to help its clients achieve their business goals. With over 35 years of experience, Lieber Group has a deep understanding of the Canadian business landscape and is well-positioned to help businesses navigate the challenges of today's rapidly changing business environment.",
+          'Lieber Group provides construction services, with mechanical, electrical, and fireproofing divisions shown in the website designs.',
         ],
         link: 'http://www.liebergroup.ca/',
       },

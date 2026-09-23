@@ -20,14 +20,14 @@ import ccPromo1 from '@/images/projects/craftcity/ccPromo1.jpg'
 import ccPromo2 from '@/images/projects/craftcity/ccPromo2.jpg'
 import ccPromo3 from '@/images/projects/craftcity/ccPromo3.jpg'
 import ccPromo4 from '@/images/projects/craftcity/ccPromo4.jpg'
-import ccPromo5 from '@/images/projects/craftcity/ccPromo4.jpg'
 
 import logoCraftCity from '@/images/projects/craftcity/craftcity-logo.svg'
 
 const projectData = {
   meta: {
-    title: 'Craft City - Project',
-    description: 'Craft City Hard Seltzer',
+    title: 'Brand & Packaging Design — Craft City | Arif Alim',
+    description:
+      'Logo, sticker, can, and promotional material design for Craft City hard seltzer.',
   },
   layout: {
     title: 'Craft City',
@@ -42,9 +42,7 @@ const projectData = {
           src: logoCraftCity,
           alt: 'Craft City logo',
         },
-        paragraphs: [
-          'Craft City Hard Seltzer is a new hard seltzer brand based in Toronto, Canada. They are a small batch, handcrafted hard seltzer brand that is made with real fruit juice and natural flavours. They are currently available in Ontario, Canada.',
-        ],
+        paragraphs: ['Craft City is a hard seltzer brand.'],
       },
     },
     {
@@ -105,7 +103,6 @@ const projectData = {
           { src: ccPromo2, alt: 'Craft City promotional asset 2' },
           { src: ccPromo3, alt: 'Craft City promotional asset 3' },
           { src: ccPromo4, alt: 'Craft City promotional asset 4' },
-          { src: ccPromo5, alt: 'Craft City promotional asset 5' },
         ],
       },
     },

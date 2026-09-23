@@ -1,9 +1,15 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import { initializeTheme } from '@/lib/theme'
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(${initializeTheme.toString()})()`,
+          }}
+        />
         {/* Adobe Typekit font */}
         <link rel="stylesheet" href="https://use.typekit.net/nbe3crr.css" />
 

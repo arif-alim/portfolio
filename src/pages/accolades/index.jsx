@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,10 +16,7 @@ import waterlooDark from '@/images/school/uw-dark.svg'
 import laurierLight from '@/images/school/wlu-light.svg'
 import laurierDark from '@/images/school/wlu-dark.svg'
 
-// Helper function
-const classNames = (...classes) => classes.filter(Boolean).join(' ')
-
-export default function HydroOne() {
+export default function Accolades() {
   const [selectedTab, setSelectedTab] = useState('Design')
 
   return (
@@ -78,10 +76,13 @@ export default function HydroOne() {
         {/* Certifications Section */}
         <div className="my-8 border-t border-gray-200 dark:border-gray-700"></div>
         <section
-          aria-labelledby="features-heading"
+          aria-labelledby="certifications-heading"
           className="mx-auto max-w-7xl pt-6"
         >
-          <h2 className="pb-4 text-2xl font-bold sm:text-2xl">
+          <h2
+            id="certifications-heading"
+            className="pb-4 text-2xl font-bold sm:text-2xl"
+          >
             Certifications
           </h2>
           <Tab.Group
@@ -98,7 +99,7 @@ export default function HydroOne() {
                   <Tab
                     key={tab.name}
                     className={({ selected }) =>
-                      classNames(
+                      clsx(
                         selected
                           ? 'border-blue-500 text-blue-800 dark:border-blue-500 dark:text-blue-500'
                           : 'dark:hover-gray-100 text-zinc-700 hover:border-gray-300 hover:text-gray-700 dark:text-zinc-300',

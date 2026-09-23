@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { ResponsiveIframe } from '@/components/portfolio/ResponsiveIframe'
 import Link from 'next/link'
 
 export function FigmaEmbedSection({
@@ -9,21 +9,6 @@ export function FigmaEmbedSection({
   fallbackMessage = "If the embedded prototype doesn't work, click the link to view it in browser.",
   responsiveHeights = { mobile: 450, desktop: 1024 },
 }) {
-  const [iframeHeight, setIframeHeight] = useState(responsiveHeights.desktop)
-
-  useEffect(() => {
-    const handleResize = () => {
-      const newHeight =
-        window.innerWidth < 768
-          ? responsiveHeights.mobile
-          : responsiveHeights.desktop
-      setIframeHeight(newHeight)
-    }
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [responsiveHeights])
-
   return (
     <div className="flex flex-col lg:gap-x-8">
       <div className="my-6 lg:mt-0 lg:max-w-3xl">
@@ -62,10 +47,10 @@ export function FigmaEmbedSection({
       </h2>
 
       <div className="mb-0 lg:mb-8">
-        <iframe
+        <ResponsiveIframe
           className="border border-black border-opacity-10"
-          width="100%"
-          height={iframeHeight}
+          mobileHeight={responsiveHeights.mobile}
+          desktopHeight={responsiveHeights.desktop}
           src={embedUrl}
           title={title}
         />

@@ -31,8 +31,9 @@ import logoCooper from '@/images/projects/cooper/coooper-logo.svg'
 
 const projectData = {
   meta: {
-    title: 'Cooper - Project',
-    description: 'Cooper Driver app and brand design',
+    title: 'Driver App & Brand Design — Cooper | Arif Alim',
+    description:
+      'UI/UX design for the Cooper Driver app, with user research, journey mapping, logo concepts, and responsive website layouts.',
   },
   layout: {
     title: 'Cooper Apps',
@@ -49,9 +50,8 @@ const projectData = {
           alt: 'Cooper logo',
         },
         paragraphs: [
-          'As the designer of the Cooper Driver mobile app, my focus was on creating a user-friendly and efficient user experience that would meet the needs of both drivers and clients. The app features a simple and intuitive interface that makes it easy for users to request and track transportation services, with real-time updates and delivery confirmation for added convenience.',
-          'The design of the Cooper Driver app incorporates the latest UI/UX mobile app design trends to enhance user experience, including the use of white space, high-quality images, and simplified navigation. The use of clear labeling and bold icons ensures that users can easily navigate the app and access the features they need, while the incorporation of real-time tracking and delivery confirmation improves transparency and user trust.',
-          'Overall, the Cooper Driver mobile app redesign has resulted in a significant improvement in user experience and customer satisfaction. The user-friendly design and efficient functionality have helped to increase engagement and improve the overall user experience, making it easier for drivers and clients to access the information and services they need while on the go.',
+          'As the designer of the Cooper Driver mobile app, I worked on interfaces for drivers and clients to request and track transportation services.',
+          'The designs include navigation, labels, icons, tracking, and delivery confirmation screens. My work also included logo concepts and responsive website layouts.',
         ],
       },
     },
@@ -61,9 +61,9 @@ const projectData = {
       content: {
         name: 'About Cooper',
         paragraphs: [
-          'The Cooper Driver app is a transportation service based in the Bahamas that provides a reliable and affordable solution for individuals and businesses looking to move goods across the country. The app connects drivers with clients in need of transportation, offering a seamless and efficient solution for all types of cargo. The Cooper Driver app features real-time tracking, delivery confirmation, and payment processing, making it easy for both drivers and clients to stay informed and in control. With a focus on safety and customer satisfaction, Cooper Driver is a trusted and reliable transportation service that meets the needs of businesses and individuals in the Bahamas.',
+          'Cooper is a transportation service in the Bahamas connecting drivers and clients.',
         ],
-        link: 'https://www.ontario.ca/page/digital-dealership-registration-program',
+        // TODO(Arif): Confirm the project/company website URL. See docs/content-credibility-report.md.
       },
     },
     {

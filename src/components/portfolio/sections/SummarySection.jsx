@@ -46,7 +46,9 @@ export function SummarySection({
 
       {responsibilities && (
         <div className="mt-6">
-          <h4 className="mb-2 text-lg font-semibold">{responsibilities.heading || 'Responsibilities'}</h4>
+          <h4 className="mb-2 text-lg font-semibold">
+            {responsibilities.heading || 'Responsibilities'}
+          </h4>
           <ul className="list-disc pl-6">
             {responsibilities.items.map((item, i) => (
               <li key={i}>{item}</li>

@@ -3,10 +3,20 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
+import { saveThemePreference } from '@/lib/theme'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/arifalim.jpeg'
-import { Fragment, useEffect, useRef } from 'react'
+import { Fragment } from 'react'
+
+const navigationItems = [
+  { href: '/', label: 'About' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/accolades', label: 'Accolades' },
+  { href: '/toolbox', label: 'Toolbox' },
+  { href: '/process', label: 'Process' },
+  { href: '/articles', label: 'Articles' },
+]
 
 function CloseIcon(props) {
   return (
@@ -121,13 +131,11 @@ function MobileNavigation(props) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base font-normal text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <MobileNavItem href="/">About</MobileNavItem>
-                <MobileNavItem href="/portfolio">Portfolio</MobileNavItem>
-                <MobileNavItem href="/accolades">Accolades</MobileNavItem>
-                <MobileNavItem href="/toolbox">Toolbox</MobileNavItem>
-                <MobileNavItem href="/process">Process</MobileNavItem>
-                <MobileNavItem href="/articles">Articles</MobileNavItem>
-                {/* <MobileNavItem href="/contact">Contact</MobileNavItem> */}
+                {navigationItems.map(({ href, label }) => (
+                  <MobileNavItem key={href} href={href}>
+                    {label}
+                  </MobileNavItem>
+                ))}
               </ul>
             </nav>
           </Popover.Panel>
@@ -144,6 +152,7 @@ function NavItem({ href, children }) {
     <li>
       <Link
         href={href}
+        aria-current={isActive ? 'page' : undefined}
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
@@ -164,12 +173,11 @@ function DesktopNavigation(props) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-tiny text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/">About</NavItem>
-        <NavItem href="/portfolio">Portfolio</NavItem>
-        <NavItem href="/accolades">Accolades</NavItem>
-        <NavItem href="/toolbox">Toolbox</NavItem>
-        <NavItem href="/process">Process</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
+        {navigationItems.map(({ href, label }) => (
+          <NavItem key={href} href={href}>
+            {label}
+          </NavItem>
+        ))}
       </ul>
     </nav>
   )
@@ -186,15 +194,8 @@ function ModeToggle() {
   function toggleMode() {
     disableTransitionsTemporarily()
 
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    let isSystemDarkMode = darkModeMediaQuery.matches
     let isDarkMode = document.documentElement.classList.toggle('dark')
-
-    if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode
-    } else {
-      window.localStorage.isDarkMode = isDarkMode
-    }
+    saveThemePreference(isDarkMode)
   }
 
   return (
@@ -249,8 +250,6 @@ function Avatar({ large = false, className, ...props }) {
 }
 
 export function Header() {
-  let headerRef = useRef()
-
   return (
     <>
       <header
@@ -261,7 +260,6 @@ export function Header() {
         }}
       >
         <div
-          ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
           style={{ position: 'var(--header-position)' }}
         >

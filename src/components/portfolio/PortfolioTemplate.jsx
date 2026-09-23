@@ -27,7 +27,9 @@ export function PortfolioTemplate({
 
       <SimpleLayout title={layout.title} intro={layout.intro}>
         <section
-          aria-labelledby="features-heading"
+          aria-label={
+            typeof layout.title === 'string' ? layout.title : undefined
+          }
           className="mx-auto max-w-7xl"
         >
           <div className="mx-auto max-w-2xl px-0 lg:max-w-none lg:px-0">

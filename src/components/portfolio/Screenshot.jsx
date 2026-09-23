@@ -16,15 +16,15 @@ export function Screenshot({
     typeof width === 'number'
       ? width
       : src && typeof src === 'object' && typeof src.width === 'number'
-        ? src.width
-        : FALLBACK_WIDTH
+      ? src.width
+      : FALLBACK_WIDTH
 
   const finalHeight =
     typeof height === 'number'
       ? height
       : src && typeof src === 'object' && typeof src.height === 'number'
-        ? src.height
-        : FALLBACK_HEIGHT
+      ? src.height
+      : FALLBACK_HEIGHT
 
   if (fill) {
     return (
@@ -44,6 +44,7 @@ export function Screenshot({
       alt={alt}
       width={finalWidth}
       height={finalHeight}
+      sizes={sizes}
       className={`rounded-lg object-cover object-center ${className}`}
     />
   )

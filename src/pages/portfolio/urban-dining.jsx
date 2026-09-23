@@ -2,12 +2,12 @@ import { PortfolioTemplate } from '@/components/portfolio'
 
 const projectData = {
   meta: {
-    title: 'Urban Dining Group - Project',
-    description: 'Restaurant that provides healthy choices',
+    title: 'Urban Dining | Arif Alim',
+    // TODO(Arif): Confirm project scope and contribution before adding a description.
   },
   layout: {
     title: 'Urban Dining',
-    intro: 'Project details coming soon...',
+    intro: 'Project details are not published.',
   },
   tabs: [],
 }

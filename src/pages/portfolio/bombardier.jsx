@@ -77,7 +77,7 @@ function LegoComponentsSectionCustom() {
         </h3>
         <p className="mt-2">
           Combining base components to create a higher order component, which I
-          call "Lego Components".
+          call &quot;Lego Components&quot;.
         </p>
       </div>
 
@@ -93,10 +93,7 @@ function LegoComponentsSectionCustom() {
               View Figma
             </Link>
           </div>
-          <Screenshot
-            src={component.image}
-            alt={component.title}
-          />
+          <Screenshot src={component.image} alt={component.title} />
         </div>
       ))}
     </div>
@@ -104,6 +101,11 @@ function LegoComponentsSectionCustom() {
 }
 
 const projectData = {
+  meta: {
+    title: 'mySmartRouter & myPrinciple — Bombardier | Arif Alim',
+    description:
+      'UX and interface design for Bombardier applications, including reusable Figma components and design guidelines.',
+  },
   layout: {
     title: 'Bombardier',
     intro: 'mySmartRouter, myPrinciple, myOnlineProductOrdering (OPO)',
@@ -116,9 +118,9 @@ const projectData = {
       content: {
         heading: 'Summary',
         paragraphs: [
-          "As the Lead UX Designer at Xennial Innovations from March 2019 to April 2021, I was responsible for leading the design efforts of multiple high-profile projects for Bombardier. These projects included designing intuitive user interfaces for Flight Link by Airbus and Bombardier's MySmartRouter and MyPrinciple mobile applications. I ensured that the designs met the needs of various stakeholders and users while adhering to AODA and WCAG 2.0 accessibility standards.",
-          "I also played a key role in the development of Bombardier's corporate design system by introducing accessible styles and typography. Using Figma, I built the design systems for Bombardier's MySmartRouter and MyPrinciple mobile applications. This involved creating lego components composed of base components and using variants and component properties to simplify the use of components.",
-          "To enhance the user experience and make it more interactive, I designed JSON Lottie graphic animations using Adobe After Effects. Additionally, I expanded enterprise-level design systems using Figma's auto layout, component variants, and component properties, allowing for high-fidelity rapid prototyping. I created comprehensive design guidelines to ensure consistency across various platforms and applications.",
+          "As the Lead UX Designer at Xennial Innovations from March 2019 to April 2021, I worked on user interfaces for Bombardier's MySmartRouter and MyPrinciple applications. I considered stakeholder and user needs alongside AODA and WCAG 2.0 accessibility requirements.",
+          "I contributed styles and typography to Bombardier's design system. Using Figma, I created reusable components for MySmartRouter and MyPrinciple, combining base components with variants and component properties.",
+          'I designed JSON Lottie animations using Adobe After Effects and created design guidelines. I also used Figma auto layout, component variants, and component properties for high-fidelity prototyping.',
         ],
       },
     },
@@ -135,9 +137,7 @@ const projectData = {
       type: 'companyDetails',
       content: {
         name: 'About Bombardier',
-        paragraphs: [
-          "Bombardier is a Canadian multinational company that specializes in the design, manufacturing, and support of innovative transportation solutions. The company operates in several industries, including aerospace, transportation, and recreation. Bombardier's aerospace division is a global leader in the production of business jets, regional aircraft, and commercial aircraft, and it has a strong presence in both the military and civil aviation markets. In the transportation sector, Bombardier is a leading manufacturer of trains and rail solutions, offering a wide range of products and services to customers worldwide. The company's recreational products division produces a diverse range of vehicles, including snowmobiles, watercraft, and all-terrain vehicles. With over 60,000 employees across its operations, Bombardier is committed to creating sustainable, innovative, and value-added products and services that meet the needs of its customers while promoting environmental responsibility and social well-being. Through its cutting-edge technology, engineering expertise, and customer-focused approach, Bombardier has earned a reputation as a trusted partner and leader in the transportation industry.",
-        ],
+        paragraphs: ['Bombardier is a Canadian manufacturer of business jets.'],
         link: 'https://bombardier.com/en',
       },
     },

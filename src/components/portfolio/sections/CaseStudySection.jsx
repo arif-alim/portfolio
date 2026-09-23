@@ -18,9 +18,9 @@ export function CaseStudySection({
 
   if (!showTableOfContents) {
     return (
-      <main id={contentId} className="max-w-3xl">
+      <div id={contentId} className="max-w-3xl">
         {children}
-      </main>
+      </div>
     )
   }
 
@@ -32,7 +32,7 @@ export function CaseStudySection({
       </aside>
 
       {/* RIGHT SIDE - CASE STUDY CONTENT */}
-      <main id={contentId}>{children}</main>
+      <div id={contentId}>{children}</div>
     </div>
   )
 }

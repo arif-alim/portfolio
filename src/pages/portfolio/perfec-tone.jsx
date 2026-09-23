@@ -11,7 +11,9 @@ import screen8 from '@/images/projects/perfectone/perfectone-8.jpg'
 
 const projectData = {
   meta: {
-    title: 'Perfec-tone - Project',
+    title: 'E-commerce Website Design — Perfec-Tone | Arif Alim',
+    description:
+      'Responsive e-commerce design for Perfec-Tone, including a style guide, reusable components, and shopping interfaces.',
   },
   layout: {
     title: 'Perfec-tone',
@@ -25,8 +27,8 @@ const projectData = {
       content: {
         heading: 'Summary',
         paragraphs: [
-          "For Perfec-Tone, I developed a cohesive digital design strategy to enhance their online presence and create a seamless user experience. Starting with a style guide, I selected typography that balanced readability and elegance while curating a color palette that reflected the brand's focus on natural beauty and organic ingredients. To ensure consistency and efficiency, I created reusable design components that streamlined the design process and maintained a unified look across all touchpoints.",
-          "The project culminated in the design and development of a mobile-responsive e-commerce website tailored to Perfec-Tone's needs. The website was crafted to provide an intuitive shopping experience, featuring user-friendly navigation, clear product descriptions, and a seamless checkout process. By emphasizing responsive design principles, the site was optimized for both desktop and mobile devices, ensuring accessibility and usability for all users. This work helped Perfec-Tone elevate their digital presence and deliver a polished, customer-focused online experience.",
+          'For Perfec-Tone, I created a style guide covering typography and color, alongside reusable design components for the e-commerce website.',
+          'The project included design and development of a mobile-responsive e-commerce website, with product descriptions, navigation, and checkout layouts for desktop and mobile devices.',
         ],
       },
     },
@@ -52,9 +54,7 @@ const projectData = {
       type: 'companyDetails',
       content: {
         name: 'About Perfec-tone',
-        paragraphs: [
-          "Perfec-Tone is a skincare company that offers a range of products designed to address a wide range of skin concerns. The company was founded with the goal of providing effective and affordable skincare solutions for all skin types and tones. Perfec-Tone's products are formulated using natural and organic ingredients, and they are free from harsh chemicals and synthetic fragrances. The company's product line includes cleansers, toners, moisturizers, serums, and treatments that are designed to address common skin concerns such as acne, hyperpigmentation, and aging. Perfec-Tone is committed to promoting healthy and radiant skin, and it offers personalized skincare consultations to help customers find the right products for their individual needs. The company's mission is to provide high-quality skincare solutions that are accessible and affordable, while promoting natural beauty and self-confidence. Perfec-Tone continues to innovate and expand its product line to meet the evolving needs of its customers, and it has established itself as a trusted brand in the skincare industry.",
-        ],
+        paragraphs: ['Perfec-Tone is a skincare brand.'],
         link: 'https://perfec-tone.com/',
       },
     },
