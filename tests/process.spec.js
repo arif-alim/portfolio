@@ -114,6 +114,95 @@ test('process direct route, metadata, and all four six-stage panels', async ({
   expect(appErrors).toEqual([])
 })
 
+test('icon-free timelines keep aligned cards and comfortable gutters in every tab', async ({
+  page,
+}, testInfo) => {
+  await page.goto('/process')
+  const isDark = testInfo.project.use.colorScheme === 'dark'
+  const expectedGutter = testInfo.project.use.viewport.width < 640 ? 16 : 24
+  const alignments = []
+
+  for (const [index, name] of Object.keys(stages).entries()) {
+    await page.getByRole('tab', { name, exact: true }).click()
+    const panel = page.getByRole('tabpanel')
+    const timeline = panel.locator('ol')
+    const cards = timeline.locator(':scope > li > div')
+
+    await expect(cards).toHaveCount(6)
+    await expect(panel.locator('img, svg, picture')).toHaveCount(0)
+    await expect(timeline.locator(':scope > li > span')).toHaveCount(0)
+    await expect(timeline).toHaveCSS('border-left-width', '1px')
+    await expect(timeline).toHaveCSS('border-left-style', 'solid')
+    await expect(timeline).toHaveCSS(
+      'border-left-color',
+      isDark ? 'rgb(55, 65, 81)' : 'rgb(229, 231, 235)'
+    )
+
+    const geometry = await timeline.evaluate((list) => {
+      const line = list.getBoundingClientRect()
+      const panel = list.closest('[role=tabpanel]').getBoundingClientRect()
+      return {
+        left: line.left,
+        top: line.top,
+        bottom: line.bottom,
+        panelLeft: panel.left,
+        panelRight: panel.right,
+        border: parseFloat(getComputedStyle(list).borderLeftWidth),
+        cards: [...list.children].map((step) => {
+          const card = step.firstElementChild
+          const box = card.getBoundingClientRect()
+          return {
+            left: box.left,
+            right: box.right,
+            top: box.top,
+            bottom: box.bottom,
+            childCount: step.children.length,
+            background: getComputedStyle(card).backgroundColor,
+          }
+        }),
+      }
+    })
+
+    expect(geometry.left).toBeCloseTo(geometry.panelLeft, 1)
+    expect(geometry.top).toBeCloseTo(geometry.cards[0].top, 1)
+    expect(geometry.bottom).toBeGreaterThanOrEqual(geometry.cards[5].bottom)
+    for (const [step, card] of geometry.cards.entries()) {
+      expect(card.childCount).toBe(1)
+      expect(card.left - geometry.left - geometry.border).toBe(expectedGutter)
+      expect(card.right).toBeCloseTo(geometry.panelRight, 1)
+      expect(card.left).toBeGreaterThanOrEqual(32)
+      expect(card.right).toBeLessThanOrEqual(
+        testInfo.project.use.viewport.width - 16
+      )
+      expect(card.background).toBe(
+        isDark ? 'rgb(39, 39, 42)' : 'rgb(255, 255, 255)'
+      )
+      if (step > 0) {
+        expect(card.top - geometry.cards[step - 1].bottom).toBe(40)
+      }
+    }
+    alignments.push([geometry.left, geometry.cards[0].left])
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth
+      )
+    ).toBe(true)
+    // Capture real viewports: the site's fixed theme background only paints
+    // one viewport in a stitched full-page screenshot.
+    await page.evaluate(() => window.scrollTo(0, 0))
+    await page.screenshot({
+      path: testInfo.outputPath(`process-tab-${index + 1}-top.png`),
+    })
+    await cards.last().scrollIntoViewIfNeeded()
+    await expect(cards.last()).toBeInViewport()
+    await page.screenshot({
+      path: testInfo.outputPath(`process-tab-${index + 1}-last-step.png`),
+    })
+  }
+  expect(alignments.every((value) => value[0] === alignments[0][0])).toBe(true)
+  expect(alignments.every((value) => value[1] === alignments[0][1])).toBe(true)
+})
+
 test('process keyboard activation, wrapping, focus, and panel entry', async ({
   page,
 }) => {
