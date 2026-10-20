@@ -1,0 +1,45 @@
+.root button:focus-visible,
+.root input:focus-visible,
+.root summary:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+:global(.dark) .root button:focus-visible,
+:global(.dark) .root input:focus-visible,
+:global(.dark) .root summary:focus-visible {
+  outline-color: #93c5fd;
+}
+.button {
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #71717a;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.button:hover:not(:disabled) {
+  background: #f4f4f5;
+}
+.button:active:not(:disabled) {
+  background: #e4e4e7;
+}
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+:global(.dark) .button:hover:not(:disabled) {
+  background: #27272a;
+}
+:global(.dark) .button:active:not(:disabled) {
+  background: #3f3f46;
+}
+.stage[aria-pressed='true'] {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+:global(.dark) .stage[aria-pressed='true'] {
+  border-color: #60a5fa;
+  background: #172554;
+  color: #dbeafe;
+}

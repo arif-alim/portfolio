@@ -16,8 +16,8 @@
   },
   {
     "path": "/portfolio/cbsa",
-    "tabs": ["Summary", "Scope of work", "Contributions", "Deliverables"],
-    "defaultTab": "Summary"
+    "tabs": ["Overview", "Design Process", "Interactive Demo"],
+    "defaultTab": "Overview"
   },
   {
     "path": "/portfolio/bombardier",
@@ -100,13 +100,12 @@
   {
     "path": "/portfolio/manulife",
     "tabs": [
-      "Summary",
-      "Company details",
-      "Wireframes",
-      "Design system",
-      "Case Study"
+      "Overview",
+      "Design Process",
+      "Design Explorations",
+      "Interactive Demo"
     ],
-    "defaultTab": "Wireframes"
+    "defaultTab": "Overview"
   },
   {
     "path": "/portfolio/miss-bahamas",
@@ -116,13 +115,12 @@
   {
     "path": "/portfolio/service-ontario",
     "tabs": [
-      "Summary",
-      "Wireframes",
-      "Prototypes",
-      "Interactive Demonstration",
-      "Company details"
+      "Overview",
+      "Design Process",
+      "Design Explorations",
+      "Interactive Demo"
     ],
-    "defaultTab": "Wireframes"
+    "defaultTab": "Overview"
   },
   {
     "path": "/portfolio/perfec-tone",

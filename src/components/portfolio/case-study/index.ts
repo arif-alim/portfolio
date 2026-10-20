@@ -1,0 +1,6 @@
+export { ArtifactGallery } from './ArtifactGallery'
+export { ArtifactImage } from './ArtifactImage'
+export { DesignDecisionPanel } from './DesignDecisionPanel'
+export { IllustrativeLabel } from './IllustrativeLabel'
+export type { CaseStudyArtifact, DesignDecision } from './types'
+export { NarrativeSections } from './NarrativeSections'

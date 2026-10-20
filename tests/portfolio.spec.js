@@ -102,14 +102,14 @@ test('social names and keyboard focus are accessible', async ({ page }) => {
   await expect(tool).toBeFocused()
   await expect(tool).toHaveCSS('outline-style', 'solid')
   await page.goto('/portfolio/manulife')
-  const selected = page.getByRole('tab', { name: 'Wireframes', exact: true })
+  const selected = page.getByRole('tab', { name: 'Overview', exact: true })
   await selected.focus()
   await page.keyboard.press('ArrowRight')
   await expect(
-    page.getByRole('tab', { name: 'Design system', exact: true })
+    page.getByRole('tab', { name: 'Design Process', exact: true })
   ).toBeFocused()
   await expect(
-    page.getByRole('tab', { name: 'Design system', exact: true })
+    page.getByRole('tab', { name: 'Design Process', exact: true })
   ).toHaveAttribute('aria-selected', 'true')
 })
 
@@ -117,7 +117,7 @@ test('case-study anchors and responsive prototype heights', async ({
   page,
 }, testInfo) => {
   await page.goto('/portfolio/manulife')
-  await page.getByRole('tab', { name: 'Case Study', exact: true }).click()
+  await page.getByRole('tab', { name: 'Design Process', exact: true }).click()
   await expect
     .poll(() => page.locator('main nav a').count())
     .toBeGreaterThan(10)
@@ -136,7 +136,9 @@ test('case-study anchors and responsive prototype heights', async ({
     )
   }
   await page.goto('/portfolio/service-ontario')
-  await page.getByRole('tab', { name: 'Prototypes', exact: true }).click()
+  await page
+    .getByRole('tab', { name: 'Design Explorations', exact: true })
+    .click()
   const frame = page.locator('iframe')
   await expect(frame).toHaveAttribute(
     'title',

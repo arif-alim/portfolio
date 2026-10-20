@@ -1,0 +1,67 @@
+.root :is(button, input, select, a, summary, [tabindex]):focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+.primary,
+.secondary {
+  min-height: 44px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+}
+.primary {
+  color: white;
+  background: #1d4ed8;
+}
+.primary:hover {
+  background: #1e40af;
+}
+.secondary {
+  border: 1px solid #71717a;
+}
+.secondary:hover:not(:disabled) {
+  background: #f4f4f5;
+}
+.secondary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.input {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #71717a;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: inherit;
+}
+.input option {
+  color: #18181b;
+  background: white;
+}
+.input:disabled {
+  opacity: 0.65;
+}
+.error {
+  color: #b91c1c;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+.input[aria-invalid='true'] {
+  border-color: #b91c1c;
+}
+:global(.dark)
+  .root
+  :is(button, input, select, a, summary, [tabindex]):focus-visible {
+  outline-color: #93c5fd;
+}
+:global(.dark) .secondary:hover:not(:disabled) {
+  background: #27272a;
+}
+:global(.dark) .error {
+  color: #fca5a5;
+}
+:global(.dark) .input[aria-invalid='true'] {
+  border-color: #fca5a5;
+}

@@ -1,12 +1,14 @@
+import {
+  IllustrativeLabel,
+  DesignDecisionPanel,
+} from '@/components/portfolio/case-study'
 import { designDecisions } from '@/data/dealershipRegistration'
 import { RegistrationWorkflow } from './RegistrationWorkflow'
 export function RegistrationDemonstration() {
   return (
     <section aria-labelledby="ddr-demo-title" className="space-y-6">
       <header className="space-y-3">
-        <p className="text-xs font-medium text-zinc-600 dark:text-zinc-300">
-          Illustrative reconstruction
-        </p>
+        <IllustrativeLabel />
         <h2 id="ddr-demo-title" className="text-xl font-semibold">
           Interactive Demonstration — Digital Dealership Registration
         </h2>
@@ -24,24 +26,13 @@ export function RegistrationDemonstration() {
       </header>
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_250px]">
         <RegistrationWorkflow />
-        <aside
-          aria-labelledby="ddr-decisions"
-          className="border-t border-zinc-200 pt-5 dark:border-zinc-700 lg:border-l lg:border-t-0 lg:pl-5 lg:pt-0"
-        >
-          <h3 id="ddr-decisions" className="mb-4 font-semibold">
-            Design Decisions
-          </h3>
-          <dl className="space-y-4">
-            {designDecisions.map(([title, detail]) => (
-              <div key={title}>
-                <dt className="font-semibold">{title}</dt>
-                <dd className="mt-1 text-xs text-zinc-600 dark:text-zinc-300">
-                  {detail}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </aside>
+        <DesignDecisionPanel
+          id="ddr-decisions"
+          title="Design Decisions"
+          decisions={designDecisions.map(
+            ([title, detail]) => [title, detail] as const
+          )}
+        />
       </div>
       <section
         aria-labelledby="ddr-comparison"

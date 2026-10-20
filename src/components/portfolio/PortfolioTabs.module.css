@@ -1,0 +1,26 @@
+.tab {
+  --tab-focus-color: #2563eb;
+  min-height: 44px;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+:global(.dark) .tab {
+  --tab-focus-color: #60a5fa;
+}
+/* Keep focus inside the horizontal scroller, apart from the bottom underline. */
+.tab:focus {
+  outline: 2px solid transparent;
+  outline-offset: -6px;
+}
+.tab:focus-visible {
+  outline-color: var(--tab-focus-color);
+}
+/* Headless UI programmatic click focus can match native :focus-visible.
+   Its document-level keyboard marker distinguishes the actual input method.
+   Native :focus-visible remains the fallback before the polyfill initializes. */
+:global(html[data-js-focus-visible]) .tab:focus {
+  outline-color: transparent;
+}
+:global(html[data-js-focus-visible][data-headlessui-focus-visible]) .tab:focus {
+  outline-color: var(--tab-focus-color);
+}

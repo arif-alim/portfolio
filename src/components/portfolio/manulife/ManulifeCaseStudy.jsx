@@ -3,50 +3,22 @@ import Divider from '@/components/Divider'
 
 export function ManulifeCaseStudy() {
   return (
-    <div className="lg:grid lg:grid-cols-[250px_1fr] lg:gap-12">
+    <div className="lg:grid lg:grid-cols-[210px_minmax(0,1fr)] lg:gap-8">
       {/* LEFT SIDEBAR — TOC */}
       <aside className="hidden lg:block">
         <TableOfContents contentId="manulife-case-study-content" />
       </aside>
 
       {/* RIGHT SIDE — CASE STUDY CONTENT */}
-      <div id="manulife-case-study-content">
-        <h2
-          id="overview"
-          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-        >
-          01. Overview
+      <div id="manulife-case-study-content" className="min-w-0 max-w-3xl">
+        <h2 id="overview" className="pb-2 text-xl font-semibold">
+          01. Design Process
         </h2>
-        <p>
-          Manulife provides group health benefits to enterprises across Canada.
-          Plan Administrators (typically HR professionals) handle employee
-          enrollment, updates, policy changes, billing, and compliance — but
-          their legacy tools were fragmented, unintuitive, and time-consuming.
-        </p>
-        <p className="pt-4">
-          This case study outlines how I redesigned the Plan Administrator
-          Portal, focusing on:
-        </p>
-        <ul className="list-disc pl-2 lg:pl-8">
-          <li className="pt-2">
-            <strong>Simplified workflows</strong> for daily administrative tasks
-          </li>
-          <li>
-            <strong>Clear dashboards</strong> powered by Power BI for
-            data-driven decisions
-          </li>
-          <li>
-            <strong>Modern UI</strong> consistent with Manulife&apos;s design
-            system
-          </li>
-          <li>
-            <strong>A unified experience</strong> for both administrators and
-            employees
-          </li>
-        </ul>
-        <p className="pt-4">
-          The work covered enterprise benefits management workflows and
-          interface patterns.
+        <p className="max-w-prose">
+          The existing project notes connect discovery, task structure,
+          dashboard concepts and member-search decisions. The goals below
+          describe design intent; illustrative dashboard messages are not
+          measured outcomes.
         </p>
 
         <Divider />
@@ -68,7 +40,7 @@ export function ManulifeCaseStudy() {
         >
           Admin Pain Points
         </h3>
-        <ul className="list-disc pl-2 lg:pl-8">
+        <ul className="list-disc space-y-2 pl-5">
           <li>
             Member search required too many inputs and produced inconsistent
             results
@@ -91,7 +63,7 @@ export function ManulifeCaseStudy() {
         >
           Employee Pain Points
         </h3>
-        <ul className="list-disc pl-2 lg:pl-8">
+        <ul className="list-disc space-y-2 pl-5">
           <li>Confusing benefit structures</li>
           <li>No unified place to view claims, balances, or eligibility</li>
           <li>Enrollment lacked guidance and transparency</li>
@@ -103,7 +75,7 @@ export function ManulifeCaseStudy() {
         >
           Business Pain Points
         </h3>
-        <ul className="list-disc pl-2 lg:pl-8">
+        <ul className="list-disc space-y-2 pl-5">
           <li>Support requests were part of the service workflow</li>
           <li>No way to surface trends or risks in real time</li>
           <li>HR teams worked across fragmented systems</li>
@@ -124,7 +96,7 @@ export function ManulifeCaseStudy() {
         >
           Experience Goals
         </h3>
-        <ul className="list-disc pl-2 lg:pl-8">
+        <ul className="list-disc space-y-2 pl-5">
           <li>Simplify navigation and reduce cognitive load</li>
           <li>Provide clear end-to-end workflows for admins</li>
           <li>Improve employee understanding of their benefits</li>
@@ -137,7 +109,7 @@ export function ManulifeCaseStudy() {
         >
           Business Goals
         </h3>
-        <ul className="list-disc pl-2 lg:pl-8">
+        <ul className="list-disc space-y-2 pl-5">
           <li>Lower support costs</li>
           <li>Increase efficiency of plan-management tasks</li>
           <li>Provide data visualization via Power BI for deeper insights</li>
@@ -159,7 +131,7 @@ export function ManulifeCaseStudy() {
         >
           Methods Used
         </h3>
-        <ul className="list-disc pl-2 lg:pl-8">
+        <ul className="list-disc space-y-2 pl-5">
           <li>Stakeholder interviews (Ops, HR, Support, Sales)</li>
           <li>
             Competitive analysis (Sun Life, Canada Life, Workday, Benepass)
@@ -175,7 +147,7 @@ export function ManulifeCaseStudy() {
         >
           Key Insights
         </h3>
-        <ol className="list-disc pl-2 lg:pl-8">
+        <ol className="list-disc space-y-2 pl-5">
           <li>
             <strong>
               Member search and verification were priorities for the redesign.
@@ -221,7 +193,7 @@ export function ManulifeCaseStudy() {
           Members <br /> → Billing & Statements <br /> → Documents <br />
           → Send a Note <br /> → Help & Resources
           <p className="pt-4">The structure was designed to support:</p>
-          <ul className="list-disc pl-2 lg:pl-4">
+          <ul className="list-disc space-y-2 pl-5">
             <li>fewer clicks</li>
             <li>clearer structure</li>
             <li>consistent paths across tasks</li>
@@ -242,7 +214,7 @@ export function ManulifeCaseStudy() {
           <p className="pt-2 font-semibold">
             Power BI cards integrated directly into the UI
           </p>
-          <ul className="list-disc pl-2 lg:pl-4">
+          <ul className="list-disc space-y-2 pl-5">
             <li>Recent activity</li>
             <li>Plan utilization</li>
             <li>Enrollment trends</li>
@@ -261,7 +233,7 @@ export function ManulifeCaseStudy() {
           Design Considerations
         </h3>
         <div className="pl-4">
-          <ul className="list-disc pl-2 lg:pl-4">
+          <ul className="list-disc space-y-2 pl-5">
             <li>Charts must align visually with Manulife&apos;s DS</li>
             <li>Tiles are embeddable, scalable modules</li>
             <li>Each chart supports drill-down</li>
@@ -296,8 +268,8 @@ export function ManulifeCaseStudy() {
           Member Search Redesign
         </h3>
         <div className="pl-4">
-          <p>The Wireframes tab shows the search interface designs:</p>
-          <ul className="list-disc pl-2 pt-4 lg:pl-4">
+          <p>The design direction for member search included:</p>
+          <ul className="list-disc space-y-2 pl-5 pt-4">
             <li>Single multi-purpose search bar</li>
             <li>Optional filters (Location, Class, Plan)</li>
             <li>Auto-complete suggestions</li>

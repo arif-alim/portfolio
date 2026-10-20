@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useRef } from 'react'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
+import styles from './PortfolioTabs.module.css'
 import { SummarySection } from './sections/SummarySection'
 import { ImageGridSection } from './sections/ImageGridSection'
 import { CompanyDetailsSection } from './sections/CompanyDetailsSection'
@@ -99,6 +100,8 @@ export function PortfolioTabs({
                         ? 'border-blue-700 font-semibold text-blue-900 dark:border-blue-500 dark:text-gray-50'
                         : 'border-transparent font-medium text-gray-900 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100',
                       'whitespace-nowrap border-b-2 px-6 text-tiny',
+                      // Preserve custom consumers' existing sizing and focus rules.
+                      !tabClassName && styles.tab,
                       tabClassName
                     )
                   }

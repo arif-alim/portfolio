@@ -1,9 +1,7 @@
 import { PortfolioTemplate } from '@/components/portfolio'
 import { ManulifeSummary } from '@/components/portfolio/manulife/ManulifeSummary'
-import {
-  ManulifeWireframes,
-  ManulifeDesignSystem,
-} from '@/components/portfolio/manulife/ManulifeGalleries'
+import { ManulifeExplorations } from '@/components/portfolio/manulife/ManulifeExplorations'
+import { ManulifeDemo } from '@/components/portfolio/manulife/ManulifeDemo'
 import { ManulifeCaseStudy } from '@/components/portfolio/manulife/ManulifeCaseStudy'
 
 const projectData = {
@@ -15,37 +13,14 @@ const projectData = {
   layout: {
     title: 'Manulife',
     intro:
-      'Streamlined the user interface for the Plan Administrator and Disability portal to enhance user experience.',
+      'Research, interaction design and reusable patterns for the Plan Administrator platform and Disability Portal.',
   },
-  defaultTab: 'Wireframes',
+  defaultTab: 'Overview',
   tabs: [
-    {
-      name: 'Summary',
-      render: () => <ManulifeSummary />,
-    },
-    {
-      name: 'Company details',
-      type: 'companyDetails',
-      content: {
-        name: 'About',
-        paragraphs: [
-          'Manulife provides insurance and financial services, including group health benefits for Canadian employers.',
-        ],
-        link: 'https://www.manulife.ca/personal.html',
-      },
-    },
-    {
-      name: 'Wireframes',
-      render: () => <ManulifeWireframes />,
-    },
-    {
-      name: 'Design system',
-      render: () => <ManulifeDesignSystem />,
-    },
-    {
-      name: 'Case Study',
-      render: () => <ManulifeCaseStudy />,
-    },
+    { name: 'Overview', render: () => <ManulifeSummary /> },
+    { name: 'Design Process', render: () => <ManulifeCaseStudy /> },
+    { name: 'Design Explorations', render: () => <ManulifeExplorations /> },
+    { name: 'Interactive Demo', render: () => <ManulifeDemo /> },
   ],
 }
 

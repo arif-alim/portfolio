@@ -2,9 +2,7 @@ const { test, expect } = require('@playwright/test')
 
 async function openDemo(page) {
   await page.goto('/portfolio/service-ontario')
-  await page
-    .getByRole('tab', { name: 'Interactive Demonstration', exact: true })
-    .click()
+  await page.getByRole('tab', { name: 'Interactive Demo', exact: true }).click()
 }
 const field = (page, label) =>
   page.getByLabel(`${label} (required)`, { exact: true })
