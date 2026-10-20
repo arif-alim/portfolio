@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import Badge from '@/components/Badge'
+import { DesignSystemsThumbnail } from './DesignSystemsThumbnail'
 
 const CARD_BORDER_COLOR = 'border-blue-300'
 
@@ -24,31 +25,35 @@ export function PortfolioCard({ project }) {
             )}
           />
 
-          <div className="absolute inset-0 my-auto">
-            <div className="flex h-full w-full items-center p-8 sm:p-6">
-              {/* Light mode logo */}
-              <Image
-                className="transition duration-300 group-hover:scale-110 dark:hidden"
-                src={project.imageLight}
-                alt={`${project.name} logo`}
-                width={260}
-                height={260}
-                sizes="(min-width: 1024px) 33vw, 100vw"
-                style={{ width: '100%', height: 'auto' }}
-              />
+          {project.thumbnail === 'designSystems' ? (
+            <DesignSystemsThumbnail />
+          ) : (
+            <div className="absolute inset-0 my-auto">
+              <div className="flex h-full w-full items-center p-8 sm:p-6">
+                {/* Light mode logo */}
+                <Image
+                  className="transition duration-300 group-hover:scale-110 dark:hidden"
+                  src={project.imageLight}
+                  alt={project.imageAlt || `${project.name} logo`}
+                  width={260}
+                  height={260}
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                />
 
-              {/* Dark mode logo */}
-              <Image
-                className="hidden transition duration-300 group-hover:scale-110 dark:block"
-                src={project.imageDark}
-                alt={`${project.name} logo`}
-                width={260}
-                height={260}
-                sizes="(min-width: 1024px) 33vw, 100vw"
-                style={{ width: '100%', height: 'auto' }}
-              />
+                {/* Dark mode logo */}
+                <Image
+                  className="hidden transition duration-300 group-hover:scale-110 dark:block"
+                  src={project.imageDark}
+                  alt={project.imageAlt || `${project.name} logo`}
+                  width={260}
+                  height={260}
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <h3 className="font-display mt-2 text-base font-semibold">
@@ -58,6 +63,11 @@ export function PortfolioCard({ project }) {
           {project.about}
         </p>
       </Link>
+      {project.tags && (
+        <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-300">
+          {project.tags.join(' · ')}
+        </p>
+      )}
     </div>
   )
 }

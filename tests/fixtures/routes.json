@@ -115,7 +115,13 @@
   },
   {
     "path": "/portfolio/service-ontario",
-    "tabs": ["Summary", "Wireframes", "Prototypes", "Company details"],
+    "tabs": [
+      "Summary",
+      "Wireframes",
+      "Prototypes",
+      "Interactive Demonstration",
+      "Company details"
+    ],
     "defaultTab": "Wireframes"
   },
   {

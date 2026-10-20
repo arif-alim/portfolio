@@ -52,3 +52,5 @@ thumb
 sketch
 
 ### Vercel ###
+# TypeScript build cache
+*.tsbuildinfo

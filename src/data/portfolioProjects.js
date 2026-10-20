@@ -43,6 +43,14 @@ import logoCBSADark from '@/images/projects/cbsa-logo-dark.png'
 
 export const portfolioProjects = [
   {
+    id: 21,
+    name: 'Design Systems Engineering & AI-Ready Architecture',
+    about: 'Figma-to-Code Design Systems & AI Tooling',
+    link: { href: '/portfolio/design-systems', label: 'View project' },
+    thumbnail: 'designSystems',
+    badge: { label: 'Architecture Exploration', color: 'blue' },
+  },
+  {
     id: 1,
     name: 'Manulife',
     about: 'Multinational financial services company',

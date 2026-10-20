@@ -1,3 +1,4 @@
+import { RegistrationDemonstration } from '@/components/portfolio/service-ontario/RegistrationDemonstration'
 import { ResponsiveIframe } from '@/components/portfolio/ResponsiveIframe'
 import Link from 'next/link'
 import { PortfolioTemplate, Screenshot } from '@/components/portfolio'
@@ -164,6 +165,10 @@ const projectData = {
     {
       name: 'Prototypes',
       render: () => <PrototypesSectionCustom />,
+    },
+    {
+      name: 'Interactive Demonstration',
+      render: () => <RegistrationDemonstration />,
     },
     {
       name: 'Company details',
