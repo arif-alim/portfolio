@@ -106,18 +106,16 @@ export function ManulifeDemo() {
       <header className="max-w-3xl space-y-3">
         <IllustrativeLabel />
         <h2 id="manulife-demo-title" className="text-xl font-semibold">
-          Plan administration · interactive demonstration
+          Plan Administration
         </h2>
         <p>
           Configure a fictional plan, find a member and review a status-change
           request through different roles.
         </p>
         <p className="text-xs text-zinc-600 dark:text-zinc-300">
-          A local exploration informed by the project’s design principles, not a
-          reproduction of Manulife’s production application, policies or
-          permissions. All records and validation rules are illustrative. No
-          backend, authentication, storage or real submission; values reset when
-          this tab closes or the page reloads.
+          I built this demo to explore conditional fields and separate review
+          roles. It uses fictional records and rules, and your changes reset
+          when you leave the tab or reload the page.
         </p>
       </header>
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_240px]">

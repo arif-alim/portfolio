@@ -1,108 +1,98 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
-
-import authorImage from '@/images/author-image.png'
-
+import { useRouter } from 'next/router'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { ReadingList } from '@/components/articles/ReadingList'
+import { readingGroups } from '@/data/readingLibrary'
 
-const posts = [
-  {
-    id: 1,
-    title: 'The Importance of User-Centered Design in UI/UX',
-    href: '/articles/coming-soon',
-    description:
-      'In this blog post, we will explore the crucial role that user-centered design plays in creating effective UI/UX. We will discuss the principles of user-centered design, provide examples of successful implementation, and offer practical tips for incorporating this approach into your own UI/UX work.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    author: {
-      name: 'Arif Alim',
-      role: 'UI/UX Designer',
-      imageUrl: authorImage,
-    },
-  },
-  {
-    id: 2,
-    title:
-      'Designing for Accessibility to Ensure a Positive User Experience for All"',
-    href: '/articles/coming-soon',
-    description:
-      'This blog post will delve into the critical topic of accessibility in UI/UX, discussing the key principles of accessible design and offering practical tips for ensuring that your designs are inclusive and usable for all users, regardless of their abilities or disabilities. We will provide resources for learning more about accessible design and testing your designs for accessibility.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    author: {
-      name: 'Arif Alim',
-      role: 'UI/UX Designer',
-      imageUrl: authorImage,
-    },
-  },
-  {
-    id: 3,
-    title: 'How to Create a Consistent and Cohesive Design System',
-    href: '/articles/coming-soon',
-    description:
-      'In this blog post, we will explore the benefits of using a design system in UI/UX and discuss the key elements of a successful design system, such as establishing a clear visual language and creating a library of reusable design elements. We will offer practical tips for implementing a design system in your own work and provide examples of successful design systems in action.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    author: {
-      name: 'Arif Alim',
-      role: 'UI/UX Designer',
-      imageUrl: authorImage,
-    },
-  },
-
-  // More posts...
-]
-
-export function Blog() {
-  return (
-    <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16  pt-10   lg:mx-0 lg:max-w-none lg:grid-cols-3">
-      {posts.map((post) => (
-        <article
-          key={post.id}
-          className="flex max-w-xl flex-col items-start justify-between"
-        >
-          <div className="group relative">
-            <h3 className="mt-3 text-lg font-semibold leading-6 group-hover:text-zinc-600 ">
-              <Link href={post.href}>
-                <span className="absolute inset-0" />
-                {post.title}
-              </Link>
-            </h3>
-            <div className="text-xs">
-              <time dateTime={post.datetime}>{post.date}</time>
-            </div>
-            <p className="mt-5 line-clamp-3 leading-6 ">{post.description}</p>
-          </div>
-          <div className="relative mt-8 flex items-center gap-x-4">
-            <Image
-              src={post.author.imageUrl}
-              alt=""
-              className="h-10 w-10 rounded-full bg-gray-50"
-              width={40}
-              height={40}
-            />
-            <div className="leading-6">
-              <p className="font-semibold ">{post.author.name}</p>
-              <p className="text-xxs">{post.author.role}</p>
-            </div>
-          </div>
-        </article>
-      ))}
-    </div>
-  )
-}
+const intro =
+  'A curated collection of practical reads on design, research, accessibility and front-end engineering.'
 
 export default function Articles() {
+  const router = useRouter()
+  const group =
+    readingGroups.find(({ id }) => id === router.query.discipline) ||
+    readingGroups[0]
+
+  function previewHref(id) {
+    return { pathname: '/articles', query: { discipline: id } }
+  }
+
   return (
-    <div className="flex min-h-screen flex-col">
+    <>
       <Head>
         <title>Articles - Arif Alim</title>
-        <meta name="description" content="Add content here" />
+        <meta name="description" content={intro} />
       </Head>
-      <SimpleLayout title="Articles" intro="What I find interesting!">
-        <Blog></Blog>
+      <SimpleLayout title="Articles" intro={intro}>
+        <section aria-labelledby="recommended-heading" className="space-y-4">
+          <h2 id="recommended-heading" className="text-xl font-semibold">
+            Recommended reading
+          </h2>
+          <nav
+            aria-label="Reading disciplines"
+            className="hidden flex-wrap gap-1 rounded-xl border border-zinc-200 p-1 dark:border-zinc-700 md:flex"
+          >
+            {readingGroups.map(({ id, name }) => (
+              <Link
+                key={id}
+                href={previewHref(id)}
+                shallow
+                scroll={false}
+                aria-current={id === group.id ? 'page' : undefined}
+                className={`flex min-h-[44px] flex-1 items-center justify-center rounded-lg px-3 py-2 text-center text-sm font-medium focus-visible:outline-offset-[-3px] ${
+                  id === group.id
+                    ? 'bg-blue-100 text-blue-950 dark:bg-blue-950 dark:text-blue-100'
+                    : 'hover:bg-zinc-100 dark:hover:bg-zinc-800'
+                }`}
+              >
+                {name}
+              </Link>
+            ))}
+          </nav>
+          <div className="md:hidden">
+            <label
+              htmlFor="reading-discipline"
+              className="block text-xs font-semibold"
+            >
+              Discipline
+            </label>
+            <select
+              id="reading-discipline"
+              value={group.id}
+              className="mt-1 min-h-[44px] w-full rounded-lg border-zinc-300 bg-white dark:border-zinc-600 dark:bg-zinc-900"
+              onChange={(event) =>
+                router.push(previewHref(event.target.value), undefined, {
+                  shallow: true,
+                  scroll: false,
+                })
+              }
+            >
+              {readingGroups.map(({ id, name }) => (
+                <option key={id} value={id}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <section aria-labelledby="reading-preview" className="space-y-2">
+            <div className="flex flex-wrap items-center justify-between gap-x-4">
+              <h3 id="reading-preview" className="text-lg font-semibold">
+                {group.name}
+              </h3>
+              {group.articles.length > 3 && (
+                <Link
+                  href={`/articles/${group.id}`}
+                  className="inline-flex min-h-[44px] items-center text-sm font-semibold text-blue-800 underline underline-offset-4 dark:text-blue-300"
+                >
+                  Browse all {group.articles.length} articles
+                </Link>
+              )}
+            </div>
+            <ReadingList articles={group.articles.slice(0, 3)} heading="h4" />
+          </section>
+        </section>
       </SimpleLayout>
-    </div>
+    </>
   )
 }

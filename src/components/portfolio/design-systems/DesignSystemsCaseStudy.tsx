@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { TokenExplorer } from './TokenExplorer'
 import { ButtonDemo } from './ButtonDemo'
+import { SaveItemExample } from './SaveItemExample'
 import { CodeBlock } from './CodeBlock'
 import { buttonContract, inspectionSteps } from '@/data/designSystems'
 const sections = [
@@ -30,26 +31,16 @@ export function DesignSystemsCaseStudy() {
     <article className="min-w-0">
       <div className="mb-7 space-y-3 text-sm">
         <p className="font-semibold text-blue-700 dark:text-blue-300">
-          Architectural exploration · interactive demonstrations
+          Design systems exploration · interactive prototypes
         </p>
         <p>
-          <strong>Category:</strong> Design Systems / Frontend Engineering / AI
-          Tooling
-          <br />
-          <strong>Role explored:</strong> Design Systems Engineer / UI Architect
-        </p>
-        <p>
-          Focus: Figma component architecture, semantic variables, variants and
-          properties, plugin development, Figma-to-code workflows, React and
-          TypeScript, CSS custom properties, Tailwind, accessibility and
-          automated validation.
+          I designed a token explorer, a React button and a component contract
+          to show how design intent can carry from Figma specifications into
+          code.
         </p>
         <p className="text-zinc-600 dark:text-zinc-300">
-          Evidence boundary: the token explorer and Button below are implemented
-          locally in this portfolio. Figma inspection workflows, automated
-          synchronization and AI consumption are proposed architecture. No
-          production package, customer deployment or external integration is
-          claimed.
+          Try the token and button prototypes below. I also outline how a Figma
+          plugin and AI-assisted tooling could use the same relationships.
         </p>
       </div>
       <nav
@@ -74,18 +65,17 @@ export function DesignSystemsCaseStudy() {
           documentation are maintained separately.
         </p>
         <p>
-          This exploration asks how structured relationships could make that
-          drift visible. The goal is to preserve design intent from a
-          foundational token through a semantic decision to an accessible React
-          component, with enough provenance for engineers to review a change.
+          I wanted designers and engineers to be able to review the same
+          decision. I made the path from the palette to the rendered button
+          visible so both can see what a token change would affect.
         </p>
       </Section>
       <Section index={1}>
         <p>
           A component-specific variable may reference a semantic variable, which
           references a foundational token in another collection or library. A
-          resolved hex value alone cannot explain which component or layer
-          depends on that decision.
+          dependency map shows which components and layers would change if that
+          token were updated.
         </p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
@@ -108,10 +98,10 @@ export function DesignSystemsCaseStudy() {
       </Section>
       <Section index={2}>
         <p>
-          My proposed workflow starts with inspection and a reviewable
-          dependency graph, then defines the implementation contract. The local
-          demonstrations exercise a small part of this approach; a Figma plugin
-          and continuous validation pipeline remain future work.
+          I started with the button because a familiar component makes it easy
+          to compare the design specification with what people can see and do in
+          the browser. I used that example to sketch a workflow a team could use
+          to review changes across design and code.
         </p>
         <ol className="list-decimal space-y-2 pl-5">
           <li>
@@ -140,43 +130,42 @@ export function DesignSystemsCaseStudy() {
       </Section>
       <Section index={3}>
         <p>
-          A token is a reference with intent, not just a value. Select a node in
-          either sample path to highlight all four layers. Each button is
-          available through Tab and Enter/Space.
+          I gave the primary and secondary actions separate semantic names so
+          each can change independently of the palette. Select any node to trace
+          its path from foundation colour to React variant.
         </p>
         <TokenExplorer />
         <p className="text-xs">
-          The sample uses one mode and two background paths. A real resolver
-          would include collection IDs, library ownership, mode mappings and
-          unresolved edges. Token names are illustrative; no Figma connection is
-          made.
+          I used two background paths in one sample mode to keep the mapping
+          readable. The tooling proposal below extends that model to shared
+          libraries and multiple modes.
         </p>
       </Section>
       <Section index={4}>
         <p>
-          The same bounded contract drives a sample Figma specification and an
-          actual React preview. CSS custom properties retain semantic aliases;
-          Tailwind supplies the surrounding layout and theme styling.
+          I specified the same variants, sizes and states on both sides of the
+          handoff. In React I used CSS custom properties to keep the token
+          aliases visible, and a native button so keyboard activation follows
+          the browser’s built-in behaviour.
         </p>
         <ButtonDemo />
+        <SaveItemExample />
       </Section>
       <Section index={5}>
         <p>
-          <strong>Future-facing architecture concept.</strong> A versioned
-          component contract could serve three consumers: designers defining
-          variants in Figma, engineers implementing typed React interfaces, and
-          AI models reasoning about approved UI choices.
+          I wrote the button contract as versioned JSON so designers and
+          engineers can review the same allowed variants, usage rules and
+          accessibility requirements. The same format could guide AI tools
+          toward approved component choices.
         </p>
         <CodeBlock
           code={JSON.stringify(buttonContract, null, 2)}
           label="Button contract · illustrative JSON"
         />
         <p>
-          An AI consumer could select an allowed variant, resolve approved
-          semantic tokens and check usage rules before generating JSX. The
-          contract would need schema validation, a trusted component registry
-          and checks against the actual implementation. Descriptive JSON alone
-          does not guarantee compliant or accessible output.
+          I would pair the contract with a trusted component registry and
+          validate generated proposals against the React implementation.
+          Rendered checks would cover keyboard behaviour and contrast.
         </p>
         <p>
           Version changes should distinguish additions from breaking removals.
@@ -187,9 +176,10 @@ export function DesignSystemsCaseStudy() {
       </Section>
       <Section index={6}>
         <p>
-          No Figma inspection plugin or token export artifact was found in this
-          repository. The following pipeline documents a proposed tooling
-          design, rather than completed integration work.
+          I designed the token explorer to show how a button inherits its
+          colour. For a larger Figma library, I sketched a tool that would trace
+          those same relationships and show which components depend on a
+          variable before a designer changes it.
         </p>
         <ol
           aria-label="Conceptual inspection pipeline"
@@ -205,18 +195,9 @@ export function DesignSystemsCaseStudy() {
           ))}
         </ol>
         <p>
-          For plugin development, separate document inspection from alias
-          resolution and export formatting. Keep unavailable external libraries
-          visible in the output, and distinguish an instance override from the
-          main component definition. Reverse dependency edges should answer
-          “which component and layer reference this variable?” before a token is
-          changed.
-        </p>
-        <p>
-          <strong>Next evidence to add:</strong> permission-cleared plugin
-          source, a real anonymized alias graph, sample exports with mode
-          coverage, and validation reports. Those artifacts would support claims
-          about synchronization beyond this local demonstration.
+          I would keep instance overrides and main component bindings separate
+          in the export. That gives designers and engineers a way to tell
+          whether a change affects one instance or the whole component set.
         </p>
       </Section>
     </article>

@@ -109,6 +109,12 @@ test('homepage retains portrait layout, responsive featured list, and themes', a
     expect(portraitBox.y + portraitBox.height).toBeLessThan(aboutBox.y)
   }
   const featured = page.getByRole('region', { name: 'Featured Work' })
+  const workIntro = featured.getByText(
+    'I designed tools for benefits administrators at Manulife, vehicle registration workflows for dealerships at ServiceOntario, and aviation applications at Bombardier. Explore the projects below to see how I approached the workflows and interactions in each.',
+    { exact: true }
+  )
+  await expect(workIntro).toBeVisible()
+  const noteBox = await workIntro.boundingBox()
   const featuredBox = await featured.boundingBox()
   expect(featuredBox.y).toBeGreaterThan(aboutBox.y + aboutBox.height)
   const boxes = await featured.getByRole('listitem').evaluateAll((items) =>
@@ -121,11 +127,12 @@ test('homepage retains portrait layout, responsive featured list, and themes', a
     Math.max(...boxes.map((box) => box.width)) -
       Math.min(...boxes.map((box) => box.width))
   ).toBeLessThan(1)
+  expect(noteBox.y + noteBox.height).toBeLessThan(boxes[0].y)
   if (testInfo.project.use.viewport.width >= 1024) {
     expect(new Set(boxes.map((box) => box.y)).size).toBe(1)
     expect(boxes[1].x).toBeGreaterThan(boxes[0].x)
     expect(boxes[2].x).toBeGreaterThan(boxes[1].x)
-    expect(featuredBox.height).toBeLessThan(320)
+    expect(featuredBox.height - noteBox.height).toBeLessThan(320)
   } else if (testInfo.project.use.viewport.width >= 640) {
     expect(boxes[0].y).toBe(boxes[1].y)
     expect(boxes[1].x).toBeGreaterThan(boxes[0].x)

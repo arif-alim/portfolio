@@ -3,7 +3,7 @@ const sections = [
   'Overview',
   'Design Process',
   'Design Explorations',
-  'Interactive Demo',
+  'Interaction Demos',
 ]
 async function openSection(page, name) {
   await page.getByRole('tab', { name, exact: true }).click()
@@ -38,6 +38,18 @@ test('four meaningful sections, preserved content and responsive visual review',
       path: testInfo.outputPath(`${name.replace(/ /g, '-')}.png`),
     })
   }
+  const demos = page.getByRole('group', { name: 'Choose a demo' })
+  await expect(demos.getByRole('button')).toHaveText([
+    'Manulife Wealth',
+    'Manulife Bank',
+    'Plan Administration',
+  ])
+  await expect(
+    demos.getByRole('button', { name: 'Manulife Wealth' })
+  ).toHaveAttribute('aria-pressed', 'true')
+  await expect(
+    page.getByRole('heading', { name: 'Manulife Wealth', exact: true })
+  ).toBeVisible()
   await openSection(page, 'Overview')
   for (const phrase of [
     'Disability Portal',
@@ -129,13 +141,13 @@ test('artifact sequences and original-resolution viewer support keyboard access'
   await expect(dialog.getByRole('heading')).toContainText('pair 1, mobile')
   await page.keyboard.press('Escape')
   await page
-    .getByText('Additional source artifacts · context not confirmed', {
+    .getByText('More design explorations', {
       exact: true,
     })
     .click()
   await expect(
     page.getByRole('button', {
-      name: 'Enlarge status-update.png — additional source composite',
+      name: 'Enlarge Member status updates — additional screens',
       exact: true,
     })
   ).toBeVisible()
@@ -152,7 +164,10 @@ test('plan configuration, member changes, approval roles and local state', async
   const errors = []
   page.on('pageerror', (error) => errors.push(error.message))
   await page.goto('/portfolio/manulife')
-  await openSection(page, 'Interactive Demo')
+  await openSection(page, 'Interaction Demos')
+  await page
+    .getByRole('button', { name: 'Plan Administration', exact: true })
+    .click()
   await page.getByLabel('Plan name (required)', { exact: true }).fill('')
   await page.getByLabel('Include dependent coverage', { exact: true }).check()
   await page.getByLabel('Dependent limit (required)', { exact: true }).fill('0')
@@ -305,4 +320,188 @@ test('plan configuration, member changes, approval roles and local state', async
     )
   ).toBe(true)
   expect(errors).toEqual([])
+})
+
+test('Wealth holdings and Bank transfer can be explored and reset', async ({
+  page,
+}, testInfo) => {
+  await page.goto('/portfolio/manulife')
+  await openSection(page, 'Interaction Demos')
+  const wealth = page.getByRole('region', {
+    name: 'Manulife Wealth',
+    exact: true,
+  })
+  await expect(
+    wealth.getByText('Illustrative portfolio prototype')
+  ).toBeVisible()
+  const account = wealth.getByLabel('Investment account')
+  await expect(account).toHaveValue('0')
+  await account.selectOption('1')
+  await expect(wealth.getByText('+$250.00')).toBeVisible()
+  const holding = wealth
+    .locator('summary')
+    .filter({ hasText: 'Harbour Balanced Fund' })
+  await holding.press('Enter')
+  await expect(
+    wealth.locator('details[open]').getByText('Units held')
+  ).toBeVisible()
+  await expect(wealth.getByText('150', { exact: true })).toBeVisible()
+  await wealth.screenshot({ path: testInfo.outputPath('wealth-demo.png') })
+  await wealth.getByRole('button', { name: 'Reset demo' }).click()
+  await expect(account).toHaveValue('0')
+  await expect(wealth.locator('details[open]')).toHaveCount(0)
+
+  await page.getByRole('button', { name: 'Manulife Bank', exact: true }).click()
+  const bank = page.getByRole('region', { name: 'Manulife Bank', exact: true })
+  await expect(bank.getByText('Illustrative portfolio prototype')).toBeVisible()
+  const amount = bank.getByLabel('Amount (CAD)')
+  const review = bank.getByRole('button', { name: 'Review transfer' })
+  await amount.fill('0.001')
+  await review.click()
+  await expect(amount).toHaveAttribute('aria-invalid', 'true')
+  await expect(amount).toBeFocused()
+  await expect(bank.getByRole('alert')).toContainText('Enter a positive amount')
+  await amount.fill('1250.01')
+  await review.click()
+  await expect(bank.getByRole('alert')).toContainText('Insufficient funds')
+  await amount.fill('125.50')
+  await review.click()
+  await expect(
+    bank.getByRole('heading', { name: 'Review transfer' })
+  ).toBeFocused()
+  await expect(bank.getByText('$125.50', { exact: true })).toBeVisible()
+  await expect(bank.getByText('$1,250.00', { exact: true })).toBeVisible()
+  await bank.getByRole('button', { name: 'Edit amount' }).click()
+  await expect(amount).toHaveValue('125.50')
+  await review.click()
+  await bank.getByRole('button', { name: 'Confirm transfer' }).click()
+  await expect(
+    bank.getByRole('heading', { name: 'Simulated transfer complete' })
+  ).toBeFocused()
+  await expect(bank.getByText('$1,124.50', { exact: true })).toBeVisible()
+  await expect(bank.getByText('$3,525.50', { exact: true })).toBeVisible()
+  await bank.screenshot({ path: testInfo.outputPath('bank-demo.png') })
+  await bank.getByRole('button', { name: 'Reset demo' }).click()
+  await expect(amount).toHaveValue('')
+  await expect(bank.getByText('$1,250.00', { exact: true })).toBeVisible()
+
+  await openSection(page, 'Overview')
+  await openSection(page, 'Interaction Demos')
+  await expect(wealth).toBeVisible()
+})
+
+test('prototype screenshots open in the existing gallery in the requested order', async ({
+  page,
+}, testInfo) => {
+  await page.goto('/portfolio/manulife')
+  await openSection(page, 'Design Explorations')
+  const panel = page.getByRole('tabpanel')
+  await expect(panel.getByRole('heading', { level: 2 }).nth(1)).toHaveText(
+    'Manulife Wealth'
+  )
+  await expect(panel.getByRole('heading', { level: 2 }).nth(2)).toHaveText(
+    'Manulife Bank'
+  )
+  await expect(panel.getByRole('heading', { level: 2 }).nth(3)).toHaveText(
+    'Plan Administration'
+  )
+  for (const [name, label, screenshot, url] of [
+    [
+      'Manulife Wealth',
+      'Investment account overview',
+      'wealth-gallery.png',
+      'https://www.manulife.com/ca/en/personal/wealth/manulife-wealth/resources/ipresources',
+    ],
+    [
+      'Manulife Bank',
+      'Transfer review',
+      'bank-gallery.png',
+      'https://www.manulifebank.ca/support/mobile-banking.html',
+    ],
+  ]) {
+    const gallery = panel.getByRole('region', { name, exact: true })
+    await expect(
+      gallery.getByText('Portfolio prototype screenshot', { exact: false })
+    ).toHaveCount(2)
+    await expect(gallery.getByRole('link')).toHaveAttribute('href', url)
+    for (const img of await gallery.getByRole('img').all()) {
+      await img.scrollIntoViewIfNeeded()
+      await expect
+        .poll(() => img.evaluate((element) => element.naturalWidth))
+        .toBeGreaterThan(0)
+    }
+    await gallery.screenshot({ path: testInfo.outputPath(screenshot) })
+    const opener = gallery.getByRole('button', { name: 'Enlarge ' + label })
+    await opener.click()
+    const dialog = page.getByRole('dialog')
+    await expect(dialog.getByRole('heading')).toHaveText(label)
+    await expect(
+      dialog.getByText('Portfolio prototype screenshot', { exact: true })
+    ).toBeVisible()
+    await expect(dialog.getByRole('img')).toHaveAttribute(
+      'alt',
+      /fictional|simulated/i
+    )
+    await page.keyboard.press('Escape')
+    await expect(opener).toBeFocused()
+  }
+})
+
+test('Design Process links each product area to its imagery and demo by keyboard', async ({
+  page,
+}, testInfo) => {
+  await page.goto('/portfolio/manulife')
+  await openSection(page, 'Design Process')
+  await expect(page.getByText('My role', { exact: true })).toBeVisible()
+  const index = page.getByRole('navigation', { name: 'Product areas' })
+  const areas = [
+    ['Plan Administration', 'plan'],
+    ['Manulife Wealth', 'wealth'],
+    ['Manulife Bank', 'bank'],
+  ]
+  await expect(index.getByRole('link')).toHaveCount(3)
+  for (const [name, id] of areas) {
+    const jump = index.getByRole('link', { name: new RegExp(name) })
+    await jump.press('Enter')
+    const story = page.getByRole('region', { name, exact: true })
+    await expect(story).toBeFocused()
+
+    await story
+      .getByRole('link', { name: 'View design explorations' })
+      .press('Enter')
+    await expect(page).toHaveURL(new RegExp('view=explorations&area=' + id))
+    const gallery = page.locator('#explorations-' + id)
+    await expect(gallery).toBeFocused()
+    await expect(
+      gallery.getByRole('button', { name: /^Enlarge/ }).first()
+    ).toBeVisible()
+
+    await page.goBack()
+    await expect(story).toBeVisible()
+    await story
+      .getByRole('link', { name: 'Open interaction demo' })
+      .press('Enter')
+    await expect(page).toHaveURL(new RegExp('view=demos&area=' + id))
+    const demo = page.locator('#demos-' + id)
+    await expect(demo).toBeFocused()
+    await expect(demo.getByRole('heading', { name, exact: true })).toBeVisible()
+    await expect(
+      page
+        .getByRole('group', { name: 'Choose a demo' })
+        .getByRole('button', { name, exact: true })
+    ).toHaveAttribute('aria-pressed', 'true')
+    await page.reload()
+    await expect(demo).toBeVisible()
+    await openSection(page, 'Design Process')
+  }
+  await page
+    .getByRole('region', { name: 'Put plan signals alongside daily tasks' })
+    .scrollIntoViewIfNeeded()
+  await page.screenshot({ path: testInfo.outputPath('manulife-decision.png') })
+  await openSection(page, 'Interaction Demos')
+  await expect(
+    page
+      .getByRole('group', { name: 'Choose a demo' })
+      .getByRole('button', { name: 'Manulife Wealth' })
+  ).toHaveAttribute('aria-pressed', 'true')
 })

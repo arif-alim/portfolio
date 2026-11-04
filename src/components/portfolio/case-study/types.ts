@@ -4,6 +4,8 @@ import type { StaticImageData } from 'next/image'
 export interface CaseStudyArtifact {
   id: string
   label: string
+  alt?: string
+  caption?: string
   source: StaticImageData
   crop?: { x: number; y: number; width: number; height: number }
 }

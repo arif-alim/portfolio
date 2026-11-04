@@ -8,6 +8,8 @@ export function PortfolioTemplate({
   layout = {},
   tabs = [],
   defaultTab,
+  selectedTab: controlledTab,
+  onTabChange,
   children,
 }) {
   const [selectedTab, setSelectedTab] = useState(
@@ -36,8 +38,8 @@ export function PortfolioTemplate({
             {tabs.length > 0 ? (
               <PortfolioTabs
                 tabs={tabs}
-                selectedTab={selectedTab}
-                onTabChange={setSelectedTab}
+                selectedTab={controlledTab ?? selectedTab}
+                onTabChange={onTabChange ?? setSelectedTab}
               />
             ) : (
               children

@@ -1,288 +1,308 @@
-import TableOfContents from '@/components/TableOfContents'
-import Divider from '@/components/Divider'
+import Link from 'next/link'
+import { ArtifactImage } from '@/components/portfolio/case-study/ArtifactImage'
+import { dashboardArtifacts } from '@/data/manulifeArtifacts'
+
+const products = [
+  {
+    id: 'plan',
+    name: 'Plan Administration',
+    scope: 'Project work · Benefits administration',
+  },
+  {
+    id: 'wealth',
+    name: 'Manulife Wealth',
+    scope: 'Product context · Investment accounts',
+  },
+  {
+    id: 'bank',
+    name: 'Manulife Bank',
+    scope: 'Product context · Mobile transfers',
+  },
+]
+
+const linkStyle =
+  'inline-flex min-h-[44px] items-center text-sm font-semibold text-blue-700 underline underline-offset-4 dark:text-blue-300'
+const visualStyle =
+  'rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-800/50'
+const sectionStyle =
+  'scroll-mt-5 space-y-5 border-t border-zinc-200 pt-6 dark:border-zinc-700'
+
+function ProductLinks({ area }) {
+  return (
+    <div className="flex flex-wrap gap-x-5">
+      <Link
+        href={{
+          pathname: '/portfolio/manulife',
+          query: { view: 'explorations', area },
+        }}
+        shallow
+        scroll={false}
+        className={linkStyle}
+      >
+        View design explorations
+      </Link>
+      <Link
+        href={{
+          pathname: '/portfolio/manulife',
+          query: { view: 'demos', area },
+        }}
+        shallow
+        scroll={false}
+        className={linkStyle}
+      >
+        Open interaction demo
+      </Link>
+    </div>
+  )
+}
 
 export function ManulifeCaseStudy() {
   return (
-    <div className="lg:grid lg:grid-cols-[210px_minmax(0,1fr)] lg:gap-8">
-      {/* LEFT SIDEBAR — TOC */}
-      <aside className="hidden lg:block">
-        <TableOfContents contentId="manulife-case-study-content" />
-      </aside>
-
-      {/* RIGHT SIDE — CASE STUDY CONTENT */}
-      <div id="manulife-case-study-content" className="min-w-0 max-w-3xl">
-        <h2 id="overview" className="pb-2 text-xl font-semibold">
-          01. Design Process
-        </h2>
-        <p className="max-w-prose">
-          The existing project notes connect discovery, task structure,
-          dashboard concepts and member-search decisions. The goals below
-          describe design intent; illustrative dashboard messages are not
-          measured outcomes.
+    <article className="space-y-8">
+      <header className="max-w-3xl space-y-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">
+          Design Process · Enterprise benefits
         </p>
-
-        <Divider />
-
-        <h2
-          id="problem"
-          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-        >
-          02. The Problem
+        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          Help administrators find the right record and act on it
         </h2>
         <p>
-          Through heuristic evaluation, stakeholder interviews, and workflow
-          audits, several critical issues emerged:
+          Benefits administrators needed to find members, verify coverage and
+          make updates across a fragmented set of tasks. I focused on where
+          people start, what they need to see and what changes from one task to
+          the next.
         </p>
+        <dl className="grid gap-3 border-y border-zinc-200 py-4 text-sm dark:border-zinc-700 sm:grid-cols-2">
+          <div>
+            <dt className="font-semibold">My role</dt>
+            <dd>
+              I mapped workflows, designed and tested prototypes, led design
+              reviews and prepared UX specifications for developers.
+            </dd>
+          </div>
+          <div>
+            <dt className="font-semibold">Project scope</dt>
+            <dd>
+              Plan Administrator Site and Disability Portal. Wealth and Bank
+              appear separately as product context and portfolio prototypes.
+            </dd>
+          </div>
+        </dl>
+      </header>
 
-        <h3
-          id="app"
-          className="pb-1 pt-4 font-semibold text-black dark:text-white"
-        >
-          Admin Pain Points
-        </h3>
-        <ul className="list-disc space-y-2 pl-5">
-          <li>
-            Member search required too many inputs and produced inconsistent
-            results
-          </li>
-          <li>High dependency on email and spreadsheets for updates</li>
-          <li>
-            No centralized dashboard showing plan trends, activity, or tasks
-          </li>
-          <li>Reporting required manually exporting data</li>
-          <li>No standardized UI components across pages</li>
-          <li>
-            Time-consuming multi-step tasks (add members, update certificates,
-            manage terminated employees)
-          </li>
-        </ul>
-
-        <h3
-          id="epp"
-          className="pb-1 pt-4 font-semibold text-black dark:text-white"
-        >
-          Employee Pain Points
-        </h3>
-        <ul className="list-disc space-y-2 pl-5">
-          <li>Confusing benefit structures</li>
-          <li>No unified place to view claims, balances, or eligibility</li>
-          <li>Enrollment lacked guidance and transparency</li>
-        </ul>
-
-        <h3
-          id="bpp"
-          className="pb-1 pt-4 font-semibold text-black dark:text-white"
-        >
-          Business Pain Points
-        </h3>
-        <ul className="list-disc space-y-2 pl-5">
-          <li>Support requests were part of the service workflow</li>
-          <li>No way to surface trends or risks in real time</li>
-          <li>HR teams worked across fragmented systems</li>
-        </ul>
-
-        <Divider />
-
-        <h2
-          id="goals"
-          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-        >
-          03. Project Goals
-        </h2>
-
-        <h3
-          id="egoals"
-          className="pb-1 pt-4 font-semibold text-black dark:text-white"
-        >
-          Experience Goals
-        </h3>
-        <ul className="list-disc space-y-2 pl-5">
-          <li>Simplify navigation and reduce cognitive load</li>
-          <li>Provide clear end-to-end workflows for admins</li>
-          <li>Improve employee understanding of their benefits</li>
-          <li>Enable self-serve tools for HR teams and employees</li>
-        </ul>
-
-        <h3
-          id="bgoals"
-          className="pb-1 pt-4 font-semibold text-black dark:text-white"
-        >
-          Business Goals
-        </h3>
-        <ul className="list-disc space-y-2 pl-5">
-          <li>Lower support costs</li>
-          <li>Increase efficiency of plan-management tasks</li>
-          <li>Provide data visualization via Power BI for deeper insights</li>
-          <li>Improve user satisfaction and platform adoption</li>
-        </ul>
-
-        <Divider />
-
-        <h2
-          id="research"
-          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-        >
-          04. Research & Discovery
-        </h2>
-
-        <h3
-          id="methods"
-          className="py-1 text-md font-semibold text-black dark:text-white lg:pl-4"
-        >
-          Methods Used
-        </h3>
-        <ul className="list-disc space-y-2 pl-5">
-          <li>Stakeholder interviews (Ops, HR, Support, Sales)</li>
-          <li>
-            Competitive analysis (Sun Life, Canada Life, Workday, Benepass)
-          </li>
-          <li>Legacy system audit</li>
-          <li>Workflow mapping (current vs. optimized)</li>
-          <li>Data requirements workshops for Power BI integration</li>
-        </ul>
-
-        <h3
-          id="insights"
-          className="py-1 pt-3 text-md font-semibold text-black dark:text-white lg:pl-4"
-        >
-          Key Insights
-        </h3>
-        <ol className="list-disc space-y-2 pl-5">
-          <li>
-            <strong>
-              Member search and verification were priorities for the redesign.
-            </strong>
-          </li>
-          <li>
-            <strong>Field hierarchy needed clarification</strong> (Client →
-            Policy → Member → Plan).
-          </li>
-          <li>
-            <strong>Admins rely on external spreadsheets</strong> to track plan
-            activity alongside the portal.
-          </li>
-          <li>
-            <strong>Dashboards must provide meaning, not just charts</strong> —
-            actionable insights are essential.
-          </li>
-          <li>
-            <strong>Complex organizations need bulk actions</strong>, filtered
-            lists, and high-performance search.
-          </li>
-        </ol>
-        <p className="pt-4">These insights guided the redesign strategy.</p>
-
-        <Divider />
-
-        <h2
-          id="approach"
-          className="pb-1 pt-4 text-lg font-semibold text-black dark:text-white"
-        >
-          05. UX Approach
-        </h2>
-
-        <h3
-          id="ia"
-          className="py-1 text-md font-semibold text-black dark:text-white lg:pl-4"
-        >
-          Information Architecture Redesign
-        </h3>
-        <div className="pl-4">
-          Home
-          <br />→ Dashboard (Power BI) <br /> → Member Search <br /> → Manage
-          Members <br /> → Billing & Statements <br /> → Documents <br />
-          → Send a Note <br /> → Help & Resources
-          <p className="pt-4">The structure was designed to support:</p>
-          <ul className="list-disc space-y-2 pl-5">
-            <li>fewer clicks</li>
-            <li>clearer structure</li>
-            <li>consistent paths across tasks</li>
-          </ul>
-        </div>
-
-        <h3
-          id="powerbi"
-          className="py-1 pt-4 text-md font-semibold text-black dark:text-white lg:pl-4"
-        >
-          Power BI Integration
-        </h3>
-        <div className="pl-4">
-          <p>
-            This was one of the largest parts of the redesign. Admins needed{' '}
-            <strong>actionable insights</strong> not raw data.
-          </p>
-          <p className="pt-2 font-semibold">
-            Power BI cards integrated directly into the UI
-          </p>
-          <ul className="list-disc space-y-2 pl-5">
-            <li>Recent activity</li>
-            <li>Plan utilization</li>
-            <li>Enrollment trends</li>
-            <li>
-              Member movement logs (additions, terminations, class changes)
+      <nav aria-label="Product areas">
+        <ul className="grid gap-3 sm:grid-cols-3">
+          {products.map(({ id, name, scope }) => (
+            <li key={id}>
+              <a
+                href={`#process-${id}`}
+                className="block h-full rounded-xl border border-zinc-200 p-3 hover:border-blue-500 dark:border-zinc-700 dark:hover:border-blue-400"
+              >
+                <span className="block font-semibold">
+                  {name} <span aria-hidden="true">↓</span>
+                </span>
+                <span className="mt-1 block text-xs text-zinc-600 dark:text-zinc-300">
+                  {scope}
+                </span>
+              </a>
             </li>
-            <li>Billing discrepancies</li>
-            <li>Missing-document alerts</li>
-          </ul>
-        </div>
+          ))}
+        </ul>
+      </nav>
 
-        <h3
-          id="considerations"
-          className="py-1 pt-4 text-md font-semibold text-black dark:text-white lg:pl-4"
-        >
-          Design Considerations
-        </h3>
-        <div className="pl-4">
-          <ul className="list-disc space-y-2 pl-5">
-            <li>Charts must align visually with Manulife&apos;s DS</li>
-            <li>Tiles are embeddable, scalable modules</li>
-            <li>Each chart supports drill-down</li>
-            <li>Color contrast</li>
-            <li>Clear labeling and tooltips</li>
-            <li>Avoid overloading users with &quot;chart clutter&quot;</li>
-          </ul>
-          <p className="pt-4">
-            <strong>Design Intent</strong>
-            <br />
-            Surface administrative issues within the dashboard.
+      <section
+        id="process-plan"
+        tabIndex={-1}
+        aria-labelledby="process-plan-title"
+        className={sectionStyle}
+      >
+        <header className="space-y-2">
+          <h2 id="process-plan-title" className="text-xl font-semibold">
+            Plan Administration
+          </h2>
+          <p className="max-w-3xl">
+            I used heuristic reviews, stakeholder interviews and workflow
+            mapping to find where benefits tasks broke down. I worked with
+            Product, Marketing, Business and IS to turn those findings into
+            navigation, search and form designs for the Plan Administrator Site
+            and Disability Portal.
           </p>
-          <p className="pt-4">
-            Example dashboard messages (illustrative, not measured business
-            results):
-          </p>
-          <p className="pt-4">
-            ❗ Missing certification documents
-            <br />❗ Terminated members still being billed
-            <br />✔ Plan utilization this quarter
-          </p>
-          <p className="pt-4">
-            These examples describe the information the dashboard was designed
-            to surface.
-          </p>
-        </div>
+        </header>
 
-        <h3
-          id="search"
-          className="py-1 pt-4 text-md font-semibold text-black dark:text-white lg:pl-4"
+        <section
+          aria-labelledby="process-search"
+          className="grid gap-4 lg:grid-cols-2 lg:items-start"
         >
-          Member Search Redesign
-        </h3>
-        <div className="pl-4">
-          <p>The design direction for member search included:</p>
-          <ul className="list-disc space-y-2 pl-5 pt-4">
-            <li>Single multi-purpose search bar</li>
-            <li>Optional filters (Location, Class, Plan)</li>
-            <li>Auto-complete suggestions</li>
-            <li>&quot;Include terminated members&quot; toggle</li>
-            <li>Cleaner layout with consistent spacing</li>
-            <li>Labels and field hierarchy</li>
-          </ul>
-          <p className="pt-4">
-            The design brings member search and optional filters into one
-            interface.
+          <div className="space-y-2">
+            <h3 id="process-search" className="text-lg font-semibold">
+              Let administrators start with what they know
+            </h3>
+            <p>
+              Member search asked for too many inputs and returned inconsistent
+              results. I designed one search entry point with suggestions and
+              optional location, class and plan filters. I put coverage and
+              member actions together so administrators could verify the record
+              before updating it.
+            </p>
+            <p className="text-sm">
+              <strong>How I checked it.</strong> I used clickable prototypes and
+              usability feedback to refine the portal, then documented the
+              hierarchy and interactions for handoff.
+            </p>
+          </div>
+          <figure className={visualStyle}>
+            <figcaption className="mb-3 font-semibold">
+              Member search · workflow comparison
+            </figcaption>
+            <dl className="space-y-3 text-sm">
+              <div>
+                <dt className="font-semibold">Earlier workflow</dt>
+                <dd>
+                  Supply several inputs up front, then reconcile inconsistent
+                  results.
+                </dd>
+              </div>
+              <div className="border-t border-zinc-200 pt-3 dark:border-zinc-700">
+                <dt className="font-semibold">Redesign</dt>
+                <dd>
+                  Start with one query, narrow when needed and verify the member
+                  in the coverage summary.
+                </dd>
+              </div>
+            </dl>
+            <p className="mt-3 text-xs">
+              Record hierarchy · Client → Policy → Member → Plan
+            </p>
+          </figure>
+        </section>
+
+        <section
+          aria-labelledby="process-dashboard"
+          className="grid gap-4 border-t border-zinc-200 pt-5 dark:border-zinc-700 lg:grid-cols-2 lg:items-start"
+        >
+          <div className="space-y-2">
+            <h3 id="process-dashboard" className="text-lg font-semibold">
+              Put plan signals alongside daily tasks
+            </h3>
+            <p>
+              Administrators used spreadsheets alongside the portal to track
+              activity. I explored putting Power BI cards on Home, beside member
+              search and navigation, so they could spot plan trends and still
+              reach the task they came to do.
+            </p>
+            <p className="text-sm">
+              <strong>How I checked it.</strong> I used data requirements
+              workshops to define what the cards could surface and compared
+              concepts for how clearly they presented activity, utilisation and
+              enrolment.
+            </p>
+          </div>
+          <figure className={visualStyle}>
+            <ArtifactImage artifact={dashboardArtifacts[0]} maxHeight={260} />
+            <figcaption className="mt-3 text-sm">
+              <strong>Power BI dashboard concept.</strong> The concept places
+              reporting within the administrator home alongside routes to daily
+              work.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section
+          aria-labelledby="process-status"
+          className="grid gap-4 border-t border-zinc-200 pt-5 dark:border-zinc-700 lg:grid-cols-2 lg:items-start"
+        >
+          <div className="space-y-2">
+            <h3 id="process-status" className="text-lg font-semibold">
+              Ask for details that fit the status change
+            </h3>
+            <p>
+              Leave, termination and reinstatement need different information. I
+              used conditional fields to keep each flow focused and explored a
+              reusable datepicker to make date entry consistent.
+            </p>
+            <p className="text-sm">
+              <strong>How I checked it.</strong> I reviewed desktop and mobile
+              variants and documented field behaviour for handoff. The portfolio
+              demo lets you try the conditional questions and a fictional
+              approval handoff.
+            </p>
+          </div>
+          <figure className={visualStyle}>
+            <figcaption className="mb-3 font-semibold">
+              Parental leave · simplified form flow
+            </figcaption>
+            <ol className="flex flex-wrap gap-2 text-sm">
+              {[
+                'Choose parental leave',
+                'Enter effective date',
+                'Provide expected return date',
+              ].map((step) => (
+                <li
+                  key={step}
+                  className="rounded-lg border border-zinc-200 bg-white px-3 py-2 dark:border-zinc-700 dark:bg-zinc-900"
+                >
+                  {step}
+                </li>
+              ))}
+            </ol>
+          </figure>
+        </section>
+
+        <p className="max-w-3xl text-sm">
+          <strong>What I delivered.</strong> I shared revised flows, prototypes,
+          visual assets and UX specifications with developers. I used usability
+          feedback and analytics to inform revisions across the Plan
+          Administrator Site and Disability Portal. The dashboard is shown as a
+          design concept.
+        </p>
+        <ProductLinks area="plan" />
+      </section>
+
+      <section
+        id="process-wealth"
+        tabIndex={-1}
+        aria-labelledby="process-wealth-title"
+        className={sectionStyle}
+      >
+        <header className="space-y-2">
+          <p className="text-xs font-semibold text-zinc-600 dark:text-zinc-300">
+            Product context
           </p>
-        </div>
-      </div>
-    </div>
+          <h2 id="process-wealth-title" className="text-xl font-semibold">
+            Manulife Wealth
+          </h2>
+          <p className="max-w-3xl">
+            The Canadian Investor Portal brings holdings, account activity and
+            documents together. In the illustrative portfolio prototype, choose
+            a fictional account, scan its activity and open a holding for
+            details.
+          </p>
+        </header>
+        <ProductLinks area="wealth" />
+      </section>
+
+      <section
+        id="process-bank"
+        tabIndex={-1}
+        aria-labelledby="process-bank-title"
+        className={sectionStyle}
+      >
+        <header className="space-y-2">
+          <p className="text-xs font-semibold text-zinc-600 dark:text-zinc-300">
+            Product context
+          </p>
+          <h2 id="process-bank-title" className="text-xl font-semibold">
+            Manulife Bank
+          </h2>
+          <p className="max-w-3xl">
+            The Canadian mobile banking app supports account navigation and
+            transfers. In the illustrative portfolio prototype, move fictional
+            funds through entry, review and confirmation, including recovery
+            from an invalid amount or insufficient funds.
+          </p>
+        </header>
+        <ProductLinks area="bank" />
+      </section>
+    </article>
   )
 }

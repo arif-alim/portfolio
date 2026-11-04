@@ -2,7 +2,7 @@ export function ManulifeSummary() {
   const sections = [
     [
       'The problem',
-      'Benefits administration spans member enrollment, status changes, coverage, reporting and supporting documents. The existing project notes describe fragmented workflows, inconsistent components and a navigation hierarchy that needed clarification. The design work focused on making these tasks easier to understand within the Plan Administrator platform and Disability Portal.',
+      'I worked on the Plan Administrator platform and Disability Portal, where benefits tasks span enrolment, member updates, coverage, reporting and documents. I focused on clarifying where people should start a task and making the controls they encounter more consistent.',
     ],
     [
       'My role and responsibilities',
@@ -10,7 +10,7 @@ export function ManulifeSummary() {
     ],
     [
       'Discovery and collaboration',
-      'Collaboration with Product, Marketing, Business and IS teams connected user needs with business objectives and system constraints. Clickable prototypes supported usability validation on UserTesting.com, while Google Analytics supplied quantitative feedback alongside qualitative research. The work informed iterative revisions to both the Plan Administrator Site and Disability Portal.',
+      'I worked with Product, Marketing, Business and IS to balance user needs with business requirements and system constraints. I used feedback from clickable prototypes on UserTesting.com and quantitative data from Google Analytics to inform revisions across both portals.',
     ],
     [
       'Design approach',
@@ -18,15 +18,15 @@ export function ManulifeSummary() {
     ],
     [
       'Key challenges',
-      'The interface needed to make the relationship between Client, Policy, Member and Plan clearer, support member search and status changes, and present useful dashboard information without overwhelming administrators. Responsive layouts, conditional fields, clear labels and consistent components were central design considerations.',
+      'I clarified the relationship between clients, policies, members and plans so administrators could tell which record they were working on. For status changes I used clear labels and conditional fields to show the questions relevant to each change.',
     ],
     [
       'Solution',
-      'The documented designs bring dashboard concepts, member information, coverage summaries and status-change workflows into a more consistent interface. Power BI integration designs explore activity, utilization and enrollment information. Shared patterns, including datepicker exploration, support consistency across tasks.',
+      'I designed coverage summaries and status-change flows, and explored a reusable datepicker to give date entry a consistent pattern. I also designed Power BI dashboard concepts around activity, utilisation and enrolment.',
     ],
     [
       'Outcomes and learnings',
-      'The documented outputs include wireframes, clickable prototypes, visual mockups, UX specifications and design handoff assets. Research, usability feedback and design reviews informed revisions; no verified adoption, time-saving or business-impact metrics are available here. A central design takeaway is that consistent hierarchy and reusable patterns matter as much as individual screens when a task crosses several administrative workflows.',
+      'I brought member search and optional filters together in one interface and designed coverage summaries that put member details, coverage and administrative actions in the same view. I refined the designs through usability feedback and reviews, then handed developers visual assets and UX specifications for the layouts and interactions.',
     ],
   ]
   return (
@@ -69,6 +69,20 @@ export function ManulifeSummary() {
           <p>{text}</p>
         </section>
       ))}
+      <section
+        aria-labelledby="manulife-bank-wealth"
+        className="space-y-3 border-t border-zinc-200 pt-5 dark:border-zinc-700"
+      >
+        <h3 id="manulife-bank-wealth" className="text-lg font-semibold">
+          Manulife Bank &amp; Manulife Wealth
+        </h3>
+        <p>
+          My design work in this case study focused on benefits administration.
+          I’ve included fictional banking and investment prototypes in
+          Interaction Demos, with official Canadian product references in Design
+          Explorations.
+        </p>
+      </section>
       <aside className="space-y-2 border-t border-zinc-200 pt-5 text-sm dark:border-zinc-700">
         <h3 className="font-semibold">About Manulife</h3>
         <p>

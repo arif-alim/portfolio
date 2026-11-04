@@ -118,23 +118,17 @@ test('case-study anchors and responsive prototype heights', async ({
 }, testInfo) => {
   await page.goto('/portfolio/manulife')
   await page.getByRole('tab', { name: 'Design Process', exact: true }).click()
-  await expect
-    .poll(() => page.locator('main nav a').count())
-    .toBeGreaterThan(10)
-  const anchors = await page
-    .locator('main nav a')
-    .evaluateAll((links) => links.map((link) => link.getAttribute('href')))
-  expect(anchors.length).toBeGreaterThan(10)
+  const index = page.getByRole('navigation', { name: 'Product areas' })
+  const links = index.getByRole('link')
+  await expect(links).toHaveCount(3)
+  const anchors = await links.evaluateAll((items) =>
+    items.map((link) => link.getAttribute('href'))
+  )
+  expect(anchors).toEqual(['#process-plan', '#process-wealth', '#process-bank'])
   for (const href of anchors) await expect(page.locator(href)).toHaveCount(1)
-  if (testInfo.project.use.viewport.width >= 1024) {
-    await page
-      .getByRole('link', { name: '02. The Problem', exact: true })
-      .click()
-    await expect(page).toHaveURL(/#problem$/)
-    await expect(page.locator('main nav [aria-current=location]')).toHaveCount(
-      1
-    )
-  }
+  await index.getByRole('link', { name: /Manulife Wealth/ }).click()
+  await expect(page).toHaveURL(/#process-wealth$/)
+  await expect(page.locator('#process-wealth')).toBeFocused()
   await page.goto('/portfolio/service-ontario')
   await page
     .getByRole('tab', { name: 'Design Explorations', exact: true })

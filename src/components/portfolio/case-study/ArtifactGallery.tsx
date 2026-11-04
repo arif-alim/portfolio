@@ -9,11 +9,13 @@ export function ArtifactGallery({
   description,
   artifacts,
   sequence = false,
+  productReference,
 }: {
   title: string
   description: string
   artifacts: Artifact[]
   sequence?: boolean
+  productReference?: { label: string; href: string }
 }) {
   const [index, setIndex] = useState(0)
   const [open, setOpen] = useState(false)
@@ -71,6 +73,17 @@ export function ArtifactGallery({
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
           {description}
         </p>
+        {productReference && (
+          <p className="mt-2 text-sm">
+            Public product reference ·{' '}
+            <a
+              href={productReference.href}
+              className="text-blue-700 underline underline-offset-4 dark:text-blue-300"
+            >
+              {productReference.label}
+            </a>
+          </p>
+        )}
       </div>
       {sequence ? (
         <div
@@ -107,8 +120,7 @@ export function ArtifactGallery({
             />
           </button>
           <p className="text-xs">
-            {current.label} · Select the image to enlarge. Source order is
-            preserved; frame numbers are not verified task steps.
+            {current.label} · Select the image to enlarge.
           </p>
         </div>
       ) : (
@@ -129,6 +141,7 @@ export function ArtifactGallery({
                 <ArtifactImage artifact={artifact} preview />
               </button>
               <figcaption className="mt-2 text-xs">
+                {artifact.caption ? `${artifact.caption} · ` : ''}
                 {artifact.label} · Click to inspect
               </figcaption>
             </figure>
@@ -155,6 +168,11 @@ export function ArtifactGallery({
                   {current.label}
                 </Dialog.Title>
                 <Dialog.Description className="mt-1 text-xs">
+                  {current.caption && (
+                    <span className="block font-semibold">
+                      {current.caption}
+                    </span>
+                  )}
                   Fit view or original pixel scale. At original scale, focus the
                   image region and use arrow keys to scroll. Escape closes the
                   viewer.

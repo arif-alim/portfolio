@@ -6,7 +6,14 @@ test('design systems discovery, token tracing and component contract', async ({
   const errors = []
   page.on('pageerror', (error) => errors.push(error.message))
   await page.goto('/portfolio')
-  await page.getByRole('link', { name: /Design Systems Engineering/ }).click()
+  await expect(
+    page.getByRole('link', { name: /Design Systems Engineering/ })
+  ).toHaveCount(0)
+  await page.goto('/process?discipline=design-systems')
+  await page.getByRole('link', { name: 'Figma to React', exact: true }).click()
+  await page
+    .getByRole('link', { name: 'Explore the full architecture' })
+    .click()
   await expect(page).toHaveURL('/portfolio/design-systems')
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Design Systems Engineering & AI-Ready Component Architecture'

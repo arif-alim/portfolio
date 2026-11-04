@@ -115,37 +115,39 @@ export default function About() {
             <div className="flex-row">
               <h2 className="text-xl font-semibold">About Me</h2>
               <p className="pt-4 ">
-                I am a seasoned UI, UX, Interaction, Service, and Product
-                Designer with over 15 years of experience transforming complex
-                challenges into intuitive, user-centered solutions. My dual
-                academic background in Computer Science and Business
-                Administration shapes the way I design—balancing technical
-                feasibility, business strategy, and thoughtful user experience
-                to create solutions that are both impactful and scalable.
+                I’m a designer at heart. Over the past 15+ years, I’ve worked
+                across product, service, UX, UI and interaction design, helping
+                people complete complex tasks with greater clarity. I’m drawn to
+                the details that shape the experience, from how someone moves
+                through a service to what a screen tells them when something
+                goes wrong.
               </p>
               <p className="pt-4">
-                With a strong foundation in front-end development, I design with
-                implementation in mind. My work is visually compelling,
-                technically practical, and seamlessly aligned with engineering
-                workflows. I’ve collaborated on high-profile projects for
-                organizations such as Bombardier, Airbus, Hydro One, and
-                ServiceOntario—crafting intuitive interfaces, mapping end-to-end
-                user journeys, and developing accessible systems that meet AODA
-                and WCAG standards.
+                Building interfaces myself has changed how I make design
+                decisions. I use research and testing to understand where people
+                struggle, then work with front-end and back-end developers to
+                understand what the interface, data and business rules can
+                support. That might mean rethinking a workflow when information
+                arrives late, or prototyping an error state early so we can
+                agree on how someone will recover. The earlier we have those
+                conversations, the more room we have to improve the design
+                before it’s built.
               </p>
               <p className="pt-4">
-                My approach is rooted in empathy, systems thinking, and
-                collaboration. I’ve honed my skills in user research, service
-                design, and high-fidelity prototyping in Figma, and I thrive in
-                cross-functional settings—facilitating workshops, aligning
-                stakeholders, and iterating quickly based on insights and
-                feedback.
+                At ServiceOntario, I designed vehicle registration workflows for
+                dealerships. At Manulife, I worked on tools for benefits
+                administrators. At Bombardier, I designed interfaces for
+                aviation applications. Across those projects, I’ve mapped
+                services, prototyped interactions in Figma and worked with
+                engineering to carry accessibility and interaction decisions
+                through to the build.
               </p>
               <p className="pt-4">
-                Design isn’t just what I do—it’s what I love. I stay curious,
-                explore new ideas, and continuously evolve my craft. I blend
-                technical depth, strategic thinking, and human-centered design
-                to create meaningful, practical, and scalable experiences.
+                My background in computer science and business administration
+                helps me connect what people need with what the organisation is
+                trying to achieve and what the team can build. The part I enjoy
+                most is working through those trade-offs together and seeing
+                whether the result makes someone’s task easier.
               </p>
             </div>
           </div>
@@ -157,6 +159,12 @@ export default function About() {
           <h2 id="featured-work-heading" className="text-xl font-semibold">
             Featured Work
           </h2>
+          <p className="mt-2 max-w-2xl text-sm text-zinc-600 dark:text-zinc-400">
+            I designed tools for benefits administrators at Manulife, vehicle
+            registration workflows for dealerships at ServiceOntario, and
+            aviation applications at Bombardier. Explore the projects below to
+            see how I approached the workflows and interactions in each.
+          </p>
           <ul
             role="list"
             className="mt-5 grid auto-rows-fr gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"

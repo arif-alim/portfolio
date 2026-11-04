@@ -19,7 +19,7 @@ export function ArtifactImage({
       <div className="overflow-hidden" style={{ maxHeight }}>
         <Image
           src={source}
-          alt={artifact.label}
+          alt={artifact.alt ?? artifact.label}
           sizes="(min-width: 1024px) 45vw, 100vw"
           style={{ width: '100%', height: 'auto' }}
         />
@@ -29,7 +29,7 @@ export function ArtifactImage({
     return (
       <Image
         src={source}
-        alt={artifact.label}
+        alt={artifact.alt ?? artifact.label}
         unoptimized={original}
         sizes="(min-width: 1024px) 45vw, 100vw"
         style={
@@ -61,7 +61,7 @@ export function ArtifactImage({
     >
       <Image
         src={source}
-        alt={artifact.label}
+        alt={artifact.alt ?? artifact.label}
         unoptimized
         width={source.width}
         height={source.height}

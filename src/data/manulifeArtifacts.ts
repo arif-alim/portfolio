@@ -13,6 +13,10 @@ import reinstate from '@/images/projects/manulife/reinstate-member.png'
 import statusArchive from '@/images/projects/manulife/status-update.png'
 import datepicker1 from '@/images/projects/manulife/datepicker-1.png'
 import datepicker2 from '@/images/projects/manulife/datepicker-2.png'
+import wealthOverview from '@/images/projects/manulife/prototype-wealth-overview.png'
+import wealthHolding from '@/images/projects/manulife/prototype-wealth-holding.png'
+import bankReview from '@/images/projects/manulife/prototype-bank-review.png'
+import bankComplete from '@/images/projects/manulife/prototype-bank-complete.png'
 export type Artifact = CaseStudyArtifact
 
 function frames(
@@ -44,12 +48,12 @@ export const homeArtifacts: Artifact[] = [
 export const dashboardArtifacts: Artifact[] = [
   {
     id: 'home-powerbi-1',
-    label: 'Plan Administrator Home (PowerBi) — concept 1',
+    label: 'Plan Administrator Home (Power BI) — concept 1',
     source: future1,
   },
   {
     id: 'home-powerbi-2',
-    label: 'Plan Administrator Home (PowerBi) — concept 2',
+    label: 'Plan Administrator Home (Power BI) — concept 2',
     source: future2,
   },
 ]
@@ -77,8 +81,7 @@ export const statusSequences = [
   {
     id: 'termination',
     title: 'Member termination',
-    description:
-      'Original label: Status Update (Terminate a member). Five frames preserve the left-to-right source order.',
+    description: 'Screens from the flow for ending a member’s coverage.',
     artifacts: frames(
       terminate,
       'Status Update (Terminate a member)',
@@ -88,8 +91,7 @@ export const statusSequences = [
   {
     id: 'parental',
     title: 'Parental leave',
-    description:
-      'Original label: Status Update (Parental leave). Desktop and mobile frames alternate in the source; they remain in that order.',
+    description: 'Desktop and mobile views of the parental leave workflow.',
     artifacts: parentalBoxes.map(
       ([x, width, height], i): Artifact => ({
         id: `parental-${i}`,
@@ -105,7 +107,7 @@ export const statusSequences = [
     id: 'other-leave',
     title: 'Other leave',
     description:
-      'Original label: Status Update (Other leave). Eight frames retain the original order without assigning unverified step meanings.',
+      'Screens from the workflow for recording other types of leave.',
     artifacts: frames(
       other,
       'Status Update (Other leave)',
@@ -115,8 +117,7 @@ export const statusSequences = [
   {
     id: 'reinstate',
     title: 'Reinstate a member',
-    description:
-      'Five source frames show the existing reinstatement designs. Captions retain the original label and frame position.',
+    description: 'Screens from the workflow for reinstating a member.',
     artifacts: frames(
       reinstate,
       'Reinstate a member',
@@ -131,12 +132,46 @@ export const componentArtifacts: Artifact[] = [
 export const archiveArtifacts: Artifact[] = [
   {
     id: 'home-future-archive',
-    label: 'home-future.png — additional source artifact',
+    label: 'Plan Administrator Home — additional layout',
     source: futureArchive,
   },
   {
     id: 'status-update-archive',
-    label: 'status-update.png — additional source composite',
+    label: 'Member status updates — additional screens',
     source: statusArchive,
+  },
+]
+
+export const wealthPrototypeArtifacts: Artifact[] = [
+  {
+    id: 'prototype-wealth-overview',
+    label: 'Investment account overview',
+    alt: 'Fictional investment account with sample market value, two holdings and recent activity',
+    source: wealthOverview,
+    caption: 'Portfolio prototype screenshot',
+  },
+  {
+    id: 'prototype-wealth-holding',
+    label: 'Holding details',
+    alt: 'Fictional retirement account with Harbour Balanced Fund expanded to show asset class, units and price',
+    source: wealthHolding,
+    caption: 'Portfolio prototype screenshot',
+  },
+]
+
+export const bankPrototypeArtifacts: Artifact[] = [
+  {
+    id: 'prototype-bank-review',
+    label: 'Transfer review',
+    alt: 'Simulated transfer review showing the source account, destination and a CAD $125.50 amount before confirmation',
+    source: bankReview,
+    caption: 'Portfolio prototype screenshot',
+  },
+  {
+    id: 'prototype-bank-complete',
+    label: 'Transfer receipt',
+    alt: 'Simulated transfer receipt and updated balances for the fictional everyday and savings accounts',
+    source: bankComplete,
+    caption: 'Portfolio prototype screenshot',
   },
 ]
