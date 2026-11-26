@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Business",
+    "disciplines": [
+      {
+        "name": "Business Analysis",
+        "topics": [
+          "Business discovery and problem definition",
+          "Stakeholder engagement and requirements elicitation",
+          "AS-IS and TO-BE process analysis",
+          "Gap analysis and impact assessment",
+          "Business process modelling and optimization",
+          "Business rules and decision logic",
+          "Requirements documentation and traceability",
+          "User acceptance testing and business validation"
+        ]
+      },
+      {
+        "name": "Business Systems Analysis",
+        "topics": [
+          "Business and system requirements",
+          "Functional and non-functional specifications",
+          "System context and architecture modelling",
+          "Data integration and mapping",
+          "REST APIs and system interfaces",
+          "System dependencies and impact analysis",
+          "Technical feasibility and solution assessment",
+          "End-to-end system validation"
+        ]
+      },
+      {
+        "name": "Product Ownership",
+        "topics": [
+          "Product vision and strategy",
+          "Product discovery and opportunity assessment",
+          "Product roadmap development",
+          "Feature prioritization and value assessment",
+          "Backlog management and refinement",
+          "Epics, features and user stories",
+          "Acceptance criteria and definition of done",
+          "Sprint planning and delivery alignment",
+          "Product performance and success metrics"
+        ]
+      },
+      {
+        "name": "Business Transformation",
+        "topics": [
+          "Business capability mapping",
+          "Current-state and future-state operating models",
+          "Digital transformation and modernization",
+          "Workflow optimization and automation",
+          "AI opportunity identification and adoption",
+          "Organizational change and stakeholder alignment",
+          "Business value and benefits realization"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Design",
+    "disciplines": [
+      {
+        "name": "Product Design",
+        "topics": [
+          "Product discovery and problem framing",
+          "User research and synthesis",
+          "Information architecture",
+          "Interaction design",
+          "Wireframing and prototyping",
+          "Usability testing and validation",
+          "Data-informed design optimization"
+        ]
+      },
+      {
+        "name": "Service Design",
+        "topics": [
+          "Customer and stakeholder research",
+          "Customer journey mapping",
+          "Service blueprinting",
+          "Ecosystem and stakeholder mapping",
+          "Co-design and collaborative workshops",
+          "Frontstage and backstage processes",
+          "Service improvement and optimization"
+        ]
+      },
+      {
+        "name": "Design Systems",
+        "topics": [
+          "Design system strategy and architecture",
+          "Foundations and design tokens",
+          "Semantic tokens and theming",
+          "Component design and architecture",
+          "Pattern libraries",
+          "Responsive and adaptive systems",
+          "Design-to-code alignment",
+          "Governance, contribution and adoption"
+        ]
+      },
+      {
+        "name": "Design Strategy",
+        "topics": [
+          "Design thinking and problem framing",
+          "Workshop facilitation",
+          "Experience strategy",
+          "Design maturity and operations",
+          "Cross-functional alignment",
+          "Outcome measurement"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Accessibility",
+    "disciplines": [
+      {
+        "name": "Inclusive Design",
+        "topics": [
+          "Inclusive research and design",
+          "Cognitive accessibility",
+          "Accessible interaction patterns",
+          "Inclusive content and information architecture"
+        ]
+      },
+      {
+        "name": "Standards & Compliance",
+        "topics": [
+          "AODA and WCAG requirements",
+          "Semantic HTML and ARIA",
+          "Colour contrast and visual accessibility",
+          "Accessible forms and error handling",
+          "Accessible navigation and focus management"
+        ]
+      },
+      {
+        "name": "Accessibility Testing",
+        "topics": [
+          "Keyboard navigation",
+          "Screen reader testing",
+          "Automated accessibility testing",
+          "Manual accessibility audits",
+          "Assistive technology validation"
+        ]
+      },
+      {
+        "name": "Accessibility Governance",
+        "topics": [
+          "Accessible design systems",
+          "Accessibility requirements and acceptance criteria",
+          "Issue identification and remediation",
+          "Documentation and compliance validation",
+          "Continuous accessibility improvement"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Engineering",
+    "disciplines": [
+      {
+        "name": "Frontend Development",
+        "topics": [
+          "Technical feasibility and co-design",
+          "React and Angular development",
+          "TypeScript and JavaScript",
+          "Component-driven architecture",
+          "Responsive and adaptive development",
+          "Design system implementation",
+          "Application states and error recovery",
+          "Frontend performance optimization"
+        ]
+      },
+      {
+        "name": "Systems Integration",
+        "topics": [
+          "REST APIs and service integration",
+          "Data flows and data mapping",
+          "Authentication and authorization concepts",
+          "Application and service dependencies",
+          "Enterprise systems modernization",
+          "Integration validation and error handling"
+        ]
+      },
+      {
+        "name": "Artificial Intelligence",
+        "topics": [
+          "AI-assisted product discovery",
+          "AI-assisted software development",
+          "Intelligent workflow automation",
+          "AI agents and multi-agent orchestration",
+          "Large language and vision-language models",
+          "AI model evaluation and validation",
+          "Human-in-the-loop workflows",
+          "AI governance and responsible implementation"
+        ]
+      },
+      {
+        "name": "Quality Assurance",
+        "topics": [
+          "Implementation handoff",
+          "Build review and sign-off",
+          "Acceptance criteria validation",
+          "Functional and regression testing",
+          "End-to-end testing",
+          "Responsive and performance testing",
+          "Release readiness and validation"
+        ]
+      }
+    ]
+  }
+]

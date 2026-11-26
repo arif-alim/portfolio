@@ -1,0 +1,25 @@
+.sidebar {
+  max-height: 28rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #a1a1aa transparent;
+}
+
+/* The site hides scrollbars globally; keep this growing navigation discoverable. */
+.sidebar::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #a1a1aa;
+  border-radius: 6px;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: sticky;
+    top: 1.5rem;
+    max-height: calc(100dvh - 3rem);
+  }
+}

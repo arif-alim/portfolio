@@ -6,9 +6,50 @@ const projects = [
   ['Bombardier', '/portfolio/bombardier'],
 ]
 
-test('original homepage with compact featured work', async ({ page }) => {
+test('multidisciplinary homepage retains compact featured work', async ({
+  page,
+}) => {
   await page.goto('/')
-  await expect(page).toHaveTitle('About - Arif Alim')
+  const title = 'Arif Alim | Business, Design, Technology & AI'
+  const description =
+    'Arif Alim is a multidisciplinary professional with 15+ years of experience across business analysis, business systems analysis, product ownership, product design, accessibility, engineering and digital transformation.'
+  await expect(page).toHaveTitle(title)
+  for (const selector of [
+    'meta[name="description"]',
+    'meta[property="og:description"]',
+    'meta[name="twitter:description"]',
+  ]) {
+    await expect(page.locator(selector)).toHaveAttribute('content', description)
+  }
+  for (const selector of [
+    'meta[property="og:title"]',
+    'meta[name="twitter:title"]',
+  ]) {
+    await expect(page.locator(selector)).toHaveAttribute('content', title)
+  }
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(
+    'Bridging Business, Design, Technology and Artificial Intelligence.'
+  )
+  await expect(page.locator('main header')).toContainText(
+    'A multidisciplinary professional with 15+ years of experience across Business Analysis, Business Systems Analysis, Product Ownership, Product Design, Service Design and Frontend Engineering.'
+  )
+  await expect(page.locator('main header')).toContainText(
+    'Attended the Double Degree Program in Honours Bachelor of Computer Science (BCS) at the University of Waterloo and Honours Bachelor of Business Administration (BBA) at Wilfrid Laurier University.'
+  )
+  const about = page
+    .getByRole('heading', { name: 'About Me', exact: true })
+    .locator('..')
+  await expect(about.locator('p')).toHaveCount(5)
+  await expect(about).toContainText("I'm a problem solver at heart.")
+  await expect(about).toContainText(
+    'At TD, I proposed opportunities to simplify insurance claims and billing experiences.'
+  )
+  await expect(about).toContainText(
+    'artificial intelligence, intelligent automation and emerging technologies'
+  )
+  await expect(page.locator('main')).not.toContainText(
+    /Seasoned Designer|designer at heart|\(BCA\)/
+  )
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Hi, I’m Arif Alim.'
   )
@@ -149,6 +190,10 @@ test('homepage retains portrait layout, responsive featured list, and themes', a
     )
   ).toBe(true)
   expect(errors).toEqual([])
+  await page.screenshot({
+    path: testInfo.outputPath('homepage.png'),
+    fullPage: true,
+  })
 })
 
 test('featured cards have accessible names, hover feedback, and clickable padding', async ({

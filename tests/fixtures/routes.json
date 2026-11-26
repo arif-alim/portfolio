@@ -164,6 +164,7 @@
   },
   {
     "path": "/process",
-    "tabs": []
+    "tabs": ["Business", "Design", "Accessibility", "Engineering"],
+    "defaultTab": "Business"
   }
 ]

@@ -7,6 +7,10 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import { GithubIcon, LinkedInIcon, MailIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.png'
 
+const pageTitle = 'Arif Alim | Business, Design, Technology & AI'
+const pageDescription =
+  'Arif Alim is a multidisciplinary professional with 15+ years of experience across business analysis, business systems analysis, product ownership, product design, accessibility, engineering and digital transformation.'
+
 const featuredWork = [
   {
     company: 'Manulife',
@@ -62,11 +66,14 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Arif Alim</title>
-        <meta
-          name="description"
-          content="Learn more about Arif Alim, a Canadian UI/UX Architect."
-        />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
       </Head>
       <SimpleLayout
         title={
@@ -74,14 +81,22 @@ export default function About() {
             Hi, I’m Arif Alim.
             <br />
             <span className="text-xl font-semibold">
-              A Seasoned Designer specializing in UI, UX, Service, and Product
-              Design!
+              Bridging Business, Design, Technology and Artificial Intelligence.
             </span>
           </>
         }
-        intro="Attended the double degree program - Honours Bachelor of
-                Computer Science (BCS) at University of Waterloo and Honours
-                Business Administration (BCA) at Wilfrid Laurier University."
+        intro={
+          <>
+            A multidisciplinary professional with 15+ years of experience across
+            Business Analysis, Business Systems Analysis, Product Ownership,
+            Product Design, Service Design and Frontend Engineering.
+            <span className="mt-4 block">
+              Attended the Double Degree Program in Honours Bachelor of Computer
+              Science (BCS) at the University of Waterloo and Honours Bachelor
+              of Business Administration (BBA) at Wilfrid Laurier University.
+            </span>
+          </>
+        }
       >
         <div className="mt-8 grid grid-cols-1 gap-y-16    sm:mt-16 lg:grid-cols-12 lg:gap-y-12">
           {/* Profile Image */}
@@ -114,40 +129,53 @@ export default function About() {
           <div className="col-span-8 lg:order-first">
             <div className="flex-row">
               <h2 className="text-xl font-semibold">About Me</h2>
-              <p className="pt-4 ">
-                I’m a designer at heart. Over the past 15+ years, I’ve worked
-                across product, service, UX, UI and interaction design, helping
-                people complete complex tasks with greater clarity. I’m drawn to
-                the details that shape the experience, from how someone moves
-                through a service to what a screen tells them when something
-                goes wrong.
+              <p className="pt-4">
+                I&apos;m a problem solver at heart. Over the past 15+ years,
+                I&apos;ve worked at the intersection of business, design and
+                technology, helping organisations transform complex challenges
+                into practical, scalable and meaningful solutions. My experience
+                spans business analysis, business systems analysis, product
+                ownership, digital transformation, experience design and
+                software development.
               </p>
               <p className="pt-4">
-                Building interfaces myself has changed how I make design
-                decisions. I use research and testing to understand where people
-                struggle, then work with front-end and back-end developers to
-                understand what the interface, data and business rules can
-                support. That might mean rethinking a workflow when information
-                arrives late, or prototyping an error state early so we can
-                agree on how someone will recover. The earlier we have those
-                conversations, the more room we have to improve the design
-                before it’s built.
+                I approach challenges from both a business and technical
+                perspective. I work closely with business leaders, Product
+                Owners, Business Analysts, Business Systems Analysts, subject
+                matter experts and engineering teams to understand business
+                objectives, define requirements, evaluate opportunities and
+                translate ideas into actionable solutions. My work encompasses
+                process optimization, business rules, system requirements,
+                product strategy, roadmaps, feature prioritization and delivery.
               </p>
               <p className="pt-4">
-                At ServiceOntario, I designed vehicle registration workflows for
-                dealerships. At Manulife, I worked on tools for benefits
-                administrators. At Bombardier, I designed interfaces for
-                aviation applications. Across those projects, I’ve mapped
-                services, prototyped interactions in Figma and worked with
-                engineering to carry accessibility and interaction decisions
-                through to the build.
+                Throughout my career, I&apos;ve contributed to complex
+                enterprise initiatives across banking, insurance, government,
+                energy and aviation. At ServiceOntario, I helped shape the
+                modernization of dealership vehicle registration services. At
+                TD, I proposed opportunities to simplify insurance claims and
+                billing experiences. At Manulife, I worked on enterprise
+                solutions supporting benefits administration. Across these
+                initiatives, I&apos;ve connected business needs, customer
+                experiences and technical capabilities throughout the product
+                development lifecycle.
+              </p>
+              <p className="pt-4">
+                My hands-on experience in software development, systems
+                integration, accessibility and design systems allows me to
+                bridge the gap between business requirements and technical
+                implementation. I&apos;m also passionate about artificial
+                intelligence, intelligent automation and emerging technologies,
+                particularly their potential to transform how organisations
+                operate, innovate and deliver value.
               </p>
               <p className="pt-4">
                 My background in computer science and business administration
-                helps me connect what people need with what the organisation is
-                trying to achieve and what the team can build. The part I enjoy
-                most is working through those trade-offs together and seeing
-                whether the result makes someone’s task easier.
+                shapes how I approach problems holistically, balancing business
+                objectives, customer needs, technical feasibility and long-term
+                scalability. What drives me most is bringing these perspectives
+                together to solve meaningful problems and deliver measurable
+                outcomes.
               </p>
             </div>
           </div>

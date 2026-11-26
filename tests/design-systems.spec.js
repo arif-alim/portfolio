@@ -10,7 +10,9 @@ test('design systems discovery, token tracing and component contract', async ({
     page.getByRole('link', { name: /Design Systems Engineering/ })
   ).toHaveCount(0)
   await page.goto('/process?discipline=design-systems')
-  await page.getByRole('link', { name: 'Figma to React', exact: true }).click()
+  await page
+    .getByRole('link', { name: 'Design-to-code alignment', exact: true })
+    .click()
   await page
     .getByRole('link', { name: 'Explore the full architecture' })
     .click()
